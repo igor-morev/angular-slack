@@ -2,7 +2,12 @@
   "name": "angular-slack",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "angular-slack",
+  "generators": {
+    "@nx/angular:component": {
+      "style": "scss"
+    }
+  },
+  "prefix": "as",
   "sourceRoot": "apps/angular-slack/src",
   "tags": [],
   "targets": {
