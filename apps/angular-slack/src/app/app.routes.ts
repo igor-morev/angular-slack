@@ -8,8 +8,8 @@ export const appRoutes: Route[] = [
     component: AuthComponent,
   },
   {
-    path: 'client/:clientId',
-    loadComponent: () =>
-      import('@angular-slack/shell').then((m) => m.ShellComponent),
+    path: 'client',
+    loadChildren: () =>
+      import('@angular-slack/shell').then((m) => m.SHELL_ROUTES),
   },
 ];

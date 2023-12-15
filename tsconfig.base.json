@@ -16,7 +16,19 @@
     "baseUrl": ".",
     "paths": {
       "@angular-slack/auth": ["libs/auth/feature-auth/src/index.ts"],
-      "@angular-slack/shell": ["libs/client/feature-shell/src/index.ts"]
+      "@angular-slack/header-toolbar": [
+        "libs/header-toolbar/feature-header-toolbar/src/index.ts"
+      ],
+      "@angular-slack/primary-view": [
+        "libs/workspace/feature-primary-view/src/index.ts"
+      ],
+      "@angular-slack/shell": ["libs/client/feature-shell/src/index.ts"],
+      "@angular-slack/tab-rail": [
+        "libs/tab-rail/feature-tab-rail/src/index.ts"
+      ],
+      "@angular-slack/workspace": [
+        "libs/workspace/feature-workspace/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

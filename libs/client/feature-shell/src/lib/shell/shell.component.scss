@@ -1,0 +1,25 @@
+:host {
+  display: block;
+  height: 100vh;
+  --dt_color-plt-aubergine-70: 131, 56, 138;
+  --dt_color-plt-aubergine-90: 74, 21, 75;
+
+  background: radial-gradient(
+      circle at 50% 50%,
+      rgb(var(--dt_color-plt-aubergine-70)) 20%,
+      transparent 80%
+    ),
+    conic-gradient(
+      from 45deg at 50% 50%,
+      rgb(var(--dt_color-plt-aubergine-90)) 0%,
+      rgb(var(--dt_color-plt-aubergine-70)) 25%,
+      rgb(var(--dt_color-plt-aubergine-90)) 50%,
+      rgb(var(--dt_color-plt-aubergine-70)) 75%,
+      rgb(var(--dt_color-plt-aubergine-90)) 100%
+    );
+}
+
+.wrapper {
+  height: calc(100% - 40px);
+  display: flex;
+}

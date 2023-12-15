@@ -1,0 +1,18 @@
+:host {
+  display: flex;
+  height: 100%;
+  background: white;
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 300px;
+  background-color: #cfc1d2;
+  padding: 10px;
+}
+
+.contents {
+  width: 100%;
+}
