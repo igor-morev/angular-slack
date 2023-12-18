@@ -1,0 +1,22 @@
+<div class="max-w-md mx-auto h-screen px-4 pt-10">
+  <img
+    alt="Slack"
+    src="https://a.slack-edge.com/bv1-10/slack_logo-ebd02d1.svg"
+    width="100"
+    class="mx-auto mb-4"
+    title="Slack"
+  />
+  <h1 class="text-center mb-2">Sign in to Slack</h1>
+  <p class="text-center mb-4">
+    We suggest using the email address you use at work.
+  </p>
+  <form [formGroup]="loginForm">
+    <tui-input formControlName="userName" class="mb-4"
+      >Your name
+      <input tuiTextfield type="text" />
+    </tui-input>
+    <button appearance="primary" tuiButton type="submit" class="w-full">
+      Sign In
+    </button>
+  </form>
+</div>
