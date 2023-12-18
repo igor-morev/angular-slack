@@ -1,17 +1,22 @@
-<h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-  Sign in to Slack
-</h1>
-<p class="mt-6 text-lg leading-8 text-gray-600">
-  We suggest using the email address you use at work.
-</p>
-<form action="">
-  <input
-    type="text"
-    name="username"
-    id="username"
-    autocomplete="username"
-    class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-    placeholder="janesmith"
+<div class="max-w-md mx-auto h-screen px-4 pt-10">
+  <img
+    alt="Slack"
+    src="https://a.slack-edge.com/bv1-10/slack_logo-ebd02d1.svg"
+    width="100"
+    class="mx-auto mb-4"
+    title="Slack"
   />
-  <button type="submit">Continue</button>
-</form>
+  <h1 class="text-center mb-2">Sign in to Slack</h1>
+  <p class="text-center mb-4">
+    We suggest using the email address you use at work.
+  </p>
+  <form [formGroup]="loginForm">
+    <tui-input formControlName="userName" class="mb-4"
+      >Your name
+      <input tuiTextfield type="text" />
+    </tui-input>
+    <button appearance="primary" tuiButton type="submit" class="w-full">
+      Sign In
+    </button>
+  </form>
+</div>

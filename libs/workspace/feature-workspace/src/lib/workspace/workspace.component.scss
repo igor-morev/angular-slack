@@ -1,15 +1,9 @@
 :host {
-  display: flex;
-  height: 100%;
-  background: white;
-  width: 100%;
-  border-radius: 6px;
-  overflow: hidden;
+  @apply h-full w-full block bg-white;
 }
 
 .sidebar {
   width: 300px;
-  background-color: #cfc1d2;
   padding: 10px;
 }
 
