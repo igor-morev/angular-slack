@@ -10,7 +10,7 @@
   <p class="text-center mb-4">
     We suggest using the email address you use at work.
   </p>
-  <form [formGroup]="loginForm">
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
     <tui-input formControlName="userName" class="mb-4"
       >Your name
       <input tuiTextfield type="text" />

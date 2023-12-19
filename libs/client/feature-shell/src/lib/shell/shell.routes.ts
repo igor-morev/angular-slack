@@ -9,7 +9,7 @@ export const SHELL_ROUTES: Routes = [
       {
         path: ':roomId',
         loadComponent: () =>
-          import('@angular-slack/primary-view').then(
+          import('@angular-slack/workspace/feature-primary-view').then(
             (m) => m.PrimaryViewComponent
           ),
       },

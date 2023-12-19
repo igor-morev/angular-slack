@@ -15,18 +15,26 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@angular-slack/auth": ["libs/auth/feature-auth/src/index.ts"],
-      "@angular-slack/header-toolbar": [
+      "@angular-slack/auth/feature-auth": [
+        "libs/auth/feature-auth/src/index.ts"
+      ],
+      "@angular-slack/auth/data-access": ["libs/auth/data-access/src/index.ts"],
+      "@angular-slack/feature-header-toolbar": [
         "libs/header-toolbar/feature-header-toolbar/src/index.ts"
       ],
-      "@angular-slack/primary-view": [
+      "@angular-slack/workspace/feature-primary-view": [
         "libs/workspace/feature-primary-view/src/index.ts"
       ],
-      "@angular-slack/shell": ["libs/client/feature-shell/src/index.ts"],
-      "@angular-slack/tab-rail": [
+      "@angular-slack/feature-shell": [
+        "libs/client/feature-shell/src/index.ts"
+      ],
+      "@angular-slack/slack-api": [
+        "libs/shared/data-access/slack-api/src/index.ts"
+      ],
+      "@angular-slack/tab-rail/feature-tab-rail": [
         "libs/tab-rail/feature-tab-rail/src/index.ts"
       ],
-      "@angular-slack/workspace": [
+      "@angular-slack/workspace/feature-workspace": [
         "libs/workspace/feature-workspace/src/index.ts"
       ]
     }
