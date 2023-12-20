@@ -1,5 +1,5 @@
 <div>
-  <div>Client</div>
+  <div *ngIf="client$ | async as client">{{ client.name }}</div>
   <div class="navigation">
     <ul>
       <li>
@@ -8,4 +8,4 @@
     </ul>
   </div>
 </div>
-<div class="user">user</div>
+<div class="user">{{ user().username }}</div>

@@ -39,7 +39,8 @@
       ],
       "@angular-slack/workspace/feature-workspace": [
         "libs/workspace/feature-workspace/src/index.ts"
-      ]
+      ],
+      "@env/*": ["apps/angular-slack/src/environments/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

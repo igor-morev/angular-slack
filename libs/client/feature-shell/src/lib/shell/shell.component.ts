@@ -1,8 +1,16 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderToolbarComponent } from '@angular-slack/feature-header-toolbar';
 import { TabRailComponent } from '@angular-slack/tab-rail/feature-tab-rail';
 import { WorkspaceComponent } from '@angular-slack/workspace/feature-workspace';
+import { AuthStore } from '@angular-slack/auth/data-access';
+import { Store } from '@ngrx/store';
+import { initClients } from '@angular-slack/client/data-access';
 
 @Component({
   selector: 'as-shell',
@@ -17,4 +25,12 @@ import { WorkspaceComponent } from '@angular-slack/workspace/feature-workspace';
   templateUrl: './shell.component.html',
   styleUrl: './shell.component.scss',
 })
-export class ShellComponent {}
+export class ShellComponent implements OnInit {
+  private readonly authStore = inject(AuthStore);
+  private readonly store = inject(Store);
+
+  ngOnInit() {
+    this.authStore.getUser();
+    this.store.dispatch(initClients());
+  }
+}

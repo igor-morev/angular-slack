@@ -1,5 +1,5 @@
 <div class="sidebar bg-gray-200 h-full">
-  <div class="toolbar">Workspace name</div>
+  <div class="toolbar" *ngIf="client$ | async as client">{{ client.name }}</div>
   <div class="channel-sidebar">
     <!-- <ul>
       <li>

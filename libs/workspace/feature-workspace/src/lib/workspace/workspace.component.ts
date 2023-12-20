@@ -1,6 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { selectEntity } from '@angular-slack/client/data-access';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'as-workspace',
@@ -10,4 +12,8 @@ import { RouterModule } from '@angular/router';
   styleUrl: './workspace.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class WorkspaceComponent {}
+export class WorkspaceComponent {
+  private readonly store = inject(Store);
+
+  client$ = this.store.select(selectEntity);
+}

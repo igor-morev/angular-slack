@@ -6,12 +6,6 @@ import { User } from './models';
   providedIn: 'root',
 })
 export class UserApiService {
-  getCurrent(): Observable<User> {
-    return of({
-      username: 'Igor M',
-    } as User);
-  }
-
   getUsers(): Observable<User[]> {
     return of([]);
   }

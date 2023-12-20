@@ -1,4 +1,6 @@
+import { User } from '@angular-slack/slack-api';
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { LoginCredentials } from './auth.model';
 
 @Injectable({
@@ -23,5 +25,11 @@ export class AuthService {
 
   logout() {
     this.authorized = null;
+  }
+
+  getMe(): Observable<User> {
+    return of({
+      username: 'Igor M',
+    } as User);
   }
 }
