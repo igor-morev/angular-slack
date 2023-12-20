@@ -1,15 +1,17 @@
 import { Route } from '@angular/router';
 
-import { AuthComponent } from '@angular-slack/auth';
+// import { authGuard } from '@angular-slack/auth/data-access';
 
 export const appRoutes: Route[] = [
   {
     path: '',
-    component: AuthComponent,
+    redirectTo: 'client',
+    pathMatch: 'full',
   },
   {
     path: 'client',
+    // canLoad: [authGuard],
     loadChildren: () =>
-      import('@angular-slack/shell').then((m) => m.SHELL_ROUTES),
+      import('@angular-slack/feature-shell').then((m) => m.SHELL_ROUTES),
   },
 ];
