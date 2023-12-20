@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Message } from './models/message';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MessageApiService {
-  sendMessageContact(chatId: string): Message {
-    console.log(chatId);
+  messages: Map<string, Message[]> = new Map([['1', []]]);
 
-    return {
+  sendMessageContact(chatId: string): Observable<Message> {
+    const newMessage: Message = {
       id: `${+new Date()}`,
       content: 'Hi, there',
       updatedAt: new Date().toISOString(),
@@ -16,9 +17,13 @@ export class MessageApiService {
         username: 'John Frank',
       },
     } as Message;
+
+    this.messages.get(chatId)!.push(newMessage);
+
+    return of(newMessage);
   }
 
-  getMessages(): Message[] {
-    return [];
+  getMessages(chatId: string): Observable<Message[]> {
+    return of(this.messages.get(chatId)!);
   }
 }

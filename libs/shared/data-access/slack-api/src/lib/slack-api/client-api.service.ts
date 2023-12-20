@@ -7,7 +7,7 @@ import { Client } from './models';
 export class ClientApiService {
   getClient(): Client {
     return {
-      name: 'My company',
+      name: 'SpaceX',
     } as Client;
   }
 }

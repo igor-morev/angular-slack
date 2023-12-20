@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { User } from './models';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserApiService {
-  getCurrent(): User {
-    return {
+  getCurrent(): Observable<User> {
+    return of({
       username: 'Igor M',
-    } as User;
+    } as User);
   }
 
-  getUsers(): User[] {
-    return [];
+  getUsers(): Observable<User[]> {
+    return of([]);
   }
 }
