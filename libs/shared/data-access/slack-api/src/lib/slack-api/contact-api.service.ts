@@ -11,10 +11,31 @@ export class ContactApiService {
       '1',
       [
         {
+          id: '1',
           name: 'Steve Jobs',
           chatId: '1',
-        } as Contact,
-      ],
+        },
+        {
+          id: '2',
+          name: 'Jeff Bezos',
+          chatId: '4',
+        },
+        {
+          id: '3',
+          name: 'Bill Gates',
+          chatId: '2',
+        },
+        {
+          id: '4',
+          name: 'Elon Musk',
+          chatId: '3',
+        },
+        {
+          id: '5',
+          name: 'John Carmack',
+          chatId: '5',
+        },
+      ] as Contact[],
     ],
   ]);
 

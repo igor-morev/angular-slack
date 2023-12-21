@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'auth-data-access',
+  displayName: 'data-access-contacts',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../../coverage/libs/auth/data-access',
+  coverageDirectory: '../../../coverage/libs/client/data-access-contacts',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

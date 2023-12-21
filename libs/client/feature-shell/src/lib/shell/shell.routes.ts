@@ -7,6 +7,11 @@ import {
   clientsReducer,
   CLIENTS_FEATURE_KEY,
 } from '@angular-slack/client/data-access';
+import {
+  ContactsEffects,
+  contactsReducer,
+  CONTACTS_FEATURE_KEY,
+} from '@angular-slack/data-access-contacts';
 
 export const SHELL_ROUTES: Routes = [
   {
@@ -24,6 +29,8 @@ export const SHELL_ROUTES: Routes = [
     providers: [
       provideState(CLIENTS_FEATURE_KEY, clientsReducer),
       provideEffects(ClientsEffects),
+      provideState(CONTACTS_FEATURE_KEY, contactsReducer),
+      provideEffects(ContactsEffects),
     ],
   },
 ];

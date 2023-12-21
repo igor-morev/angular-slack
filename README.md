@@ -12,6 +12,10 @@ To start the development server run `nx serve angular-slack`. Open your browser 
 
 `npx nx g @nx/angular:library workspace --directory=libs/workspace/feature-workspace --standalone --prefix=as --changeDetection=OnPush --style=scss --tags=feature`
 
+## Create data-access
+
+`npx nx g @nx/angular:library data-access-contacts --directory=libs/workspace/data-access-workspace --tags=data-access`
+
 ## Generate code
 
 If you happen to use Nx plugins, you can leverage code generators that might come with it.
