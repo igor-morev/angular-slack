@@ -1,11 +1,37 @@
-<div>
-  <div>Client</div>
-  <div class="navigation">
-    <ul>
-      <li>
-        <a href="">Home</a>
-      </li>
-    </ul>
-  </div>
+<div class="flex flex-col">
+  <button
+    *ngIf="client$ | async as client"
+    type="button"
+    class="mb-6"
+    tuiHintAppearance="onDark"
+    tuiHintDirection="right"
+    [tuiHint]="client.name"
+  >
+    <img
+      [src]="client.logo"
+      alt=""
+      class="inline-block h-10 w-10 rounded-md ring-1 ring-slate-100"
+    />
+  </button>
+  <ul>
+    <li>
+      <button class="block text-xs text-center">
+        <span
+          class="bg-slate-400 h-10 w-10 rounded-md flex items-center justify-center"
+        >
+          <tui-svg src="tuiIconHome"></tui-svg>
+        </span>
+        <span class="block pt-1">Home</span>
+      </button>
+    </li>
+  </ul>
 </div>
-<div class="user">user</div>
+<button
+  class="user"
+  tuiHintAppearance="onDark"
+  tuiHintDirection="right"
+  [tuiHint]="user().username"
+>
+  <tui-avatar [text]="user().username" [autoColor]="true" size="m"></tui-avatar>
+  <!-- <img [src]="user().image" alt="" class="inline-block h-8 w-8 rounded-md" /> -->
+</button>

@@ -1,4 +1,6 @@
+import { User } from '@angular-slack/slack-api';
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { LoginCredentials } from './auth.model';
 
 @Injectable({
@@ -23,5 +25,13 @@ export class AuthService {
 
   logout() {
     this.authorized = null;
+  }
+
+  getMe(): Observable<User> {
+    return of({
+      username: 'Igor Morev (Frontend Engineer)',
+      image:
+        'https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    } as User);
   }
 }

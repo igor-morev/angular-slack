@@ -1,5 +1,4 @@
 :host {
-  display: block;
-  height: 100%;
   width: 76px;
+  @apply h-full pt-4 pb-8 flex flex-col items-center justify-between;
 }

@@ -11,8 +11,8 @@ export class ContactApiService {
       '1',
       [
         {
-          name: 'John Frank',
-          chatId: '121212',
+          name: 'Steve Jobs',
+          chatId: '1',
         } as Contact,
       ],
     ],
