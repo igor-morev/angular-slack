@@ -4,7 +4,11 @@
 >
   {{ chat.name }}
 </div>
-<div class="body overflow-y-auto">
-  <div *ngFor="let message of messages$ | async">{{ message.content }}</div>
+<div class="flex flex-col flex-1">
+  <div class="body overflow-y-auto flex-1">
+    <div *ngFor="let message of messages$ | async">{{ message.content }}</div>
+  </div>
+  <div class="footer">
+    <quill-editor></quill-editor>
+  </div>
 </div>
-<div class="footer"></div>

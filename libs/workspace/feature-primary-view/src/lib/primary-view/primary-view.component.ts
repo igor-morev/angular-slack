@@ -12,11 +12,12 @@ import {
   initMessages,
   selectAllMessages,
 } from '@angular-slack/data-access-messages';
+import { QuillModule } from 'ngx-quill';
 
 @Component({
   selector: 'as-primary-view',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, QuillModule],
   templateUrl: './primary-view.component.html',
   styleUrl: './primary-view.component.scss',
   providers: [TuiDestroyService],

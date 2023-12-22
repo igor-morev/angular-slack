@@ -1,3 +1,7 @@
 :host {
-  @apply flex-1;
+  @apply flex flex-col flex-1;
+}
+
+quill-editor {
+  display: block;
 }
