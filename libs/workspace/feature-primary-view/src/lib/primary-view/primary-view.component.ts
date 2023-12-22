@@ -13,11 +13,12 @@ import {
   selectAllMessages,
 } from '@angular-slack/data-access-messages';
 import { QuillModule } from 'ngx-quill';
+import { TuiAvatarModule } from '@taiga-ui/kit';
 
 @Component({
   selector: 'as-primary-view',
   standalone: true,
-  imports: [CommonModule, QuillModule],
+  imports: [CommonModule, QuillModule, TuiAvatarModule],
   templateUrl: './primary-view.component.html',
   styleUrl: './primary-view.component.scss',
   providers: [TuiDestroyService],
