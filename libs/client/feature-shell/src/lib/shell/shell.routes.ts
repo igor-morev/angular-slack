@@ -24,7 +24,14 @@ export const SHELL_ROUTES: Routes = [
     component: ShellComponent,
     children: [
       {
-        path: ':chatId',
+        path: 'direct/:chatId',
+        loadComponent: () =>
+          import('@angular-slack/workspace/feature-primary-view').then(
+            (m) => m.PrimaryViewComponent
+          ),
+      },
+      {
+        path: 'channels/:chatId',
         loadComponent: () =>
           import('@angular-slack/workspace/feature-primary-view').then(
             (m) => m.PrimaryViewComponent

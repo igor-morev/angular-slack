@@ -1,8 +1,8 @@
 <div
   class="toolbar h-12 text-lg text-black px-4 border-b-2 border-slate-200 flex items-center"
-  *ngIf="contact$ | async as contact"
+  *ngIf="chat$ | async as chat"
 >
-  {{ contact.name }}
+  {{ chat.name }}
 </div>
 <div class="body overflow-y-auto">
   <div *ngFor="let message of messages$ | async">{{ message.content }}</div>

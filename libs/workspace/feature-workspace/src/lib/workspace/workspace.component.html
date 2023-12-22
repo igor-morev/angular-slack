@@ -17,7 +17,7 @@
     </div>
     <div class="content">
       <a
-        [routerLink]="['/client', client.id, contact.chatId]"
+        [routerLink]="['/client', client.id, 'direct', contact.chatId]"
         routerLinkActive="bg-black text-white pointer-events-none"
         class="contact-item flex px-2 py-1 items-center hover:bg-slate-300 rounded-md"
         *ngFor="let contact of contacts$ | async"

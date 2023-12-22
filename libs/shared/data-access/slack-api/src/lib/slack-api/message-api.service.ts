@@ -11,7 +11,20 @@ export class MessageApiService {
       '1',
       [
         {
-          id: `1`,
+          id: `${+new Date()}`,
+          content: 'Hi, there',
+          updatedAt: new Date().toISOString(),
+          author: {
+            username: 'Steve Jobs',
+          },
+        } as Message,
+      ],
+    ],
+    [
+      '4',
+      [
+        {
+          id: `${+new Date()}`,
           content: 'Hi, there',
           updatedAt: new Date().toISOString(),
           author: {

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { filter, map, takeUntil } from 'rxjs';
+import { map, takeUntil } from 'rxjs';
 import { Store } from '@ngrx/store';
 import {
   loadContactByChatActions,
@@ -25,13 +25,14 @@ import {
 export class PrimaryViewComponent {
   route = inject(ActivatedRoute);
   store = inject(Store);
+  destroy$ = inject(TuiDestroyService);
 
-  contact$ = this.store.select(selectSelectedContactEntity);
+  chat$ = this.store.select(selectSelectedContactEntity);
   messages$ = this.store.select(selectAllMessages);
 
   chatId$ = this.route.paramMap.pipe(map((value) => value.get('chatId')));
 
-  constructor(private readonly destroy$: TuiDestroyService) {
+  constructor() {
     this.chatId$.pipe(takeUntil(this.destroy$)).subscribe((chatId) => {
       if (chatId) {
         this.store.dispatch(
@@ -46,6 +47,12 @@ export class PrimaryViewComponent {
           })
         );
       }
+    });
+  }
+
+  ngOnInit() {
+    this.route.url.subscribe((url) => {
+      console.log(url);
     });
   }
 }
