@@ -12,9 +12,27 @@ export class ContactsEffects {
   init$ = createEffect(() =>
     this.actions$.pipe(
       ofType(ContactsActions.initContacts),
-      switchMap(() => this.contactApiService.getContacts('1')),
+      switchMap(() => this.contactApiService.getContacts()),
       switchMap((contacts) =>
         of(ContactsActions.loadContactsSuccess({ contacts }))
+      ),
+      catchError((error) => {
+        console.error('Error', error);
+        return of(ContactsActions.loadContactsFailure({ error }));
+      })
+    )
+  );
+
+  loadContactByChat$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(ContactsActions.loadContactByChatActions.loadContactByChat),
+      switchMap((action) => this.contactApiService.getContactBy(action.chatId)),
+      switchMap((contact) =>
+        of(
+          ContactsActions.loadContactByChatActions.loadContactByChatSuccess({
+            contact,
+          })
+        )
       ),
       catchError((error) => {
         console.error('Error', error);

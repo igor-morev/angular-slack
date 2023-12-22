@@ -1,7 +1,6 @@
-<div class="sidebar bg-slate-100 h-full">
+<div class="sidebar bg-slate-100 h-full" *ngIf="client$ | async as client">
   <div
     class="toolbar h-12 text-lg text-black px-4 border-b-2 border-slate-200 flex items-center"
-    *ngIf="client$ | async as client"
   >
     {{ client.name }}
   </div>
@@ -18,7 +17,8 @@
     </div>
     <div class="content">
       <a
-        href="#"
+        [routerLink]="['/client', client.id, contact.chatId]"
+        routerLinkActive="bg-black text-white pointer-events-none"
         class="contact-item flex px-2 py-1 items-center hover:bg-slate-300 rounded-md"
         *ngFor="let contact of contacts$ | async"
       >
@@ -34,6 +34,4 @@
   </div>
 </div>
 
-<div class="contents">
-  <router-outlet></router-outlet>
-</div>
+<router-outlet></router-outlet>

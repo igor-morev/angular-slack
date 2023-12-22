@@ -7,7 +7,7 @@ import { ContactsEntity } from './contacts.models';
 export const CONTACTS_FEATURE_KEY = 'contacts';
 
 export interface ContactsState extends EntityState<ContactsEntity> {
-  selectedId?: string | number; // which Contacts record has been selected
+  selectedContact?: ContactsEntity; // which Contacts record has been selected
   loaded: boolean; // has the Contacts list been loaded
   error?: string | null; // last known error (if any)
 }
@@ -38,7 +38,14 @@ const reducer = createReducer(
   on(ContactsActions.loadContactsFailure, (state, { error }) => ({
     ...state,
     error,
-  }))
+  })),
+  on(
+    ContactsActions.loadContactByChatActions.loadContactByChatSuccess,
+    (state, { contact }) => ({
+      ...state,
+      selectedContact: contact,
+    })
+  )
 );
 
 export function contactsReducer(

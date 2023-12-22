@@ -13,5 +13,8 @@
     "jest.config.ts",
     "src/**/*.test.ts"
   ],
-  "include": ["src/**/*.ts"]
+  "include": [
+    "src/**/*.ts",
+    "../../../auth/data-access/src/lib/data-access/models/user.ts"
+  ]
 }

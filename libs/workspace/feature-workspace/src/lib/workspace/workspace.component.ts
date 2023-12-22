@@ -6,6 +6,7 @@ import { Store } from '@ngrx/store';
 import { selectAllContacts } from '@angular-slack/data-access-contacts';
 import { TuiHintModule, TuiSvgModule } from '@taiga-ui/core';
 import { TuiAvatarModule } from '@taiga-ui/kit';
+import { TuiLetModule } from '@taiga-ui/cdk';
 
 @Component({
   selector: 'as-workspace',
@@ -16,6 +17,7 @@ import { TuiAvatarModule } from '@taiga-ui/kit';
     TuiSvgModule,
     TuiHintModule,
     TuiAvatarModule,
+    TuiLetModule,
   ],
   templateUrl: './workspace.component.html',
   styleUrl: './workspace.component.scss',

@@ -14,7 +14,7 @@ export class MessageApiService {
       content: 'Hi, there',
       updatedAt: new Date().toISOString(),
       author: {
-        username: 'John Frank',
+        username: 'Steve Jobs',
       },
     } as Message;
 
@@ -23,7 +23,7 @@ export class MessageApiService {
     return of(newMessage);
   }
 
-  getMessages(chatId: string): Observable<Message[]> {
+  getMessagesBy(chatId: string): Observable<Message[]> {
     return of(this.messages.get(chatId)!);
   }
 }

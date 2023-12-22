@@ -3,9 +3,9 @@ import { rxMethod } from '@ngrx/signals/rxjs-interop';
 
 import { signalStore, withState, withMethods, patchState } from '@ngrx/signals';
 import { inject } from '@angular/core';
-import { User } from '@angular-slack/slack-api';
 
 import { pipe, switchMap, tap } from 'rxjs';
+import { User } from './models';
 
 export type AuthState = {
   user: User;

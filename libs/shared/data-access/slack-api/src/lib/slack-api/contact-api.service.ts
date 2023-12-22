@@ -1,4 +1,6 @@
-import { Injectable } from '@angular/core';
+import { AuthService } from '@angular-slack/auth/data-access';
+
+import { inject, Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Contact } from './models';
 
@@ -6,9 +8,11 @@ import { Contact } from './models';
   providedIn: 'root',
 })
 export class ContactApiService {
+  private authService = inject(AuthService);
+
   contacts: Map<string, Contact[]> = new Map([
     [
-      '1',
+      this.authService.userId,
       [
         {
           id: '1',
@@ -39,7 +43,15 @@ export class ContactApiService {
     ],
   ]);
 
-  getContacts(userId: string): Observable<Contact[]> {
-    return of(this.contacts.get(userId)!);
+  getContacts(): Observable<Contact[]> {
+    return of(this.contacts.get(this.authService.userId)!);
+  }
+
+  getContactBy(chatId: string): Observable<Contact | undefined> {
+    return of(
+      this.contacts
+        .get(this.authService.userId)!
+        .find((contact) => contact.chatId === chatId)
+    );
   }
 }

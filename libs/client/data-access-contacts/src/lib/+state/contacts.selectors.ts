@@ -31,13 +31,13 @@ export const selectContactsEntities = createSelector(
   (state: ContactsState) => selectEntities(state)
 );
 
-export const selectSelectedId = createSelector(
+export const selectSelectedContactEntity = createSelector(
   selectContactsState,
-  (state: ContactsState) => state.selectedId
+  (state: ContactsState) => state.selectedContact
 );
 
-export const selectEntity = createSelector(
-  selectContactsEntities,
-  selectSelectedId,
-  (entities, selectedId) => (selectedId ? entities[selectedId] : undefined)
-);
+// export const selectEntity = createSelector(
+//   selectContactsEntities,
+//   selectSelectedId,
+//   (entities, selectedId) => (selectedId ? entities[selectedId] : undefined)
+// );

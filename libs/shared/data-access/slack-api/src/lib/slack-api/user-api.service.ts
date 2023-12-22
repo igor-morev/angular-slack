@@ -1,6 +1,7 @@
+import { User } from '@angular-slack/auth/data-access';
+
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { User } from './models';
 
 @Injectable({
   providedIn: 'root',

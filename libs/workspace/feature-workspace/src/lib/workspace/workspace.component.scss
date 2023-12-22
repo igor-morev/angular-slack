@@ -1,11 +1,7 @@
 :host {
-  @apply h-full w-full block bg-white rounded-md overflow-hidden;
+  @apply h-full w-full flex bg-white rounded-md overflow-hidden;
 }
 
 .sidebar {
   width: 300px;
-}
-
-.contents {
-  width: 100%;
 }

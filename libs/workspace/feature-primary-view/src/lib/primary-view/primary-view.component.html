@@ -1,3 +1,8 @@
-<div>
-  {{ roomId$ | async }}
+<div
+  class="toolbar h-12 text-lg text-black px-4 border-b-2 border-slate-200 flex items-center"
+  *ngIf="contact$ | async as contact"
+>
+  {{ contact.name }}
 </div>
+<div class="body"></div>
+<div class="footer"></div>
