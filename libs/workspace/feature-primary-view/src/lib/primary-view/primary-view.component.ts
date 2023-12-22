@@ -8,6 +8,10 @@ import {
   selectSelectedContactEntity,
 } from '@angular-slack/data-access-contacts';
 import { TuiDestroyService } from '@taiga-ui/cdk';
+import {
+  initMessages,
+  selectAllMessages,
+} from '@angular-slack/data-access-messages';
 
 @Component({
   selector: 'as-primary-view',
@@ -23,6 +27,7 @@ export class PrimaryViewComponent {
   store = inject(Store);
 
   contact$ = this.store.select(selectSelectedContactEntity);
+  messages$ = this.store.select(selectAllMessages);
 
   chatId$ = this.route.paramMap.pipe(map((value) => value.get('chatId')));
 
@@ -31,6 +36,12 @@ export class PrimaryViewComponent {
       if (chatId) {
         this.store.dispatch(
           loadContactByChatActions.loadContactByChat({
+            chatId,
+          })
+        );
+
+        this.store.dispatch(
+          initMessages({
             chatId,
           })
         );

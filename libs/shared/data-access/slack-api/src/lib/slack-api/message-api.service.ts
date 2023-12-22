@@ -6,7 +6,21 @@ import { Message } from './models/message';
   providedIn: 'root',
 })
 export class MessageApiService {
-  messages: Map<string, Message[]> = new Map([['1', []]]);
+  messages: Map<string, Message[]> = new Map([
+    [
+      '1',
+      [
+        {
+          id: `1`,
+          content: 'Hi, there',
+          updatedAt: new Date().toISOString(),
+          author: {
+            username: 'Steve Jobs',
+          },
+        } as Message,
+      ],
+    ],
+  ]);
 
   sendMessageContact(chatId: string): Observable<Message> {
     const newMessage: Message = {

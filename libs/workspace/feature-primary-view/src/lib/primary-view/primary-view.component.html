@@ -4,5 +4,7 @@
 >
   {{ contact.name }}
 </div>
-<div class="body"></div>
+<div class="body overflow-y-auto">
+  <div *ngFor="let message of messages$ | async">{{ message.content }}</div>
+</div>
 <div class="footer"></div>

@@ -14,7 +14,11 @@ To start the development server run `nx serve angular-slack`. Open your browser 
 
 ## Create data-access
 
-`npx nx g @nx/angular:library data-access-contacts --directory=libs/workspace/data-access-workspace --tags=data-access`
+`npx nx g @nx/angular:library data-access-contacts --directory=libs/client/data-access-contacts --tags=data-access`
+
+## Create feature store
+
+`npx nx generate ngrx-feature-store messages --parent=/libs/client/feature-shell/src/lib/shell/shell.routes.ts --route=routeName`
 
 ## Generate code
 

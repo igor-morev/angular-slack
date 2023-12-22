@@ -25,6 +25,9 @@
       "@angular-slack/data-access-contacts": [
         "libs/client/data-access-contacts/src/index.ts"
       ],
+      "@angular-slack/data-access-messages": [
+        "libs/client/data-access-messages/src/index.ts"
+      ],
       "@angular-slack/feature-header-toolbar": [
         "libs/header-toolbar/feature-header-toolbar/src/index.ts"
       ],
