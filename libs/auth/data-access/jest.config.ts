@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'data-access',
+  displayName: 'auth-data-access',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory: '../../../coverage/libs/auth/data-access',

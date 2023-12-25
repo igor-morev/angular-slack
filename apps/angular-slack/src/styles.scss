@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'quill/dist/quill.snow.css';
+
+@import './custom//quill.scss';
+
 @layer base {
   h1 {
     @apply text-2xl;

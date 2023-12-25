@@ -9,6 +9,7 @@ import { provideRouterStore } from '@ngrx/router-store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 
 import { environment } from '../environments/environment';
+import { provideQuillConfig } from 'ngx-quill';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,5 +20,18 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(TuiRootModule),
     provideRouterStore(),
     !environment.production ? provideStoreDevtools() : [],
+    provideQuillConfig({
+      modules: {
+        syntax: true,
+        toolbar: [
+          ['bold', 'italic', 'strike'], // toggled buttons
+          ['link'],
+
+          [{ list: 'ordered' }, { list: 'bullet' }],
+
+          ['blockquote', 'code', 'code-block'],
+        ],
+      },
+    }),
   ],
 };

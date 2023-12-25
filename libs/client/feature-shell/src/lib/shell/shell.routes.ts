@@ -7,6 +7,16 @@ import {
   clientsReducer,
   CLIENTS_FEATURE_KEY,
 } from '@angular-slack/client/data-access';
+import {
+  ContactsEffects,
+  contactsReducer,
+  CONTACTS_FEATURE_KEY,
+} from '@angular-slack/data-access-contacts';
+import {
+  MESSAGES_FEATURE_KEY,
+  messagesReducer,
+  MessagesEffects,
+} from '@angular-slack/data-access-messages';
 
 export const SHELL_ROUTES: Routes = [
   {
@@ -14,7 +24,14 @@ export const SHELL_ROUTES: Routes = [
     component: ShellComponent,
     children: [
       {
-        path: ':roomId',
+        path: 'direct/:chatId',
+        loadComponent: () =>
+          import('@angular-slack/workspace/feature-primary-view').then(
+            (m) => m.PrimaryViewComponent
+          ),
+      },
+      {
+        path: 'channels/:chatId',
         loadComponent: () =>
           import('@angular-slack/workspace/feature-primary-view').then(
             (m) => m.PrimaryViewComponent
@@ -24,6 +41,10 @@ export const SHELL_ROUTES: Routes = [
     providers: [
       provideState(CLIENTS_FEATURE_KEY, clientsReducer),
       provideEffects(ClientsEffects),
+      provideState(CONTACTS_FEATURE_KEY, contactsReducer),
+      provideEffects(ContactsEffects),
+      provideState(MESSAGES_FEATURE_KEY, messagesReducer),
+      provideEffects(MessagesEffects),
     ],
   },
 ];

@@ -26,9 +26,5 @@ export class TabRailComponent {
 
   user = this.authStore.user;
 
-  constructor() {
-    this.clients$.subscribe((client) => {
-      console.log(client);
-    });
-  }
+  constructor() {}
 }
