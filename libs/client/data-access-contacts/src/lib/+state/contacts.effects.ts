@@ -22,22 +22,4 @@ export class ContactsEffects {
       })
     )
   );
-
-  loadContactByChat$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(ContactsActions.loadContactByChatActions.loadContactByChat),
-      switchMap((action) => this.contactApiService.getContactBy(action.chatId)),
-      switchMap((contact) =>
-        of(
-          ContactsActions.loadContactByChatActions.loadContactByChatSuccess({
-            contact,
-          })
-        )
-      ),
-      catchError((error) => {
-        console.error('Error', error);
-        return of(ContactsActions.loadContactsFailure({ error }));
-      })
-    )
-  );
 }

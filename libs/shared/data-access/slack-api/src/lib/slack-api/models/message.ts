@@ -6,7 +6,7 @@ export interface Message {
   id: string;
   chatId: string;
   content: string;
-  updatedAt: string;
+  createdAt: string;
   attachments: Attachment[];
   author: User;
 }

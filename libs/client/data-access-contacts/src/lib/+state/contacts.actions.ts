@@ -1,4 +1,4 @@
-import { createAction, props, createActionGroup } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 import { ContactsEntity } from './contacts.models';
 
 export const initContacts = createAction('[Contacts Page] Init');
@@ -10,16 +10,15 @@ export const loadContactsSuccess = createAction(
 
 export const loadContactsFailure = createAction(
   '[Contacts/API] Load Contacts Failure',
-  props<{ error: any }>()
+  props<{ error: string | null }>()
 );
 
-export const loadContactByChatActions = createActionGroup({
-  source: '[Contacts/API]',
-  events: {
-    'Load Contact by chat': props<{ chatId: string }>(),
-    'Load Contact by chat Success': props<{
-      contact: ContactsEntity | undefined;
-    }>(),
-    'Load Contact by chat Failure': props<{ error: any }>(),
-  },
-});
+// export const selectContact = createAction(
+//   '[Contacts/API] Select Contact',
+//   props<{ contact: ContactsEntity }>()
+// );
+
+export const selectContactByChatId = createAction(
+  '[Contacts/API] Select Contact By ChatId',
+  props<{ chatId: string }>()
+);

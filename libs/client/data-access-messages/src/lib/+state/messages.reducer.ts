@@ -38,7 +38,10 @@ const reducer = createReducer(
   on(MessagesActions.loadMessagesFailure, (state, { error }) => ({
     ...state,
     error,
-  }))
+  })),
+  on(MessagesActions.sendMessageSuccess, (state, { message }) =>
+    messagesAdapter.addOne(message, { ...state })
+  )
 );
 
 export function messagesReducer(

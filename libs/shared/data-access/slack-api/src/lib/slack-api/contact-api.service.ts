@@ -46,12 +46,4 @@ export class ContactApiService {
   getContacts(): Observable<Contact[]> {
     return of(this.contacts.get(this.authService.userId)!);
   }
-
-  getContactBy(chatId: string): Observable<Contact | undefined> {
-    return of(
-      this.contacts
-        .get(this.authService.userId)!
-        .find((contact) => contact.chatId === chatId)
-    );
-  }
 }

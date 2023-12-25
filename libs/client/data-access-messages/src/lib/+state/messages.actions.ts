@@ -13,5 +13,20 @@ export const loadMessagesSuccess = createAction(
 
 export const loadMessagesFailure = createAction(
   '[Messages/API] Load Messages Failure',
-  props<{ error: any }>()
+  props<{ error: string | null }>()
+);
+
+export const sendMessage = createAction(
+  '[Messages/API] Send Message',
+  props<{ chatId: string; content: string }>()
+);
+
+export const sendMessageSuccess = createAction(
+  '[Messages/API] Send Message Success',
+  props<{ message: MessagesEntity }>()
+);
+
+export const sendMessageFailure = createAction(
+  '[Messages/API] Send Message Failure',
+  props<{ error: string | null }>()
 );

@@ -24,4 +24,20 @@ export class MessagesEffects {
       })
     )
   );
+
+  sendMessage$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(MessagesActions.sendMessage),
+      switchMap((action) =>
+        this.messageApiService.sendMessage(action.chatId, action.content)
+      ),
+      switchMap((message) =>
+        of(MessagesActions.sendMessageSuccess({ message }))
+      ),
+      catchError((error) => {
+        console.error('Error', error);
+        return of(MessagesActions.sendMessageFailure({ error }));
+      })
+    )
+  );
 }
