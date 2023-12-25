@@ -1,0 +1,20 @@
+.as-quill-editor {
+  @apply rounded-md border-slate-300 border overflow-hidden;
+
+  .ql-toolbar {
+    @apply bg-slate-50;
+  }
+
+  .ql-toolbar,
+  .ql-container {
+    @apply border-none;
+  }
+
+  .ql-editor {
+    font: var(--tui-font-text-s);
+  }
+
+  .ql-blank::before {
+    font-style: normal;
+  }
+}

@@ -26,7 +26,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { TuiSvgModule } from '@taiga-ui/core';
+import { TuiButtonModule, TuiSvgModule } from '@taiga-ui/core';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @Component({
@@ -39,6 +39,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     ReactiveFormsModule,
     TuiSvgModule,
     ScrollingModule,
+    TuiButtonModule,
   ],
   templateUrl: './primary-view.component.html',
   styleUrl: './primary-view.component.scss',
