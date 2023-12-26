@@ -3,7 +3,7 @@ export default {
   displayName: 'data-access-messages',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../../coverage/libs/client/data-access-messages',
+  coverageDirectory: '../../../coverage/libs/workspace/data-access-messages',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

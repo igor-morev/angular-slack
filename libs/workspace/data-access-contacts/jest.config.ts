@@ -3,7 +3,7 @@ export default {
   displayName: 'data-access-contacts',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../../coverage/libs/client/data-access-contacts',
+  coverageDirectory: '../../../coverage/libs/workspace/data-access-contacts',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

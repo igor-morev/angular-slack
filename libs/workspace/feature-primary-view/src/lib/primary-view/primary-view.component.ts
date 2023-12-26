@@ -11,7 +11,7 @@ import { Store } from '@ngrx/store';
 import {
   selectContactByChatId,
   selectSelectedContactEntity,
-} from '@angular-slack/data-access-contacts';
+} from 'libs/workspace/data-access-contacts/src';
 import { TuiDestroyService } from '@taiga-ui/cdk';
 import {
   initMessages,

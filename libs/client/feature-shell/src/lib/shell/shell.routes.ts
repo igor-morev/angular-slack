@@ -11,7 +11,7 @@ import {
   ContactsEffects,
   contactsReducer,
   CONTACTS_FEATURE_KEY,
-} from '@angular-slack/data-access-contacts';
+} from 'libs/workspace/data-access-contacts/src';
 import {
   MESSAGES_FEATURE_KEY,
   messagesReducer,
