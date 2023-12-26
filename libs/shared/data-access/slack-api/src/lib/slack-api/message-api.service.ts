@@ -13,7 +13,7 @@ export class MessageApiService {
     [
       '1',
       Array.from(
-        { length: 100 },
+        { length: 10 },
         (v, k) =>
           ({
             id: `${+new Date()}${k}`,

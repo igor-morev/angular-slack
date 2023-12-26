@@ -1,0 +1,14 @@
+<tui-avatar
+  [text]="message.author.username"
+  [autoColor]="true"
+  size="s"
+  class="mr-2 mt-1"
+></tui-avatar>
+<div>
+  <button class="text-base mr-1">
+    {{ message.author.username }}
+  </button>
+  <span class="text-gray-400 text-xs">{{ message.createdAt | date }}</span>
+
+  <div [innerHTML]="message.content"></div>
+</div>

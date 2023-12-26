@@ -8,38 +8,31 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { map, takeUntil } from 'rxjs';
 import { Store } from '@ngrx/store';
-import {
-  selectContactByChatId,
-  selectSelectedContactEntity,
-} from 'libs/workspace/data-access-contacts/src';
 import { TuiDestroyService } from '@taiga-ui/cdk';
 import {
   initMessages,
   selectAllMessages,
-  sendMessage,
 } from '@angular-slack/data-access-messages';
-import { QuillModule } from 'ngx-quill';
 import { TuiAvatarModule } from '@taiga-ui/kit';
-import {
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
-import { TuiButtonModule, TuiSvgModule } from '@taiga-ui/core';
+import { TuiSvgModule } from '@taiga-ui/core';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import {
+  selectContactByChatId,
+  selectSelectedContactEntity,
+} from '@angular-slack/data-access-contacts';
+import { ChatMessageComponent } from '@angular-slack/chat-message';
+import { MessageEditorComponent } from '@angular-slack/message-editor';
 
 @Component({
   selector: 'as-primary-view',
   standalone: true,
   imports: [
     CommonModule,
-    QuillModule,
     TuiAvatarModule,
-    ReactiveFormsModule,
     TuiSvgModule,
     ScrollingModule,
-    TuiButtonModule,
+    ChatMessageComponent,
+    MessageEditorComponent,
   ],
   templateUrl: './primary-view.component.html',
   styleUrl: './primary-view.component.scss',
@@ -55,10 +48,6 @@ export class PrimaryViewComponent implements OnInit {
   messages$ = this.store.select(selectAllMessages);
 
   chatId$ = this.route.paramMap.pipe(map((value) => value.get('chatId')));
-
-  messageForm = new FormGroup({
-    text: new FormControl('', Validators.required),
-  });
 
   ngOnInit() {
     this.chatId$.pipe(takeUntil(this.destroy$)).subscribe((chatId) => {
@@ -76,18 +65,5 @@ export class PrimaryViewComponent implements OnInit {
         );
       }
     });
-  }
-
-  onSubmit(chatId: string) {
-    if (this.messageForm.value.text) {
-      this.store.dispatch(
-        sendMessage({
-          chatId,
-          content: this.messageForm.value.text,
-        })
-      );
-
-      this.messageForm.controls.text.patchValue('');
-    }
   }
 }
