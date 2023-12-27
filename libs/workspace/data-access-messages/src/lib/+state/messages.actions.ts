@@ -18,7 +18,7 @@ export const loadMessagesFailure = createAction(
 
 export const sendMessage = createAction(
   '[Messages/API] Send Message',
-  props<{ chatId: string; content: string }>()
+  props<{ chatId: string; content: string; attachments: File[] }>()
 );
 
 export const sendMessageSuccess = createAction(
@@ -29,4 +29,9 @@ export const sendMessageSuccess = createAction(
 export const sendMessageFailure = createAction(
   '[Messages/API] Send Message Failure',
   props<{ error: string | null }>()
+);
+
+export const scrollToMessage = createAction(
+  '[Messages/UI] ScrollToMessage',
+  props<{ index: number }>()
 );

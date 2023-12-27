@@ -10,7 +10,15 @@
     formControlName="text"
   >
     <div below-quill-editor-toolbar class="p-2">
-      <div class="files-preview"></div>
+      <div class="files-preview flex mb-4">
+        <as-file-preview
+          *ngFor="let file of attachements; index as i"
+          class="max-w-[240px] mr-2"
+          [file]="file"
+          (deleteEvent)="deleteFile($event, i)"
+          [showDelete]="true"
+        ></as-file-preview>
+      </div>
       <div class="flex justify-between">
         <as-input-file formControlName="attachments" [multiple]="true">
           <button

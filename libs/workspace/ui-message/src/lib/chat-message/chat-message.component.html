@@ -1,14 +1,26 @@
-<tui-avatar
-  [text]="message.author.username"
-  [autoColor]="true"
-  size="s"
-  class="mr-2 mt-1"
-></tui-avatar>
-<div>
-  <button class="text-base mr-1">
-    {{ message.author.username }}
-  </button>
-  <span class="text-gray-400 text-xs">{{ message.createdAt | date }}</span>
+<div class="flex">
+  <tui-avatar
+    [text]="message.author.username"
+    [autoColor]="true"
+    size="s"
+    class="mr-2 mt-1"
+  ></tui-avatar>
+  <div>
+    <button class="text-base mr-1">
+      {{ message.author.username }}
+    </button>
+    <span class="text-gray-400 text-xs">{{
+      message.createdAt | date : 'short'
+    }}</span>
 
-  <div [innerHTML]="message.content"></div>
+    <div [innerHTML]="message.content"></div>
+  </div>
+</div>
+
+<div class="flex mt-2" *ngIf="message.attachments?.length">
+  <as-file-preview
+    *ngFor="let file of message.attachments; index as i"
+    class="max-w-[240px] mr-2"
+    [file]="file"
+  ></as-file-preview>
 </div>

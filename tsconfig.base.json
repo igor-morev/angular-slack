@@ -35,6 +35,9 @@
       "@angular-slack/feature-shell": [
         "libs/client/feature-shell/src/index.ts"
       ],
+      "@angular-slack/file-preview": [
+        "libs/workspace/ui-file-preview/src/index.ts"
+      ],
       "@angular-slack/message-editor": [
         "libs/workspace/feature-message-editor/src/index.ts"
       ],

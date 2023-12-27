@@ -3,19 +3,24 @@ import {
   Component,
   inject,
   OnInit,
+  ViewChild,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { map, takeUntil } from 'rxjs';
+import { map, takeUntil, delay } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { TuiDestroyService } from '@taiga-ui/cdk';
 import {
   initMessages,
   selectAllMessages,
+  selectScrollToMessageIndex,
 } from '@angular-slack/data-access-messages';
 import { TuiAvatarModule } from '@taiga-ui/kit';
 import { TuiSvgModule } from '@taiga-ui/core';
-import { ScrollingModule } from '@angular/cdk/scrolling';
+import {
+  CdkVirtualScrollViewport,
+  ScrollingModule,
+} from '@angular/cdk/scrolling';
 import {
   selectContactByChatId,
   selectSelectedContactEntity,
@@ -49,6 +54,11 @@ export class PrimaryViewComponent implements OnInit {
 
   chatId$ = this.route.paramMap.pipe(map((value) => value.get('chatId')));
 
+  @ViewChild(CdkVirtualScrollViewport)
+  virtualScrollViewport!: CdkVirtualScrollViewport;
+
+  selectScrollToMessageIndex$ = this.store.select(selectScrollToMessageIndex);
+
   ngOnInit() {
     this.chatId$.pipe(takeUntil(this.destroy$)).subscribe((chatId) => {
       if (chatId) {
@@ -65,5 +75,13 @@ export class PrimaryViewComponent implements OnInit {
         );
       }
     });
+
+    this.selectScrollToMessageIndex$
+      .pipe(delay(0), takeUntil(this.destroy$))
+      .subscribe((index) => {
+        if (index !== undefined) {
+          this.virtualScrollViewport.scrollToIndex(index);
+        }
+      });
   }
 }

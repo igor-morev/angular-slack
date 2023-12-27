@@ -40,11 +40,16 @@ export class MessageApiService {
     ],
   ]);
 
-  sendMessage(chatId: string, content: string): Observable<Message> {
+  sendMessage(
+    chatId: string,
+    content: string,
+    attachments: File[]
+  ): Observable<Message> {
     const newMessage: Message = {
       id: `${+new Date()}`,
       content,
       createdAt: new Date().toISOString(),
+      attachments,
       author: {
         username: 'Igor Morev (Frontend Engineer)',
       },

@@ -1,0 +1,12 @@
+:host {
+  @apply rounded-md p-3 flex relative border border-slate-300;
+  &:hover {
+    .close {
+      opacity: 1;
+    }
+  }
+}
+
+.close {
+  opacity: 0;
+}

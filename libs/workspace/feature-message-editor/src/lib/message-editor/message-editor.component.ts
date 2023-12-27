@@ -12,6 +12,7 @@ import { sendMessage } from '@angular-slack/data-access-messages';
 import { Store } from '@ngrx/store';
 import { selectSelectedContactEntity } from '@angular-slack/data-access-contacts';
 import { InputFileComponent } from '../input-file/input-file.component';
+import { FilePreviewComponent } from '@angular-slack/file-preview';
 
 @Component({
   selector: 'as-message-editor',
@@ -22,6 +23,7 @@ import { InputFileComponent } from '../input-file/input-file.component';
     QuillModule,
     TuiButtonModule,
     InputFileComponent,
+    FilePreviewComponent,
   ],
   templateUrl: './message-editor.component.html',
   styleUrl: './message-editor.component.scss',
@@ -32,28 +34,36 @@ export class MessageEditorComponent {
 
   messageForm = new FormGroup({
     text: new FormControl('', Validators.required),
-    attachments: new FormControl([]),
+    attachments: new FormControl<File[]>([]),
   });
+
+  get attachements() {
+    return this.messageForm.value.attachments;
+  }
 
   // Todo: create own abstract interface for this component like MessageEditorConfig
   chat$ = this.store.select(selectSelectedContactEntity);
-
-  ngOnInit() {
-    this.messageForm.valueChanges.subscribe((value) => {
-      console.log(value);
-    });
-  }
 
   onSubmit(chatId: string) {
     if (this.messageForm.value.text) {
       this.store.dispatch(
         sendMessage({
           chatId,
+          attachments: this.attachements!,
           content: this.messageForm.value.text,
         })
       );
 
-      this.messageForm.controls.text.patchValue('');
+      this.messageForm.setValue({
+        attachments: [],
+        text: '',
+      });
     }
+  }
+
+  deleteFile(file: File, index: number) {
+    this.messageForm.controls.attachments.patchValue(
+      this.attachements!.filter((file, i) => i !== index)
+    );
   }
 }
