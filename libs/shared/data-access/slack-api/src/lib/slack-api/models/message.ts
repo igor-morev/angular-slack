@@ -10,4 +10,5 @@ export interface Message {
   attachments?: File[];
   threads?: Message[];
   author: User;
+  mode: 'full' | 'compact';
 }

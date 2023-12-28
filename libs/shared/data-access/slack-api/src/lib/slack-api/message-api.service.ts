@@ -18,6 +18,7 @@ export class MessageApiService {
           ({
             id: `${+new Date()}${k}`,
             content: 'Hi, there',
+            mode: 'full',
             createdAt: new Date().toISOString(),
             author: {
               username: `Steve Jobs ${k}`,
@@ -30,7 +31,7 @@ export class MessageApiService {
       [
         {
           id: `${+new Date()}`,
-          content: 'Jeff Bezos',
+          content: '234dfgdfg',
           createdAt: new Date().toISOString(),
           author: {
             username: 'Steve Jobs',
@@ -51,7 +52,7 @@ export class MessageApiService {
       createdAt: new Date().toISOString(),
       attachments,
       author: {
-        username: 'Igor Morev (Frontend Engineer)',
+        username: 'Steve Jobs 9',
       },
     } as Message;
 
