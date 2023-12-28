@@ -38,13 +38,7 @@ export class InputFileComponent<T> implements ControlValueAccessor {
 
   @HostListener('change', ['$event.target.files']) emitFiles(event: FileList) {
     if (this.multiple) {
-      for (let i = 0; i < event.length; i++) {
-        if (Array.isArray(this.files) || this.files === null) {
-          this.files = this.files || [];
-
-          this.files = [...this.files, event.item(i)!];
-        }
-      }
+      this.addMultipleFiles(event);
     } else {
       this.files = event.item(0);
     }
@@ -71,4 +65,14 @@ export class InputFileComponent<T> implements ControlValueAccessor {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   registerOnTouched(_fn: () => void) {}
+
+  private addMultipleFiles(event: FileList) {
+    for (let i = 0; i < event.length; i++) {
+      if (Array.isArray(this.files) || this.files === null) {
+        this.files = this.files || [];
+
+        this.files = [...this.files, event.item(i)!];
+      }
+    }
+  }
 }

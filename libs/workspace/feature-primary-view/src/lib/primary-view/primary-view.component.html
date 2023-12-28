@@ -1,14 +1,12 @@
 <ng-container *ngIf="chat$ | async as chat"
-  ><div
-    class="toolbar h-12 text-lg text-black px-4 border-b border-slate-200 flex items-center"
-  >
+  ><div class="toolbar h-12 px-4 border-b border-slate-200 flex items-center">
     <tui-avatar
       [text]="chat.name"
       [autoColor]="true"
       size="xs"
       class="mr-2"
     ></tui-avatar>
-    {{ chat.name }}
+    <span class="font-semibold text-lg text-black"> {{ chat.name }} </span>
   </div>
   <div class="flex flex-col flex-1 min-h-0">
     <div class="body overflow-y-auto flex-1">

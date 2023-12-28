@@ -25,7 +25,6 @@ export const appConfig: ApplicationConfig = {
         syntax: true,
         toolbar: [
           ['bold', 'italic', 'strike'], // toggled buttons
-          ['link'],
 
           [{ list: 'ordered' }, { list: 'bullet' }],
 

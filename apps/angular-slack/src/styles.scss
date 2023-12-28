@@ -13,9 +13,33 @@
   h2 {
     @apply text-xl;
   }
-  /* ... */
 }
 
 body {
   letter-spacing: 0.015em;
+}
+
+code {
+  @apply px-1 py-0 border border-slate-300 text-pink-500 rounded-md bg-slate-100 text-xs;
+}
+pre {
+  @apply px-2 py-2 border border-slate-300 rounded-md bg-slate-100 text-xs my-1;
+}
+
+blockquote {
+  @apply pl-4 border-l-4 border-slate-300 mt-1 mb-1;
+}
+
+as-chat-message {
+  ol,
+  ul {
+    @apply pl-4;
+  }
+  ol {
+    @apply list-decimal;
+  }
+
+  ul {
+    @apply list-disc;
+  }
 }
