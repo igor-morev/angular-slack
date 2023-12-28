@@ -1,17 +1,26 @@
 <div class="flex">
-  <tui-avatar
-    [text]="message.author.username"
-    [autoColor]="true"
-    size="s"
-    class="mr-2 mt-1"
-  ></tui-avatar>
-  <div>
-    <button class="text-base mr-1 mb-0.5 font-semibold hover:underline">
-      {{ message.author.username }}
-    </button>
-    <span class="text-gray-400 text-xs">{{
-      message.createdAt | date : 'short'
+  <div class="mr-2 w-14">
+    <tui-avatar
+      [text]="message.author.username"
+      *ngIf="message.mode === 'full'"
+      [autoColor]="true"
+      size="m"
+      class="mt-1"
+    ></tui-avatar>
+    <span class="text-gray-400 text-xs" *ngIf="message.mode === 'compact'">{{
+      message.createdAt | date : 'shortTime'
     }}</span>
+  </div>
+
+  <div>
+    <ng-container *ngIf="message.mode === 'full'">
+      <button class="text-base mr-1 mb-0.5 font-semibold hover:underline">
+        {{ message.author.username }}
+      </button>
+      <span class="text-gray-400 text-xs">{{
+        message.createdAt | date : 'medium'
+      }}</span>
+    </ng-container>
 
     <div [innerHTML]="message.content"></div>
   </div>
