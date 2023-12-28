@@ -41,3 +41,8 @@ export const selectEntity = createSelector(
   selectSelectedId,
   (entities, selectedId) => (selectedId ? entities[selectedId] : undefined)
 );
+
+export const selectScrollToMessageIndex = createSelector(
+  selectMessagesState,
+  (state) => state.scrollToMessageIndex
+);

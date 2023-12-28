@@ -10,6 +10,7 @@ export interface MessagesState extends EntityState<MessagesEntity> {
   selectedId?: string | number; // which Messages record has been selected
   loaded: boolean; // has the Messages list been loaded
   error?: string | null; // last known error (if any)
+  scrollToMessageIndex?: number;
 }
 
 export interface MessagesPartialState {
@@ -41,7 +42,12 @@ const reducer = createReducer(
   })),
   on(MessagesActions.sendMessageSuccess, (state, { message }) =>
     messagesAdapter.addOne(message, { ...state })
-  )
+  ),
+  // TODO: move to UI store messages
+  on(MessagesActions.scrollToMessage, (state, { index }) => ({
+    ...state,
+    scrollToMessageIndex: index,
+  }))
 );
 
 export function messagesReducer(

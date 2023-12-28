@@ -3,43 +3,41 @@ import {
   Component,
   inject,
   OnInit,
+  ViewChild,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { map, takeUntil } from 'rxjs';
+import { map, takeUntil, delay } from 'rxjs';
 import { Store } from '@ngrx/store';
-import {
-  selectContactByChatId,
-  selectSelectedContactEntity,
-} from 'libs/workspace/data-access-contacts/src';
 import { TuiDestroyService } from '@taiga-ui/cdk';
 import {
   initMessages,
   selectAllMessages,
-  sendMessage,
+  selectScrollToMessageIndex,
 } from '@angular-slack/data-access-messages';
-import { QuillModule } from 'ngx-quill';
 import { TuiAvatarModule } from '@taiga-ui/kit';
+import { TuiSvgModule } from '@taiga-ui/core';
 import {
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
-import { TuiButtonModule, TuiSvgModule } from '@taiga-ui/core';
-import { ScrollingModule } from '@angular/cdk/scrolling';
+  CdkVirtualScrollViewport,
+  ScrollingModule,
+} from '@angular/cdk/scrolling';
+import {
+  selectContactByChatId,
+  selectSelectedContactEntity,
+} from '@angular-slack/data-access-contacts';
+import { ChatMessageComponent } from '@angular-slack/chat-message';
+import { MessageEditorComponent } from '@angular-slack/message-editor';
 
 @Component({
   selector: 'as-primary-view',
   standalone: true,
   imports: [
     CommonModule,
-    QuillModule,
     TuiAvatarModule,
-    ReactiveFormsModule,
     TuiSvgModule,
     ScrollingModule,
-    TuiButtonModule,
+    ChatMessageComponent,
+    MessageEditorComponent,
   ],
   templateUrl: './primary-view.component.html',
   styleUrl: './primary-view.component.scss',
@@ -56,9 +54,10 @@ export class PrimaryViewComponent implements OnInit {
 
   chatId$ = this.route.paramMap.pipe(map((value) => value.get('chatId')));
 
-  messageForm = new FormGroup({
-    text: new FormControl('', Validators.required),
-  });
+  @ViewChild(CdkVirtualScrollViewport)
+  virtualScrollViewport!: CdkVirtualScrollViewport;
+
+  selectScrollToMessageIndex$ = this.store.select(selectScrollToMessageIndex);
 
   ngOnInit() {
     this.chatId$.pipe(takeUntil(this.destroy$)).subscribe((chatId) => {
@@ -76,18 +75,13 @@ export class PrimaryViewComponent implements OnInit {
         );
       }
     });
-  }
 
-  onSubmit(chatId: string) {
-    if (this.messageForm.value.text) {
-      this.store.dispatch(
-        sendMessage({
-          chatId,
-          content: this.messageForm.value.text,
-        })
-      );
-
-      this.messageForm.controls.text.patchValue('');
-    }
+    this.selectScrollToMessageIndex$
+      .pipe(delay(0), takeUntil(this.destroy$))
+      .subscribe((index) => {
+        if (index !== undefined) {
+          this.virtualScrollViewport.scrollToIndex(index);
+        }
+      });
   }
 }

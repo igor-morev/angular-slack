@@ -1,0 +1,46 @@
+<div class="flex">
+  <tui-avatar
+    [text]="message.author.username"
+    [autoColor]="true"
+    size="s"
+    class="mr-2 mt-1"
+  ></tui-avatar>
+  <div>
+    <button class="text-base mr-1 mb-0.5 font-semibold hover:underline">
+      {{ message.author.username }}
+    </button>
+    <span class="text-gray-400 text-xs">{{
+      message.createdAt | date : 'short'
+    }}</span>
+
+    <div [innerHTML]="message.content"></div>
+  </div>
+</div>
+
+<div class="flex mt-2 flex-wrap" *ngIf="message.attachments?.length">
+  <as-file-preview
+    (click)="show(file)"
+    *ngFor="let file of message.attachments; index as i"
+    class="max-w-[240px] mr-2 cursor-pointer hover:bg-gray-300"
+    [file]="file"
+  ></as-file-preview>
+</div>
+
+<ng-template #contentSample>
+  <div class="content">
+    <h1>Important document</h1>
+
+    <p>
+      Hello everyone! This is some important document in A4 format, although it
+      is made using html
+    </p>
+
+    <p>
+      This shows that the component preview can work with absolutely any
+      content: this way you can show any template, image, pdf or even iframe
+      with your favorite site. We will put this content in the center of the
+      portal and provide the user with control over it, and we will provide you
+      with convenient levers to change it and process actions.
+    </p>
+  </div>
+</ng-template>

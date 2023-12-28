@@ -1,55 +1,25 @@
 <ng-container *ngIf="chat$ | async as chat"
-  ><div
-    class="toolbar h-12 text-lg text-black px-4 border-b border-slate-200 flex items-center"
-  >
+  ><div class="toolbar h-12 px-4 border-b border-slate-200 flex items-center">
     <tui-avatar
       [text]="chat.name"
       [autoColor]="true"
       size="xs"
       class="mr-2"
     ></tui-avatar>
-    {{ chat.name }}
+    <span class="font-semibold text-lg text-black"> {{ chat.name }} </span>
   </div>
   <div class="flex flex-col flex-1 min-h-0">
     <div class="body overflow-y-auto flex-1">
       <cdk-virtual-scroll-viewport itemSize="60" class="viewport h-full">
-        <div
+        <as-chat-message
           *cdkVirtualFor="let message of messages$ | async"
-          class="flex px-4 py-2 hover:bg-slate-100"
+          [message]="message"
         >
-          <tui-avatar
-            [text]="message.author.username"
-            [autoColor]="true"
-            size="s"
-            class="mr-2 mt-1"
-          ></tui-avatar>
-          <div>
-            <button class="text-base">{{ message.author.username }}</button>
-            <div [innerHTML]="message.content"></div>
-          </div>
-        </div>
+        </as-chat-message>
       </cdk-virtual-scroll-viewport>
     </div>
     <div class="footer px-4 py-4">
-      <form [formGroup]="messageForm" (ngSubmit)="onSubmit(chat.chatId)">
-        <quill-editor
-          class="as-quill-editor"
-          customToolbarPosition="bottom"
-          placeholder="Message {{ chat.name }}"
-          formControlName="text"
-        >
-          <div below-quill-editor-toolbar class="flex justify-between p-2">
-            <div></div>
-            <button
-              tuiIconButton
-              [disabled]="messageForm.invalid"
-              type="submit"
-              size="s"
-              icon="tuiIconSend"
-            ></button>
-          </div>
-        </quill-editor>
-      </form>
+      <as-message-editor></as-message-editor>
     </div>
   </div>
 </ng-container>

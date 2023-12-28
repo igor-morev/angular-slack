@@ -1,0 +1,22 @@
+<tui-marker-icon
+  mode="secondary"
+  size="s"
+  src="tuiIconFileLarge"
+  class="mr-2"
+></tui-marker-icon>
+<div class="min-w-0">
+  <div class="truncate">
+    <b class="mb-1 w-full">{{ file.name }}</b>
+  </div>
+  <div class="text-gray-400 text-xs">{{ file.type }}</div>
+</div>
+
+<tui-marker-icon
+  *ngIf="showDelete"
+  (click)="delete()"
+  class="close absolute -top-5 -right-5 cursor-pointer"
+  mode="error"
+  new
+  size="xxs"
+  src="tuiIconClose"
+></tui-marker-icon>
