@@ -7,6 +7,7 @@ import { TuiHintModule, TuiSvgModule } from '@taiga-ui/core';
 import { TuiAvatarModule } from '@taiga-ui/kit';
 import { TuiLetModule } from '@taiga-ui/cdk';
 import { selectAllContacts } from '@angular-slack/data-access-contacts';
+import { selectAllChannels } from '@angular-slack/data-access-channels';
 
 @Component({
   selector: 'as-workspace',
@@ -28,4 +29,6 @@ export class WorkspaceComponent {
 
   client$ = this.store.select(selectEntity);
   contacts$ = this.store.select(selectAllContacts);
+
+  channels$ = this.store.select(selectAllChannels);
 }

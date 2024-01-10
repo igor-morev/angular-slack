@@ -4,6 +4,34 @@
   >
     {{ client.name }}
   </div>
+  <div class="px-2 py-2 mb-2">
+    <div class="flex items-center">
+      <button
+        class="h-6 w-6 flex items-center justify-center hover:bg-slate-300 rounded-md ml-2"
+      >
+        <tui-svg src="tuiIconChevronDown"></tui-svg>
+      </button>
+      <button class="hover:bg-slate-300 rounded-md px-2 flex py-1">
+        Channels
+      </button>
+    </div>
+    <div class="content">
+      <a
+        [routerLink]="['/client', client.id, 'channels', channel.chatId]"
+        routerLinkActive="bg-black text-white pointer-events-none"
+        class="contact-item flex px-2 py-1 items-center hover:bg-slate-300 rounded-md"
+        *ngFor="let channel of channels$ | async"
+      >
+        <tui-avatar
+          [text]="channel.name"
+          [autoColor]="true"
+          size="xs"
+          class="mr-2"
+        ></tui-avatar>
+        <span>{{ channel.name }}</span>
+      </a>
+    </div>
+  </div>
   <div class="px-2 py-2">
     <div class="flex items-center">
       <button

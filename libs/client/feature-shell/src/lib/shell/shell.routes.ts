@@ -8,15 +8,20 @@ import {
   CLIENTS_FEATURE_KEY,
 } from '@angular-slack/client/data-access';
 import {
-  ContactsEffects,
-  contactsReducer,
-  CONTACTS_FEATURE_KEY,
-} from 'libs/workspace/data-access-contacts/src';
-import {
   MESSAGES_FEATURE_KEY,
   messagesReducer,
   MessagesEffects,
 } from '@angular-slack/data-access-messages';
+import {
+  ContactsEffects,
+  contactsReducer,
+  CONTACTS_FEATURE_KEY,
+} from '@angular-slack/data-access-contacts';
+import {
+  ChannelsEffects,
+  channelsReducer,
+  CHANNELS_FEATURE_KEY,
+} from '@angular-slack/data-access-channels';
 
 export const SHELL_ROUTES: Routes = [
   {
@@ -43,6 +48,8 @@ export const SHELL_ROUTES: Routes = [
       provideEffects(ClientsEffects),
       provideState(CONTACTS_FEATURE_KEY, contactsReducer),
       provideEffects(ContactsEffects),
+      provideState(CHANNELS_FEATURE_KEY, channelsReducer),
+      provideEffects(ChannelsEffects),
       provideState(MESSAGES_FEATURE_KEY, messagesReducer),
       provideEffects(MessagesEffects),
     ],

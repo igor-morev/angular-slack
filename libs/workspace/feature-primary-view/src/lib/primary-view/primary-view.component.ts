@@ -55,7 +55,7 @@ export class PrimaryViewComponent implements OnInit {
   chatId$ = this.route.paramMap.pipe(map((value) => value.get('chatId')));
 
   @ViewChild(CdkVirtualScrollViewport)
-  virtualScrollViewport!: CdkVirtualScrollViewport;
+  virtualScrollViewport?: CdkVirtualScrollViewport;
 
   selectScrollToMessageIndex$ = this.store.select(selectScrollToMessageIndex);
 
@@ -79,7 +79,7 @@ export class PrimaryViewComponent implements OnInit {
     this.selectScrollToMessageIndex$
       .pipe(delay(0), takeUntil(this.destroy$))
       .subscribe((index) => {
-        if (index !== undefined) {
+        if (index !== undefined && this.virtualScrollViewport) {
           this.virtualScrollViewport.scrollToIndex(index);
         }
       });
