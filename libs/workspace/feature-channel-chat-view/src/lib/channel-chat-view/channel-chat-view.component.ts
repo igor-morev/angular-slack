@@ -6,30 +6,31 @@ import {
   ViewChild,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
-import { map, takeUntil, delay } from 'rxjs';
-import { Store } from '@ngrx/store';
+import { ChatMessageComponent } from '@angular-slack/chat-message';
+import { MessageEditorComponent } from '@angular-slack/message-editor';
+import {
+  CdkVirtualScrollViewport,
+  ScrollingModule,
+} from '@angular/cdk/scrolling';
 import { TuiDestroyService } from '@taiga-ui/cdk';
+import { TuiSvgModule } from '@taiga-ui/core';
+import { TuiAvatarModule } from '@taiga-ui/kit';
 import {
   initMessages,
   selectAllMessages,
   selectScrollToMessageIndex,
 } from '@angular-slack/data-access-messages';
-import { TuiAvatarModule } from '@taiga-ui/kit';
-import { TuiSvgModule } from '@taiga-ui/core';
+import { delay, map, switchMap, takeUntil } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { ActivatedRoute } from '@angular/router';
 import {
-  CdkVirtualScrollViewport,
-  ScrollingModule,
-} from '@angular/cdk/scrolling';
-import {
-  selectContactByChatId,
-  selectSelectedContactEntity,
-} from '@angular-slack/data-access-contacts';
-import { ChatMessageComponent } from '@angular-slack/chat-message';
-import { MessageEditorComponent } from '@angular-slack/message-editor';
+  selectChannelByChatId,
+  selectSelectedChannelsEntity,
+} from '@angular-slack/data-access-channels';
+import { ChannelApiService } from '@angular-slack/slack-api';
 
 @Component({
-  selector: 'as-primary-view',
+  selector: 'as-channel-chat-view',
   standalone: true,
   imports: [
     CommonModule,
@@ -39,20 +40,26 @@ import { MessageEditorComponent } from '@angular-slack/message-editor';
     ChatMessageComponent,
     MessageEditorComponent,
   ],
-  templateUrl: './primary-view.component.html',
-  styleUrl: './primary-view.component.scss',
+  templateUrl: './channel-chat-view.component.html',
+  styleUrl: './channel-chat-view.component.scss',
   providers: [TuiDestroyService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PrimaryViewComponent implements OnInit {
+export class ChannelChatViewComponent implements OnInit {
   route = inject(ActivatedRoute);
   store = inject(Store);
   destroy$ = inject(TuiDestroyService);
 
-  chat$ = this.store.select(selectSelectedContactEntity);
+  channelApiService = inject(ChannelApiService);
+
+  chat$ = this.store.select(selectSelectedChannelsEntity);
   messages$ = this.store.select(selectAllMessages);
 
   chatId$ = this.route.paramMap.pipe(map((value) => value.get('chatId')));
+
+  users$ = this.chatId$.pipe(
+    switchMap((chatId) => this.channelApiService.getChannelUsers(chatId!))
+  );
 
   @ViewChild(CdkVirtualScrollViewport)
   virtualScrollViewport?: CdkVirtualScrollViewport;
@@ -61,9 +68,10 @@ export class PrimaryViewComponent implements OnInit {
 
   ngOnInit() {
     this.chatId$.pipe(takeUntil(this.destroy$)).subscribe((chatId) => {
+      console.log(chatId);
       if (chatId) {
         this.store.dispatch(
-          selectContactByChatId({
+          selectChannelByChatId({
             chatId,
           })
         );

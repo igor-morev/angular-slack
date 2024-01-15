@@ -39,6 +39,35 @@ export class MessageApiService {
         } as Message,
       ],
     ],
+    [
+      'channel-1',
+      [
+        {
+          id: `${+new Date()}`,
+          content: 'Hello',
+          createdAt: new Date().toISOString(),
+          author: {
+            username: 'Jeff Bezos',
+          },
+        } as Message,
+        {
+          id: `${+new Date() + 1}`,
+          content: 'Greetings',
+          createdAt: new Date().toISOString(),
+          author: {
+            username: 'Elon Mask',
+          },
+        } as Message,
+        {
+          id: `${+new Date() + 2}`,
+          content: 'What`s up',
+          createdAt: new Date().toISOString(),
+          author: {
+            username: 'Bill Gates',
+          },
+        } as Message,
+      ],
+    ],
   ]);
 
   sendMessage(

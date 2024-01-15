@@ -12,6 +12,7 @@ import { AuthStore } from '@angular-slack/auth/data-access';
 import { Store } from '@ngrx/store';
 import { initClients } from '@angular-slack/client/data-access';
 import { initContacts } from '@angular-slack/data-access-contacts';
+import { initChannels } from '@angular-slack/data-access-channels';
 
 @Component({
   selector: 'as-shell',
@@ -35,5 +36,7 @@ export class ShellComponent implements OnInit {
     this.store.dispatch(initClients());
 
     this.store.dispatch(initContacts());
+
+    this.store.dispatch(initChannels());
   }
 }

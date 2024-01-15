@@ -10,9 +10,13 @@ import { Contact } from './models';
 export class ContactApiService {
   private authService = inject(AuthService);
 
+  get userId() {
+    return this.authService.userId;
+  }
+
   contacts: Map<string, Contact[]> = new Map([
     [
-      this.authService.userId,
+      this.userId,
       [
         {
           id: '1',
@@ -44,6 +48,6 @@ export class ContactApiService {
   ]);
 
   getContacts(): Observable<Contact[]> {
-    return of(this.contacts.get(this.authService.userId)!);
+    return of(this.contacts.get(this.userId)!);
   }
 }

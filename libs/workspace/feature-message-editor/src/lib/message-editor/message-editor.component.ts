@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  Input,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormControl,
@@ -10,7 +15,6 @@ import { QuillModule } from 'ngx-quill';
 import { TuiButtonModule } from '@taiga-ui/core';
 import { sendMessage } from '@angular-slack/data-access-messages';
 import { Store } from '@ngrx/store';
-import { selectSelectedContactEntity } from '@angular-slack/data-access-contacts';
 import { InputFileComponent } from '../input-file/input-file.component';
 import { FilePreviewComponent } from '@angular-slack/file-preview';
 
@@ -30,6 +34,8 @@ import { FilePreviewComponent } from '@angular-slack/file-preview';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MessageEditorComponent {
+  @Input() chat: { chatId: string; name: string } | null = null;
+
   store = inject(Store);
 
   messageForm = new FormGroup({
@@ -40,9 +46,6 @@ export class MessageEditorComponent {
   get attachements() {
     return this.messageForm.value.attachments;
   }
-
-  // Todo: create own abstract interface for this component like MessageEditorConfig
-  chat$ = this.store.select(selectSelectedContactEntity);
 
   onSubmit(chatId: string) {
     if (this.messageForm.value.text) {

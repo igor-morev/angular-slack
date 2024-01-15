@@ -28,7 +28,10 @@ function groupMessages(a: Message[], b: Message) {
     });
   }
 
-  return a.concat(b);
+  return a.concat({
+    ...b,
+    mode: 'full',
+  });
 }
 
 // Lookup the 'Messages' feature state managed by NgRx
