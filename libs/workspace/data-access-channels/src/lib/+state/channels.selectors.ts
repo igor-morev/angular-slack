@@ -31,13 +31,12 @@ export const selectChannelsEntities = createSelector(
   (state: ChannelsState) => selectEntities(state)
 );
 
-export const selectSelectedId = createSelector(
-  selectChannelsState,
-  (state: ChannelsState) => state.selectedId
-);
+// export const selectSelectedId = createSelector(
+//   selectChannelsState,
+//   (state: ChannelsState) => state.selectedId
+// );
 
-export const selectEntity = createSelector(
-  selectChannelsEntities,
-  selectSelectedId,
-  (entities, selectedId) => (selectedId ? entities[selectedId] : undefined)
+export const selectSelectedChannelsEntity = createSelector(
+  selectChannelsState,
+  (state: ChannelsState) => state.selectedChannel
 );

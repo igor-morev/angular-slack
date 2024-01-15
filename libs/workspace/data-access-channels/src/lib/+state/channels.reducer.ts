@@ -7,7 +7,7 @@ import { ChannelsEntity } from './channels.models';
 export const CHANNELS_FEATURE_KEY = 'channels';
 
 export interface ChannelsState extends EntityState<ChannelsEntity> {
-  selectedId?: string | number; // which Channels record has been selected
+  selectedChannel?: ChannelsEntity;
   loaded: boolean; // has the Channels list been loaded
   error?: string | null; // last known error (if any)
 }
@@ -38,6 +38,12 @@ const reducer = createReducer(
   on(ChannelsActions.loadChannelsFailure, (state, { error }) => ({
     ...state,
     error,
+  })),
+  on(ChannelsActions.selectChannelByChatId, (state, { chatId }) => ({
+    ...state,
+    selectedChannel: Object.values(state.entities).find(
+      (contact) => contact?.chatId === chatId
+    ),
   }))
 );
 

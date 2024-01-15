@@ -12,3 +12,8 @@ export const loadChannelsFailure = createAction(
   '[Channels/API] Load Channels Failure',
   props<{ error: any }>()
 );
+
+export const selectChannelByChatId = createAction(
+  '[Channels/API] Select Channel By ChatId',
+  props<{ chatId: string }>()
+);

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { selectEntity } from '@angular-slack/client/data-access';
 import { Store } from '@ngrx/store';
-import { TuiHintModule, TuiSvgModule } from '@taiga-ui/core';
+import { TuiExpandModule, TuiHintModule, TuiSvgModule } from '@taiga-ui/core';
 import { TuiAvatarModule } from '@taiga-ui/kit';
 import { TuiLetModule } from '@taiga-ui/cdk';
 import { selectAllContacts } from '@angular-slack/data-access-contacts';
@@ -19,6 +19,7 @@ import { selectAllChannels } from '@angular-slack/data-access-channels';
     TuiHintModule,
     TuiAvatarModule,
     TuiLetModule,
+    TuiExpandModule,
   ],
   templateUrl: './workspace.component.html',
   styleUrl: './workspace.component.scss',
@@ -31,4 +32,7 @@ export class WorkspaceComponent {
   contacts$ = this.store.select(selectAllContacts);
 
   channels$ = this.store.select(selectAllChannels);
+
+  contactsExpanded = true;
+  channelsExpanded = true;
 }

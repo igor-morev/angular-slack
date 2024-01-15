@@ -7,6 +7,7 @@
   <div class="px-2 py-2 mb-2">
     <div class="flex items-center">
       <button
+        (click)="channelsExpanded = !channelsExpanded"
         class="h-6 w-6 flex items-center justify-center hover:bg-slate-300 rounded-md ml-2"
       >
         <tui-svg src="tuiIconChevronDown"></tui-svg>
@@ -15,7 +16,7 @@
         Channels
       </button>
     </div>
-    <div class="content">
+    <tui-expand [expanded]="channelsExpanded">
       <a
         [routerLink]="['/client', client.id, 'channels', channel.chatId]"
         routerLinkActive="bg-black text-white pointer-events-none"
@@ -30,11 +31,12 @@
         ></tui-avatar>
         <span>{{ channel.name }}</span>
       </a>
-    </div>
+    </tui-expand>
   </div>
   <div class="px-2 py-2">
     <div class="flex items-center">
       <button
+        (click)="contactsExpanded = !contactsExpanded"
         class="h-6 w-6 flex items-center justify-center hover:bg-slate-300 rounded-md ml-2"
       >
         <tui-svg src="tuiIconChevronDown"></tui-svg>
@@ -43,7 +45,7 @@
         Direct messages
       </button>
     </div>
-    <div class="content">
+    <tui-expand [expanded]="contactsExpanded">
       <a
         [routerLink]="['/client', client.id, 'direct', contact.chatId]"
         routerLinkActive="bg-black text-white pointer-events-none"
@@ -58,7 +60,7 @@
         ></tui-avatar>
         <span>{{ contact.name }}</span>
       </a>
-    </div>
+    </tui-expand>
   </div>
 </div>
 

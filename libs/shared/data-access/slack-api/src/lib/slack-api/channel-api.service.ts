@@ -1,4 +1,4 @@
-import { AuthService } from '@angular-slack/auth/data-access';
+import { AuthService, User } from '@angular-slack/auth/data-access';
 
 import { inject, Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
@@ -25,5 +25,25 @@ export class ChannelApiService {
 
   getChannels(): Observable<Channel[]> {
     return of(this.channels.get(this.authService.userId)!);
+  }
+
+  getChannelUsers(channelId: string): Observable<User[]> {
+    return of([
+      {
+        username: 'Steve Jobs',
+      },
+      {
+        username: 'Jeff Bezos',
+      },
+      {
+        username: 'Bill Gates',
+      },
+      {
+        username: 'Elon Musk',
+      },
+      {
+        username: 'John Carmack',
+      },
+    ]);
   }
 }

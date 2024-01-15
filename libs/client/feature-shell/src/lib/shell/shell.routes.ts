@@ -38,8 +38,8 @@ export const SHELL_ROUTES: Routes = [
       {
         path: 'channels/:chatId',
         loadComponent: () =>
-          import('@angular-slack/workspace/feature-primary-view').then(
-            (m) => m.PrimaryViewComponent
+          import('@angular-slack/workspace/feature-channel-chat-view').then(
+            (m) => m.ChannelChatViewComponent
           ),
       },
     ],
