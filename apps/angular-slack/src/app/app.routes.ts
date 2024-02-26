@@ -5,7 +5,7 @@ import { Route } from '@angular/router';
 export const appRoutes: Route[] = [
   {
     path: '',
-    redirectTo: 'client',
+    redirectTo: 'client/1/channels/channel-1',
     pathMatch: 'full',
   },
   {

@@ -36,7 +36,7 @@ import { FilePreviewComponent } from '@angular-slack/file-preview';
 export class MessageEditorComponent {
   @Input() chat: { chatId: string; name: string } | null = null;
 
-  store = inject(Store);
+  private store = inject(Store);
 
   messageForm = new FormGroup({
     text: new FormControl('', Validators.required),

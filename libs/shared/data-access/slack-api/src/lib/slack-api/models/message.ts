@@ -1,4 +1,5 @@
 import { User } from '@angular-slack/auth/data-access';
+import { Thread } from './thread';
 
 // import { Attachment } from './attachment';
 
@@ -8,7 +9,7 @@ export interface Message {
   content: string;
   createdAt: string;
   attachments?: File[];
-  threads?: Message[];
+  thread?: Thread;
   author: User;
   mode: 'full' | 'compact';
 }

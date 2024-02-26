@@ -68,4 +68,13 @@
   <!--primary-view-->
   <router-outlet></router-outlet>
   <!--secondary-view-->
+  <div
+    class="secondary-view border-l"
+    #secondaryView
+    *ngIf="activeSecondaryView as view"
+  >
+    <ng-template
+      *ngComponentOutlet="view.component; inputs: view.data"
+    ></ng-template>
+  </div>
 </div>

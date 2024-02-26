@@ -1,4 +1,4 @@
-import { AuthService } from '@angular-slack/auth/data-access';
+import { AuthService, User } from '@angular-slack/auth/data-access';
 import { inject, Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Message } from './models/message';
@@ -41,6 +41,48 @@ export class MessageApiService {
     ],
     [
       'channel-1',
+      [
+        {
+          id: `${+new Date()}`,
+          content: 'Hello',
+          createdAt: new Date().toISOString(),
+          author: {
+            username: 'Jeff Bezos',
+          },
+          thread: {
+            id: `${+new Date()}`,
+            chatId: 'thread-1',
+            authors: [
+              {
+                username: 'Jeff Bezos',
+              },
+              {
+                username: 'Elon Mask',
+              },
+            ],
+            messagesCount: 1,
+          },
+        } as Message,
+        {
+          id: `${+new Date() + 1}`,
+          content: 'Greetings',
+          createdAt: new Date().toISOString(),
+          author: {
+            username: 'Elon Mask',
+          },
+        } as Message,
+        {
+          id: `${+new Date() + 2}`,
+          content: 'What`s up',
+          createdAt: new Date().toISOString(),
+          author: {
+            username: 'Bill Gates',
+          },
+        } as Message,
+      ],
+    ],
+    [
+      'thread-1',
       [
         {
           id: `${+new Date()}`,

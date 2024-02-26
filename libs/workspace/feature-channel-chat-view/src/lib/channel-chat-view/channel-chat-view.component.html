@@ -30,6 +30,7 @@
         <as-chat-message
           *cdkVirtualFor="let message of messages$ | async"
           [message]="message"
+          (openThreadEvent)="openThread($event)"
         >
         </as-chat-message>
       </cdk-virtual-scroll-viewport>

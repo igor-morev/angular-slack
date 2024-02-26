@@ -45,9 +45,9 @@ import { MessageEditorComponent } from '@angular-slack/message-editor';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PrimaryViewComponent implements OnInit {
-  route = inject(ActivatedRoute);
-  store = inject(Store);
-  destroy$ = inject(TuiDestroyService);
+  private route = inject(ActivatedRoute);
+  private store = inject(Store);
+  private destroy$ = inject(TuiDestroyService);
 
   chat$ = this.store.select(selectSelectedContactEntity);
   messages$ = this.store.select(selectAllMessages);

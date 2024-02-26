@@ -27,7 +27,9 @@ import {
   selectChannelByChatId,
   selectSelectedChannelsEntity,
 } from '@angular-slack/data-access-channels';
-import { ChannelApiService } from '@angular-slack/slack-api';
+import { ChannelApiService, Thread } from '@angular-slack/slack-api';
+import { ViewStore } from '@angular-slack/ui-store';
+import { ThreadChatViewComponent } from '@angular-slack/thread-chat-view';
 
 @Component({
   selector: 'as-channel-chat-view',
@@ -46,11 +48,13 @@ import { ChannelApiService } from '@angular-slack/slack-api';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChannelChatViewComponent implements OnInit {
-  route = inject(ActivatedRoute);
-  store = inject(Store);
-  destroy$ = inject(TuiDestroyService);
+  private route = inject(ActivatedRoute);
+  private store = inject(Store);
+  private viewStore = inject(ViewStore);
 
-  channelApiService = inject(ChannelApiService);
+  private destroy$ = inject(TuiDestroyService);
+
+  private channelApiService = inject(ChannelApiService);
 
   chat$ = this.store.select(selectSelectedChannelsEntity);
   messages$ = this.store.select(selectAllMessages);
@@ -68,7 +72,6 @@ export class ChannelChatViewComponent implements OnInit {
 
   ngOnInit() {
     this.chatId$.pipe(takeUntil(this.destroy$)).subscribe((chatId) => {
-      console.log(chatId);
       if (chatId) {
         this.store.dispatch(
           selectChannelByChatId({
@@ -91,5 +94,12 @@ export class ChannelChatViewComponent implements OnInit {
           this.virtualScrollViewport.scrollToIndex(index);
         }
       });
+  }
+
+  openThread(thread: Thread) {
+    this.viewStore.openView('thread', ThreadChatViewComponent, {
+      chatId: thread.chatId,
+      title: 'Thread',
+    });
   }
 }
