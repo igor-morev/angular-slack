@@ -1,7 +1,7 @@
 {
-  "name": "file-preview",
+  "name": "chat-message",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/workspace/ui-file-preview/src",
+  "sourceRoot": "libs/shared/ui-message/src",
   "prefix": "as",
   "tags": ["ui"],
   "projectType": "library",
@@ -10,7 +10,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/workspace/ui-file-preview/jest.config.ts"
+        "jestConfig": "libs/shared/ui-message/jest.config.ts"
       }
     },
     "lint": {

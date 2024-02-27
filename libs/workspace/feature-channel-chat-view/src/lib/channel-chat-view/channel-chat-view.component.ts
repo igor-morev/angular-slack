@@ -6,8 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChatMessageComponent } from '@angular-slack/chat-message';
-import { MessageEditorComponent } from '@angular-slack/message-editor';
+import { ChatMessageComponent } from 'libs/shared/ui-message/src';
 import {
   CdkVirtualScrollViewport,
   ScrollingModule,
@@ -18,16 +17,21 @@ import { TuiAvatarModule } from '@taiga-ui/kit';
 import {
   initMessages,
   selectAllMessages,
+  selectMessagesByChatId,
   selectScrollToMessageIndex,
+  sendMessage,
 } from '@angular-slack/data-access-messages';
-import { delay, map, switchMap, takeUntil } from 'rxjs';
+import { delay, filter, map, switchMap, takeUntil } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { ActivatedRoute } from '@angular/router';
 import {
   selectChannelByChatId,
   selectSelectedChannelsEntity,
 } from '@angular-slack/data-access-channels';
-import { ChannelApiService } from '@angular-slack/slack-api';
+import { ChannelApiService, Thread } from '@angular-slack/slack-api';
+import { SecondaryViewStore } from '@angular-slack/ui-store';
+import { ThreadChatViewComponent } from '@angular-slack/thread-chat-view';
+import { MessageEditorComponent } from '@angular-slack/message-editor';
 
 @Component({
   selector: 'as-channel-chat-view',
@@ -46,16 +50,21 @@ import { ChannelApiService } from '@angular-slack/slack-api';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChannelChatViewComponent implements OnInit {
-  route = inject(ActivatedRoute);
-  store = inject(Store);
-  destroy$ = inject(TuiDestroyService);
+  private route = inject(ActivatedRoute);
+  private store = inject(Store);
+  private secondaryViewStore = inject(SecondaryViewStore);
 
-  channelApiService = inject(ChannelApiService);
+  private destroy$ = inject(TuiDestroyService);
 
-  chat$ = this.store.select(selectSelectedChannelsEntity);
-  messages$ = this.store.select(selectAllMessages);
+  private channelApiService = inject(ChannelApiService);
 
   chatId$ = this.route.paramMap.pipe(map((value) => value.get('chatId')));
+
+  chat$ = this.store.select(selectSelectedChannelsEntity);
+  messages$ = this.chatId$.pipe(
+    filter((chatId) => !!chatId),
+    switchMap((chatId) => this.store.select(selectMessagesByChatId(chatId!)))
+  );
 
   users$ = this.chatId$.pipe(
     switchMap((chatId) => this.channelApiService.getChannelUsers(chatId!))
@@ -67,22 +76,24 @@ export class ChannelChatViewComponent implements OnInit {
   selectScrollToMessageIndex$ = this.store.select(selectScrollToMessageIndex);
 
   ngOnInit() {
-    this.chatId$.pipe(takeUntil(this.destroy$)).subscribe((chatId) => {
-      console.log(chatId);
-      if (chatId) {
+    this.chatId$
+      .pipe(
+        filter((chatId) => !!chatId),
+        takeUntil(this.destroy$)
+      )
+      .subscribe((chatId) => {
         this.store.dispatch(
           selectChannelByChatId({
-            chatId,
+            chatId: chatId!,
           })
         );
 
         this.store.dispatch(
           initMessages({
-            chatId,
+            chatId: chatId!,
           })
         );
-      }
-    });
+      });
 
     this.selectScrollToMessageIndex$
       .pipe(delay(0), takeUntil(this.destroy$))
@@ -91,5 +102,23 @@ export class ChannelChatViewComponent implements OnInit {
           this.virtualScrollViewport.scrollToIndex(index);
         }
       });
+  }
+
+  openThread(thread: Thread) {
+    this.secondaryViewStore.open('thread', ThreadChatViewComponent, {
+      chatId: thread.chatId,
+      title: 'Thread',
+    });
+  }
+
+  submit(event: { content: string; attachments: File[] }, chatId: string) {
+    const { content, attachments } = event;
+    this.store.dispatch(
+      sendMessage({
+        chatId,
+        attachments,
+        content: content,
+      })
+    );
   }
 }

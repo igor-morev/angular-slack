@@ -8,6 +8,7 @@ import { TuiAvatarModule } from '@taiga-ui/kit';
 import { TuiLetModule } from '@taiga-ui/cdk';
 import { selectAllContacts } from '@angular-slack/data-access-contacts';
 import { selectAllChannels } from '@angular-slack/data-access-channels';
+import { SecondaryViewStore } from '@angular-slack/ui-store';
 
 @Component({
   selector: 'as-workspace',
@@ -28,6 +29,8 @@ import { selectAllChannels } from '@angular-slack/data-access-channels';
 export class WorkspaceComponent {
   private readonly store = inject(Store);
 
+  private secondaryViewStore = inject(SecondaryViewStore);
+
   client$ = this.store.select(selectEntity);
   contacts$ = this.store.select(selectAllContacts);
 
@@ -35,4 +38,12 @@ export class WorkspaceComponent {
 
   contactsExpanded = true;
   channelsExpanded = true;
+
+  get activeSecondaryView() {
+    return this.secondaryViewStore.activeView();
+  }
+
+  selectContact() {
+    this.secondaryViewStore.close();
+  }
 }

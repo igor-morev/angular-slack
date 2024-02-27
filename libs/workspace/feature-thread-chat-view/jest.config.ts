@@ -1,9 +1,10 @@
 /* eslint-disable */
 export default {
-  displayName: 'chat-message',
+  displayName: 'thread-chat-view',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../../coverage/libs/workspace/ui-message',
+  coverageDirectory:
+    '../../../coverage/libs/workspace/feature-thread-chat-view',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

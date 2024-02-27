@@ -1,8 +1,8 @@
-<form [formGroup]="messageForm" (ngSubmit)="onSubmit(chat.chatId)" *ngIf="chat">
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
   <quill-editor
     class="as-quill-editor"
     customToolbarPosition="bottom"
-    placeholder="Message {{ chat.name }}"
+    [placeholder]="placeholder"
     formControlName="text"
   >
     <div below-quill-editor-toolbar class="p-2">

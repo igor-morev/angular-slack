@@ -34,7 +34,7 @@ const reducer = createReducer(
     error: null,
   })),
   on(MessagesActions.loadMessagesSuccess, (state, { messages }) =>
-    messagesAdapter.setAll(messages, { ...state, loaded: true })
+    messagesAdapter.addMany(messages, { ...state, loaded: true })
   ),
   on(MessagesActions.loadMessagesFailure, (state, { error }) => ({
     ...state,

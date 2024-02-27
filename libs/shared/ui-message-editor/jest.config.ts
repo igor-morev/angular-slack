@@ -3,7 +3,7 @@ export default {
   displayName: 'message-editor',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../../coverage/libs/workspace/feature-message-editor',
+  coverageDirectory: '../../../coverage/libs/shared/ui-message-editor',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

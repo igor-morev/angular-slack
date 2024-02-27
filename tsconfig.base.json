@@ -19,10 +19,7 @@
       "@angular-slack/auth/feature-auth": [
         "libs/auth/feature-auth/src/index.ts"
       ],
-      "@angular-slack/workspace/feature-channel-chat-view": [
-        "libs/workspace/feature-channel-chat-view/src/index.ts"
-      ],
-      "@angular-slack/chat-message": ["libs/workspace/ui-message/src/index.ts"],
+      "@angular-slack/chat-message": ["libs/shared/ui-message/src/index.ts"],
       "@angular-slack/client/data-access": [
         "libs/client/data-access/src/index.ts"
       ],
@@ -42,16 +39,25 @@
         "libs/client/feature-shell/src/index.ts"
       ],
       "@angular-slack/file-preview": [
-        "libs/workspace/ui-file-preview/src/index.ts"
+        "libs/shared/ui-file-preview/src/index.ts"
       ],
       "@angular-slack/message-editor": [
-        "libs/workspace/feature-message-editor/src/index.ts"
+        "libs/shared/ui-message-editor/src/index.ts"
       ],
       "@angular-slack/slack-api": [
         "libs/shared/data-access/slack-api/src/index.ts"
       ],
       "@angular-slack/tab-rail/feature-tab-rail": [
         "libs/tab-rail/feature-tab-rail/src/index.ts"
+      ],
+      "@angular-slack/thread-chat-view": [
+        "libs/workspace/feature-thread-chat-view/src/index.ts"
+      ],
+      "@angular-slack/ui-store": [
+        "libs/shared/data-access/ui-store/src/index.ts"
+      ],
+      "@angular-slack/workspace/feature-channel-chat-view": [
+        "libs/workspace/feature-channel-chat-view/src/index.ts"
       ],
       "@angular-slack/workspace/feature-primary-view": [
         "libs/workspace/feature-primary-view/src/index.ts"

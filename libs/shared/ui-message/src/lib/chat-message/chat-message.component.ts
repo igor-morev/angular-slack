@@ -1,17 +1,23 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  EventEmitter,
   Inject,
   Input,
+  Output,
   TemplateRef,
   ViewChild,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TuiAvatarModule } from '@taiga-ui/kit';
-import { Message } from '@angular-slack/slack-api';
+import { Message, Thread } from '@angular-slack/slack-api';
 import { FilePreviewComponent } from '@angular-slack/file-preview';
 
-import { TuiDialogModule, TuiDialogService } from '@taiga-ui/core';
+import {
+  TuiDialogModule,
+  TuiDialogService,
+  TuiSvgModule,
+} from '@taiga-ui/core';
 
 import { TuiDestroyService } from '@taiga-ui/cdk';
 
@@ -23,6 +29,7 @@ import { TuiDestroyService } from '@taiga-ui/cdk';
     TuiAvatarModule,
     FilePreviewComponent,
     TuiDialogModule,
+    TuiSvgModule,
   ],
   templateUrl: './chat-message.component.html',
   styleUrl: './chat-message.component.scss',
@@ -33,7 +40,9 @@ export class ChatMessageComponent {
   @ViewChild('contentSample')
   readonly contentSample?: TemplateRef<Record<string, unknown>>;
 
-  @Input() message: Message = {} as Message;
+  @Input() message!: Message | null;
+
+  @Output() openThreadEvent = new EventEmitter<Thread>();
 
   index = 0;
 
@@ -52,5 +61,9 @@ export class ChatMessageComponent {
         data: file,
       })
       .subscribe();
+  }
+
+  openThread() {
+    this.openThreadEvent.emit(this.message!.thread);
   }
 }

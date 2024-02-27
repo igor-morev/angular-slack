@@ -1,0 +1,26 @@
+<div
+  class="toolbar h-12 px-4 border-b border-slate-200 flex items-center justify-between"
+>
+  <span class="font-semibold text-lg text-black mr-2 box-sg">{{ title }} </span>
+  <button tuiIconButton>
+    <tui-svg src="tuiIconClose" (click)="close()"></tui-svg>
+  </button>
+</div>
+<div class="flex flex-col flex-1 min-h-0">
+  <div class="body flex-1">
+    <cdk-virtual-scroll-viewport itemSize="60" class="viewport h-full">
+      <as-chat-message
+        *cdkVirtualFor="let message of messages$ | async; index as i"
+        [class.border-b]="i === 0"
+        [message]="message"
+      >
+      </as-chat-message>
+    </cdk-virtual-scroll-viewport>
+  </div>
+  <div class="footer px-4 py-4">
+    <as-message-editor
+      placeholder="Reply..."
+      (submitEvent)="submit($event, chatId)"
+    ></as-message-editor>
+  </div>
+</div>

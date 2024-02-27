@@ -56,6 +56,11 @@ export const selectAllMessages = createSelector(
     selectAll(state).reduce(groupMessages, [] as Message[])
 );
 
+export const selectMessagesByChatId = (chatId: string) =>
+  createSelector(selectAllMessages, (state) =>
+    state.filter((message) => message.chatId === chatId)
+  );
+
 export const selectMessagesEntities = createSelector(
   selectMessagesState,
   (state: MessagesState) => selectEntities(state)

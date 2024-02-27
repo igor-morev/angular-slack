@@ -25,17 +25,21 @@
     </div>
   </div>
   <div class="flex flex-col flex-1 min-h-0">
-    <div class="body overflow-y-auto flex-1">
+    <div class="body flex-1">
       <cdk-virtual-scroll-viewport itemSize="60" class="viewport h-full">
         <as-chat-message
           *cdkVirtualFor="let message of messages$ | async"
           [message]="message"
+          (openThreadEvent)="openThread($event)"
         >
         </as-chat-message>
       </cdk-virtual-scroll-viewport>
     </div>
     <div class="footer px-4 py-4">
-      <as-message-editor [chat]="chat"></as-message-editor>
+      <as-message-editor
+        placeholder="Message {{ chat.name }}"
+        (submitEvent)="submit($event, chat.chatId)"
+      ></as-message-editor>
     </div>
   </div>
 </ng-container>
