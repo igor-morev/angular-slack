@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'message-editor',
+  displayName: 'file-preview',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../../coverage/libs/workspace/feature-message-editor',
+  coverageDirectory: '../../../coverage/libs/shared/ui-file-preview',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

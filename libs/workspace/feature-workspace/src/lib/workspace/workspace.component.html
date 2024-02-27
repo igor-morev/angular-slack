@@ -48,6 +48,7 @@
     <tui-expand [expanded]="contactsExpanded">
       <a
         [routerLink]="['/client', client.id, 'direct', contact.chatId]"
+        (click)="selectContact()"
         routerLinkActive="bg-black text-white pointer-events-none"
         class="contact-item flex px-2 py-1 items-center hover:bg-slate-300 rounded-md"
         *ngFor="let contact of contacts$ | async"

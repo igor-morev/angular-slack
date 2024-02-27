@@ -27,11 +27,12 @@ export class AuthService {
     this.authorized = null;
   }
 
-  userId = '1';
+  readonly userId = '1';
+  readonly userName = 'Igor Morev (Frontend Engineer)';
 
   getMe(): Observable<User> {
     return of({
-      username: 'Igor Morev (Frontend Engineer)',
+      username: this.userName,
       image:
         'https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     } as User);

@@ -1,1 +1,1 @@
-export * from './lib/view.store';
+export * from './lib/secondary-view.store';

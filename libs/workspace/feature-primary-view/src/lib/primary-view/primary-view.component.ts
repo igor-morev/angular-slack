@@ -7,13 +7,14 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { map, takeUntil, delay } from 'rxjs';
+import { map, takeUntil, delay, filter, switchMap } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { TuiDestroyService } from '@taiga-ui/cdk';
 import {
   initMessages,
-  selectAllMessages,
+  selectMessagesByChatId,
   selectScrollToMessageIndex,
+  sendMessage,
 } from '@angular-slack/data-access-messages';
 import { TuiAvatarModule } from '@taiga-ui/kit';
 import { TuiSvgModule } from '@taiga-ui/core';
@@ -25,8 +26,11 @@ import {
   selectContactByChatId,
   selectSelectedContactEntity,
 } from '@angular-slack/data-access-contacts';
-import { ChatMessageComponent } from '@angular-slack/chat-message';
+import { ChatMessageComponent } from 'libs/shared/ui-message/src';
 import { MessageEditorComponent } from '@angular-slack/message-editor';
+import { Thread } from '@angular-slack/slack-api';
+import { ThreadChatViewComponent } from '@angular-slack/thread-chat-view';
+import { SecondaryViewStore } from '@angular-slack/ui-store';
 
 @Component({
   selector: 'as-primary-view',
@@ -48,11 +52,15 @@ export class PrimaryViewComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private store = inject(Store);
   private destroy$ = inject(TuiDestroyService);
-
-  chat$ = this.store.select(selectSelectedContactEntity);
-  messages$ = this.store.select(selectAllMessages);
+  private secondaryViewStore = inject(SecondaryViewStore);
 
   chatId$ = this.route.paramMap.pipe(map((value) => value.get('chatId')));
+
+  chat$ = this.store.select(selectSelectedContactEntity);
+  messages$ = this.chatId$.pipe(
+    filter((chatId) => !!chatId),
+    switchMap((chatId) => this.store.select(selectMessagesByChatId(chatId!)))
+  );
 
   @ViewChild(CdkVirtualScrollViewport)
   virtualScrollViewport?: CdkVirtualScrollViewport;
@@ -60,21 +68,24 @@ export class PrimaryViewComponent implements OnInit {
   selectScrollToMessageIndex$ = this.store.select(selectScrollToMessageIndex);
 
   ngOnInit() {
-    this.chatId$.pipe(takeUntil(this.destroy$)).subscribe((chatId) => {
-      if (chatId) {
+    this.chatId$
+      .pipe(
+        filter((chatId) => !!chatId),
+        takeUntil(this.destroy$)
+      )
+      .subscribe((chatId) => {
         this.store.dispatch(
           selectContactByChatId({
-            chatId,
+            chatId: chatId!,
           })
         );
 
         this.store.dispatch(
           initMessages({
-            chatId,
+            chatId: chatId!,
           })
         );
-      }
-    });
+      });
 
     this.selectScrollToMessageIndex$
       .pipe(delay(0), takeUntil(this.destroy$))
@@ -83,5 +94,23 @@ export class PrimaryViewComponent implements OnInit {
           this.virtualScrollViewport.scrollToIndex(index);
         }
       });
+  }
+
+  openThread(thread: Thread) {
+    this.secondaryViewStore.open('thread', ThreadChatViewComponent, {
+      chatId: thread.chatId,
+      title: 'Thread',
+    });
+  }
+
+  submit(event: { content: string; attachments: File[] }, chatId: string) {
+    const { content, attachments } = event;
+    this.store.dispatch(
+      sendMessage({
+        chatId,
+        attachments,
+        content: content,
+      })
+    );
   }
 }

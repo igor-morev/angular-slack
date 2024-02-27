@@ -1,8 +1,9 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  inject,
+  EventEmitter,
   Input,
+  Output,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
@@ -13,8 +14,6 @@ import {
 } from '@angular/forms';
 import { QuillModule } from 'ngx-quill';
 import { TuiButtonModule } from '@taiga-ui/core';
-import { sendMessage } from '@angular-slack/data-access-messages';
-import { Store } from '@ngrx/store';
 import { InputFileComponent } from '../input-file/input-file.component';
 import { FilePreviewComponent } from '@angular-slack/file-preview';
 
@@ -34,9 +33,12 @@ import { FilePreviewComponent } from '@angular-slack/file-preview';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MessageEditorComponent {
-  @Input() chat: { chatId: string; name: string } | null = null;
+  @Input() placeholder: string = '';
 
-  private store = inject(Store);
+  @Output() submitEvent = new EventEmitter<{
+    attachments: File[];
+    content: string;
+  }>();
 
   messageForm = new FormGroup({
     text: new FormControl('', Validators.required),
@@ -47,15 +49,12 @@ export class MessageEditorComponent {
     return this.messageForm.value.attachments;
   }
 
-  onSubmit(chatId: string) {
+  onSubmit() {
     if (this.messageForm.value.text) {
-      this.store.dispatch(
-        sendMessage({
-          chatId,
-          attachments: this.attachements!,
-          content: this.messageForm.value.text,
-        })
-      );
+      this.submitEvent.emit({
+        attachments: this.attachements!,
+        content: this.messageForm.value.text,
+      });
 
       this.messageForm.setValue({
         attachments: [],

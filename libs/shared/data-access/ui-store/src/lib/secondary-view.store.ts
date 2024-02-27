@@ -9,7 +9,7 @@ type ThreadViewData = {
   title: string;
 };
 
-export type ViewState = {
+type SecondaryViewState = {
   activeView: {
     type: ViewType;
     component: Type<any>;
@@ -17,19 +17,15 @@ export type ViewState = {
   } | null;
 };
 
-const viewInitialState: ViewState = {
+const viewInitialState: SecondaryViewState = {
   activeView: null,
 };
 
-export const ViewStore = signalStore(
+export const SecondaryViewStore = signalStore(
   { providedIn: 'root' },
-  withState<ViewState>(viewInitialState),
+  withState<SecondaryViewState>(viewInitialState),
   withMethods((store) => ({
-    openView: <T>(
-      type: ViewType,
-      component: Type<any>,
-      data: ThreadViewData
-    ) => {
+    open: <T>(type: ViewType, component: Type<any>, data: ThreadViewData) => {
       patchState(store, {
         activeView: {
           type,
@@ -38,7 +34,7 @@ export const ViewStore = signalStore(
         },
       });
     },
-    closeView: () => {
+    close: () => {
       patchState(store, {
         activeView: null,
       });

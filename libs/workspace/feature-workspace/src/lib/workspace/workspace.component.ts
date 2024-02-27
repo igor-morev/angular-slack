@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  ViewContainerRef,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { selectEntity } from '@angular-slack/client/data-access';
@@ -13,7 +8,7 @@ import { TuiAvatarModule } from '@taiga-ui/kit';
 import { TuiLetModule } from '@taiga-ui/cdk';
 import { selectAllContacts } from '@angular-slack/data-access-contacts';
 import { selectAllChannels } from '@angular-slack/data-access-channels';
-import { ViewStore } from '@angular-slack/ui-store';
+import { SecondaryViewStore } from '@angular-slack/ui-store';
 
 @Component({
   selector: 'as-workspace',
@@ -34,7 +29,7 @@ import { ViewStore } from '@angular-slack/ui-store';
 export class WorkspaceComponent {
   private readonly store = inject(Store);
 
-  private viewStore = inject(ViewStore);
+  private secondaryViewStore = inject(SecondaryViewStore);
 
   client$ = this.store.select(selectEntity);
   contacts$ = this.store.select(selectAllContacts);
@@ -45,15 +40,10 @@ export class WorkspaceComponent {
   channelsExpanded = true;
 
   get activeSecondaryView() {
-    return this.viewStore.activeView();
+    return this.secondaryViewStore.activeView();
   }
 
-  constructor() {
-    // subscribe to open component (T)
-    this.viewStore.activeView;
-  }
-
-  open() {
-    // this.ref.createComponent();
+  selectContact() {
+    this.secondaryViewStore.close();
   }
 }
