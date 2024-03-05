@@ -10,15 +10,19 @@ import {
   initThreads,
   selectAllThreads,
 } from '@angular-slack/data-access-threads';
-import { Thread } from '@angular-slack/slack-api';
+import { Message, Thread } from '@angular-slack/slack-api';
 
-import { map, switchMap, tap } from 'rxjs';
-import { initMessages } from '@angular-slack/data-access-messages';
+import { Observable } from 'rxjs';
+import {
+  selectMessagesByChatId,
+  sendMessage,
+} from '@angular-slack/data-access-messages';
+import { ThreadCardComponent } from '@angular-slack/thread-card';
 
 @Component({
   selector: 'as-threads',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ThreadCardComponent],
   templateUrl: './threads.component.html',
   styleUrl: './threads.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -26,21 +30,11 @@ import { initMessages } from '@angular-slack/data-access-messages';
 export class ThreadsComponent implements OnInit {
   private readonly store = inject(Store);
 
-  threads$ = this.store.select(selectAllThreads).pipe(
-    tap((threads) => {
-      threads.forEach((thread) => {
-        this.store.dispatch(
-          initMessages({
-            chatId: thread.messageId,
-          })
-        );
-      });
-    })
-  );
+  threads$ = this.store.select(selectAllThreads);
 
-  constructor() {}
-
-  getMessagesByChatId(chatId: string) {}
+  getMessagesByChatId(chatId: string): Observable<Message[]> {
+    return this.store.select(selectMessagesByChatId(chatId));
+  }
 
   ngOnInit() {
     this.store.dispatch(initThreads());
@@ -48,5 +42,16 @@ export class ThreadsComponent implements OnInit {
 
   trackBy(_: any, thread: Thread): string {
     return thread.id;
+  }
+
+  submit(event: { content: string; attachments: File[] }, chatId: string) {
+    const { content, attachments } = event;
+    this.store.dispatch(
+      sendMessage({
+        chatId,
+        attachments,
+        content: content,
+      })
+    );
   }
 }

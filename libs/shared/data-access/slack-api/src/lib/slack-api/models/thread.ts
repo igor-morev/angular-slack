@@ -3,7 +3,7 @@ import { User } from '@angular-slack/auth/data-access';
 export interface Thread {
   id: string;
   chatName: string;
-  messageId: string;
+  chatId: string;
   authors: User[];
   messagesCount: number;
 }

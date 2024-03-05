@@ -1,0 +1,19 @@
+<div *ngIf="thread" class="mb-2">
+  {{ thread.chatName }}
+</div>
+
+<div class="border border-slate-200 rounded-md overflow-hidden bg-white">
+  <ng-container *ngIf="messages">
+    <as-chat-message
+      *ngFor="let message of messages; trackBy: trackBy"
+      [message]="message"
+    >
+    </as-chat-message>
+  </ng-container>
+  <div class="footer px-4 py-4">
+    <as-message-editor
+      placeholder="Reply..."
+      (submitEvent)="submit($event)"
+    ></as-message-editor>
+  </div>
+</div>

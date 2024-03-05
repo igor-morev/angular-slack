@@ -8,6 +8,7 @@ import {
 
 import { DateTime } from 'luxon';
 
+// TODO: move to utils ?
 function groupMessages(a: Message[], b: Message) {
   const prevMessage = a[a.length - 1];
 

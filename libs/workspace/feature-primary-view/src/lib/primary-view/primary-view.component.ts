@@ -98,7 +98,7 @@ export class PrimaryViewComponent implements OnInit {
 
   openThread(thread: Thread) {
     this.secondaryViewStore.open('thread', ThreadChatViewComponent, {
-      chatId: thread.messageId,
+      chatId: thread.chatId,
       title: 'Thread',
     });
   }

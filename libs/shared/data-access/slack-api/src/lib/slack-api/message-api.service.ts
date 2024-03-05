@@ -57,7 +57,7 @@ export class MessageApiService {
           },
           thread: {
             id: uuidv4(),
-            messageId: 'thread-1',
+            chatId: 'thread-1',
             authors: [
               {
                 username: 'Jeff Bezos',

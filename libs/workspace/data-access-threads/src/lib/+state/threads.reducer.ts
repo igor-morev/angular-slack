@@ -39,7 +39,10 @@ const reducer = createReducer(
   on(ThreadsActions.loadThreadsFailure, (state, { error }) => ({
     ...state,
     error,
-  }))
+  })),
+  on(ThreadsActions.createThreadSuccess, (state, { thread }) =>
+    threadsAdapter.addOne(thread, { ...state })
+  )
 );
 
 export function threadsReducer(

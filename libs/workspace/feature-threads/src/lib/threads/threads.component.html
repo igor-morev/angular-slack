@@ -1,8 +1,14 @@
-<div class="toolbar h-12 px-4 border-b border-slate-200 flex items-center">
+<div
+  class="toolbar h-12 px-4 border-b border-slate-200 flex items-center bg-white"
+>
   <span class="font-semibold text-lg text-black"> Threads </span>
 </div>
 <div class="px-4 py-2">
-  <div *ngFor="let thread of threads$ | async; trackBy: trackBy">
-    {{ thread.chatName }}
-  </div>
+  <as-thread-card
+    *ngFor="let thread of threads$ | async; trackBy: trackBy"
+    [thread]="thread"
+    [messages]="getMessagesByChatId(thread.chatId) | async"
+    (submitEvent)="submit($event, thread.chatId)"
+  >
+  </as-thread-card>
 </div>

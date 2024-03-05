@@ -19,7 +19,7 @@ export class ThreadApiService {
         {
           id: uuidv4(),
           chatName: 'General',
-          messageId: uuidv4(),
+          chatId: 'thread-1',
         },
       ] as Thread[],
     ],
@@ -30,6 +30,11 @@ export class ThreadApiService {
   }
 
   createThread(params: CreateThreadParams) {
+    const newThread: Thread = {
+      ...params,
+      id: uuidv4(),
+    };
+
     this.threads.set(
       this.authService.userId,
       this.threads.get(this.authService.userId)!.concat({
@@ -38,6 +43,6 @@ export class ThreadApiService {
       })
     );
 
-    return of(params);
+    return of(newThread);
   }
 }

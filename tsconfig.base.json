@@ -53,6 +53,9 @@
       "@angular-slack/tab-rail/feature-tab-rail": [
         "libs/tab-rail/feature-tab-rail/src/index.ts"
       ],
+      "@angular-slack/thread-card": [
+        "libs/workspace/ui-thread-card/src/index.ts"
+      ],
       "@angular-slack/thread-chat-view": [
         "libs/workspace/feature-thread-chat-view/src/index.ts"
       ],
