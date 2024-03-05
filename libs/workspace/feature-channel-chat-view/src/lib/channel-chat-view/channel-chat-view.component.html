@@ -28,7 +28,7 @@
     <div class="body flex-1">
       <cdk-virtual-scroll-viewport itemSize="60" class="viewport h-full">
         <as-chat-message
-          *cdkVirtualFor="let message of messages$ | async"
+          *cdkVirtualFor="let message of messages$ | async; trackBy: trackBy"
           [message]="message"
           (openThreadEvent)="openThread($event)"
         >

@@ -32,6 +32,9 @@
       "@angular-slack/data-access-messages": [
         "libs/workspace/data-access-messages/src/index.ts"
       ],
+      "@angular-slack/data-access-threads": [
+        "libs/workspace/data-access-threads/src/index.ts"
+      ],
       "@angular-slack/feature-header-toolbar": [
         "libs/header-toolbar/feature-header-toolbar/src/index.ts"
       ],
@@ -61,6 +64,9 @@
       ],
       "@angular-slack/workspace/feature-primary-view": [
         "libs/workspace/feature-primary-view/src/index.ts"
+      ],
+      "@angular-slack/workspace/feature-threads": [
+        "libs/workspace/feature-threads/src/index.ts"
       ],
       "@angular-slack/workspace/feature-workspace": [
         "libs/workspace/feature-workspace/src/index.ts"

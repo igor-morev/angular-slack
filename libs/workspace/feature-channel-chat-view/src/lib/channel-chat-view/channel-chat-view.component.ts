@@ -28,7 +28,7 @@ import {
   selectChannelByChatId,
   selectSelectedChannelsEntity,
 } from '@angular-slack/data-access-channels';
-import { ChannelApiService, Thread } from '@angular-slack/slack-api';
+import { ChannelApiService, Message, Thread } from '@angular-slack/slack-api';
 import { SecondaryViewStore } from '@angular-slack/ui-store';
 import { ThreadChatViewComponent } from '@angular-slack/thread-chat-view';
 import { MessageEditorComponent } from '@angular-slack/message-editor';
@@ -106,9 +106,13 @@ export class ChannelChatViewComponent implements OnInit {
 
   openThread(thread: Thread) {
     this.secondaryViewStore.open('thread', ThreadChatViewComponent, {
-      chatId: thread.chatId,
+      chatId: thread.messageId,
       title: 'Thread',
     });
+  }
+
+  trackBy(_: any, message: Message): string {
+    return message.id;
   }
 
   submit(event: { content: string; attachments: File[] }, chatId: string) {

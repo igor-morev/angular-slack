@@ -22,12 +22,28 @@ import {
   channelsReducer,
   CHANNELS_FEATURE_KEY,
 } from '@angular-slack/data-access-channels';
+import {
+  ThreadsEffects,
+  threadsReducer,
+  THREADS_FEATURE_KEY,
+} from '@angular-slack/data-access-threads';
 
 export const SHELL_ROUTES: Routes = [
   {
     path: ':clientId',
     component: ShellComponent,
     children: [
+      {
+        path: 'threads',
+        loadComponent: () =>
+          import('@angular-slack/workspace/feature-threads').then(
+            (m) => m.ThreadsComponent
+          ),
+        providers: [
+          provideState(THREADS_FEATURE_KEY, threadsReducer),
+          provideEffects(ThreadsEffects),
+        ],
+      },
       {
         path: 'direct/:chatId',
         loadComponent: () =>

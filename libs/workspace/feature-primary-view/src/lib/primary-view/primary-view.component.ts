@@ -28,7 +28,7 @@ import {
 } from '@angular-slack/data-access-contacts';
 import { ChatMessageComponent } from 'libs/shared/ui-message/src';
 import { MessageEditorComponent } from '@angular-slack/message-editor';
-import { Thread } from '@angular-slack/slack-api';
+import { Message, Thread } from '@angular-slack/slack-api';
 import { ThreadChatViewComponent } from '@angular-slack/thread-chat-view';
 import { SecondaryViewStore } from '@angular-slack/ui-store';
 
@@ -98,9 +98,13 @@ export class PrimaryViewComponent implements OnInit {
 
   openThread(thread: Thread) {
     this.secondaryViewStore.open('thread', ThreadChatViewComponent, {
-      chatId: thread.chatId,
+      chatId: thread.messageId,
       title: 'Thread',
     });
+  }
+
+  trackBy(_: any, message: Message): string {
+    return message.id;
   }
 
   submit(event: { content: string; attachments: File[] }, chatId: string) {

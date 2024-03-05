@@ -83,6 +83,10 @@ export class ThreadChatViewComponent implements OnInit {
       });
   }
 
+  trackBy(_: any, message: Message): string {
+    return message.id;
+  }
+
   submit(event: { content: string; attachments: File[] }, chatId: string) {
     const { content, attachments } = event;
     this.store.dispatch(

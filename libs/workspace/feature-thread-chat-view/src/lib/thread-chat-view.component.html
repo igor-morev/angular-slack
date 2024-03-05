@@ -10,7 +10,11 @@
   <div class="body flex-1">
     <cdk-virtual-scroll-viewport itemSize="60" class="viewport h-full">
       <as-chat-message
-        *cdkVirtualFor="let message of messages$ | async; index as i"
+        *cdkVirtualFor="
+          let message of messages$ | async;
+          index as i;
+          trackBy: trackBy
+        "
         [class.border-b]="i === 0"
         [message]="message"
       >
