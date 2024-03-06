@@ -6,11 +6,12 @@
   </div>
   <div class="px-2 py-2 mb-2">
     <a
+      (click)="selectMenuItem()"
       [routerLink]="['/client', client.id, 'threads']"
       routerLinkActive="bg-black text-white pointer-events-none"
       class="flex px-2 py-1 items-center hover:bg-slate-300 rounded-md"
     >
-      <tui-svg src="tuiIconMessageCircle" class="mr-2"></tui-svg>
+      <tui-svg src="tuiIconMessageSquare" class="mr-2"></tui-svg>
       <span>Threads</span>
     </a>
   </div>
@@ -29,6 +30,7 @@
     <tui-expand [expanded]="channelsExpanded">
       <a
         [routerLink]="['/client', client.id, 'channels', channel.chatId]"
+        (click)="selectMenuItem()"
         routerLinkActive="bg-black text-white pointer-events-none"
         class="contact-item flex px-2 py-1 items-center hover:bg-slate-300 rounded-md"
         *ngFor="let channel of channels$ | async"
@@ -53,7 +55,7 @@
     <tui-expand [expanded]="contactsExpanded">
       <a
         [routerLink]="['/client', client.id, 'direct', contact.chatId]"
-        (click)="selectContact()"
+        (click)="selectMenuItem()"
         routerLinkActive="bg-black text-white pointer-events-none"
         class="contact-item flex px-2 py-1 items-center hover:bg-slate-300 rounded-md"
         *ngFor="let contact of contacts$ | async"
@@ -74,11 +76,7 @@
   <!--primary-view-->
   <router-outlet></router-outlet>
   <!--secondary-view-->
-  <div
-    class="secondary-view border-l"
-    #secondaryView
-    *ngIf="activeSecondaryView as view"
-  >
+  <div class="secondary-view border-l" *ngIf="activeSecondaryView as view">
     <ng-template
       *ngComponentOutlet="view.component; inputs: view.data"
     ></ng-template>

@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -24,6 +25,7 @@ import {
 } from '@angular/cdk/scrolling';
 import {
   selectContactByChatId,
+  selectContactSelection,
   selectSelectedContactEntity,
 } from '@angular-slack/data-access-contacts';
 import { ChatMessageComponent } from 'libs/shared/ui-message/src';
@@ -48,7 +50,7 @@ import { SecondaryViewStore } from '@angular-slack/ui-store';
   providers: [TuiDestroyService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PrimaryViewComponent implements OnInit {
+export class PrimaryViewComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private store = inject(Store);
   private destroy$ = inject(TuiDestroyService);
@@ -96,10 +98,12 @@ export class PrimaryViewComponent implements OnInit {
       });
   }
 
-  openThread(thread: Thread) {
-    this.secondaryViewStore.open('thread', ThreadChatViewComponent, {
-      chatId: thread.chatId,
-      title: 'Thread',
+  openThread(message: Message) {
+    this.secondaryViewStore.close();
+    setTimeout(() => {
+      this.secondaryViewStore.open('thread', ThreadChatViewComponent, {
+        message,
+      });
     });
   }
 
@@ -116,5 +120,9 @@ export class PrimaryViewComponent implements OnInit {
         content: content,
       })
     );
+  }
+
+  ngOnDestroy() {
+    this.store.dispatch(selectContactSelection());
   }
 }

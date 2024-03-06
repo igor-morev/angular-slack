@@ -3,12 +3,13 @@
 >
   <span class="font-semibold text-lg text-black"> Threads </span>
 </div>
-<div class="px-4 py-2">
+<div class="px-4 py-2 overflow-y-auto min-h-0 flex flex-col flex-1">
   <as-thread-card
     *ngFor="let thread of threads$ | async; trackBy: trackBy"
+    class="mb-4"
     [thread]="thread"
-    [messages]="getMessagesByChatId(thread.chatId) | async"
-    (submitEvent)="submit($event, thread.chatId)"
+    [messages]="getMessagesByChatId(thread) | async"
+    (submitEvent)="submit($event, thread)"
   >
   </as-thread-card>
 </div>

@@ -23,6 +23,9 @@
       "@angular-slack/client/data-access": [
         "libs/client/data-access/src/index.ts"
       ],
+      "@angular-slack/pipes/collection-commas": [
+        "libs/shared/pipes/collection-commas/src/index.ts"
+      ],
       "@angular-slack/data-access-channels": [
         "libs/workspace/data-access-channels/src/index.ts"
       ],
@@ -62,6 +65,7 @@
       "@angular-slack/ui-store": [
         "libs/shared/data-access/ui-store/src/index.ts"
       ],
+      "@angular-slack/utils": ["libs/shared/utils/src/index.ts"],
       "@angular-slack/workspace/feature-channel-chat-view": [
         "libs/workspace/feature-channel-chat-view/src/index.ts"
       ],

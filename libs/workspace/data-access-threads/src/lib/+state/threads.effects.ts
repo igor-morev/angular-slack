@@ -47,4 +47,18 @@ export class ThreadsEffects {
       })
     )
   );
+
+  updateThread$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(ThreadsActions.updateThread),
+      switchMap((action) =>
+        this.threadApiService.updateThread(action.id, action.payload)
+      ),
+      switchMap((thread) => of(ThreadsActions.updateThreadSuccess({ thread }))),
+      catchError((error) => {
+        console.error('Error', error);
+        return of(ThreadsActions.updateThreadFailure({ error }));
+      })
+    )
+  );
 }

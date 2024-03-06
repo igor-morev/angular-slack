@@ -2,9 +2,12 @@ import { AuthService } from '@angular-slack/auth/data-access';
 
 import { inject, Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { CreateThreadParams, Thread } from './models';
-
-import { v4 as uuidv4 } from 'uuid';
+import {
+  CreateThreadParams,
+  Message,
+  Thread,
+  UpdateThreadParams,
+} from './models';
 
 @Injectable({
   providedIn: 'root',
@@ -17,9 +20,34 @@ export class ThreadApiService {
       this.authService.userId,
       [
         {
-          id: uuidv4(),
+          id: 'thread-1',
           chatName: 'General',
           chatId: 'thread-1',
+          authors: [
+            {
+              username: 'Elon Mask',
+            },
+            {
+              username: 'John Carmack',
+            },
+            {
+              username: 'Bill Gates',
+            },
+            {
+              username: 'Steve Jobs',
+            },
+          ],
+          message: {
+            id: 'thread-1',
+            mode: 'full',
+            content: 'Hello',
+            chatId: 'channel-1',
+            parentChatId: null,
+            createdAt: new Date().toISOString(),
+            author: {
+              username: 'Jeff Bezos',
+            },
+          } as Message,
         },
       ] as Thread[],
     ],
@@ -32,17 +60,35 @@ export class ThreadApiService {
   createThread(params: CreateThreadParams) {
     const newThread: Thread = {
       ...params,
-      id: uuidv4(),
     };
 
     this.threads.set(
       this.authService.userId,
       this.threads.get(this.authService.userId)!.concat({
         ...params,
-        id: uuidv4(),
       })
     );
 
     return of(newThread);
+  }
+
+  updateThread(id: string, params: UpdateThreadParams) {
+    this.threads.set(
+      this.authService.userId,
+      this.threads.get(this.authService.userId)!.map((thread) => {
+        if (thread.id === id) {
+          return {
+            ...thread,
+            ...params,
+          };
+        }
+
+        return thread;
+      })
+    );
+
+    return of(
+      this.threads.get(this.authService.userId)!.find((t) => t.id === id)!
+    );
   }
 }

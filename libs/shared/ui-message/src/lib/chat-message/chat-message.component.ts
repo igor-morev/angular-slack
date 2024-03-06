@@ -10,12 +10,16 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TuiAvatarModule } from '@taiga-ui/kit';
-import { Message, Thread } from '@angular-slack/slack-api';
+import { Message } from '@angular-slack/slack-api';
 import { FilePreviewComponent } from '@angular-slack/file-preview';
 
 import {
+  TuiButtonModule,
+  TuiDataListModule,
   TuiDialogModule,
   TuiDialogService,
+  TuiDropdownModule,
+  TuiHostedDropdownModule,
   TuiSvgModule,
 } from '@taiga-ui/core';
 
@@ -30,6 +34,10 @@ import { TuiDestroyService } from '@taiga-ui/cdk';
     FilePreviewComponent,
     TuiDialogModule,
     TuiSvgModule,
+    TuiDropdownModule,
+    TuiHostedDropdownModule,
+    TuiDataListModule,
+    TuiButtonModule,
   ],
   templateUrl: './chat-message.component.html',
   styleUrl: './chat-message.component.scss',
@@ -42,18 +50,17 @@ export class ChatMessageComponent {
 
   @Input() message!: Message | null;
 
-  @Output() openThreadEvent = new EventEmitter<Thread>();
+  @Output() openThreadEvent = new EventEmitter<Message>();
+  @Input() hasDropdown = true;
 
   index = 0;
+
+  open = false;
 
   constructor(
     @Inject(TuiDialogService)
     private readonly dialogs: TuiDialogService
   ) {}
-
-  get title(): string {
-    return 'Heading';
-  }
 
   show(file: File): void {
     this.dialogs
@@ -64,6 +71,6 @@ export class ChatMessageComponent {
   }
 
   openThread() {
-    this.openThreadEvent.emit(this.message!.thread);
+    this.openThreadEvent.emit(this.message!);
   }
 }

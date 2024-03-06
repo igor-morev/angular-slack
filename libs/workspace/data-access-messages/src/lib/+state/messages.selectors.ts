@@ -53,13 +53,14 @@ export const selectMessagesError = createSelector(
 
 export const selectAllMessages = createSelector(
   selectMessagesState,
-  (state: MessagesState) =>
-    selectAll(state).reduce(groupMessages, [] as Message[])
+  (state: MessagesState) => selectAll(state)
 );
 
 export const selectMessagesByChatId = (chatId: string) =>
   createSelector(selectAllMessages, (state) =>
-    state.filter((message) => message.chatId === chatId)
+    state
+      .filter((message) => message.chatId === chatId)
+      .reduce(groupMessages, [] as Message[])
   );
 
 export const selectMessagesEntities = createSelector(

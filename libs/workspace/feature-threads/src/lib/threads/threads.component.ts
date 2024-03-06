@@ -1,21 +1,13 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
-import {
-  initThreads,
-  selectAllThreads,
-} from '@angular-slack/data-access-threads';
+import { selectAllThreads } from '@angular-slack/data-access-threads';
 import { Message, Thread } from '@angular-slack/slack-api';
 
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import {
   selectMessagesByChatId,
-  sendMessage,
+  sendThreadMessage,
 } from '@angular-slack/data-access-messages';
 import { ThreadCardComponent } from '@angular-slack/thread-card';
 
@@ -27,28 +19,27 @@ import { ThreadCardComponent } from '@angular-slack/thread-card';
   styleUrl: './threads.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ThreadsComponent implements OnInit {
+export class ThreadsComponent {
   private readonly store = inject(Store);
 
   threads$ = this.store.select(selectAllThreads);
 
-  getMessagesByChatId(chatId: string): Observable<Message[]> {
-    return this.store.select(selectMessagesByChatId(chatId));
-  }
-
-  ngOnInit() {
-    this.store.dispatch(initThreads());
+  getMessagesByChatId(thread: Thread): Observable<Message[]> {
+    return this.store
+      .select(selectMessagesByChatId(thread.chatId))
+      .pipe(map((messages) => [thread.message, ...messages]));
   }
 
   trackBy(_: any, thread: Thread): string {
     return thread.id;
   }
 
-  submit(event: { content: string; attachments: File[] }, chatId: string) {
+  submit(event: { content: string; attachments: File[] }, thread: Thread) {
     const { content, attachments } = event;
     this.store.dispatch(
-      sendMessage({
-        chatId,
+      sendThreadMessage({
+        threadId: thread.id,
+        parentMessage: thread.message,
         attachments,
         content: content,
       })

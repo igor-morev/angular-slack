@@ -9,11 +9,17 @@ import { CommonModule } from '@angular/common';
 import { Message, Thread } from '@angular-slack/slack-api';
 import { ChatMessageComponent } from '@angular-slack/chat-message';
 import { MessageEditorComponent } from '@angular-slack/message-editor';
+import { CollectionCommasPipe } from '@angular-slack/pipes/collection-commas';
 
 @Component({
   selector: 'as-thread-card',
   standalone: true,
-  imports: [CommonModule, ChatMessageComponent, MessageEditorComponent],
+  imports: [
+    CommonModule,
+    ChatMessageComponent,
+    MessageEditorComponent,
+    CollectionCommasPipe,
+  ],
   templateUrl: './thread-card.component.html',
   styleUrl: './thread-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

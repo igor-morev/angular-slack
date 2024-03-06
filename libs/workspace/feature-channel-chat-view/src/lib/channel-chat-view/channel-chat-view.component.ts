@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
+  OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -16,7 +17,6 @@ import { TuiSvgModule } from '@taiga-ui/core';
 import { TuiAvatarModule } from '@taiga-ui/kit';
 import {
   initMessages,
-  selectAllMessages,
   selectMessagesByChatId,
   selectScrollToMessageIndex,
   sendMessage,
@@ -25,10 +25,11 @@ import { delay, filter, map, switchMap, takeUntil } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { ActivatedRoute } from '@angular/router';
 import {
+  resetChannelSelection,
   selectChannelByChatId,
   selectSelectedChannelsEntity,
 } from '@angular-slack/data-access-channels';
-import { ChannelApiService, Message, Thread } from '@angular-slack/slack-api';
+import { ChannelApiService, Message } from '@angular-slack/slack-api';
 import { SecondaryViewStore } from '@angular-slack/ui-store';
 import { ThreadChatViewComponent } from '@angular-slack/thread-chat-view';
 import { MessageEditorComponent } from '@angular-slack/message-editor';
@@ -49,7 +50,7 @@ import { MessageEditorComponent } from '@angular-slack/message-editor';
   providers: [TuiDestroyService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ChannelChatViewComponent implements OnInit {
+export class ChannelChatViewComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private store = inject(Store);
   private secondaryViewStore = inject(SecondaryViewStore);
@@ -104,10 +105,12 @@ export class ChannelChatViewComponent implements OnInit {
       });
   }
 
-  openThread(thread: Thread) {
-    this.secondaryViewStore.open('thread', ThreadChatViewComponent, {
-      chatId: thread.chatId,
-      title: 'Thread',
+  openThread(message: Message) {
+    this.secondaryViewStore.close();
+    setTimeout(() => {
+      this.secondaryViewStore.open('thread', ThreadChatViewComponent, {
+        message,
+      });
     });
   }
 
@@ -124,5 +127,9 @@ export class ChannelChatViewComponent implements OnInit {
         content: content,
       })
     );
+  }
+
+  ngOnDestroy() {
+    this.store.dispatch(resetChannelSelection());
   }
 }

@@ -42,6 +42,15 @@ const reducer = createReducer(
   })),
   on(ThreadsActions.createThreadSuccess, (state, { thread }) =>
     threadsAdapter.addOne(thread, { ...state })
+  ),
+  on(ThreadsActions.updateThread, (state, { id, payload }) =>
+    threadsAdapter.updateOne(
+      {
+        id,
+        changes: payload,
+      },
+      { ...state }
+    )
   )
 );
 

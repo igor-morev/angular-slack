@@ -1,64 +1,88 @@
 <ng-container *ngIf="message">
-  <div class="flex">
-    <div class="mr-2 w-14">
-      <tui-avatar
-        [text]="message.author.username"
-        *ngIf="message.mode === 'full'"
-        [autoColor]="true"
-        size="m"
-        class="mt-1"
-      ></tui-avatar>
-      <span class="text-gray-400 text-xs" *ngIf="message.mode === 'compact'">{{
-        message.createdAt | date : 'shortTime'
-      }}</span>
-    </div>
-
-    <div>
-      <ng-container *ngIf="message.mode === 'full'">
-        <button class="text-base mr-1 mb-0.5 font-semibold hover:underline">
-          {{ message.author.username }}
-        </button>
-        <span class="text-gray-400 text-xs">{{
-          message.createdAt | date : 'medium'
-        }}</span>
-      </ng-container>
-
-      <div [innerHTML]="message.content"></div>
-    </div>
-  </div>
-
-  <div class="flex mt-2 flex-wrap" *ngIf="message.attachments?.length">
-    <as-file-preview
-      (click)="show(file)"
-      *ngFor="let file of message.attachments; index as i"
-      class="max-w-[240px] mr-2 cursor-pointer hover:bg-white"
-      [file]="file"
-    ></as-file-preview>
-  </div>
-
-  <button
-    class="flex mt-2 items-center w-[60%] rounded-sm border border-slate-200 overflow-hidden p-1 hover:bg-white justify-between"
-    *ngIf="message.thread as thread"
-    (click)="openThread()"
+  <tui-hosted-dropdown
+    class="w-full px-4 py-2"
+    [class.bg-slate-100]="open"
+    tuiDropdownHover
+    [(open)]="open"
+    [tuiDropdownOffset]="-40"
+    [tuiDropdown]="hasDropdown ? menuContent : null"
+    tuiDropdownAlign="right"
+    tuiDropdownDirection="top"
+    [tuiDropdownShowDelay]="0"
+    [tuiDropdownHideDelay]="60"
   >
-    <span class="flex items-center">
-      <span class="flex">
+    <div class="flex" tuiHostedDropdownHost>
+      <div class="mr-2 w-14">
         <tui-avatar
-          *ngFor="let author of thread.authors"
-          [text]="author.username"
+          [text]="message.author.username"
+          *ngIf="message.mode === 'full'"
           [autoColor]="true"
-          size="s"
-          class="mr-1"
+          size="m"
+          class="mt-1"
         ></tui-avatar>
+        <span
+          class="text-gray-400 text-xs"
+          *ngIf="message.mode === 'compact'"
+          >{{ message.createdAt | date : 'shortTime' }}</span
+        >
+      </div>
+
+      <div>
+        <ng-container *ngIf="message.mode === 'full'">
+          <button
+            class="text-base mr-1 pt-1 mb-0.5 font-semibold hover:underline"
+          >
+            {{ message.author.username }}
+          </button>
+          <span class="text-gray-400 text-xs">{{
+            message.createdAt | date : 'medium'
+          }}</span>
+        </ng-container>
+
+        <div [innerHTML]="message.content"></div>
+      </div>
+    </div>
+
+    <div class="flex mt-2 flex-wrap" *ngIf="message.attachments?.length">
+      <as-file-preview
+        (click)="show(file)"
+        *ngFor="let file of message.attachments; index as i"
+        class="max-w-[240px] mr-2 cursor-pointer hover:bg-white"
+        [file]="file"
+      ></as-file-preview>
+    </div>
+
+    <button
+      class="flex mt-2 items-center w-[60%] rounded-md border border-slate-200 overflow-hidden p-1 hover:bg-white justify-between"
+      *ngIf="message.thread as thread"
+      (click)="openThread()"
+    >
+      <span class="flex items-center">
+        <span class="flex mr-1">
+          <tui-avatar
+            *ngFor="let author of thread.authors"
+            [text]="author.username"
+            [autoColor]="true"
+            size="xs"
+            class="mr-1"
+          ></tui-avatar>
+        </span>
+        <span class="mr-2 text-blue-500">
+          {{ thread.messagesCount }}
+          replies
+        </span>
+        <span class="text-slate-500">View thread</span>
       </span>
-      <span class="mr-2 text-blue-500">
-        {{ thread.messagesCount }}
-        replies
-      </span>
-      <span class="text-slate-500">View thread</span>
-    </span>
-    <tui-svg src="tuiIconChevronRight" class="text-slate-500"></tui-svg>
-  </button>
+      <tui-svg src="tuiIconChevronRight" class="text-slate-500"></tui-svg>
+    </button>
+    <ng-template #menuContent>
+      <tui-data-list class="d-flex">
+        <button tuiOption (click)="openThread()">
+          <tui-svg src="tuiIconMessageSquare"></tui-svg>
+        </button>
+      </tui-data-list>
+    </ng-template>
+  </tui-hosted-dropdown>
 </ng-container>
 
 <ng-template #contentSample>

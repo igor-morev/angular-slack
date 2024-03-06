@@ -1,12 +1,18 @@
-<div *ngIf="thread" class="mb-2">
-  {{ thread.chatName }}
-</div>
+<ng-container *ngIf="thread">
+  <div class="font-semibold">
+    {{ thread.chatName }}
+  </div>
+  <div class="mb-2 text-xs text-gray-500">
+    {{ thread.authors | collectionCommas : 'username' }}
+  </div>
+</ng-container>
 
-<div class="border border-slate-200 rounded-md overflow-hidden bg-white">
+<div class="border border-slate-200 rounded-md overflow-auto bg-white">
   <ng-container *ngIf="messages">
     <as-chat-message
       *ngFor="let message of messages; trackBy: trackBy"
       [message]="message"
+      [hasDropdown]="false"
     >
     </as-chat-message>
   </ng-container>

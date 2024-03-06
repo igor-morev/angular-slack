@@ -1,12 +1,11 @@
-import { ThreadChatViewComponent } from '@angular-slack/thread-chat-view';
+import { Message } from '@angular-slack/slack-api';
 import { Type } from '@angular/core';
 import { signalStore, withState, withMethods, patchState } from '@ngrx/signals';
 
 type ViewType = 'thread' | 'profile';
 
 type ThreadViewData = {
-  chatId: string;
-  title: string;
+  message: Message;
 };
 
 type SecondaryViewState = {

@@ -39,10 +39,6 @@ export const SHELL_ROUTES: Routes = [
           import('@angular-slack/workspace/feature-threads').then(
             (m) => m.ThreadsComponent
           ),
-        providers: [
-          provideState(THREADS_FEATURE_KEY, threadsReducer),
-          provideEffects(ThreadsEffects),
-        ],
       },
       {
         path: 'direct/:chatId',
@@ -68,6 +64,8 @@ export const SHELL_ROUTES: Routes = [
       provideEffects(ChannelsEffects),
       provideState(MESSAGES_FEATURE_KEY, messagesReducer),
       provideEffects(MessagesEffects),
+      provideState(THREADS_FEATURE_KEY, threadsReducer),
+      provideEffects(ThreadsEffects),
     ],
   },
 ];
