@@ -14,6 +14,10 @@ export const loadChannelsFailure = createAction(
 );
 
 export const selectChannelByChatId = createAction(
-  '[Channels/API] Select Channel By ChatId',
+  '[Channels] Select Channel By ChatId',
   props<{ chatId: string }>()
+);
+
+export const resetChannelSelection = createAction(
+  '[Channels] Reset Channel Selection'
 );

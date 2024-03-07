@@ -28,7 +28,7 @@ export class AuthService {
   }
 
   readonly userId = '1';
-  readonly userName = 'Igor Morev (Frontend Engineer)';
+  readonly userName = 'Igor Morev (Frontend Dev)';
 
   getMe(): Observable<User> {
     return of({

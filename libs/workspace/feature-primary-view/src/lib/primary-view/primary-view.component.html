@@ -9,10 +9,10 @@
     <span class="font-semibold text-lg text-black"> {{ chat.name }} </span>
   </div>
   <div class="flex flex-col flex-1 min-h-0">
-    <div class="body flex-1">
-      <cdk-virtual-scroll-viewport itemSize="60" class="viewport h-full">
+    <div class="body flex-1 overflow-y-auto">
+      <cdk-virtual-scroll-viewport itemSize="60" class="h-full">
         <as-chat-message
-          *cdkVirtualFor="let message of messages$ | async"
+          *cdkVirtualFor="let message of messages$ | async; trackBy: trackBy"
           [message]="message"
           (openThreadEvent)="openThread($event)"
         >

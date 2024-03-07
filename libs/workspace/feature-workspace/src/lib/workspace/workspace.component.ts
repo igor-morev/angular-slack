@@ -9,6 +9,7 @@ import { TuiLetModule } from '@taiga-ui/cdk';
 import { selectAllContacts } from '@angular-slack/data-access-contacts';
 import { selectAllChannels } from '@angular-slack/data-access-channels';
 import { SecondaryViewStore } from '@angular-slack/ui-store';
+import { initThreads } from '@angular-slack/data-access-threads';
 
 @Component({
   selector: 'as-workspace',
@@ -39,11 +40,15 @@ export class WorkspaceComponent {
   contactsExpanded = true;
   channelsExpanded = true;
 
+  ngOnInit() {
+    this.store.dispatch(initThreads());
+  }
+
   get activeSecondaryView() {
     return this.secondaryViewStore.activeView();
   }
 
-  selectContact() {
+  selectMenuItem() {
     this.secondaryViewStore.close();
   }
 }

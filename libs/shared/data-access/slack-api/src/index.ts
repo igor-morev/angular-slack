@@ -3,5 +3,6 @@ export * from './lib/slack-api/contact-api.service';
 export * from './lib/slack-api/client-api.service';
 export * from './lib/slack-api/message-api.service';
 export * from './lib/slack-api/channel-api.service';
+export * from './lib/slack-api/thread-api.service';
 
 export * from './lib/slack-api/models';

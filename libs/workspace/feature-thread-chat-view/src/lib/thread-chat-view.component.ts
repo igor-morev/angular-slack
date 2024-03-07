@@ -11,11 +11,13 @@ import { TuiSvgModule } from '@taiga-ui/core';
 import { SecondaryViewStore } from '@angular-slack/ui-store';
 import { Store } from '@ngrx/store';
 import {
+  CreateThreadHeadMessage,
   initMessages,
   selectAllMessages,
   selectMessagesByChatId,
   selectScrollToMessageIndex,
   sendMessage,
+  sendThreadMessage,
 } from '@angular-slack/data-access-messages';
 import { MessageEditorComponent } from '@angular-slack/message-editor';
 import { FilePreviewComponent } from '@angular-slack/file-preview';
@@ -24,9 +26,10 @@ import {
   CdkVirtualScrollViewport,
   ScrollingModule,
 } from '@angular/cdk/scrolling';
-import { delay, of, takeUntil } from 'rxjs';
-import { Message } from '@angular-slack/slack-api';
-import { TuiDestroyService } from '@taiga-ui/cdk';
+import { delay, map, Observable, of, takeUntil } from 'rxjs';
+import { Message, Thread } from '@angular-slack/slack-api';
+import { TuiDestroyService, TuiLetModule } from '@taiga-ui/cdk';
+import { selectThreadsEntities } from '@angular-slack/data-access-threads';
 
 @Component({
   selector: 'as-thread-chat-view',
@@ -38,6 +41,7 @@ import { TuiDestroyService } from '@taiga-ui/cdk';
     FilePreviewComponent,
     ChatMessageComponent,
     ScrollingModule,
+    TuiLetModule,
   ],
   templateUrl: './thread-chat-view.component.html',
   styleUrl: './thread-chat-view.component.scss',
@@ -45,52 +49,77 @@ import { TuiDestroyService } from '@taiga-ui/cdk';
   providers: [TuiDestroyService],
 })
 export class ThreadChatViewComponent implements OnInit {
-  @Input() title!: string;
-  @Input() chatId!: string;
+  @Input() message!: Message;
 
   private secondaryViewStore = inject(SecondaryViewStore);
   private store = inject(Store);
   private destroy$ = inject(TuiDestroyService);
 
-  messages$ = of([] as Message[]);
+  thread$: Observable<Thread | undefined | null> = of(null);
+
+  messages$: Observable<Message[]> = of([] as Message[]);
 
   @ViewChild(CdkVirtualScrollViewport)
   virtualScrollViewport?: CdkVirtualScrollViewport;
 
   selectScrollToMessageIndex$ = this.store.select(selectScrollToMessageIndex);
 
-  close() {
-    this.secondaryViewStore.close();
-  }
-
   ngOnInit() {
-    this.messages$ = this.store.select(selectMessagesByChatId(this.chatId!));
+    this.thread$ = this.store
+      .select(selectThreadsEntities)
+      .pipe(map((threads) => threads[this.message.id!]));
 
-    if (this.chatId) {
+    this.messages$ = this.store
+      .select(selectMessagesByChatId(this.message.id!))
+      .pipe(
+        map((messages) => [
+          {
+            ...this.message,
+            thread: null,
+            mode: 'full',
+          },
+          ...messages,
+        ])
+      );
+
+    if (this.message.thread) {
       this.store.dispatch(
         initMessages({
-          chatId: this.chatId,
+          chatId: this.message.id,
         })
       );
-    }
 
-    this.selectScrollToMessageIndex$
-      .pipe(delay(0), takeUntil(this.destroy$))
-      .subscribe((index) => {
-        if (index !== undefined && this.virtualScrollViewport) {
-          this.virtualScrollViewport.scrollToIndex(index);
-        }
-      });
+      this.selectScrollToMessageIndex$
+        .pipe(delay(0), takeUntil(this.destroy$))
+        .subscribe((index) => {
+          if (index !== undefined && this.virtualScrollViewport) {
+            this.virtualScrollViewport.scrollToIndex(index);
+          }
+        });
+    }
   }
 
-  submit(event: { content: string; attachments: File[] }, chatId: string) {
+  trackBy(_: any, message: Message): string {
+    return message.id;
+  }
+
+  submit(
+    event: { content: string; attachments: File[] },
+    thread?: Thread | null
+  ) {
     const { content, attachments } = event;
+
     this.store.dispatch(
-      sendMessage({
-        chatId,
+      sendThreadMessage({
+        threadId: thread ? thread.id : null,
+        parentMessage: this.message,
         attachments,
-        content: content,
+        content,
       })
     );
+  }
+
+  close() {
+    this.secondaryViewStore.close();
   }
 }

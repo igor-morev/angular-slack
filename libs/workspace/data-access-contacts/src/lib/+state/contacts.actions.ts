@@ -19,6 +19,10 @@ export const loadContactsFailure = createAction(
 // );
 
 export const selectContactByChatId = createAction(
-  '[Contacts/API] Select Contact By ChatId',
+  '[Contacts] Select Contact By ChatId',
   props<{ chatId: string }>()
+);
+
+export const selectContactSelection = createAction(
+  '[Contacts] Reset Contact selection'
 );
