@@ -61,12 +61,6 @@ export const updateMessageFailure = createAction(
   props<{ error: string | null }>()
 );
 
-export const CreateThreadHeadMessage = createAction(
-  '[Messages] Create Thread Head Message',
-  props<{
-    message: Message;
-  }>()
-);
 
 export const sendThreadMessage = createAction(
   '[Messages/API] Send Thread Message',
@@ -75,7 +69,6 @@ export const sendThreadMessage = createAction(
     parentMessage: Message;
     content: string;
     attachments: File[];
-    parentChatId?: string;
   }>()
 );
 

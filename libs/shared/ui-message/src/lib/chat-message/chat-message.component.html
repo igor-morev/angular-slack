@@ -1,17 +1,14 @@
 <ng-container *ngIf="message">
-  <tui-hosted-dropdown
+  <div
     class="w-full px-4 py-2"
-    [class.bg-slate-100]="open"
-    tuiDropdownHover
-    [(open)]="open"
-    [tuiDropdownOffset]="-40"
+    tuiDropdownContext
+    [(tuiDropdownOpen)]="dropdownOpen"
+    [class.bg-slate-100]="dropdownOpen"
+    #dropdown="tuiDropdown"
     [tuiDropdown]="hasDropdown ? menuContent : null"
-    tuiDropdownAlign="right"
-    tuiDropdownDirection="top"
-    [tuiDropdownShowDelay]="0"
-    [tuiDropdownHideDelay]="60"
   >
-    <div class="flex" tuiHostedDropdownHost>
+    <div class="flex" 
+    >
       <div class="mr-2 w-14">
         <tui-avatar
           [text]="message.author.username"
@@ -43,17 +40,23 @@
       </div>
     </div>
 
-    <div class="flex mt-2 flex-wrap" *ngIf="message.attachments?.length">
+    <div class="flex mt-2 ml-16 flex-wrap" *ngIf="message.attachments?.length">
       <as-file-preview
         (click)="show(file)"
-        *ngFor="let file of message.attachments; index as i"
+        *ngFor="let file of message.attachments"
         class="max-w-[240px] mr-2 cursor-pointer hover:bg-white"
         [file]="file"
       ></as-file-preview>
     </div>
 
+    <div class="mt-2 ml-16" *ngIf="message.emoji?.length">
+      <code         *ngFor="let emoji of message.emoji;" [innerHTML]="emoji" class="mr-1 text-base" (click)="onEmojiDelete(emoji)"
+      >
+    </code>
+    </div>
+
     <button
-      class="flex mt-2 items-center w-[60%] rounded-md border border-slate-200 overflow-hidden p-1 hover:bg-white justify-between"
+      class="flex ml-16 mt-2 items-center rounded-md border border-slate-200 overflow-hidden p-1 hover:bg-white justify-between"
       *ngIf="message.thread as thread"
       (click)="openThread()"
     >
@@ -63,7 +66,7 @@
             *ngFor="let author of thread.authors"
             [text]="author.username"
             [autoColor]="true"
-            size="xs"
+            size="s"
             class="mr-1"
           ></tui-avatar>
         </span>
@@ -76,14 +79,30 @@
       <tui-svg src="tuiIconChevronRight" class="text-slate-500"></tui-svg>
     </button>
     <ng-template #menuContent>
-      <tui-data-list class="d-flex">
-        <button tuiOption (click)="openThread()">
-          <tui-svg src="tuiIconMessageSquare"></tui-svg>
+      <tui-data-list class="flex" tuiDataListDropdownManager role="menu">
+        <button
+          tuiOption
+          (click)="openEmoji($event);"
+          *ngIf="dropdownConfig.emoji"
+        >
+          Add reaction...
+          <tui-svg src="tuiIconSmile" class="ml-1"></tui-svg>
         </button>
+        <button
+          tuiOption
+          (click)="openThread(); dropdown.toggle(false)"
+          *ngIf="dropdownConfig.thread"
+        >
+          Reply to thread
+          <tui-svg src="tuiIconMessageSquare" class="ml-1"></tui-svg>
+        </button>
+        
       </tui-data-list>
     </ng-template>
-  </tui-hosted-dropdown>
+  </div>
 </ng-container>
+
+
 
 <ng-template #contentSample>
   <div class="content">
@@ -103,3 +122,12 @@
     </p>
   </div>
 </ng-template>
+
+<ng-template #emojiContent>
+  <emoji-mart
+    title="Pick your emoji…"
+    emoji="point_up"
+    (emojiSelect)="onEmojiSelect($event)"
+  ></emoji-mart>
+</ng-template>
+

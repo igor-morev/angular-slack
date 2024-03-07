@@ -11,12 +11,9 @@ import { TuiSvgModule } from '@taiga-ui/core';
 import { SecondaryViewStore } from '@angular-slack/ui-store';
 import { Store } from '@ngrx/store';
 import {
-  CreateThreadHeadMessage,
   initMessages,
-  selectAllMessages,
   selectMessagesByChatId,
   selectScrollToMessageIndex,
-  sendMessage,
   sendThreadMessage,
 } from '@angular-slack/data-access-messages';
 import { MessageEditorComponent } from '@angular-slack/message-editor';

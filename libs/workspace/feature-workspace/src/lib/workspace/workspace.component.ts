@@ -6,8 +6,8 @@ import { Store } from '@ngrx/store';
 import { TuiExpandModule, TuiHintModule, TuiSvgModule } from '@taiga-ui/core';
 import { TuiAvatarModule } from '@taiga-ui/kit';
 import { TuiLetModule } from '@taiga-ui/cdk';
-import { selectAllContacts } from '@angular-slack/data-access-contacts';
-import { selectAllChannels } from '@angular-slack/data-access-channels';
+import { initContacts, selectAllContacts } from '@angular-slack/data-access-contacts';
+import { initChannels, selectAllChannels } from '@angular-slack/data-access-channels';
 import { SecondaryViewStore } from '@angular-slack/ui-store';
 import { initThreads } from '@angular-slack/data-access-threads';
 
@@ -41,6 +41,8 @@ export class WorkspaceComponent {
   channelsExpanded = true;
 
   ngOnInit() {
+    this.store.dispatch(initContacts());
+    this.store.dispatch(initChannels());
     this.store.dispatch(initThreads());
   }
 

@@ -35,8 +35,5 @@ export class ShellComponent implements OnInit {
     this.authStore.getUser();
     this.store.dispatch(initClients());
 
-    this.store.dispatch(initContacts());
-
-    this.store.dispatch(initChannels());
   }
 }

@@ -20,6 +20,7 @@ import {
   selectMessagesByChatId,
   selectScrollToMessageIndex,
   sendMessage,
+  updateMessage,
 } from '@angular-slack/data-access-messages';
 import { delay, filter, map, switchMap, takeUntil } from 'rxjs';
 import { Store } from '@ngrx/store';
@@ -112,6 +113,16 @@ export class ChannelChatViewComponent implements OnInit, OnDestroy {
         message,
       });
     });
+  }
+
+  selectEmoji(emoji: string[], message: Message, chatId: string) {
+    this.store.dispatch(updateMessage({
+      id: message.id,
+      chatId,
+      updateParams: {
+        emoji,
+      }
+    }))
   }
 
   trackBy(_: any, message: Message): string {

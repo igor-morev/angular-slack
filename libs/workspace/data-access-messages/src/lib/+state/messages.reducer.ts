@@ -6,8 +6,6 @@ import { MessagesEntity } from './messages.models';
 
 export const MESSAGES_FEATURE_KEY = 'messages';
 
-import { v4 as uuidv4 } from 'uuid';
-
 export interface MessagesState extends EntityState<MessagesEntity> {
   selectedId?: string | number; // which Messages record has been selected
   loaded: boolean; // has the Messages list been loaded
@@ -48,19 +46,6 @@ const reducer = createReducer(
   on(MessagesActions.updateMessageSuccess, (state, { message }) =>
     messagesAdapter.updateOne(
       { id: message.id, changes: message },
-      { ...state }
-    )
-  ),
-  on(MessagesActions.CreateThreadHeadMessage, (state, { message }) =>
-    messagesAdapter.addOne(
-      {
-        ...message,
-        id: uuidv4(),
-        mode: 'full',
-        chatId: message.id,
-        thread: null,
-        createdAt: new Date().toISOString(),
-      },
       { ...state }
     )
   ),
