@@ -11,12 +11,11 @@ import { TuiSvgModule } from '@taiga-ui/core';
 import { SecondaryViewStore } from '@angular-slack/ui-store';
 import { Store } from '@ngrx/store';
 import {
-  initMessages,
   selectMessagesByChatId,
   selectMessagesEntities,
   selectScrollToMessageIndex,
-  sendThreadMessage,
-  updateMessage,
+  MessagesThreadApiActions,
+  MessagesApiActions
 } from '@angular-slack/data-access-messages';
 import { MessageEditorComponent } from '@angular-slack/message-editor';
 import { FilePreviewComponent } from '@angular-slack/file-preview';
@@ -80,7 +79,7 @@ export class ThreadChatViewComponent implements OnInit {
       );
 
       this.store.dispatch(
-        initMessages({
+        MessagesApiActions.init({
           chatId: this.messageId,
         })
       );
@@ -106,7 +105,7 @@ export class ThreadChatViewComponent implements OnInit {
     const { content, attachments } = event;
 
     this.store.dispatch(
-      sendThreadMessage({
+      MessagesThreadApiActions.send({
         threadId: threadMessage.thread ? threadMessage.thread.id! : null,
         parentMessage: threadMessage,
         attachments,
@@ -116,7 +115,7 @@ export class ThreadChatViewComponent implements OnInit {
   }
 
   selectEmoji(emoji: string[], message: Message) {
-    this.store.dispatch(updateMessage({
+    this.store.dispatch(MessagesApiActions.update({
       id: message.id,
       chatId: message.chatId,
       updateParams: {

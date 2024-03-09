@@ -2,7 +2,7 @@ import { ContactApiService } from '@angular-slack/slack-api';
 import { Injectable, inject } from '@angular/core';
 import { createEffect, Actions, ofType } from '@ngrx/effects';
 import { switchMap, catchError, of } from 'rxjs';
-import * as ContactsActions from './contacts.actions';
+import { ContactsApiActions } from './contacts.actions';
 
 @Injectable()
 export class ContactsEffects {
@@ -11,14 +11,14 @@ export class ContactsEffects {
 
   init$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(ContactsActions.initContacts),
+      ofType(ContactsApiActions.init),
       switchMap(() => this.contactApiService.getContacts()),
       switchMap((contacts) =>
-        of(ContactsActions.loadContactsSuccess({ contacts }))
+        of(ContactsApiActions.loadSuccess({ contacts }))
       ),
       catchError((error) => {
         console.error('Error', error);
-        return of(ContactsActions.loadContactsFailure({ error }));
+        return of(ContactsApiActions.loadFailure({ error }));
       })
     )
   );

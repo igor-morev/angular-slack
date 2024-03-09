@@ -11,16 +11,6 @@ export const selectContactsState =
 
 const { selectAll, selectEntities } = contactsAdapter.getSelectors();
 
-export const selectContactsLoaded = createSelector(
-  selectContactsState,
-  (state: ContactsState) => state.loaded
-);
-
-export const selectContactsError = createSelector(
-  selectContactsState,
-  (state: ContactsState) => state.error
-);
-
 export const selectAllContacts = createSelector(
   selectContactsState,
   (state: ContactsState) => selectAll(state)
@@ -35,9 +25,3 @@ export const selectSelectedContactEntity = createSelector(
   selectContactsState,
   (state: ContactsState) => state.selectedContact
 );
-
-// export const selectEntity = createSelector(
-//   selectContactsEntities,
-//   selectSelectedId,
-//   (entities, selectedId) => (selectedId ? entities[selectedId] : undefined)
-// );

@@ -1,17 +1,14 @@
-import { createAction, props } from '@ngrx/store';
+import { createAction, createActionGroup, emptyProps, props } from '@ngrx/store';
 import { ChannelsEntity } from './channels.models';
 
-export const initChannels = createAction('[Channels Page] Init');
-
-export const loadChannelsSuccess = createAction(
-  '[Channels/API] Load Channels Success',
-  props<{ channels: ChannelsEntity[] }>()
-);
-
-export const loadChannelsFailure = createAction(
-  '[Channels/API] Load Channels Failure',
-  props<{ error: any }>()
-);
+export const ChannelsApiActions = createActionGroup({
+  source: 'ChannelsApi',
+  events: {
+    init: emptyProps(),
+    loadSuccess: props<{ channels: ChannelsEntity[] }>(),
+    loadFailure: props<{ error: string | null }>()
+  }
+})
 
 export const selectChannelByChatId = createAction(
   '[Channels] Select Channel By ChatId',

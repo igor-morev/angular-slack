@@ -16,11 +16,9 @@ import { TuiDestroyService } from '@taiga-ui/cdk';
 import { TuiSvgModule } from '@taiga-ui/core';
 import { TuiAvatarModule } from '@taiga-ui/kit';
 import {
-  initMessages,
+  MessagesApiActions,
   selectMessagesByChatId,
   selectScrollToMessageIndex,
-  sendMessage,
-  updateMessage,
 } from '@angular-slack/data-access-messages';
 import { delay, filter, map, switchMap, takeUntil } from 'rxjs';
 import { Store } from '@ngrx/store';
@@ -91,7 +89,7 @@ export class ChannelChatViewComponent implements OnInit, OnDestroy {
         );
 
         this.store.dispatch(
-          initMessages({
+          MessagesApiActions.init({
             chatId: chatId!,
           })
         );
@@ -116,7 +114,8 @@ export class ChannelChatViewComponent implements OnInit, OnDestroy {
   }
 
   selectEmoji(emoji: string[], message: Message, chatId: string) {
-    this.store.dispatch(updateMessage({
+    console.log(emoji);
+    this.store.dispatch(MessagesApiActions.update({
       id: message.id,
       chatId,
       updateParams: {
@@ -132,7 +131,7 @@ export class ChannelChatViewComponent implements OnInit, OnDestroy {
   submit(event: { content: string; attachments: File[] }, chatId: string) {
     const { content, attachments } = event;
     this.store.dispatch(
-      sendMessage({
+      MessagesApiActions.send({
         chatId,
         attachments,
         content: content,

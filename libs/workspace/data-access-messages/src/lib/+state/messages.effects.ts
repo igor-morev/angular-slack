@@ -1,14 +1,14 @@
-import { createThread, updateThread } from '@angular-slack/data-access-threads';
+import { ThreadsApiActions } from '@angular-slack/data-access-threads';
 import { MessageApiService } from '@angular-slack/slack-api';
 import { Injectable, inject } from '@angular/core';
 import { createEffect, Actions, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { switchMap, catchError, of, tap, withLatestFrom, map } from 'rxjs';
-import * as MessagesActions from './messages.actions';
 import { selectAllMessages } from './messages.selectors';
 
 import { selectSelectedChannelsEntity } from '@angular-slack/data-access-channels';
 import { selectSelectedContactEntity } from '@angular-slack/data-access-contacts';
+import { MessagesApiActions, MessagesThreadApiActions, scrollToMessage } from './messages.actions';
 
 @Injectable()
 export class MessagesEffects {
@@ -18,23 +18,23 @@ export class MessagesEffects {
 
   init$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(MessagesActions.initMessages),
+      ofType(MessagesApiActions.init),
       switchMap((action) =>
         this.messageApiService.getMessagesBy(action.chatId)
       ),
       switchMap((messages) =>
-        of(MessagesActions.loadMessagesSuccess({ messages }))
+        of(MessagesApiActions.loadSuccess({ messages }))
       ),
       catchError((error) => {
         console.error('Error', error);
-        return of(MessagesActions.loadMessagesFailure({ error }));
+        return of(MessagesApiActions.loadFailure({ error }));
       })
     )
   );
 
   sendMessage$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(MessagesActions.sendMessage),
+      ofType(MessagesApiActions.send),
       switchMap((action) =>
         this.messageApiService.sendMessage(
           action.chatId,
@@ -44,18 +44,18 @@ export class MessagesEffects {
         )
       ),
       switchMap((response) =>
-        of(MessagesActions.sendMessageSuccess({ message: response.data }))
+        of(MessagesApiActions.sendSuccess({ message: response.data }))
       ),
       catchError((error) => {
         console.error('Error', error);
-        return of(MessagesActions.sendMessageFailure({ error }));
+        return of(MessagesApiActions.sendFailure({ error }));
       })
     )
   );
 
   updateMessage$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(MessagesActions.updateMessage),
+      ofType(MessagesApiActions.update),
       switchMap((action) =>
         this.messageApiService.updateMessage(
           action.id,
@@ -64,18 +64,18 @@ export class MessagesEffects {
         )
       ),
       switchMap((message) =>
-        of(MessagesActions.updateMessageSuccess({ message }))
+        of(MessagesApiActions.updateSuccess({ message }))
       ),
       catchError((error) => {
         console.error('Error', error);
-        return of(MessagesActions.updateMessageFailure({ error }));
+        return of(MessagesApiActions.updateFailure({ error }));
       })
     )
   );
 
   sendThreadMessage$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(MessagesActions.sendThreadMessage),
+      ofType(MessagesThreadApiActions.send),
       switchMap((action) =>
         this.messageApiService
           .sendMessage(
@@ -90,13 +90,13 @@ export class MessagesEffects {
         this.store.select(selectSelectedContactEntity)
       ),
       switchMap(([{ action, response }, channel, contact]) =>
-        of(MessagesActions.sendMessageSuccess({ message: response.data })).pipe(
+        of(MessagesApiActions.sendSuccess({ message: response.data })).pipe(
           tap(() => {
             
 
             if (action.threadId) {
               this.store.dispatch(
-                updateThread({
+                ThreadsApiActions.update({
                   id: action.threadId,
                   payload: {
                     chatId: response.data.chatId,
@@ -107,7 +107,7 @@ export class MessagesEffects {
               
             } else {
               this.store.dispatch(
-                createThread({
+                ThreadsApiActions.create({
                   payload: {
                     id: action.parentMessage.id,
                     chatId: response.data.chatId,
@@ -125,7 +125,7 @@ export class MessagesEffects {
 
 
             this.store.dispatch(
-              MessagesActions.updateMessage({
+              MessagesApiActions.update({
                 id: action.parentMessage.id,
                 chatId: action.parentMessage.chatId!,
                 updateParams: {
@@ -142,7 +142,7 @@ export class MessagesEffects {
 
       catchError((error) => {
         console.error('Error', error);
-        return of(MessagesActions.sendMessageFailure({ error }));
+        return of(MessagesApiActions.sendFailure({ error }));
       })
     )
   );
@@ -150,13 +150,13 @@ export class MessagesEffects {
   scrollToMessage$ = createEffect(() =>
     this.actions$.pipe(
       ofType(
-        MessagesActions.sendMessageSuccess,
-        MessagesActions.sendThreadMessageSuccess,
-        MessagesActions.loadMessagesSuccess
+        MessagesApiActions.sendSuccess,
+        MessagesThreadApiActions.sendSuccess,
+        MessagesApiActions.loadSuccess
       ),
       withLatestFrom(this.store.select(selectAllMessages)),
       switchMap(([, messages]) =>
-        of(MessagesActions.scrollToMessage({ index: messages.length }))
+        of(scrollToMessage({ index: messages.length }))
       )
     )
   );

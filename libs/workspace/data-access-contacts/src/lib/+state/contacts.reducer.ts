@@ -1,8 +1,8 @@
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { createReducer, on, Action } from '@ngrx/store';
 
-import * as ContactsActions from './contacts.actions';
 import { ContactsEntity } from './contacts.models';
+import { ContactsApiActions, selectContactByChatId } from './contacts.actions';
 
 export const CONTACTS_FEATURE_KEY = 'contacts';
 
@@ -28,19 +28,15 @@ export const initialContactsState: ContactsState =
 
 const reducer = createReducer(
   initialContactsState,
-  on(ContactsActions.initContacts, (state) => ({
+  on(ContactsApiActions.init, (state) => ({
     ...state,
     loaded: false,
     error: null,
   })),
-  on(ContactsActions.loadContactsSuccess, (state, { contacts }) =>
+  on(ContactsApiActions.loadSuccess, (state, { contacts }) =>
     contactsAdapter.setAll(contacts, { ...state, loaded: true })
   ),
-  on(ContactsActions.loadContactsFailure, (state, { error }) => ({
-    ...state,
-    error,
-  })),
-  on(ContactsActions.selectContactByChatId, (state, { chatId }) => ({
+  on(selectContactByChatId, (state, { chatId }) => ({
     ...state,
     selectedContact: Object.values(state.entities).find(
       (contact) => contact?.chatId === chatId

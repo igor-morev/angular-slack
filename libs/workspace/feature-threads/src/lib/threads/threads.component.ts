@@ -1,14 +1,14 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
-import { initThreads, selectAllThreads } from '@angular-slack/data-access-threads';
+import { ThreadsApiActions, selectAllThreads } from '@angular-slack/data-access-threads';
 import { Message, Thread } from '@angular-slack/slack-api';
 
 import { map, Observable } from 'rxjs';
 import {
   selectMessagesByChatId,
-  sendThreadMessage,
-  updateMessage,
+  MessagesApiActions,
+  MessagesThreadApiActions
 } from '@angular-slack/data-access-messages';
 import { ThreadCardComponent } from '@angular-slack/thread-card';
 
@@ -26,7 +26,7 @@ export class ThreadsComponent {
   threads$ = this.store.select(selectAllThreads);
 
   ngOnInit() {
-    this.store.dispatch(initThreads());
+    this.store.dispatch(ThreadsApiActions.init());
   }
 
   getMessagesByChatId(thread: Thread): Observable<Message[]> {
@@ -35,6 +35,7 @@ export class ThreadsComponent {
     .pipe(map((messages) => [{
       ...thread.message,
       mode: 'full',
+      emoji: []
     }, ...messages]));
   }
 
@@ -45,7 +46,7 @@ export class ThreadsComponent {
   submit(event: { content: string; attachments: File[] }, thread: Thread) {
     const { content, attachments } = event;
     this.store.dispatch(
-      sendThreadMessage({
+      MessagesThreadApiActions.send({
         threadId: thread.id,
         parentMessage: thread.message,
         attachments,
@@ -58,7 +59,7 @@ export class ThreadsComponent {
     messageId: string;
     emoji: string[];
   }, thread: Thread) {
-    this.store.dispatch(updateMessage({
+    this.store.dispatch(MessagesApiActions.update({
       id: messageId,
       chatId: thread.id,
       updateParams: {

@@ -1,8 +1,8 @@
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { createReducer, on, Action } from '@ngrx/store';
 
-import * as MessagesActions from './messages.actions';
 import { MessagesEntity } from './messages.models';
+import { MessagesApiActions, scrollToMessage } from '@angular-slack/data-access-messages';
 
 export const MESSAGES_FEATURE_KEY = 'messages';
 
@@ -22,34 +22,33 @@ export const messagesAdapter: EntityAdapter<MessagesEntity> =
 
 export const initialMessagesState: MessagesState =
   messagesAdapter.getInitialState({
-    // set initial required properties
     loaded: false,
   });
 
 const reducer = createReducer(
   initialMessagesState,
-  on(MessagesActions.initMessages, (state) => ({
+  on(MessagesApiActions.init, (state) => ({
     ...state,
     loaded: false,
     error: null,
   })),
-  on(MessagesActions.loadMessagesSuccess, (state, { messages }) =>
+  on(MessagesApiActions.loadSuccess, (state, { messages }) =>
     messagesAdapter.addMany(messages, { ...state, loaded: true })
   ),
-  on(MessagesActions.loadMessagesFailure, (state, { error }) => ({
+  on(MessagesApiActions.loadFailure, (state, { error }) => ({
     ...state,
     error,
   })),
-  on(MessagesActions.sendMessageSuccess, (state, { message }) =>
+  on(MessagesApiActions.sendSuccess, (state, { message }) =>
     messagesAdapter.addOne(message, { ...state })
   ),
-  on(MessagesActions.updateMessageSuccess, (state, { message }) =>
+  on(MessagesApiActions.updateSuccess, (state, { message }) =>
     messagesAdapter.updateOne(
       { id: message.id, changes: message },
       { ...state }
     )
   ),
-  on(MessagesActions.scrollToMessage, (state, { index }) => ({
+  on(scrollToMessage, (state, { index }) => ({
     ...state,
     scrollToMessageIndex: index,
   }))
