@@ -30,6 +30,7 @@ import {
 
 import { TuiDestroyService } from '@taiga-ui/cdk';
 import { TemplatePortal } from '@angular/cdk/portal';
+import { takeUntil } from 'rxjs';
 
 type DropdownConfig = Partial<Record<'emoji' | 'thread', boolean>>;
 
@@ -89,14 +90,16 @@ export class ChatMessageComponent {
     @Inject(TuiDialogService)
     private readonly dialogs: TuiDialogService,
     private overlay: Overlay,
-    private containerRef: ViewContainerRef
+    private containerRef: ViewContainerRef,
+    private destroy$: TuiDestroyService,
+
   ) {}
 
   show(file: File): void {
     this.dialogs
       .open(this.contentSample, {
         data: file,
-      })
+      }).pipe(takeUntil(this.destroy$))
       .subscribe();
   }
 
@@ -104,16 +107,37 @@ export class ChatMessageComponent {
     this.openThreadEvent.emit(this.message!);
   }
 
-  openEmoji(event: MouseEvent) {
-    this.dropdownOpen = false;
+  openEmojiPanel(event: MouseEvent) {
+    this._config.positionStrategy = this.overlay.position().flexibleConnectedTo({
+      x: event.clientX,
+      y: event.clientY,
+    }).withPositions([
+      {
+        originX: 'center',
+        originY: 'center',
+        overlayX: 'start',
+        overlayY: 'top',
+      },
+      {
+        originX: 'center',
+        originY: 'center',
+        overlayX: 'start',
+        overlayY: 'center',
+      },
+      {
+        originX: 'center',
+        originY: 'center',
+        overlayX: 'start',
+        overlayY: 'bottom',
+      },
+    ])
 
-    this._config.positionStrategy = this.overlay.position().global().left(`${event.clientX}px`).top(`${event.clientY}px`);
     this.emojiOverlayRef = this.overlay.create(this._config);
 
     const filePreviewPortal = new TemplatePortal(this.emojiContent!, this.containerRef);
 
     this.emojiOverlayRef.attach(filePreviewPortal);
-    this.emojiOverlayRef.outsidePointerEvents().subscribe(() => {
+    this.emojiOverlayRef.outsidePointerEvents().pipe(takeUntil(this.destroy$)).subscribe(() => {
       if (this.emojiOverlayRef) {
         this.emojiOverlayRef.detach();
       }

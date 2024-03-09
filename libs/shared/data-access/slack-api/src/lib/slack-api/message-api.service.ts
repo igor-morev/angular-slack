@@ -86,7 +86,6 @@ export class MessageApiService {
           id: uuidv4(),
           content: '<i>Greetings</i>',
           chatId: 'channel-1',
-          parentChatId: null,
           createdAt: new Date().toISOString(),
           author: {
             username: 'Elon Mask',
@@ -96,7 +95,6 @@ export class MessageApiService {
           id: uuidv4(),
           content: 'What`s up',
           chatId: 'channel-1',
-          parentChatId: null,
           emoji: ['&#x1F602', '&#x1F618', '&#x1F631'],
           createdAt: new Date().toISOString(),
           author: {
@@ -112,7 +110,6 @@ export class MessageApiService {
           id: uuidv4(),
           content: 'How are u',
           chatId: 'thread-1',
-          parentChatId: 'channel-1',
           createdAt: new Date().toISOString(),
           author: {
             username: 'Elon Mask',
@@ -122,7 +119,6 @@ export class MessageApiService {
           id: uuidv4(),
           content: 'Ok',
           chatId: 'thread-1',
-          parentChatId: 'channel-1',
           createdAt: new Date().toISOString(),
           author: {
             username: 'Bill Gates',
@@ -132,7 +128,6 @@ export class MessageApiService {
           id: uuidv4(),
           content: 'Cool',
           chatId: 'thread-1',
-          parentChatId: 'channel-1',
           createdAt: new Date().toISOString(),
           emoji: ['&#x1F606', '&#x1F44D', '&#x1F60D'],
           author: {
@@ -143,7 +138,6 @@ export class MessageApiService {
           id: uuidv4(),
           content: 'Thanks <br> <b>Every one</b>',
           chatId: 'thread-1',
-          parentChatId: 'channel-1',
           createdAt: new Date().toISOString(),
           author: {
             username: 'Steve Jobs',
@@ -156,8 +150,7 @@ export class MessageApiService {
   sendMessage(
     chatId: string,
     content: string,
-    attachments: File[],
-    parentChatId?: string
+    attachments: File[]
   ): Observable<{
     data: Message;
     chatCount: number;
@@ -169,7 +162,6 @@ export class MessageApiService {
       chatId,
       createdAt: new Date().toISOString(),
       attachments,
-      parentChatId,
       author: {
         username: this.authService.userName,
       },

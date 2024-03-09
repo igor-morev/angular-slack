@@ -106,8 +106,7 @@ export class ThreadChatViewComponent implements OnInit {
 
     this.store.dispatch(
       MessagesThreadApiActions.send({
-        threadId: threadMessage.thread ? threadMessage.thread.id! : null,
-        parentMessage: threadMessage,
+        message: threadMessage,
         attachments,
         content,
       })

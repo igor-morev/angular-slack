@@ -6,7 +6,6 @@
 @import '@ctrl/ngx-emoji-mart/picker';
 @import '@angular/cdk/overlay-prebuilt.css';
 
-
 @import './custom/quill.scss';
 @import './custom/emoji-mart.scss';
 
@@ -52,4 +51,18 @@ as-chat-message {
   border-radius: var(--tui-radius-m);
   overflow: hidden;
   border: 1px solid var(--tui-base-04);
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--tui-base-05);
+  outline: none;
+  @apply rounded-md;
 }

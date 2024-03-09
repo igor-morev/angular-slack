@@ -30,8 +30,7 @@ export const MessagesThreadApiActions = createActionGroup({
   source: 'MessagesThreadApi',
   events: {
     send:  props<{
-      threadId: string | null;
-      parentMessage: Message;
+      message: Message;
       content: string;
       attachments: File[];
     }>(),
