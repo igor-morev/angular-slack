@@ -10,9 +10,10 @@
 <div class="border border-slate-200 rounded-md overflow-auto bg-white">
   <ng-container *ngIf="messages">
     <as-chat-message
-      *ngFor="let message of messages; trackBy: trackBy"
+      *ngFor="let message of messages; trackBy: trackBy; index as i"
       [message]="message"
-      [hasDropdown]="false"
+      [dropdownConfig]="i > 0 ? {emoji: true} : {emoji: false}"
+      (selectEmojiEvent)="selectEmoji($event, message)"
     >
     </as-chat-message>
   </ng-container>

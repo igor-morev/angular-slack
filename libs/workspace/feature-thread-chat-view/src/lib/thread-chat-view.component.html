@@ -6,11 +6,11 @@
     <tui-svg src="tuiIconClose" (click)="close()"></tui-svg>
   </button>
 </div>
-<div class="flex flex-col flex-1 min-h-0" *tuiLet="thread$ | async as thread">
+<div class="flex flex-col flex-1 min-h-0" *ngIf="threadMessage$ | async as threadMessage">
   <div class="body flex-1 overflow-y-auto">
     <cdk-virtual-scroll-viewport itemSize="60" class="h-full">
       <as-chat-message
-        [hasDropdown]="false"
+      [dropdownConfig]="{emoji: true}"
         *cdkVirtualFor="
           let message of messages$ | async;
           index as i;
@@ -18,6 +18,7 @@
         "
         [class.border-b]="i === 0"
         [message]="message"
+        (selectEmojiEvent)="selectEmoji($event, message)"
       >
       </as-chat-message>
     </cdk-virtual-scroll-viewport>
@@ -25,7 +26,7 @@
   <div class="footer px-4 py-4">
     <as-message-editor
       placeholder="Reply..."
-      (submitEvent)="submit($event, thread)"
+      (submitEvent)="submit($event, threadMessage)"
     ></as-message-editor>
   </div>
 </div>

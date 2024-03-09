@@ -2,7 +2,7 @@ import { ChannelApiService } from '@angular-slack/slack-api';
 import { Injectable, inject } from '@angular/core';
 import { createEffect, Actions, ofType } from '@ngrx/effects';
 import { switchMap, catchError, of } from 'rxjs';
-import * as ChannelsActions from './channels.actions';
+import { ChannelsApiActions } from './channels.actions';
 
 @Injectable()
 export class ChannelsEffects {
@@ -11,14 +11,14 @@ export class ChannelsEffects {
 
   init$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(ChannelsActions.initChannels),
+      ofType(ChannelsApiActions.init),
       switchMap(() => this.channelApiService.getChannels()),
       switchMap((channels) =>
-        of(ChannelsActions.loadChannelsSuccess({ channels }))
+        of(ChannelsApiActions.loadSuccess({ channels }))
       ),
       catchError((error) => {
         console.error('Error', error);
-        return of(ChannelsActions.loadChannelsFailure({ error }));
+        return of(ChannelsApiActions.loadFailure({ error }));
       })
     )
   );

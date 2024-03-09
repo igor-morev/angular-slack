@@ -33,6 +33,11 @@ export class ThreadCardComponent {
     attachments: File[];
   }>();
 
+  @Output() updateMessageEmojiEvent = new EventEmitter<{
+    messageId: string;
+    emoji: string[];
+  }>();
+
   trackBy(_: any, message: Message) {
     return message.id;
   }
@@ -43,6 +48,13 @@ export class ThreadCardComponent {
     this.submitEvent.emit({
       content,
       attachments,
+    });
+  }
+
+  selectEmoji(emoji: string[], message: Message) {
+    this.updateMessageEmojiEvent.emit({
+      messageId: message.id,
+      emoji
     });
   }
 }

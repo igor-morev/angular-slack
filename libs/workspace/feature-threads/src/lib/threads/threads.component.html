@@ -10,6 +10,7 @@
     [thread]="thread"
     [messages]="getMessagesByChatId(thread) | async"
     (submitEvent)="submit($event, thread)"
+    (updateMessageEmojiEvent)="updateEmoji($event, thread)"
   >
   </as-thread-card>
 </div>

@@ -12,10 +12,9 @@ import { map, takeUntil, delay, filter, switchMap } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { TuiDestroyService } from '@taiga-ui/cdk';
 import {
-  initMessages,
+  MessagesApiActions,
   selectMessagesByChatId,
   selectScrollToMessageIndex,
-  sendMessage,
 } from '@angular-slack/data-access-messages';
 import { TuiAvatarModule } from '@taiga-ui/kit';
 import { TuiSvgModule } from '@taiga-ui/core';
@@ -83,7 +82,7 @@ export class PrimaryViewComponent implements OnInit, OnDestroy {
         );
 
         this.store.dispatch(
-          initMessages({
+          MessagesApiActions.init({
             chatId: chatId!,
           })
         );
@@ -102,7 +101,7 @@ export class PrimaryViewComponent implements OnInit, OnDestroy {
     this.secondaryViewStore.close();
     setTimeout(() => {
       this.secondaryViewStore.open('thread', ThreadChatViewComponent, {
-        message,
+        messageId: message.id,
       });
     });
   }
@@ -114,12 +113,22 @@ export class PrimaryViewComponent implements OnInit, OnDestroy {
   submit(event: { content: string; attachments: File[] }, chatId: string) {
     const { content, attachments } = event;
     this.store.dispatch(
-      sendMessage({
+      MessagesApiActions.send({
         chatId,
         attachments,
         content: content,
       })
     );
+  }
+
+  selectEmoji(emoji: string[], message: Message, chatId: string) {
+    this.store.dispatch(MessagesApiActions.update({
+      id: message.id,
+      chatId,
+      updateParams: {
+        emoji,
+      }
+    }))
   }
 
   ngOnDestroy() {

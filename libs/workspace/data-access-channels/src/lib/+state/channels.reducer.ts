@@ -1,8 +1,8 @@
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { createReducer, on, Action } from '@ngrx/store';
 
-import * as ChannelsActions from './channels.actions';
 import { ChannelsEntity } from './channels.models';
+import { ChannelsApiActions, resetChannelSelection, selectChannelByChatId } from './channels.actions';
 
 export const CHANNELS_FEATURE_KEY = 'channels';
 
@@ -27,31 +27,27 @@ export const initialChannelsState: ChannelsState =
 
 const reducer = createReducer(
   initialChannelsState,
-  on(ChannelsActions.initChannels, (state) => ({
+  on(ChannelsApiActions.init, (state) => ({
     ...state,
     loaded: false,
     error: null,
   })),
-  on(ChannelsActions.loadChannelsSuccess, (state, { channels }) =>
+  on(ChannelsApiActions.loadSuccess, (state, { channels }) =>
     channelsAdapter.setAll(channels, { ...state, loaded: true })
   ),
-  on(ChannelsActions.loadChannelsFailure, (state, { error }) => ({
-    ...state,
-    error,
-  })),
-  on(ChannelsActions.selectChannelByChatId, (state, { chatId }) => ({
+  on(selectChannelByChatId, (state, { chatId }) => ({
     ...state,
     selectedChannel: Object.values(state.entities).find(
       (contact) => contact?.chatId === chatId
     ),
   })),
-  on(ChannelsActions.selectChannelByChatId, (state, { chatId }) => ({
+  on(selectChannelByChatId, (state, { chatId }) => ({
     ...state,
     selectedChannel: Object.values(state.entities).find(
       (contact) => contact?.chatId === chatId
     ),
   })),
-  on(ChannelsActions.resetChannelSelection, (state) => ({
+  on(resetChannelSelection, (state) => ({
     ...state,
     selectedChannel: null,
   }))

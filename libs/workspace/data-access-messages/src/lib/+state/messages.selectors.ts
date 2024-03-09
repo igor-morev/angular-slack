@@ -35,21 +35,10 @@ function groupMessages(a: Message[], b: Message) {
   });
 }
 
-// Lookup the 'Messages' feature state managed by NgRx
 export const selectMessagesState =
   createFeatureSelector<MessagesState>(MESSAGES_FEATURE_KEY);
 
 const { selectAll, selectEntities } = messagesAdapter.getSelectors();
-
-export const selectMessagesLoaded = createSelector(
-  selectMessagesState,
-  (state: MessagesState) => state.loaded
-);
-
-export const selectMessagesError = createSelector(
-  selectMessagesState,
-  (state: MessagesState) => state.error
-);
 
 export const selectAllMessages = createSelector(
   selectMessagesState,

@@ -5,7 +5,7 @@ import { signalStore, withState, withMethods, patchState } from '@ngrx/signals';
 type ViewType = 'thread' | 'profile';
 
 type ThreadViewData = {
-  message: Message;
+  messageId: string;
 };
 
 type SecondaryViewState = {
@@ -24,7 +24,7 @@ export const SecondaryViewStore = signalStore(
   { providedIn: 'root' },
   withState<SecondaryViewState>(viewInitialState),
   withMethods((store) => ({
-    open: <T>(type: ViewType, component: Type<any>, data: ThreadViewData) => {
+    open: <T>(type: ViewType, component: Type<T>, data: ThreadViewData) => {
       patchState(store, {
         activeView: {
           type,

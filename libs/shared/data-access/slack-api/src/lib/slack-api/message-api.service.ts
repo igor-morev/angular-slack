@@ -16,21 +16,24 @@ export class MessageApiService {
   messages: Map<string, Message[]> = new Map([
     [
       '1',
-      Array.from(
-        { length: 10 },
-        (v, k) =>
-          ({
-            id: uuidv4(),
-            chatId: '1',
-            parentChatId: null,
-            content: 'Hi, there',
-            mode: 'full',
-            createdAt: new Date().toISOString(),
-            author: {
-              username: `Steve Jobs ${k}`,
-            },
-          } as Message)
-      ),
+      [{
+        id: uuidv4(),
+        chatId: '1',
+        content: 'What`s up',
+        emoji: ['&#x1F602', '&#x1F618', '&#x1F631'],
+        createdAt: new Date().toISOString(),
+        author: {
+          username: 'Steve Jobs',
+        },
+      }, {
+        id: uuidv4(),
+        chatId: '1',
+        content: 'Hi, how are u doing?',
+        createdAt: new Date().toISOString(),
+        author: {
+          username: 'Igor Morev (Frontend Dev)',
+        },
+      }] as Message[]
     ],
     [
       '4',
@@ -38,10 +41,10 @@ export class MessageApiService {
         {
           id: uuidv4(),
           chatId: '4',
-          content: '234dfgdfg',
+          content: 'Hi',
           createdAt: new Date().toISOString(),
           author: {
-            username: 'Steve Jobs',
+            username: 'Igor Morev (Frontend Dev)',
           },
         } as Message,
       ],
@@ -54,8 +57,8 @@ export class MessageApiService {
 
           content: 'Hello',
           chatId: 'channel-1',
-          parentChatId: null,
           createdAt: new Date().toISOString(),
+          emoji: ['&#x1F606', '&#x1F44D', '&#x1F60D', '&#x1F602', '&#x1F618', '&#x1F631'],
           author: {
             username: 'Jeff Bezos',
           },
@@ -94,6 +97,7 @@ export class MessageApiService {
           content: 'What`s up',
           chatId: 'channel-1',
           parentChatId: null,
+          emoji: ['&#x1F602', '&#x1F618', '&#x1F631'],
           createdAt: new Date().toISOString(),
           author: {
             username: 'Bill Gates',
@@ -130,6 +134,7 @@ export class MessageApiService {
           chatId: 'thread-1',
           parentChatId: 'channel-1',
           createdAt: new Date().toISOString(),
+          emoji: ['&#x1F606', '&#x1F44D', '&#x1F60D'],
           author: {
             username: 'John Carmack',
           },

@@ -7,11 +7,16 @@ import {
   Output,
   TemplateRef,
   ViewChild,
+  ViewContainerRef,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TuiAvatarModule } from '@taiga-ui/kit';
 import { Message } from '@angular-slack/slack-api';
 import { FilePreviewComponent } from '@angular-slack/file-preview';
+
+import { PickerComponent } from '@ctrl/ngx-emoji-mart';
+
+import {OverlayModule, OverlayConfig, Overlay, OverlayRef} from '@angular/cdk/overlay';
 
 import {
   TuiButtonModule,
@@ -24,6 +29,9 @@ import {
 } from '@taiga-ui/core';
 
 import { TuiDestroyService } from '@taiga-ui/cdk';
+import { TemplatePortal } from '@angular/cdk/portal';
+
+type DropdownConfig = Partial<Record<'emoji' | 'thread', boolean>>;
 
 @Component({
   selector: 'as-chat-message',
@@ -38,6 +46,8 @@ import { TuiDestroyService } from '@taiga-ui/cdk';
     TuiHostedDropdownModule,
     TuiDataListModule,
     TuiButtonModule,
+    PickerComponent,
+    OverlayModule
   ],
   templateUrl: './chat-message.component.html',
   styleUrl: './chat-message.component.scss',
@@ -45,21 +55,41 @@ import { TuiDestroyService } from '@taiga-ui/cdk';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChatMessageComponent {
+  private _config = new OverlayConfig({});
+
   @ViewChild('contentSample')
   readonly contentSample?: TemplateRef<Record<string, unknown>>;
 
-  @Input() message!: Message | null;
+  @ViewChild('emojiContent')
+  readonly emojiContent?: TemplateRef<unknown>;
+
+  @Input({required: true}) message!: Message | null;
+
+  @Input() dropdownConfig: DropdownConfig = {
+    emoji: true,
+    thread: true,
+  };
 
   @Output() openThreadEvent = new EventEmitter<Message>();
-  @Input() hasDropdown = true;
+  @Output() selectEmojiEvent = new EventEmitter<string[]>();
 
-  index = 0;
 
-  open = false;
+  dropdownOpen = false;
+  emojiOverlayRef?: OverlayRef;
+
+  get hasDropdown() {
+    if (this.dropdownConfig) {
+      return Object.keys(this.dropdownConfig).some(key => this.dropdownConfig[key as keyof DropdownConfig])
+    }
+
+    return false;
+  }
 
   constructor(
     @Inject(TuiDialogService)
-    private readonly dialogs: TuiDialogService
+    private readonly dialogs: TuiDialogService,
+    private overlay: Overlay,
+    private containerRef: ViewContainerRef
   ) {}
 
   show(file: File): void {
@@ -72,5 +102,40 @@ export class ChatMessageComponent {
 
   openThread() {
     this.openThreadEvent.emit(this.message!);
+  }
+
+  openEmoji(event: MouseEvent) {
+    this.dropdownOpen = false;
+
+    this._config.positionStrategy = this.overlay.position().global().left(`${event.clientX}px`).top(`${event.clientY}px`);
+    this.emojiOverlayRef = this.overlay.create(this._config);
+
+    const filePreviewPortal = new TemplatePortal(this.emojiContent!, this.containerRef);
+
+    this.emojiOverlayRef.attach(filePreviewPortal);
+    this.emojiOverlayRef.outsidePointerEvents().subscribe(() => {
+      if (this.emojiOverlayRef) {
+        this.emojiOverlayRef.detach();
+      }
+    })
+  }
+
+  onEmojiDelete(emoji: string) {
+    const htmlCodes = this.message!.emoji || [];
+
+    this.selectEmojiEvent.emit(htmlCodes.filter(code => code !== emoji));
+  }
+
+  onEmojiSelect(event: {emoji: {
+    unified: string
+  }}) {
+    const htmlCode = `&#x${event.emoji.unified}`;
+    const htmlCodes = this.message!.emoji || [];
+    const updatedHtmlCodes = htmlCodes.includes(htmlCode) ? htmlCodes.filter(code => code !== htmlCode) : [...htmlCodes, htmlCode];
+
+    this.selectEmojiEvent.emit(updatedHtmlCodes);
+    if (this.emojiOverlayRef) {
+      this.emojiOverlayRef.detach();
+    }
   }
 }

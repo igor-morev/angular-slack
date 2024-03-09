@@ -1,8 +1,8 @@
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { createReducer, on, Action } from '@ngrx/store';
 
-import * as ThreadsActions from './threads.actions';
 import { ThreadsEntity } from './threads.models';
+import { ThreadsApiActions } from './threads.actions';
 
 export const THREADS_FEATURE_KEY = 'threads';
 
@@ -28,22 +28,22 @@ export const initialThreadsState: ThreadsState = threadsAdapter.getInitialState(
 
 const reducer = createReducer(
   initialThreadsState,
-  on(ThreadsActions.initThreads, (state) => ({
+  on(ThreadsApiActions.init, (state) => ({
     ...state,
     loaded: false,
     error: null,
   })),
-  on(ThreadsActions.loadThreadsSuccess, (state, { threads }) =>
+  on(ThreadsApiActions.loadSuccess, (state, { threads }) =>
     threadsAdapter.setAll(threads, { ...state, loaded: true })
   ),
-  on(ThreadsActions.loadThreadsFailure, (state, { error }) => ({
+  on(ThreadsApiActions.loadFailure, (state, { error }) => ({
     ...state,
     error,
   })),
-  on(ThreadsActions.createThreadSuccess, (state, { thread }) =>
+  on(ThreadsApiActions.createSuccess, (state, { thread }) =>
     threadsAdapter.addOne(thread, { ...state })
   ),
-  on(ThreadsActions.updateThread, (state, { id, payload }) =>
+  on(ThreadsApiActions.update, (state, { id, payload }) =>
     threadsAdapter.updateOne(
       {
         id,

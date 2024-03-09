@@ -8,6 +8,7 @@ export interface Message {
   content: string;
   createdAt: string;
   attachments?: File[];
+  emoji: string[];
   thread?: Partial<MessageThread> | null;
   author: User;
   mode: 'full' | 'compact';
