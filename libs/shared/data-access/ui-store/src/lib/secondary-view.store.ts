@@ -5,7 +5,7 @@ import { signalStore, withState, withMethods, patchState } from '@ngrx/signals';
 type ViewType = 'thread' | 'profile';
 
 type ThreadViewData = {
-  message: Message;
+  messageId: string;
 };
 
 type SecondaryViewState = {

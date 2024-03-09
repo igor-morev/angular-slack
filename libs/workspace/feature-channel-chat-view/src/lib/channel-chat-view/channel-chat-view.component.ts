@@ -110,7 +110,7 @@ export class ChannelChatViewComponent implements OnInit, OnDestroy {
     this.secondaryViewStore.close();
     setTimeout(() => {
       this.secondaryViewStore.open('thread', ThreadChatViewComponent, {
-        message,
+        messageId: message.id
       });
     });
   }

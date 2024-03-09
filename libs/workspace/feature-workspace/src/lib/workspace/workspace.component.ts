@@ -9,7 +9,6 @@ import { TuiLetModule } from '@taiga-ui/cdk';
 import { initContacts, selectAllContacts } from '@angular-slack/data-access-contacts';
 import { initChannels, selectAllChannels } from '@angular-slack/data-access-channels';
 import { SecondaryViewStore } from '@angular-slack/ui-store';
-import { initThreads } from '@angular-slack/data-access-threads';
 
 @Component({
   selector: 'as-workspace',
@@ -43,7 +42,6 @@ export class WorkspaceComponent {
   ngOnInit() {
     this.store.dispatch(initContacts());
     this.store.dispatch(initChannels());
-    this.store.dispatch(initThreads());
   }
 
   get activeSecondaryView() {

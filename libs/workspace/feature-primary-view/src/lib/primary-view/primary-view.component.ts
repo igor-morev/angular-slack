@@ -16,6 +16,7 @@ import {
   selectMessagesByChatId,
   selectScrollToMessageIndex,
   sendMessage,
+  updateMessage,
 } from '@angular-slack/data-access-messages';
 import { TuiAvatarModule } from '@taiga-ui/kit';
 import { TuiSvgModule } from '@taiga-ui/core';
@@ -102,7 +103,7 @@ export class PrimaryViewComponent implements OnInit, OnDestroy {
     this.secondaryViewStore.close();
     setTimeout(() => {
       this.secondaryViewStore.open('thread', ThreadChatViewComponent, {
-        message,
+        messageId: message.id,
       });
     });
   }
@@ -120,6 +121,16 @@ export class PrimaryViewComponent implements OnInit, OnDestroy {
         content: content,
       })
     );
+  }
+
+  selectEmoji(emoji: string[], message: Message, chatId: string) {
+    this.store.dispatch(updateMessage({
+      id: message.id,
+      chatId,
+      updateParams: {
+        emoji,
+      }
+    }))
   }
 
   ngOnDestroy() {

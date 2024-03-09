@@ -92,20 +92,20 @@ export class MessagesEffects {
       switchMap(([{ action, response }, channel, contact]) =>
         of(MessagesActions.sendMessageSuccess({ message: response.data })).pipe(
           tap(() => {
-            this.store.dispatch(
-              MessagesActions.updateMessage({
-                id: action.parentMessage.id,
-                chatId: action.parentMessage.chatId!,
-                updateParams: {
-                  thread: {
-                    messagesCount: response.chatCount,
+            
+
+            if (action.threadId) {
+              this.store.dispatch(
+                updateThread({
+                  id: action.threadId,
+                  payload: {
+                    chatId: response.data.chatId,
                     authors: response.authors,
                   },
-                },
-              })
-            );
-
-            if (!action.threadId) {
+                })
+              );
+              
+            } else {
               this.store.dispatch(
                 createThread({
                   payload: {
@@ -121,17 +121,21 @@ export class MessagesEffects {
                   },
                 })
               );
-            } else {
-              this.store.dispatch(
-                updateThread({
-                  id: action.threadId,
-                  payload: {
-                    chatId: response.data.chatId,
+            }
+
+
+            this.store.dispatch(
+              MessagesActions.updateMessage({
+                id: action.parentMessage.id,
+                chatId: action.parentMessage.chatId!,
+                updateParams: {
+                  thread: {
+                    messagesCount: response.chatCount,
                     authors: response.authors,
                   },
-                })
-              );
-            }
+                },
+              })
+            );
           })
         )
       ),

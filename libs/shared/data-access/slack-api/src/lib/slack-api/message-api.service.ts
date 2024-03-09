@@ -54,7 +54,6 @@ export class MessageApiService {
 
           content: 'Hello',
           chatId: 'channel-1',
-          parentChatId: null,
           createdAt: new Date().toISOString(),
           author: {
             username: 'Jeff Bezos',

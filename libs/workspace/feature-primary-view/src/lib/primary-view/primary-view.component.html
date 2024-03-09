@@ -15,6 +15,7 @@
           *cdkVirtualFor="let message of messages$ | async; trackBy: trackBy"
           [message]="message"
           (openThreadEvent)="openThread($event)"
+          (selectEmojiEvent)="selectEmoji($event, message, chat.chatId)"
         >
         </as-chat-message>
       </cdk-virtual-scroll-viewport>

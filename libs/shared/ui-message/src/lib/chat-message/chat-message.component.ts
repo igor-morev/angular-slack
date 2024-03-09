@@ -31,6 +31,8 @@ import {
 import { TuiDestroyService } from '@taiga-ui/cdk';
 import { TemplatePortal } from '@angular/cdk/portal';
 
+type DropdownConfig = Partial<Record<'emoji' | 'thread', boolean>>;
+
 @Component({
   selector: 'as-chat-message',
   standalone: true,
@@ -61,11 +63,9 @@ export class ChatMessageComponent {
   @ViewChild('emojiContent')
   readonly emojiContent?: TemplateRef<unknown>;
 
-  @Input() message!: Message | null;
+  @Input({required: true}) message!: Message | null;
 
-  @Input() hasDropdown = true;
-
-  @Input() dropdownConfig: Record<'emoji' | 'thread', boolean> = {
+  @Input() dropdownConfig: DropdownConfig = {
     emoji: true,
     thread: true,
   };
@@ -76,6 +76,14 @@ export class ChatMessageComponent {
 
   dropdownOpen = false;
   emojiOverlayRef?: OverlayRef;
+
+  get hasDropdown() {
+    if (this.dropdownConfig) {
+      return Object.keys(this.dropdownConfig).some(key => this.dropdownConfig[key as keyof DropdownConfig])
+    }
+
+    return false;
+  }
 
   constructor(
     @Inject(TuiDialogService)

@@ -13,8 +13,10 @@ import { Store } from '@ngrx/store';
 import {
   initMessages,
   selectMessagesByChatId,
+  selectMessagesEntities,
   selectScrollToMessageIndex,
   sendThreadMessage,
+  updateMessage,
 } from '@angular-slack/data-access-messages';
 import { MessageEditorComponent } from '@angular-slack/message-editor';
 import { FilePreviewComponent } from '@angular-slack/file-preview';
@@ -23,11 +25,9 @@ import {
   CdkVirtualScrollViewport,
   ScrollingModule,
 } from '@angular/cdk/scrolling';
-import { delay, map, Observable, of, takeUntil } from 'rxjs';
-import { Message, Thread } from '@angular-slack/slack-api';
+import { combineLatest, delay, map, Observable, of, takeUntil } from 'rxjs';
+import { Message } from '@angular-slack/slack-api';
 import { TuiDestroyService, TuiLetModule } from '@taiga-ui/cdk';
-import { selectThreadsEntities } from '@angular-slack/data-access-threads';
-
 @Component({
   selector: 'as-thread-chat-view',
   standalone: true,
@@ -46,15 +46,15 @@ import { selectThreadsEntities } from '@angular-slack/data-access-threads';
   providers: [TuiDestroyService],
 })
 export class ThreadChatViewComponent implements OnInit {
-  @Input() message!: Message;
+  @Input() messageId!: string;
 
   private secondaryViewStore = inject(SecondaryViewStore);
   private store = inject(Store);
   private destroy$ = inject(TuiDestroyService);
 
-  thread$: Observable<Thread | undefined | null> = of(null);
-
   messages$: Observable<Message[]> = of([] as Message[]);
+
+  threadMessage$!: Observable<Message>;
 
   @ViewChild(CdkVirtualScrollViewport)
   virtualScrollViewport?: CdkVirtualScrollViewport;
@@ -62,16 +62,16 @@ export class ThreadChatViewComponent implements OnInit {
   selectScrollToMessageIndex$ = this.store.select(selectScrollToMessageIndex);
 
   ngOnInit() {
-    this.thread$ = this.store
-      .select(selectThreadsEntities)
-      .pipe(map((threads) => threads[this.message.id!]));
+    this.threadMessage$ = this.store
+      .select(selectMessagesEntities)
+      .pipe(map((messages) => messages[this.messageId!]!));
 
-    this.messages$ = this.store
-      .select(selectMessagesByChatId(this.message.id!))
+    this.messages$ = combineLatest([this.threadMessage$, this.store
+      .select(selectMessagesByChatId(this.messageId!))])
       .pipe(
-        map((messages) => [
+        map(([threadMessage, messages]) => [
           {
-            ...this.message,
+            ...threadMessage,
             thread: null,
             mode: 'full',
           },
@@ -79,13 +79,13 @@ export class ThreadChatViewComponent implements OnInit {
         ])
       );
 
-    if (this.message.thread) {
       this.store.dispatch(
         initMessages({
-          chatId: this.message.id,
+          chatId: this.messageId,
         })
       );
 
+    
       this.selectScrollToMessageIndex$
         .pipe(delay(0), takeUntil(this.destroy$))
         .subscribe((index) => {
@@ -93,7 +93,6 @@ export class ThreadChatViewComponent implements OnInit {
             this.virtualScrollViewport.scrollToIndex(index);
           }
         });
-    }
   }
 
   trackBy(_: any, message: Message): string {
@@ -102,18 +101,29 @@ export class ThreadChatViewComponent implements OnInit {
 
   submit(
     event: { content: string; attachments: File[] },
-    thread?: Thread | null
+    threadMessage: Message
   ) {
     const { content, attachments } = event;
 
     this.store.dispatch(
       sendThreadMessage({
-        threadId: thread ? thread.id : null,
-        parentMessage: this.message,
+        threadId: threadMessage.thread ? threadMessage.thread.id! : null,
+        parentMessage: threadMessage,
         attachments,
         content,
       })
     );
+  }
+
+  selectEmoji(emoji: string[], message: Message) {
+    this.store.dispatch(updateMessage({
+      id: message.id,
+      chatId: message.chatId,
+      updateParams: {
+        emoji,
+      }
+    }))
+   
   }
 
   close() {
