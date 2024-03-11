@@ -40,7 +40,6 @@ export class MessagesEffects {
           action.chatId,
           action.content,
           action.attachments,
-          action.parentChatId
         )
       ),
       switchMap((response) =>
@@ -79,7 +78,7 @@ export class MessagesEffects {
       switchMap((action) =>
         this.messageApiService
           .sendMessage(
-            action.parentMessage.id,
+            action.message.id,
             action.content,
             action.attachments
           )
@@ -92,12 +91,10 @@ export class MessagesEffects {
       switchMap(([{ action, response }, channel, contact]) =>
         of(MessagesApiActions.sendSuccess({ message: response.data })).pipe(
           tap(() => {
-            
-
-            if (action.threadId) {
+            if (action.message.thread) {
               this.store.dispatch(
                 ThreadsApiActions.update({
-                  id: action.threadId,
+                  id: action.message.thread.id!,
                   payload: {
                     chatId: response.data.chatId,
                     authors: response.authors,
@@ -109,7 +106,7 @@ export class MessagesEffects {
               this.store.dispatch(
                 ThreadsApiActions.create({
                   payload: {
-                    id: action.parentMessage.id,
+                    id: action.message.id,
                     chatId: response.data.chatId,
                     authors: response.authors,
                     chatName: channel
@@ -117,7 +114,7 @@ export class MessagesEffects {
                       : contact
                       ? contact.name
                       : '',
-                    message: action.parentMessage,
+                    message: action.message,
                   },
                 })
               );
@@ -126,8 +123,8 @@ export class MessagesEffects {
 
             this.store.dispatch(
               MessagesApiActions.update({
-                id: action.parentMessage.id,
-                chatId: action.parentMessage.chatId!,
+                id: action.message.id,
+                chatId: action.message.chatId!,
                 updateParams: {
                   thread: {
                     messagesCount: response.chatCount,

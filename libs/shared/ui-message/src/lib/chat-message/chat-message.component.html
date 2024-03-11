@@ -7,8 +7,7 @@
     #dropdown="tuiDropdown"
     [tuiDropdown]="hasDropdown ? menuContent : null"
   >
-    <div class="flex" 
-    >
+    <div class="flex">
       <div class="mr-2 w-14">
         <tui-avatar
           [text]="message.author.username"
@@ -50,9 +49,13 @@
     </div>
 
     <div class="mt-2 ml-16" *ngIf="message.emoji?.length">
-      <code         *ngFor="let emoji of message.emoji;" [innerHTML]="emoji" class="mr-1 text-base" (click)="onEmojiDelete(emoji)"
+      <code
+        *ngFor="let emoji of message.emoji"
+        [innerHTML]="emoji"
+        class="mr-1 text-base"
+        (click)="onEmojiDelete(emoji)"
       >
-    </code>
+      </code>
     </div>
 
     <button
@@ -82,7 +85,7 @@
       <tui-data-list class="flex" tuiDataListDropdownManager role="menu">
         <button
           tuiOption
-          (click)="openEmoji($event);"
+          (click)="openEmojiPanel($event); dropdown.toggle(false)"
           *ngIf="dropdownConfig.emoji"
         >
           Add reaction...
@@ -96,13 +99,10 @@
           Reply to thread
           <tui-svg src="tuiIconMessageSquare" class="ml-1"></tui-svg>
         </button>
-        
       </tui-data-list>
     </ng-template>
   </div>
 </ng-container>
-
-
 
 <ng-template #contentSample>
   <div class="content">
@@ -125,9 +125,9 @@
 
 <ng-template #emojiContent>
   <emoji-mart
+    color="#191D32"
     title="Pick your emoji…"
     emoji="point_up"
     (emojiSelect)="onEmojiSelect($event)"
   ></emoji-mart>
 </ng-template>
-

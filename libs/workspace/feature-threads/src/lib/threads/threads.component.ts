@@ -47,8 +47,7 @@ export class ThreadsComponent {
     const { content, attachments } = event;
     this.store.dispatch(
       MessagesThreadApiActions.send({
-        threadId: thread.id,
-        parentMessage: thread.message,
+        message: thread.message,
         attachments,
         content: content,
       })

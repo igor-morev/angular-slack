@@ -4,7 +4,6 @@ import { MessageThread } from './thread';
 export interface Message {
   id: string;
   chatId: string;
-  parentChatId: string | null;
   content: string;
   createdAt: string;
   attachments?: File[];
