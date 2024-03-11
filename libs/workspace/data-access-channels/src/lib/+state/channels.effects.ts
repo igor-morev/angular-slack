@@ -13,9 +13,7 @@ export class ChannelsEffects {
     this.actions$.pipe(
       ofType(ChannelsApiActions.init),
       switchMap(() => this.channelApiService.getChannels()),
-      switchMap((channels) =>
-        of(ChannelsApiActions.loadSuccess({ channels }))
-      ),
+      switchMap((channels) => of(ChannelsApiActions.loadSuccess({ channels }))),
       catchError((error) => {
         console.error('Error', error);
         return of(ChannelsApiActions.loadFailure({ error }));

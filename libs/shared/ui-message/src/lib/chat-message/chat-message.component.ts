@@ -16,7 +16,12 @@ import { FilePreviewComponent } from '@angular-slack/file-preview';
 
 import { PickerComponent } from '@ctrl/ngx-emoji-mart';
 
-import {OverlayModule, OverlayConfig, Overlay, OverlayRef} from '@angular/cdk/overlay';
+import {
+  OverlayModule,
+  OverlayConfig,
+  Overlay,
+  OverlayRef,
+} from '@angular/cdk/overlay';
 
 import {
   TuiButtonModule,
@@ -48,7 +53,7 @@ type DropdownConfig = Partial<Record<'emoji' | 'thread', boolean>>;
     TuiDataListModule,
     TuiButtonModule,
     PickerComponent,
-    OverlayModule
+    OverlayModule,
   ],
   templateUrl: './chat-message.component.html',
   styleUrl: './chat-message.component.scss',
@@ -64,7 +69,7 @@ export class ChatMessageComponent {
   @ViewChild('emojiContent')
   readonly emojiContent?: TemplateRef<unknown>;
 
-  @Input({required: true}) message!: Message | null;
+  @Input({ required: true }) message!: Message | null;
 
   @Input() dropdownConfig: DropdownConfig = {
     emoji: true,
@@ -74,13 +79,14 @@ export class ChatMessageComponent {
   @Output() openThreadEvent = new EventEmitter<Message>();
   @Output() selectEmojiEvent = new EventEmitter<string[]>();
 
-
   dropdownOpen = false;
   emojiOverlayRef?: OverlayRef;
 
   get hasDropdown() {
     if (this.dropdownConfig) {
-      return Object.keys(this.dropdownConfig).some(key => this.dropdownConfig[key as keyof DropdownConfig])
+      return Object.keys(this.dropdownConfig).some(
+        (key) => this.dropdownConfig[key as keyof DropdownConfig]
+      );
     }
 
     return false;
@@ -91,15 +97,15 @@ export class ChatMessageComponent {
     private readonly dialogs: TuiDialogService,
     private overlay: Overlay,
     private containerRef: ViewContainerRef,
-    private destroy$: TuiDestroyService,
-
+    private destroy$: TuiDestroyService
   ) {}
 
   show(file: File): void {
     this.dialogs
       .open(this.contentSample, {
         data: file,
-      }).pipe(takeUntil(this.destroy$))
+      })
+      .pipe(takeUntil(this.destroy$))
       .subscribe();
   }
 
@@ -108,54 +114,67 @@ export class ChatMessageComponent {
   }
 
   openEmojiPanel(event: MouseEvent) {
-    this._config.positionStrategy = this.overlay.position().flexibleConnectedTo({
-      x: event.clientX,
-      y: event.clientY,
-    }).withPositions([
-      {
-        originX: 'center',
-        originY: 'center',
-        overlayX: 'start',
-        overlayY: 'top',
-      },
-      {
-        originX: 'center',
-        originY: 'center',
-        overlayX: 'start',
-        overlayY: 'center',
-      },
-      {
-        originX: 'center',
-        originY: 'center',
-        overlayX: 'start',
-        overlayY: 'bottom',
-      },
-    ])
+    this._config.positionStrategy = this.overlay
+      .position()
+      .flexibleConnectedTo({
+        x: event.clientX,
+        y: event.clientY,
+      })
+      .withPositions([
+        {
+          originX: 'center',
+          originY: 'center',
+          overlayX: 'start',
+          overlayY: 'top',
+        },
+        {
+          originX: 'center',
+          originY: 'center',
+          overlayX: 'start',
+          overlayY: 'center',
+        },
+        {
+          originX: 'center',
+          originY: 'center',
+          overlayX: 'start',
+          overlayY: 'bottom',
+        },
+      ]);
 
     this.emojiOverlayRef = this.overlay.create(this._config);
 
-    const filePreviewPortal = new TemplatePortal(this.emojiContent!, this.containerRef);
+    const filePreviewPortal = new TemplatePortal(
+      this.emojiContent!,
+      this.containerRef
+    );
 
     this.emojiOverlayRef.attach(filePreviewPortal);
-    this.emojiOverlayRef.outsidePointerEvents().pipe(takeUntil(this.destroy$)).subscribe(() => {
-      if (this.emojiOverlayRef) {
-        this.emojiOverlayRef.detach();
-      }
-    })
+    this.emojiOverlayRef
+      .outsidePointerEvents()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(() => {
+        if (this.emojiOverlayRef) {
+          this.emojiOverlayRef.detach();
+        }
+      });
   }
 
   onEmojiDelete(emoji: string) {
     const htmlCodes = this.message!.emoji || [];
 
-    this.selectEmojiEvent.emit(htmlCodes.filter(code => code !== emoji));
+    this.selectEmojiEvent.emit(htmlCodes.filter((code) => code !== emoji));
   }
 
-  onEmojiSelect(event: {emoji: {
-    unified: string
-  }}) {
+  onEmojiSelect(event: {
+    emoji: {
+      unified: string;
+    };
+  }) {
     const htmlCode = `&#x${event.emoji.unified}`;
     const htmlCodes = this.message!.emoji || [];
-    const updatedHtmlCodes = htmlCodes.includes(htmlCode) ? htmlCodes.filter(code => code !== htmlCode) : [...htmlCodes, htmlCode];
+    const updatedHtmlCodes = htmlCodes.includes(htmlCode)
+      ? htmlCodes.filter((code) => code !== htmlCode)
+      : [...htmlCodes, htmlCode];
 
     this.selectEmojiEvent.emit(updatedHtmlCodes);
     if (this.emojiOverlayRef) {

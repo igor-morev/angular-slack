@@ -2,7 +2,10 @@ import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { createReducer, on, Action } from '@ngrx/store';
 
 import { MessagesEntity } from './messages.models';
-import { MessagesApiActions, scrollToMessage } from '@angular-slack/data-access-messages';
+import {
+  MessagesApiActions,
+  scrollToMessage,
+} from '@angular-slack/data-access-messages';
 
 export const MESSAGES_FEATURE_KEY = 'messages';
 

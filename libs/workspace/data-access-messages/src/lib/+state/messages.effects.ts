@@ -8,7 +8,11 @@ import { selectAllMessages } from './messages.selectors';
 
 import { selectSelectedChannelsEntity } from '@angular-slack/data-access-channels';
 import { selectSelectedContactEntity } from '@angular-slack/data-access-contacts';
-import { MessagesApiActions, MessagesThreadApiActions, scrollToMessage } from './messages.actions';
+import {
+  MessagesApiActions,
+  MessagesThreadApiActions,
+  scrollToMessage,
+} from './messages.actions';
 
 @Injectable()
 export class MessagesEffects {
@@ -22,9 +26,7 @@ export class MessagesEffects {
       switchMap((action) =>
         this.messageApiService.getMessagesBy(action.chatId)
       ),
-      switchMap((messages) =>
-        of(MessagesApiActions.loadSuccess({ messages }))
-      ),
+      switchMap((messages) => of(MessagesApiActions.loadSuccess({ messages }))),
       catchError((error) => {
         console.error('Error', error);
         return of(MessagesApiActions.loadFailure({ error }));
@@ -39,7 +41,7 @@ export class MessagesEffects {
         this.messageApiService.sendMessage(
           action.chatId,
           action.content,
-          action.attachments,
+          action.attachments
         )
       ),
       switchMap((response) =>
@@ -62,9 +64,7 @@ export class MessagesEffects {
           action.updateParams
         )
       ),
-      switchMap((message) =>
-        of(MessagesApiActions.updateSuccess({ message }))
-      ),
+      switchMap((message) => of(MessagesApiActions.updateSuccess({ message }))),
       catchError((error) => {
         console.error('Error', error);
         return of(MessagesApiActions.updateFailure({ error }));
@@ -77,11 +77,7 @@ export class MessagesEffects {
       ofType(MessagesThreadApiActions.send),
       switchMap((action) =>
         this.messageApiService
-          .sendMessage(
-            action.message.id,
-            action.content,
-            action.attachments
-          )
+          .sendMessage(action.message.id, action.content, action.attachments)
           .pipe(map((response) => ({ action, response })))
       ),
       withLatestFrom(
@@ -101,7 +97,6 @@ export class MessagesEffects {
                   },
                 })
               );
-              
             } else {
               this.store.dispatch(
                 ThreadsApiActions.create({
@@ -119,7 +114,6 @@ export class MessagesEffects {
                 })
               );
             }
-
 
             this.store.dispatch(
               MessagesApiActions.update({

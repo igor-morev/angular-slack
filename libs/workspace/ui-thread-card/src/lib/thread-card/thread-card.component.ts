@@ -54,7 +54,7 @@ export class ThreadCardComponent {
   selectEmoji(emoji: string[], message: Message) {
     this.updateMessageEmojiEvent.emit({
       messageId: message.id,
-      emoji
+      emoji,
     });
   }
 }

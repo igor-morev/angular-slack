@@ -5,7 +5,11 @@ import {
   TuiAlertModule,
   TUI_SANITIZER,
 } from '@taiga-ui/core';
-import { ChangeDetectionStrategy, Component, ViewContainerRef } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ViewContainerRef,
+} from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -18,7 +22,5 @@ import { RouterModule } from '@angular/router';
   providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
 })
 export class AppComponent {
-  constructor(public viewRef: ViewContainerRef) {
-    
-  }
+  constructor(public viewRef: ViewContainerRef) {}
 }

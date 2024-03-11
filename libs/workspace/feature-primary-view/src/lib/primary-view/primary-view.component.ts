@@ -122,13 +122,15 @@ export class PrimaryViewComponent implements OnInit, OnDestroy {
   }
 
   selectEmoji(emoji: string[], message: Message, chatId: string) {
-    this.store.dispatch(MessagesApiActions.update({
-      id: message.id,
-      chatId,
-      updateParams: {
-        emoji,
-      }
-    }))
+    this.store.dispatch(
+      MessagesApiActions.update({
+        id: message.id,
+        chatId,
+        updateParams: {
+          emoji,
+        },
+      })
+    );
   }
 
   ngOnDestroy() {

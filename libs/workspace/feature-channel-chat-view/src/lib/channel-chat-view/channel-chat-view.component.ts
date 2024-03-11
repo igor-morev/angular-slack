@@ -108,20 +108,22 @@ export class ChannelChatViewComponent implements OnInit, OnDestroy {
     this.secondaryViewStore.close();
     setTimeout(() => {
       this.secondaryViewStore.open('thread', ThreadChatViewComponent, {
-        messageId: message.id
+        messageId: message.id,
       });
     });
   }
 
   selectEmoji(emoji: string[], message: Message, chatId: string) {
     console.log(emoji);
-    this.store.dispatch(MessagesApiActions.update({
-      id: message.id,
-      chatId,
-      updateParams: {
-        emoji,
-      }
-    }))
+    this.store.dispatch(
+      MessagesApiActions.update({
+        id: message.id,
+        chatId,
+        updateParams: {
+          emoji,
+        },
+      })
+    );
   }
 
   trackBy(_: any, message: Message): string {

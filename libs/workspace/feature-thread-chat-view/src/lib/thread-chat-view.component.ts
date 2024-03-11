@@ -15,7 +15,7 @@ import {
   selectMessagesEntities,
   selectScrollToMessageIndex,
   MessagesThreadApiActions,
-  MessagesApiActions
+  MessagesApiActions,
 } from '@angular-slack/data-access-messages';
 import { MessageEditorComponent } from '@angular-slack/message-editor';
 import { FilePreviewComponent } from '@angular-slack/file-preview';
@@ -65,33 +65,33 @@ export class ThreadChatViewComponent implements OnInit {
       .select(selectMessagesEntities)
       .pipe(map((messages) => messages[this.messageId!]!));
 
-    this.messages$ = combineLatest([this.threadMessage$, this.store
-      .select(selectMessagesByChatId(this.messageId!))])
-      .pipe(
-        map(([threadMessage, messages]) => [
-          {
-            ...threadMessage,
-            thread: null,
-            mode: 'full',
-          },
-          ...messages,
-        ])
-      );
+    this.messages$ = combineLatest([
+      this.threadMessage$,
+      this.store.select(selectMessagesByChatId(this.messageId!)),
+    ]).pipe(
+      map(([threadMessage, messages]) => [
+        {
+          ...threadMessage,
+          thread: null,
+          mode: 'full',
+        },
+        ...messages,
+      ])
+    );
 
-      this.store.dispatch(
-        MessagesApiActions.init({
-          chatId: this.messageId,
-        })
-      );
+    this.store.dispatch(
+      MessagesApiActions.init({
+        chatId: this.messageId,
+      })
+    );
 
-    
-      this.selectScrollToMessageIndex$
-        .pipe(delay(0), takeUntil(this.destroy$))
-        .subscribe((index) => {
-          if (index !== undefined && this.virtualScrollViewport) {
-            this.virtualScrollViewport.scrollToIndex(index);
-          }
-        });
+    this.selectScrollToMessageIndex$
+      .pipe(delay(0), takeUntil(this.destroy$))
+      .subscribe((index) => {
+        if (index !== undefined && this.virtualScrollViewport) {
+          this.virtualScrollViewport.scrollToIndex(index);
+        }
+      });
   }
 
   trackBy(_: any, message: Message): string {
@@ -114,14 +114,15 @@ export class ThreadChatViewComponent implements OnInit {
   }
 
   selectEmoji(emoji: string[], message: Message) {
-    this.store.dispatch(MessagesApiActions.update({
-      id: message.id,
-      chatId: message.chatId,
-      updateParams: {
-        emoji,
-      }
-    }))
-   
+    this.store.dispatch(
+      MessagesApiActions.update({
+        id: message.id,
+        chatId: message.chatId,
+        updateParams: {
+          emoji,
+        },
+      })
+    );
   }
 
   close() {

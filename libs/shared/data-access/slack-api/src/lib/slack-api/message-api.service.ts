@@ -16,24 +16,27 @@ export class MessageApiService {
   messages: Map<string, Message[]> = new Map([
     [
       '1',
-      [{
-        id: uuidv4(),
-        chatId: '1',
-        content: 'What`s up',
-        emoji: ['&#x1F602', '&#x1F618', '&#x1F631'],
-        createdAt: new Date().toISOString(),
-        author: {
-          username: 'Steve Jobs',
+      [
+        {
+          id: uuidv4(),
+          chatId: '1',
+          content: 'What`s up',
+          emoji: ['&#x1F602', '&#x1F618', '&#x1F631'],
+          createdAt: new Date().toISOString(),
+          author: {
+            username: 'Steve Jobs',
+          },
         },
-      }, {
-        id: uuidv4(),
-        chatId: '1',
-        content: 'Hi, how are u doing?',
-        createdAt: new Date().toISOString(),
-        author: {
-          username: 'Igor Morev (Frontend Dev)',
+        {
+          id: uuidv4(),
+          chatId: '1',
+          content: 'Hi, how are u doing?',
+          createdAt: new Date().toISOString(),
+          author: {
+            username: 'Igor Morev (Frontend Dev)',
+          },
         },
-      }] as Message[]
+      ] as Message[],
     ],
     [
       '4',
@@ -58,7 +61,14 @@ export class MessageApiService {
           content: 'Hello',
           chatId: 'channel-1',
           createdAt: new Date().toISOString(),
-          emoji: ['&#x1F606', '&#x1F44D', '&#x1F60D', '&#x1F602', '&#x1F618', '&#x1F631'],
+          emoji: [
+            '&#x1F606',
+            '&#x1F44D',
+            '&#x1F60D',
+            '&#x1F602',
+            '&#x1F618',
+            '&#x1F631',
+          ],
           author: {
             username: 'Jeff Bezos',
           },

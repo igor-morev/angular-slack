@@ -1,14 +1,17 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
-import { ThreadsApiActions, selectAllThreads } from '@angular-slack/data-access-threads';
+import {
+  ThreadsApiActions,
+  selectAllThreads,
+} from '@angular-slack/data-access-threads';
 import { Message, Thread } from '@angular-slack/slack-api';
 
 import { map, Observable } from 'rxjs';
 import {
   selectMessagesByChatId,
   MessagesApiActions,
-  MessagesThreadApiActions
+  MessagesThreadApiActions,
 } from '@angular-slack/data-access-messages';
 import { ThreadCardComponent } from '@angular-slack/thread-card';
 
@@ -30,13 +33,16 @@ export class ThreadsComponent {
   }
 
   getMessagesByChatId(thread: Thread): Observable<Message[]> {
-    return this.store
-    .select(selectMessagesByChatId(thread.chatId))
-    .pipe(map((messages) => [{
-      ...thread.message,
-      mode: 'full',
-      emoji: []
-    }, ...messages]));
+    return this.store.select(selectMessagesByChatId(thread.chatId)).pipe(
+      map((messages) => [
+        {
+          ...thread.message,
+          mode: 'full',
+          emoji: [],
+        },
+        ...messages,
+      ])
+    );
   }
 
   trackBy(_: any, thread: Thread): string {
@@ -54,16 +60,24 @@ export class ThreadsComponent {
     );
   }
 
-  updateEmoji({messageId, emoji}: {
-    messageId: string;
-    emoji: string[];
-  }, thread: Thread) {
-    this.store.dispatch(MessagesApiActions.update({
-      id: messageId,
-      chatId: thread.id,
-      updateParams: {
-        emoji,
-      }
-    }))
+  updateEmoji(
+    {
+      messageId,
+      emoji,
+    }: {
+      messageId: string;
+      emoji: string[];
+    },
+    thread: Thread
+  ) {
+    this.store.dispatch(
+      MessagesApiActions.update({
+        id: messageId,
+        chatId: thread.id,
+        updateParams: {
+          emoji,
+        },
+      })
+    );
   }
 }

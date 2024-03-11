@@ -26,9 +26,7 @@ export class ThreadsEffects {
           );
         });
       }),
-      switchMap((threads) =>
-        of(ThreadsApiActions.loadSuccess({ threads }))
-      ),
+      switchMap((threads) => of(ThreadsApiActions.loadSuccess({ threads }))),
       catchError((error) => {
         console.error('Error', error);
         return of(ThreadsApiActions.loadFailure({ error }));

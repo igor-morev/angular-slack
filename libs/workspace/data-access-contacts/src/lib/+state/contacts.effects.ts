@@ -13,9 +13,7 @@ export class ContactsEffects {
     this.actions$.pipe(
       ofType(ContactsApiActions.init),
       switchMap(() => this.contactApiService.getContacts()),
-      switchMap((contacts) =>
-        of(ContactsApiActions.loadSuccess({ contacts }))
-      ),
+      switchMap((contacts) => of(ContactsApiActions.loadSuccess({ contacts }))),
       catchError((error) => {
         console.error('Error', error);
         return of(ContactsApiActions.loadFailure({ error }));

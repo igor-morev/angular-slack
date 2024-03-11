@@ -6,8 +6,14 @@ import { Store } from '@ngrx/store';
 import { TuiExpandModule, TuiHintModule, TuiSvgModule } from '@taiga-ui/core';
 import { TuiAvatarModule } from '@taiga-ui/kit';
 import { TuiLetModule } from '@taiga-ui/cdk';
-import { ContactsApiActions, selectAllContacts } from '@angular-slack/data-access-contacts';
-import { ChannelsApiActions, selectAllChannels } from '@angular-slack/data-access-channels';
+import {
+  ContactsApiActions,
+  selectAllContacts,
+} from '@angular-slack/data-access-contacts';
+import {
+  ChannelsApiActions,
+  selectAllChannels,
+} from '@angular-slack/data-access-channels';
 import { SecondaryViewStore } from '@angular-slack/ui-store';
 
 @Component({

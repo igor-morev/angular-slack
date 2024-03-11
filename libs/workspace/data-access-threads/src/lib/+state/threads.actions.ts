@@ -17,5 +17,5 @@ export const ThreadsApiActions = createActionGroup({
     update: props<{ id: string; payload: UpdateThreadParams }>(),
     updateSuccess: props<{ thread: ThreadsEntity }>(),
     updateFailure: props<{ error: string | null }>(),
-  }
+  },
 });

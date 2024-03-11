@@ -6,11 +6,14 @@
     <tui-svg src="tuiIconClose" (click)="close()"></tui-svg>
   </button>
 </div>
-<div class="flex flex-col flex-1 min-h-0" *ngIf="threadMessage$ | async as threadMessage">
+<div
+  class="flex flex-col flex-1 min-h-0"
+  *ngIf="threadMessage$ | async as threadMessage"
+>
   <div class="body flex-1 overflow-y-auto">
     <cdk-virtual-scroll-viewport itemSize="60" class="h-full">
       <as-chat-message
-      [dropdownConfig]="{emoji: true}"
+        [dropdownConfig]="{ emoji: true }"
         *cdkVirtualFor="
           let message of messages$ | async;
           index as i;

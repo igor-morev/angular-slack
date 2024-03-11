@@ -12,7 +12,7 @@
     <as-chat-message
       *ngFor="let message of messages; trackBy: trackBy; index as i"
       [message]="message"
-      [dropdownConfig]="i > 0 ? {emoji: true} : {emoji: false}"
+      [dropdownConfig]="i > 0 ? { emoji: true } : { emoji: false }"
       (selectEmojiEvent)="selectEmoji($event, message)"
     >
     </as-chat-message>

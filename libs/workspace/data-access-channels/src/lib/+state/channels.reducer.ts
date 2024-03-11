@@ -2,7 +2,11 @@ import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { createReducer, on, Action } from '@ngrx/store';
 
 import { ChannelsEntity } from './channels.models';
-import { ChannelsApiActions, resetChannelSelection, selectChannelByChatId } from './channels.actions';
+import {
+  ChannelsApiActions,
+  resetChannelSelection,
+  selectChannelByChatId,
+} from './channels.actions';
 
 export const CHANNELS_FEATURE_KEY = 'channels';
 
