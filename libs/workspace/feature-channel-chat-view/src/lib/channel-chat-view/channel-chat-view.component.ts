@@ -28,7 +28,7 @@ import {
   selectChannelByChatId,
   selectSelectedChannelsEntity,
 } from '@angular-slack/data-access-channels';
-import { ChannelApiService, Message } from '@angular-slack/slack-api';
+import { Message } from '@angular-slack/slack-api';
 import { SecondaryViewStore } from '@angular-slack/ui-store';
 import { ThreadChatViewComponent } from '@angular-slack/thread-chat-view';
 import { MessageEditorComponent } from '@angular-slack/message-editor';
@@ -56,18 +56,12 @@ export class ChannelChatViewComponent implements OnInit, OnDestroy {
 
   private destroy$ = inject(TuiDestroyService);
 
-  private channelApiService = inject(ChannelApiService);
-
   chatId$ = this.route.paramMap.pipe(map((value) => value.get('chatId')));
 
   chat$ = this.store.select(selectSelectedChannelsEntity);
   messages$ = this.chatId$.pipe(
     filter((chatId) => !!chatId),
     switchMap((chatId) => this.store.select(selectMessagesByChatId(chatId!)))
-  );
-
-  users$ = this.chatId$.pipe(
-    switchMap((chatId) => this.channelApiService.getChannelUsers(chatId!))
   );
 
   @ViewChild(CdkVirtualScrollViewport)
@@ -114,7 +108,6 @@ export class ChannelChatViewComponent implements OnInit, OnDestroy {
   }
 
   selectEmoji(emoji: string[], message: Message, chatId: string) {
-    console.log(emoji);
     this.store.dispatch(
       MessagesApiActions.update({
         id: message.id,

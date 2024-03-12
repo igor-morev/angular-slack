@@ -1,7 +1,5 @@
 import { Route } from '@angular/router';
 
-// import { authGuard } from '@angular-slack/auth/data-access';
-
 export const appRoutes: Route[] = [
   {
     path: '',
@@ -10,8 +8,11 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'client',
-    // canLoad: [authGuard],
     loadChildren: () =>
       import('@angular-slack/feature-shell').then((m) => m.SHELL_ROUTES),
+  },
+  {
+    path: '**',
+    redirectTo: '',
   },
 ];

@@ -8,12 +8,12 @@
       <span class="font-semibold text-lg text-black mr-2">
         {{ chat.name }}
       </span>
-      <span>Company-wide announcements and work-based matters</span>
+      <span *ngIf="chat.description as desc">{{ desc }}</span>
     </div>
 
     <div class="tui-avatar-stack">
       <tui-avatar
-        *ngFor="let user of users$ | async"
+        *ngFor="let user of chat.users"
         [autoColor]="true"
         size="xs"
         [text]="user.username"

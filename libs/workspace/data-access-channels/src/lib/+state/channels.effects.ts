@@ -20,4 +20,16 @@ export class ChannelsEffects {
       })
     )
   );
+
+  create$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(ChannelsApiActions.create),
+      switchMap((action) => this.channelApiService.createChannel(action)),
+      switchMap((channel) => of(ChannelsApiActions.createSuccess({ channel }))),
+      catchError((error) => {
+        console.error('Error', error);
+        return of(ChannelsApiActions.createFailure({ error }));
+      })
+    )
+  );
 }

@@ -33,18 +33,14 @@ const reducer = createReducer(
   initialChannelsState,
   on(ChannelsApiActions.init, (state) => ({
     ...state,
-    loaded: false,
     error: null,
   })),
   on(ChannelsApiActions.loadSuccess, (state, { channels }) =>
-    channelsAdapter.setAll(channels, { ...state, loaded: true })
+    channelsAdapter.setAll(channels, { ...state })
   ),
-  on(selectChannelByChatId, (state, { chatId }) => ({
-    ...state,
-    selectedChannel: Object.values(state.entities).find(
-      (contact) => contact?.chatId === chatId
-    ),
-  })),
+  on(ChannelsApiActions.createSuccess, (state, { channel }) =>
+    channelsAdapter.addOne(channel, { ...state })
+  ),
   on(selectChannelByChatId, (state, { chatId }) => ({
     ...state,
     selectedChannel: Object.values(state.entities).find(

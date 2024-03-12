@@ -1,0 +1,43 @@
+<form class="b-form" [formGroup]="form">
+  <tui-input
+    formControlName="name"
+    tuiTextfieldIconLeft="tuiIconHash"
+    class="mb-4"
+  >
+    Name
+    <input tuiTextfield type="text" />
+  </tui-input>
+
+  <tui-multi-select
+    formControlName="users"
+    *tuiLet="users$ | async as users"
+    [stringify]="stringify"
+    class="mb-4"
+  >
+    Users
+    <tui-data-list-wrapper
+      *tuiDataList
+      [itemContent]="userContent"
+      [items]="users | tuiHideSelected"
+    ></tui-data-list-wrapper>
+  </tui-multi-select>
+
+  <div class="flex justify-end pt-4">
+    <button
+      size="m"
+      tuiButton
+      type="button"
+      [disabled]="form.invalid"
+      (click)="submit()"
+    >
+      Next
+    </button>
+  </div>
+</form>
+
+<ng-template #userContent let-data>
+  <div class="flex items-center">
+    <tui-avatar size="xs" [text]="data.username" class="mr-2"></tui-avatar>
+    {{ data.username }}
+  </div>
+</ng-template>
