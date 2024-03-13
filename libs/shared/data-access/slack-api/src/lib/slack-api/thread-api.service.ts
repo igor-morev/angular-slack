@@ -21,7 +21,7 @@ export class ThreadApiService {
       [
         {
           id: 'thread-1',
-          chatName: 'General',
+          chatName: 'general',
           chatId: 'thread-1',
           authors: [
             {

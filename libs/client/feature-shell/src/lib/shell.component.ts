@@ -7,10 +7,10 @@ import {
 import { CommonModule } from '@angular/common';
 import { HeaderToolbarComponent } from '@angular-slack/feature-header-toolbar';
 import { TabRailComponent } from '@angular-slack/tab-rail/feature-tab-rail';
-import { WorkspaceComponent } from '@angular-slack/workspace/feature-workspace';
 import { AuthStore } from '@angular-slack/auth/data-access';
 import { Store } from '@ngrx/store';
 import { initClients } from '@angular-slack/client/data-access';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'as-shell',
@@ -20,7 +20,7 @@ import { initClients } from '@angular-slack/client/data-access';
     CommonModule,
     HeaderToolbarComponent,
     TabRailComponent,
-    WorkspaceComponent,
+    RouterModule,
   ],
   templateUrl: './shell.component.html',
   styleUrl: './shell.component.scss',

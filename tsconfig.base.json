@@ -78,8 +78,8 @@
       "@angular-slack/workspace/feature-threads": [
         "libs/workspace/feature-threads/src/index.ts"
       ],
-      "@angular-slack/workspace/feature-workspace": [
-        "libs/workspace/feature-workspace/src/index.ts"
+      "@angular-slack/workspace/feature-shell": [
+        "libs/workspace/feature-shell/src/index.ts"
       ],
       "@env/*": ["apps/angular-slack/src/environments/*"]
     }

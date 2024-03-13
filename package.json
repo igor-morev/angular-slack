@@ -5,7 +5,8 @@
   "scripts": {
     "start": "npx nx serve angular-slack",
     "eslint": "ng lint",
-    "prettier:fix": "prettier --write"
+    "prettier:fix": "prettier --write",
+    "graph": "npx nx graph"
   },
   "private": true,
   "dependencies": {
