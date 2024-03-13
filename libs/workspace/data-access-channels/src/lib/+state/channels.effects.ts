@@ -32,4 +32,16 @@ export class ChannelsEffects {
       })
     )
   );
+
+  update$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(ChannelsApiActions.update),
+      switchMap((action) => this.channelApiService.updateChannel(action)),
+      switchMap((channel) => of(ChannelsApiActions.updateSuccess({ channel }))),
+      catchError((error) => {
+        console.error('Error', error);
+        return of(ChannelsApiActions.updateFailure({ error }));
+      })
+    )
+  );
 }

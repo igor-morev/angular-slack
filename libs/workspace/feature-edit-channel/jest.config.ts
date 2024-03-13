@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'auth',
+  displayName: 'edit-channel',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../../coverage/libs/auth/feature-auth',
+  coverageDirectory: '../../../coverage/libs/workspace/feature-edit-channel',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

@@ -13,7 +13,11 @@ import {
   ScrollingModule,
 } from '@angular/cdk/scrolling';
 import { TuiDestroyService } from '@taiga-ui/cdk';
-import { TuiSvgModule } from '@taiga-ui/core';
+import {
+  TuiButtonModule,
+  TuiDialogService,
+  TuiSvgModule,
+} from '@taiga-ui/core';
 import { TuiAvatarModule } from '@taiga-ui/kit';
 import {
   MessagesApiActions,
@@ -28,10 +32,12 @@ import {
   selectChannelByChatId,
   selectSelectedChannelsEntity,
 } from '@angular-slack/data-access-channels';
-import { Message } from '@angular-slack/slack-api';
+import { Channel, Message } from '@angular-slack/slack-api';
 import { SecondaryViewStore } from '@angular-slack/ui-store';
 import { ThreadChatViewComponent } from '@angular-slack/thread-chat-view';
 import { MessageEditorComponent } from '@angular-slack/message-editor';
+import { EditChannelComponent } from '@angular-slack/edit-channel';
+import { PolymorpheusComponent } from '@tinkoff/ng-polymorpheus';
 
 @Component({
   selector: 'as-channel-chat-view',
@@ -43,6 +49,7 @@ import { MessageEditorComponent } from '@angular-slack/message-editor';
     ScrollingModule,
     ChatMessageComponent,
     MessageEditorComponent,
+    TuiButtonModule,
   ],
   templateUrl: './channel-chat-view.component.html',
   styleUrl: './channel-chat-view.component.scss',
@@ -55,6 +62,7 @@ export class ChannelChatViewComponent implements OnInit, OnDestroy {
   private secondaryViewStore = inject(SecondaryViewStore);
 
   private destroy$ = inject(TuiDestroyService);
+  private readonly tuiDialogService = inject(TuiDialogService);
 
   chatId$ = this.route.paramMap.pipe(map((value) => value.get('chatId')));
 
@@ -119,7 +127,7 @@ export class ChannelChatViewComponent implements OnInit, OnDestroy {
     );
   }
 
-  trackBy(_: any, message: Message): string {
+  trackBy(_: unknown, message: Message): string {
     return message.id;
   }
 
@@ -132,6 +140,17 @@ export class ChannelChatViewComponent implements OnInit, OnDestroy {
         content: content,
       })
     );
+  }
+
+  openEditChannel(channel: Channel) {
+    this.tuiDialogService
+      .open<Channel>(new PolymorpheusComponent(EditChannelComponent), {
+        label: channel.name,
+        data: channel,
+        dismissible: true,
+        closeable: true,
+      })
+      .subscribe();
   }
 
   ngOnDestroy() {

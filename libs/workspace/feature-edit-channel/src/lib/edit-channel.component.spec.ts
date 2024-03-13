@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AuthComponent } from './auth.component';
+import { EditChannelComponent } from './edit-channel.component';
 
-describe('AuthComponent', () => {
-  let component: AuthComponent;
-  let fixture: ComponentFixture<AuthComponent>;
+describe('EditChannelComponent', () => {
+  let component: EditChannelComponent;
+  let fixture: ComponentFixture<EditChannelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AuthComponent],
+      imports: [EditChannelComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AuthComponent);
+    fixture = TestBed.createComponent(EditChannelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

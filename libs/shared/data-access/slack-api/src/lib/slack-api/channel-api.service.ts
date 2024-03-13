@@ -2,7 +2,7 @@ import { AuthService, User } from '@angular-slack/auth/data-access';
 
 import { inject, Injectable } from '@angular/core';
 import { Observable, of, switchMap } from 'rxjs';
-import { Channel, ChannelCreate } from './models';
+import { Channel, ChannelCreate, ChannelUpdate } from './models';
 
 import { v4 as uuidv4 } from 'uuid';
 import { UserApiService } from './user-api.service';
@@ -20,10 +20,13 @@ export class ChannelApiService {
       [
         {
           id: '1',
-          name: 'General',
+          name: 'general',
+          ownerId: this.authService.userId,
           chatId: 'channel-1',
+          ownerName: this.authService.userName,
+          createdAt: new Date().toISOString(),
           protected: true,
-          description: 'Company-wide announcements and work-based matters',
+          topic: 'Company-wide announcements and work-based matters',
           users: [
             {
               username: 'Steve Jobs',
@@ -55,7 +58,9 @@ export class ChannelApiService {
       ...data,
       id: uuidv4(),
       ownerId: this.authService.userId,
+      ownerName: this.authService.userName,
       chatId: uuidv4(),
+      createdAt: new Date().toISOString(),
       protected: false,
       clientId: '1',
       users: data.users.map(
@@ -70,5 +75,35 @@ export class ChannelApiService {
     ]);
 
     return of(newChannel);
+  }
+
+  updateChannel(params: ChannelUpdate) {
+    this.channels.set(
+      this.authService.userId,
+      this.channels.get(this.authService.userId)!.map((channel) => {
+        if (channel.id === params.id) {
+          return {
+            ...channel,
+            ...params,
+            users: params.users
+              ? params.users.map(
+                  (userId) =>
+                    this.userApiService.users.find(
+                      (user) => user.id === userId
+                    )!
+                )
+              : channel.users,
+          };
+        }
+
+        return channel;
+      })
+    );
+
+    return of(
+      this.channels
+        .get(this.authService.userId)!
+        .find((m) => m.id === params.id)!
+    );
   }
 }

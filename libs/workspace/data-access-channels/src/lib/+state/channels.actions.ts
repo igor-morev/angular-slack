@@ -1,4 +1,4 @@
-import { ChannelCreate } from '@angular-slack/slack-api';
+import { ChannelCreate, ChannelUpdate } from '@angular-slack/slack-api';
 import {
   createAction,
   createActionGroup,
@@ -16,6 +16,9 @@ export const ChannelsApiActions = createActionGroup({
     create: props<ChannelCreate>(),
     createSuccess: props<{ channel: ChannelsEntity }>(),
     createFailure: props<{ error: string | null }>(),
+    update: props<ChannelUpdate>(),
+    updateSuccess: props<{ channel: ChannelsEntity }>(),
+    updateFailure: props<{ error: string | null }>(),
   },
 });
 
