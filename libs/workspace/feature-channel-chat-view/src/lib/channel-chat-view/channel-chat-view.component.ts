@@ -106,11 +106,12 @@ export class ChannelChatViewComponent implements OnInit, OnDestroy {
       });
   }
 
-  openThread(message: Message) {
+  openThread(message: Message, chat: Channel) {
     this.secondaryViewStore.close();
     setTimeout(() => {
       this.secondaryViewStore.open('thread', ThreadChatViewComponent, {
         messageId: message.id,
+        chat,
       });
     });
   }
@@ -137,7 +138,7 @@ export class ChannelChatViewComponent implements OnInit, OnDestroy {
       MessagesApiActions.send({
         chatId,
         attachments,
-        content: content,
+        content,
       })
     );
   }

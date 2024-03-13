@@ -14,6 +14,7 @@ export interface Thread {
   chatId: string;
   authors: User[];
   message: Message;
+  messagesCount: number;
 }
 
 export type CreateThreadParams = Thread;

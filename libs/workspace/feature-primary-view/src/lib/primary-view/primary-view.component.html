@@ -14,7 +14,7 @@
         <as-chat-message
           *cdkVirtualFor="let message of messages$ | async; trackBy: trackBy"
           [message]="message"
-          (openThreadEvent)="openThread($event)"
+          (openThreadEvent)="openThread($event, chat)"
           (selectEmojiEvent)="selectEmoji($event, message, chat.chatId)"
         >
         </as-chat-message>

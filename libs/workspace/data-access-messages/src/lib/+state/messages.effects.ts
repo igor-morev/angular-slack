@@ -5,9 +5,6 @@ import { createEffect, Actions, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { switchMap, catchError, of, tap, withLatestFrom, map } from 'rxjs';
 import { selectAllMessages } from './messages.selectors';
-
-import { selectSelectedChannelsEntity } from '@angular-slack/data-access-channels';
-import { selectSelectedContactEntity } from '@angular-slack/data-access-contacts';
 import {
   MessagesApiActions,
   MessagesThreadApiActions,
@@ -80,12 +77,10 @@ export class MessagesEffects {
           .sendMessage(action.message.id, action.content, action.attachments)
           .pipe(map((response) => ({ action, response })))
       ),
-      withLatestFrom(
-        this.store.select(selectSelectedChannelsEntity),
-        this.store.select(selectSelectedContactEntity)
-      ),
-      switchMap(([{ action, response }, channel, contact]) =>
-        of(MessagesApiActions.sendSuccess({ message: response.data })).pipe(
+      switchMap(({ action, response }) =>
+        of(
+          MessagesThreadApiActions.sendSuccess({ message: response.data })
+        ).pipe(
           tap(() => {
             if (action.message.thread) {
               this.store.dispatch(
@@ -94,6 +89,7 @@ export class MessagesEffects {
                   payload: {
                     chatId: response.data.chatId,
                     authors: response.authors,
+                    messagesCount: response.chatCount,
                   },
                 })
               );
@@ -104,38 +100,44 @@ export class MessagesEffects {
                     id: action.message.id,
                     chatId: response.data.chatId,
                     authors: response.authors,
-                    chatName: channel
-                      ? channel.name
-                      : contact
-                      ? contact.name
-                      : '',
+                    chatName: action.chatName,
                     message: action.message,
+                    messagesCount: response.chatCount,
                   },
                 })
               );
             }
-
-            this.store.dispatch(
-              MessagesApiActions.update({
-                id: action.message.id,
-                chatId: action.message.chatId!,
-                updateParams: {
-                  thread: {
-                    messagesCount: response.chatCount,
-                    authors: response.authors,
-                  },
-                },
-              })
-            );
           })
         )
       ),
-
       catchError((error) => {
         console.error('Error', error);
-        return of(MessagesApiActions.sendFailure({ error }));
+        return of(MessagesThreadApiActions.sendFailure({ error }));
       })
     )
+  );
+
+  updateRepliedMessageAfterThreadUpdate$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(
+          ThreadsApiActions.createSuccess,
+          ThreadsApiActions.updateSuccess
+        ),
+        tap((data) => {
+          const { message } = data.thread;
+          this.store.dispatch(
+            MessagesApiActions.update({
+              id: message.id,
+              chatId: message.chatId!,
+              updateParams: {
+                thread: data.thread,
+              },
+            })
+          );
+        })
+      ),
+    { dispatch: false }
   );
 
   scrollToMessage$ = createEffect(() =>

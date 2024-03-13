@@ -196,14 +196,14 @@ export class MessageApiService {
     return of(this.messages.get(chatId) || []);
   }
 
-  updateMessage(id: string, chatId: string, data: UpdateMessageParams) {
+  updateMessage(id: string, chatId: string, params: UpdateMessageParams) {
     this.messages.set(
       chatId,
       this.messages.get(chatId)!.map((message) => {
         if (message.id === id) {
           return {
             ...message,
-            ...data,
+            ...params,
           };
         }
 

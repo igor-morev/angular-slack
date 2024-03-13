@@ -31,6 +31,7 @@ export const MessagesThreadApiActions = createActionGroup({
   events: {
     send: props<{
       message: Message;
+      chatName: string;
       content: string;
       attachments: File[];
     }>(),

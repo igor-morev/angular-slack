@@ -29,7 +29,7 @@ import {
 } from '@angular-slack/data-access-contacts';
 import { ChatMessageComponent } from 'libs/shared/ui-message/src';
 import { MessageEditorComponent } from '@angular-slack/message-editor';
-import { Message, Thread } from '@angular-slack/slack-api';
+import { Contact, Message } from '@angular-slack/slack-api';
 import { ThreadChatViewComponent } from '@angular-slack/thread-chat-view';
 import { SecondaryViewStore } from '@angular-slack/ui-store';
 
@@ -97,11 +97,12 @@ export class PrimaryViewComponent implements OnInit, OnDestroy {
       });
   }
 
-  openThread(message: Message) {
+  openThread(message: Message, chat: Contact) {
     this.secondaryViewStore.close();
     setTimeout(() => {
       this.secondaryViewStore.open('thread', ThreadChatViewComponent, {
         messageId: message.id,
+        chat,
       });
     });
   }

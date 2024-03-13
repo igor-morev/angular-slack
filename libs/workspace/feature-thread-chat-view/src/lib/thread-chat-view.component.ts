@@ -46,6 +46,7 @@ import { TuiDestroyService, TuiLetModule } from '@taiga-ui/cdk';
 })
 export class ThreadChatViewComponent implements OnInit {
   @Input() messageId!: string;
+  @Input() chat!: { name: string };
 
   private secondaryViewStore = inject(SecondaryViewStore);
   private store = inject(Store);
@@ -107,6 +108,7 @@ export class ThreadChatViewComponent implements OnInit {
     this.store.dispatch(
       MessagesThreadApiActions.send({
         message: threadMessage,
+        chatName: this.chat.name,
         attachments,
         content,
       })

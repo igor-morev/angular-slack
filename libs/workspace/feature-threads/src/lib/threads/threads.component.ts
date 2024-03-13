@@ -54,6 +54,7 @@ export class ThreadsComponent {
     this.store.dispatch(
       MessagesThreadApiActions.send({
         message: thread.message,
+        chatName: thread.chatName,
         attachments,
         content: content,
       })
