@@ -1,10 +1,11 @@
+import { MESSAGES_FEATURE_KEY, MessagesState, messagesAdapter } from '@angular-slack/data-access-messages';
 import { Message } from '@angular-slack/slack-api';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import {
-  MESSAGES_FEATURE_KEY,
-  MessagesState,
-  messagesAdapter,
-} from './messages.reducer';
+
+import { selectSelectedContactEntity } from '@angular-slack/data-access-contacts';
+import { selectSelectedChannelsEntity } from '@angular-slack/data-access-channels';
+
+
 
 import { DateTime } from 'luxon';
 
@@ -71,4 +72,10 @@ export const selectEntity = createSelector(
 export const selectScrollToMessageIndex = createSelector(
   selectMessagesState,
   (state) => state.scrollToMessageIndex
+);
+
+export const selectSelectedChat = createSelector(
+  selectSelectedContactEntity,
+  selectSelectedChannelsEntity,
+  (contact, channel) => contact ? contact : channel
 );

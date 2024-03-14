@@ -11,7 +11,6 @@ import { map, Observable } from 'rxjs';
 import {
   selectMessagesByChatId,
   MessagesApiActions,
-  MessagesThreadApiActions,
 } from '@angular-slack/data-access-messages';
 import { ThreadCardComponent } from '@angular-slack/thread-card';
 
@@ -52,11 +51,10 @@ export class ThreadsComponent {
   submit(event: { content: string; attachments: File[] }, thread: Thread) {
     const { content, attachments } = event;
     this.store.dispatch(
-      MessagesThreadApiActions.send({
-        message: thread.message,
-        chatName: thread.chatName,
+      MessagesApiActions.send({
+        chatId: thread.id,
         attachments,
-        content: content,
+        content,
       })
     );
   }

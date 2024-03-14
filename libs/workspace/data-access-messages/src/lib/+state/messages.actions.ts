@@ -1,6 +1,7 @@
 import { Message, UpdateMessageParams } from '@angular-slack/slack-api';
 import { createAction, createActionGroup, props } from '@ngrx/store';
 import { MessagesEntity } from './messages.models';
+import { User } from '@angular-slack/auth/data-access';
 
 export const MessagesApiActions = createActionGroup({
   source: 'MessagesApi',
@@ -14,7 +15,7 @@ export const MessagesApiActions = createActionGroup({
       attachments: File[];
       parentChatId?: string;
     }>(),
-    sendSuccess: props<{ message: MessagesEntity }>(),
+    sendSuccess: props<{ message: MessagesEntity, messagesCount: number; authors: User[] }>(),
     sendFailure: props<{ error: string | null }>(),
     update: props<{
       id: string;
@@ -23,20 +24,6 @@ export const MessagesApiActions = createActionGroup({
     }>(),
     updateSuccess: props<{ message: MessagesEntity }>(),
     updateFailure: props<{ error: string | null }>(),
-  },
-});
-
-export const MessagesThreadApiActions = createActionGroup({
-  source: 'MessagesThreadApi',
-  events: {
-    send: props<{
-      message: Message;
-      chatName: string;
-      content: string;
-      attachments: File[];
-    }>(),
-    sendSuccess: props<{ message: MessagesEntity }>(),
-    sendFailure: props<{ error: string | null }>(),
   },
 });
 

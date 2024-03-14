@@ -4,7 +4,6 @@ import { createReducer, on, Action } from '@ngrx/store';
 import { MessagesEntity } from './messages.models';
 import {
   MessagesApiActions,
-  MessagesThreadApiActions,
   scrollToMessage,
 } from '@angular-slack/data-access-messages';
 
@@ -44,9 +43,6 @@ const reducer = createReducer(
     error,
   })),
   on(MessagesApiActions.sendSuccess, (state, { message }) =>
-    messagesAdapter.addOne(message, { ...state })
-  ),
-  on(MessagesThreadApiActions.sendSuccess, (state, { message }) =>
     messagesAdapter.addOne(message, { ...state })
   ),
   on(MessagesApiActions.updateSuccess, (state, { message }) =>

@@ -51,12 +51,13 @@ export const WORKSPACE_ROUTES: Routes = [
       },
     ],
     providers: [
+      provideState(MESSAGES_FEATURE_KEY, messagesReducer),
+      provideEffects(MessagesEffects),
       provideState(CONTACTS_FEATURE_KEY, contactsReducer),
       provideEffects(ContactsEffects),
       provideState(CHANNELS_FEATURE_KEY, channelsReducer),
       provideEffects(ChannelsEffects),
-      provideState(MESSAGES_FEATURE_KEY, messagesReducer),
-      provideEffects(MessagesEffects),
+      
       provideState(THREADS_FEATURE_KEY, threadsReducer),
       provideEffects(ThreadsEffects),
     ],

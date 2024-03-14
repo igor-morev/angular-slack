@@ -14,7 +14,6 @@ import {
   selectMessagesByChatId,
   selectMessagesEntities,
   selectScrollToMessageIndex,
-  MessagesThreadApiActions,
   MessagesApiActions,
 } from '@angular-slack/data-access-messages';
 import { MessageEditorComponent } from '@angular-slack/message-editor';
@@ -106,9 +105,8 @@ export class ThreadChatViewComponent implements OnInit {
     const { content, attachments } = event;
 
     this.store.dispatch(
-      MessagesThreadApiActions.send({
-        message: threadMessage,
-        chatName: this.chat.name,
+      MessagesApiActions.send({
+        chatId: threadMessage.id,
         attachments,
         content,
       })

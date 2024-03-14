@@ -1,6 +1,6 @@
 <ng-container *ngIf="thread">
   <div class="font-semibold">
-    {{ thread.chatName }}
+    {{ thread.parentChatName }}
   </div>
   <div class="mb-2 text-xs text-gray-500">
     {{ thread.authors | collectionCommas : 'username' }}

@@ -160,10 +160,10 @@ export class MessageApiService {
   sendMessage(
     chatId: string,
     content: string,
-    attachments: File[]
+    attachments: File[],
   ): Observable<{
     data: Message;
-    chatCount: number;
+    messagesCount: number;
     authors: User[];
   }> {
     const newMessage: Message = {
@@ -185,7 +185,7 @@ export class MessageApiService {
 
     return of({
       data: newMessage,
-      chatCount: this.messages.get(chatId)!.length,
+      messagesCount: this.messages.get(chatId)!.length,
       authors: removeDublicates(
         this.messages.get(chatId)!.map((message) => message.author)
       ),
