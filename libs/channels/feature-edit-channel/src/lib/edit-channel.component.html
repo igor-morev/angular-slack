@@ -1,0 +1,72 @@
+<form [formGroup]="form">
+  <div orientation="vertical" tuiGroup [collapsed]="true" class="mb-4 w-full">
+    <div class="border border-slate-200 p-4">
+      <label tuiLabel="Channel name">
+        <tui-input
+          formControlName="name"
+          [tuiTextfieldLabelOutside]="true"
+          tuiTextfieldIconLeft="tuiIconHash"
+        >
+          <input placeholder="e.g. frontend" tuiTextfield />
+        </tui-input>
+      </label>
+    </div>
+  </div>
+
+  <div orientation="vertical" tuiGroup [collapsed]="true" class="w-full">
+    <div class="border border-slate-200 p-4">
+      <label tuiLabel="Topic">
+        <tui-input formControlName="topic" [tuiTextfieldLabelOutside]="true">
+          <input placeholder="Add a topic" tuiTextfield />
+        </tui-input>
+      </label>
+    </div>
+
+    <div class="border border-slate-200 p-4">
+      <label tuiLabel="Members">
+        <tui-multi-select
+          formControlName="users"
+          [identityMatcher]="identityMatcher"
+          [tuiTextfieldLabelOutside]="true"
+          *tuiLet="users$ | async as users"
+          [stringify]="stringify"
+        >
+          <tui-data-list-wrapper
+            *tuiDataList
+            [itemContent]="userContent"
+            [items]="users | tuiHideSelected"
+          ></tui-data-list-wrapper>
+        </tui-multi-select>
+      </label>
+
+      <ng-template #userContent let-data>
+        <div class="flex items-center">
+          <tui-avatar
+            size="xs"
+            [text]="data.username"
+            class="mr-2"
+          ></tui-avatar>
+          {{ data.username }}
+        </div>
+      </ng-template>
+    </div>
+
+    <div class="border border-slate-200 p-4">
+      <label tuiLabel="Created by">
+        {{ channel.ownerName }} on {{ channel.createdAt | date : 'medium' }}
+      </label>
+    </div>
+  </div>
+
+  <div class="flex justify-end pt-4">
+    <button
+      size="m"
+      tuiButton
+      type="button"
+      [disabled]="form.invalid"
+      (click)="submit()"
+    >
+      Save
+    </button>
+  </div>
+</form>

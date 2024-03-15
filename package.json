@@ -2,7 +2,11 @@
   "name": "@angular-slack/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "npx nx serve angular-slack",
+    "eslint": "ng lint",
+    "graph": "npx nx graph"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~17.0.0",

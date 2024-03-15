@@ -21,7 +21,6 @@ export const clientsAdapter: EntityAdapter<ClientsEntity> =
 
 export const initialClientsState: ClientsState = clientsAdapter.getInitialState(
   {
-    // set initial required properties
     selectedId: '1',
     loaded: false,
   }

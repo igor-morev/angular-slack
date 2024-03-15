@@ -1,1 +1,1 @@
-export * from './lib/shell/shell.routes';
+export * from './lib/shell.routes';

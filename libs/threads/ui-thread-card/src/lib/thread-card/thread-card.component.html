@@ -1,0 +1,26 @@
+<ng-container *ngIf="thread">
+  <div class="font-semibold">
+    {{ thread.parentChatName }}
+  </div>
+  <div class="mb-2 text-xs text-gray-500">
+    {{ thread.authors | collectionCommas : 'username' }}
+  </div>
+</ng-container>
+
+<div class="border border-slate-200 rounded-md overflow-auto bg-white">
+  <ng-container *ngIf="messages">
+    <as-chat-message
+      *ngFor="let message of messages; trackBy: trackBy; index as i"
+      [message]="message"
+      [dropdownConfig]="i > 0 ? { emoji: true } : { emoji: false }"
+      (selectEmojiEvent)="selectEmoji($event, message)"
+    >
+    </as-chat-message>
+  </ng-container>
+  <div class="footer px-4 py-4">
+    <as-message-editor
+      placeholder="Reply..."
+      (submitEvent)="submit($event)"
+    ></as-message-editor>
+  </div>
+</div>

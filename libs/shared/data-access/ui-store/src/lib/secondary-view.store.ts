@@ -1,4 +1,3 @@
-import { Message } from '@angular-slack/slack-api';
 import { Type } from '@angular/core';
 import { signalStore, withState, withMethods, patchState } from '@ngrx/signals';
 
@@ -6,6 +5,7 @@ type ViewType = 'thread' | 'profile';
 
 type ThreadViewData = {
   messageId: string;
+  chat: { name: string };
 };
 
 type SecondaryViewState = {

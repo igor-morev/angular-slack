@@ -10,10 +10,11 @@ export interface MessageThread {
 
 export interface Thread {
   id: string;
-  chatName: string;
+  parentChatName: string;
   chatId: string;
   authors: User[];
   message: Message;
+  messagesCount: number;
 }
 
 export type CreateThreadParams = Thread;
