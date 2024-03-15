@@ -21,22 +21,22 @@
         "libs/client/data-access/src/index.ts"
       ],
       "@angular-slack/create-channel": [
-        "libs/workspace/feature-create-channel/src/index.ts"
+        "libs/channels/feature-create-channel/src/index.ts"
       ],
       "@angular-slack/data-access-channels": [
-        "libs/workspace/data-access-channels/src/index.ts"
+        "libs/channels/data-access-channels/src/index.ts"
       ],
       "@angular-slack/data-access-contacts": [
-        "libs/workspace/data-access-contacts/src/index.ts"
+        "libs/contacts/data-access-contacts/src/index.ts"
       ],
       "@angular-slack/data-access-messages": [
-        "libs/workspace/data-access-messages/src/index.ts"
+        "libs/chat/data-access-messages/src/index.ts"
       ],
       "@angular-slack/data-access-threads": [
-        "libs/workspace/data-access-threads/src/index.ts"
+        "libs/threads/data-access-threads/src/index.ts"
       ],
       "@angular-slack/edit-channel": [
-        "libs/workspace/feature-edit-channel/src/index.ts"
+        "libs/channels/feature-edit-channel/src/index.ts"
       ],
       "@angular-slack/feature-header-toolbar": [
         "libs/header-toolbar/feature-header-toolbar/src/index.ts"
@@ -60,23 +60,23 @@
         "libs/tab-rail/feature-tab-rail/src/index.ts"
       ],
       "@angular-slack/thread-card": [
-        "libs/workspace/ui-thread-card/src/index.ts"
+        "libs/threads/ui-thread-card/src/index.ts"
       ],
-      "@angular-slack/thread-chat-view": [
-        "libs/workspace/feature-thread-chat-view/src/index.ts"
+      "@angular-slack/chat/thread-chat-view": [
+        "libs/chat/feature-thread-chat-view/src/index.ts"
       ],
       "@angular-slack/ui-store": [
         "libs/shared/data-access/ui-store/src/index.ts"
       ],
       "@angular-slack/utils": ["libs/shared/utils/src/index.ts"],
-      "@angular-slack/workspace/feature-channel-chat-view": [
-        "libs/workspace/feature-channel-chat-view/src/index.ts"
+      "@angular-slack/chat/feature-channel-chat-view": [
+        "libs/chat/feature-channel-chat-view/src/index.ts"
       ],
-      "@angular-slack/workspace/feature-primary-view": [
-        "libs/workspace/feature-primary-view/src/index.ts"
+      "@angular-slack/chat/feature-primary-view": [
+        "libs/chat/feature-primary-view/src/index.ts"
       ],
-      "@angular-slack/workspace/feature-threads": [
-        "libs/workspace/feature-threads/src/index.ts"
+      "@angular-slack/threads/feature-threads": [
+        "libs/threads/feature-threads/src/index.ts"
       ],
       "@angular-slack/workspace/feature-shell": [
         "libs/workspace/feature-shell/src/index.ts"

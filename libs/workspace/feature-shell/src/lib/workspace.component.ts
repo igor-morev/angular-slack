@@ -15,7 +15,7 @@ import { TuiLetModule } from '@taiga-ui/cdk';
 import {
   ContactsApiActions,
   selectAllContacts,
-} from '@angular-slack/data-access-contacts';
+} from 'libs/contacts/data-access-contacts/src';
 import {
   ChannelsApiActions,
   selectAllChannels,

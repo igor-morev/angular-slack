@@ -1,7 +1,7 @@
-import { AuthService, User } from '@angular-slack/auth/data-access';
+import { AuthService } from '@angular-slack/auth/data-access';
 
 import { inject, Injectable } from '@angular/core';
-import { Observable, of, switchMap } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Channel, ChannelCreate, ChannelUpdate } from './models';
 
 import { v4 as uuidv4 } from 'uuid';
@@ -29,18 +29,23 @@ export class ChannelApiService {
           topic: 'Company-wide announcements and work-based matters',
           users: [
             {
+              id: '1',
               username: 'Steve Jobs',
             },
             {
+              id: '2',
               username: 'Jeff Bezos',
             },
             {
+              id: '3',
               username: 'Bill Gates',
             },
             {
+              id: '4',
               username: 'Elon Musk',
             },
             {
+              id: '5',
               username: 'John Carmack',
             },
           ],
@@ -62,6 +67,7 @@ export class ChannelApiService {
       chatId: uuidv4(),
       createdAt: new Date().toISOString(),
       protected: false,
+      name: data.name.toLowerCase(),
       clientId: '1',
       users: data.users.map(
         (userId) =>

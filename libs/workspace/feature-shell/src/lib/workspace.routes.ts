@@ -7,11 +7,6 @@ import {
   MessagesEffects,
 } from '@angular-slack/data-access-messages';
 import {
-  ContactsEffects,
-  contactsReducer,
-  CONTACTS_FEATURE_KEY,
-} from '@angular-slack/data-access-contacts';
-import {
   ChannelsEffects,
   channelsReducer,
   CHANNELS_FEATURE_KEY,
@@ -22,6 +17,11 @@ import {
   THREADS_FEATURE_KEY,
 } from '@angular-slack/data-access-threads';
 import { WorkspaceComponent } from './workspace.component';
+import {
+  ContactsEffects,
+  contactsReducer,
+  CONTACTS_FEATURE_KEY,
+} from '@angular-slack/data-access-contacts';
 
 export const WORKSPACE_ROUTES: Routes = [
   {
@@ -31,21 +31,21 @@ export const WORKSPACE_ROUTES: Routes = [
       {
         path: 'threads',
         loadComponent: () =>
-          import('@angular-slack/workspace/feature-threads').then(
+          import('@angular-slack/threads/feature-threads').then(
             (m) => m.ThreadsComponent
           ),
       },
       {
         path: 'direct/:chatId',
         loadComponent: () =>
-          import('@angular-slack/workspace/feature-primary-view').then(
+          import('@angular-slack/chat/feature-primary-view').then(
             (m) => m.PrimaryViewComponent
           ),
       },
       {
         path: 'channels/:chatId',
         loadComponent: () =>
-          import('@angular-slack/workspace/feature-channel-chat-view').then(
+          import('@angular-slack/chat/feature-channel-chat-view').then(
             (m) => m.ChannelChatViewComponent
           ),
       },
@@ -57,7 +57,7 @@ export const WORKSPACE_ROUTES: Routes = [
       provideEffects(ContactsEffects),
       provideState(CHANNELS_FEATURE_KEY, channelsReducer),
       provideEffects(ChannelsEffects),
-      
+
       provideState(THREADS_FEATURE_KEY, threadsReducer),
       provideEffects(ThreadsEffects),
     ],
