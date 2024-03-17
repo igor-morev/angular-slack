@@ -6,7 +6,7 @@ A simplified Slack messenger built with `Angular 17`, `Nx workspace`, `ngrx`, `T
 
 ## Working application
 
-Check out the live demo ->
+Check out the **live demo** -> https://ng-slack.netlify.app
 
 ![Angular Slack Demo][demo]
 
@@ -24,11 +24,11 @@ Thanks for supporting me!
 
 I've been working with Angular for about six years and regularly using Slack at my work. I like this experience.
 
-So, I decided to implement basic Slack features, especially **Threads** and imitate the user interface as well. **Threads** are my most lovely ones, which were challenging 🙀, actually. But I think the result is good. Also, it is my additional portfolio-project, as proof of my skills and experience, because most of my real projects are enterprise-like and closed by NDA.
+So, I decided to implement basic Slack features, especially **Threads** and imitate the user interface as well. **Threads** are my most lovely ones, which were challenging 🙀, actually. But I think the result is good. Also, it can be proof of my skills and experience, because most of my real projects are enterprise-like and closed by NDA.
 
-If we talk about the tech area, it's an app which focuses on a frontend part. But it has a mocked backend API (for usual integration with ngrx effects) which can be switched on a real API next time. By the way, I've also experimented with libraries as i wanted to try before: `NX`, `TaiwindCSS` and brand-new `ngrx` features like `@ngrx/signals`.
+Aside the tech area, it's an app which focuses only on a frontend part. But it has a mocked backend API (for showcase with ngrx effects) which can be switched on a real API next time. By the way, I've also experimented with libraries as i wanted to try before: `NX`, `TaiwindCSS` and brand-new `ngrx` features like `@ngrx/signals`.
 
-I've been working on it in my spare time for about two months. There are many Angular examples on the web but most of them are way too simple. I like to think that this codebase contains enough complexity and library variety to offer valuable insights to **Angular developers of some skill levels**.
+I've been working on it in my spare time for about two months. There are many Angular examples on the web but most of them are way too simple. I like to think that this codebase contains good cases for a messenger-like app architecture to offer valuable insights to **Angular developers**.
 
 ## Tech stack
 
@@ -82,7 +82,7 @@ I followed the structure recommended by official [documentation](https://nx.dev/
         │   └── data-access (angular:lib) - store, services and models for mocked auth
         ├── tab-rail (dir)
         │   └── feature-tab-rail (angular:lib)
-        ├── chat (dir)
+        ├── chat (dir) - chat-views domain for sending messages
         │   ├── data-access-messages (angular:lib)
         │   ├── feature-channel-chat-view (angular:lib)
         │   ├── feature-primary-view (angular:lib)
@@ -122,7 +122,7 @@ A simplified graph looks like the following. It gives you insightful information
 
 ## Features and Roadmap
 
-### 1.0 - Simple Slack clone
+### 1.0 - Simple Slack clone (no backend API)
 
 > March 15, 2024
 
@@ -136,6 +136,13 @@ A simplified graph looks like the following. It gives you insightful information
 - [x] Create and edit channels
 - [x] Good-looking user interface which reminds Slack 🤪
 
+### 2.0 - Proven API to send message, create channels, threads, etc.
+
+> TBD
+
+- [x] Build backend with Nest Js and Socket.io
+- [x] Authentication
+
 ### Accessibility ♿
 
 I use semantics tags and Taiga UI provides accessible UI components
@@ -144,13 +151,13 @@ I use semantics tags and Taiga UI provides accessible UI components
 
 - `git clone https://github.com/Morev1993/angular-slack.git`
 - `cd angular-slack`
-- `npm i --legacy-peer-deps`
+- `npm install`
 - `npm start` for starting Angular web application
 - The app should run on `http://localhost:4200/`
 
 ## Author: Igor Morev 🤖
 
-- A passionate front-end engineer with eight years of experience
+- A passionate front-end engineer with nine years of experience
 
 ## Contributing
 
