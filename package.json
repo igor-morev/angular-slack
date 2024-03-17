@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "npx nx serve angular-slack",
+    "build": "npx nx run angular-slack:build:production",
     "eslint": "ng lint",
     "graph": "npx nx graph"
   },

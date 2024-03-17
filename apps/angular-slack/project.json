@@ -24,7 +24,6 @@
         "assets": [
           "apps/angular-slack/src/favicon.ico",
           "apps/angular-slack/src/assets",
-          "apps/angular-slack/src/netlify.toml",
           {
             "glob": "**/*",
             "input": "node_modules/@taiga-ui/icons/src",
