@@ -1,8 +1,12 @@
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { createReducer, on, Action } from '@ngrx/store';
 
-import * as ClientsActions from './clients.actions';
 import { ClientsEntity } from './clients.models';
+import {
+  initClients,
+  loadClientsSuccess,
+  loadClientsFailure,
+} from './clients.actions';
 
 export const CLIENTS_FEATURE_KEY = 'clients';
 
@@ -28,15 +32,15 @@ export const initialClientsState: ClientsState = clientsAdapter.getInitialState(
 
 const reducer = createReducer(
   initialClientsState,
-  on(ClientsActions.initClients, (state) => ({
+  on(initClients, (state) => ({
     ...state,
     loaded: false,
     error: null,
   })),
-  on(ClientsActions.loadClientsSuccess, (state, { clients }) =>
+  on(loadClientsSuccess, (state, { clients }) =>
     clientsAdapter.setAll(clients, { ...state, loaded: true })
   ),
-  on(ClientsActions.loadClientsFailure, (state, { error }) => ({
+  on(loadClientsFailure, (state, { error }) => ({
     ...state,
     error,
   }))
