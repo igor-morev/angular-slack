@@ -8,11 +8,13 @@ import {
   Thread,
   UpdateThreadParams,
 } from './models';
+import { UserApiService } from './user-api.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ThreadApiService {
+  private userApiService = inject(UserApiService);
   private authService = inject(AuthService);
 
   threads: Map<string, Thread[]> = new Map([
@@ -23,20 +25,7 @@ export class ThreadApiService {
           id: 'thread-1',
           parentChatName: 'general',
           chatId: 'thread-1',
-          authors: [
-            {
-              username: 'Elon Mask',
-            },
-            {
-              username: 'John Carmack',
-            },
-            {
-              username: 'Bill Gates',
-            },
-            {
-              username: 'Steve Jobs',
-            },
-          ],
+          authors: this.userApiService.users.slice(1, 5),
           message: {
             id: 'thread-1',
             mode: 'full',
@@ -44,7 +33,7 @@ export class ThreadApiService {
             chatId: 'channel-1',
             createdAt: new Date().toISOString(),
             author: {
-              username: 'Jeff Bezos',
+              username: 'Benoit enzley',
             },
           } as Message,
         },

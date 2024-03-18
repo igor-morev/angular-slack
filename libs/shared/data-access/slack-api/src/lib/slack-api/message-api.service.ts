@@ -5,12 +5,14 @@ import { Message, UpdateMessageParams } from './models/message';
 
 import { v4 as uuidv4 } from 'uuid';
 import { removeDublicates } from '@angular-slack/utils';
+import { UserApiService } from './user-api.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MessageApiService {
   private authService = inject(AuthService);
+  private userApiService = inject(UserApiService);
 
   // fake db
   messages: Map<string, Message[]> = new Map([
@@ -24,7 +26,7 @@ export class MessageApiService {
           emoji: ['&#x1F602', '&#x1F618', '&#x1F631'],
           createdAt: new Date().toISOString(),
           author: {
-            username: 'Steve Jobs',
+            username: 'Benoit enzley',
           },
         },
         {
@@ -33,7 +35,7 @@ export class MessageApiService {
           content: 'Hi, how are u doing?',
           createdAt: new Date().toISOString(),
           author: {
-            username: 'Igor Morev (Frontend Dev)',
+            username: this.authService.userName,
           },
         },
       ] as Message[],
@@ -47,7 +49,7 @@ export class MessageApiService {
           content: 'Hi',
           createdAt: new Date().toISOString(),
           author: {
-            username: 'Igor Morev (Frontend Dev)',
+            username: this.authService.userName,
           },
         } as Message,
       ],
@@ -70,25 +72,12 @@ export class MessageApiService {
             '&#x1F631',
           ],
           author: {
-            username: 'Jeff Bezos',
+            username: 'Benoit enzley',
           },
           thread: {
             id: 'thread-1',
             chatId: 'thread-1',
-            authors: [
-              {
-                username: 'Elon Mask',
-              },
-              {
-                username: 'John Carmack',
-              },
-              {
-                username: 'Bill Gates',
-              },
-              {
-                username: 'Steve Jobs',
-              },
-            ],
+            authors: this.userApiService.users.slice(1, 5),
             messagesCount: 4,
           },
         } as Message,
@@ -98,7 +87,7 @@ export class MessageApiService {
           chatId: 'channel-1',
           createdAt: new Date().toISOString(),
           author: {
-            username: 'Elon Mask',
+            username: 'Beverie Duncklee',
           },
         } as Message,
         {
@@ -108,7 +97,7 @@ export class MessageApiService {
           emoji: ['&#x1F602', '&#x1F618', '&#x1F631'],
           createdAt: new Date().toISOString(),
           author: {
-            username: 'Bill Gates',
+            username: 'Mayor Howarth',
           },
         } as Message,
       ],
@@ -122,7 +111,7 @@ export class MessageApiService {
           chatId: 'thread-1',
           createdAt: new Date().toISOString(),
           author: {
-            username: 'Elon Mask',
+            username: 'Beverie Duncklee',
           },
         } as Message,
         {
@@ -131,7 +120,7 @@ export class MessageApiService {
           chatId: 'thread-1',
           createdAt: new Date().toISOString(),
           author: {
-            username: 'Bill Gates',
+            username: 'Mayor Howarth',
           },
         } as Message,
         {
@@ -141,7 +130,7 @@ export class MessageApiService {
           createdAt: new Date().toISOString(),
           emoji: ['&#x1F606', '&#x1F44D', '&#x1F60D'],
           author: {
-            username: 'John Carmack',
+            username: 'Nikolaos Olivazzi',
           },
         } as Message,
         {
@@ -150,7 +139,7 @@ export class MessageApiService {
           chatId: 'thread-1',
           createdAt: new Date().toISOString(),
           author: {
-            username: 'Steve Jobs',
+            username: 'Hube Sambell',
           },
         } as Message,
       ],
@@ -160,7 +149,7 @@ export class MessageApiService {
   sendMessage(
     chatId: string,
     content: string,
-    attachments: File[],
+    attachments: File[]
   ): Observable<{
     data: Message;
     messagesCount: number;
