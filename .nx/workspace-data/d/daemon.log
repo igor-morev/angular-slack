@@ -1,0 +1,12 @@
+[NX Daemon Server] - 2024-06-19T08:17:32.794Z - Started listening on: /var/folders/92/mx1gmt6x7qvgv8db4rblz4l00000gq/T/8ad82e59c71147ac46e8/d.sock
+[NX Daemon Server] - 2024-06-19T08:17:32.803Z - [WATCHER]: Subscribed to changes within: /Users/morevin/dev/angular-slack (native)
+[NX Daemon Server] - 2024-06-19T08:17:32.805Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-06-19T08:17:32.807Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-06-19T08:17:32.810Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-06-19T08:17:32.816Z - [REQUEST]: Responding to the client. handleGlob
+[NX Daemon Server] - 2024-06-19T08:17:32.817Z - Done responding to the client handleGlob
+[NX Daemon Server] - 2024-06-19T08:17:32.817Z - Handled GLOB. Handling time: 3. Response time: 1.
+[NX Daemon Server] - 2024-06-19T08:17:32.976Z - [REQUEST]: Responding to the client. handleNxWorkspaceFiles
+[NX Daemon Server] - 2024-06-19T08:17:32.977Z - Done responding to the client handleNxWorkspaceFiles
+[NX Daemon Server] - 2024-06-19T08:17:32.977Z - Handled GET_NX_WORKSPACE_FILES. Handling time: 6. Response time: 1.
+[NX Daemon Server] - 2024-06-19T08:17:34.280Z - Closed a connection. Number of open connections: 0
