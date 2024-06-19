@@ -17,6 +17,15 @@
     "paths": {
       "@angular-slack/auth/data-access": ["libs/auth/data-access/src/index.ts"],
       "@angular-slack/chat-message": ["libs/shared/ui-message/src/index.ts"],
+      "@angular-slack/chat/feature-channel-chat-view": [
+        "libs/chat/feature-channel-chat-view/src/index.ts"
+      ],
+      "@angular-slack/chat/feature-primary-view": [
+        "libs/chat/feature-primary-view/src/index.ts"
+      ],
+      "@angular-slack/chat/thread-chat-view": [
+        "libs/chat/feature-thread-chat-view/src/index.ts"
+      ],
       "@angular-slack/client/data-access": [
         "libs/client/data-access/src/index.ts"
       ],
@@ -62,22 +71,13 @@
       "@angular-slack/thread-card": [
         "libs/threads/ui-thread-card/src/index.ts"
       ],
-      "@angular-slack/chat/thread-chat-view": [
-        "libs/chat/feature-thread-chat-view/src/index.ts"
+      "@angular-slack/threads/feature-threads": [
+        "libs/threads/feature-threads/src/index.ts"
       ],
       "@angular-slack/ui-store": [
         "libs/shared/data-access/ui-store/src/index.ts"
       ],
       "@angular-slack/utils": ["libs/shared/utils/src/index.ts"],
-      "@angular-slack/chat/feature-channel-chat-view": [
-        "libs/chat/feature-channel-chat-view/src/index.ts"
-      ],
-      "@angular-slack/chat/feature-primary-view": [
-        "libs/chat/feature-primary-view/src/index.ts"
-      ],
-      "@angular-slack/threads/feature-threads": [
-        "libs/threads/feature-threads/src/index.ts"
-      ],
       "@angular-slack/workspace/feature-shell": [
         "libs/workspace/feature-shell/src/index.ts"
       ],

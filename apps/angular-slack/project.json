@@ -2,14 +2,14 @@
   "name": "angular-slack",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
+  "prefix": "as",
+  "sourceRoot": "apps/angular-slack/src",
+  "tags": [],
   "generators": {
     "@nx/angular:component": {
       "style": "scss"
     }
   },
-  "prefix": "as",
-  "sourceRoot": "apps/angular-slack/src",
-  "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
@@ -71,7 +71,10 @@
           "buildTarget": "angular-slack:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "options": {
+        "proxyConfig": "apps/angular-slack/proxy.conf.json"
+      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",

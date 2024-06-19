@@ -6,6 +6,30 @@
       "data": {
         "root": "libs/header-toolbar/feature-header-toolbar",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/header-toolbar/feature-header-toolbar",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -61,6 +85,30 @@
       "data": {
         "root": "libs/channels/feature-create-channel",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/channels/feature-create-channel",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -116,6 +164,30 @@
       "data": {
         "root": "libs/chat/feature-channel-chat-view",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/chat/feature-channel-chat-view",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -171,6 +243,30 @@
       "data": {
         "root": "libs/shared/pipes/collection-commas",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/shared/pipes/collection-commas",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -226,6 +322,30 @@
       "data": {
         "root": "libs/channels/data-access-channels",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/channels/data-access-channels",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -281,6 +401,30 @@
       "data": {
         "root": "libs/contacts/data-access-contacts",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/contacts/data-access-contacts",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -336,6 +480,30 @@
       "data": {
         "root": "libs/channels/feature-edit-channel",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/channels/feature-edit-channel",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -391,6 +559,30 @@
       "data": {
         "root": "libs/chat/feature-thread-chat-view",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/chat/feature-thread-chat-view",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -446,6 +638,30 @@
       "data": {
         "root": "libs/shared/data-access/slack-api",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/shared/data-access/slack-api",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -501,6 +717,30 @@
       "data": {
         "root": "libs/threads/data-access-threads",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/threads/data-access-threads",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -556,6 +796,30 @@
       "data": {
         "root": "libs/shared/data-access/ui-store",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/shared/data-access/ui-store",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -611,6 +875,30 @@
       "data": {
         "root": "libs/chat/data-access-messages",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/chat/data-access-messages",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -666,6 +954,30 @@
       "data": {
         "root": "libs/chat/feature-primary-view",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/chat/feature-primary-view",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -721,6 +1033,30 @@
       "data": {
         "root": "libs/tab-rail/feature-tab-rail",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/tab-rail/feature-tab-rail",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -776,6 +1112,30 @@
       "data": {
         "root": "libs/shared/ui-message-editor",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/shared/ui-message-editor",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -831,6 +1191,30 @@
       "data": {
         "root": "libs/threads/feature-threads",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/threads/feature-threads",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -886,6 +1270,30 @@
       "data": {
         "root": "libs/workspace/feature-shell",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/workspace/feature-shell",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -941,6 +1349,30 @@
       "data": {
         "root": "libs/shared/ui-file-preview",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/shared/ui-file-preview",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -996,6 +1428,30 @@
       "data": {
         "root": "libs/threads/ui-thread-card",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/threads/ui-thread-card",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -1051,6 +1507,30 @@
       "data": {
         "root": "libs/client/feature-shell",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/client/feature-shell",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -1104,6 +1584,30 @@
       "data": {
         "root": "libs/client/data-access",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/client/data-access",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -1159,6 +1663,30 @@
       "data": {
         "root": "libs/shared/ui-message",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/shared/ui-message",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -1214,6 +1742,30 @@
       "data": {
         "root": "libs/auth/data-access",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/auth/data-access",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -1269,6 +1821,30 @@
       "data": {
         "root": "apps/angular-slack",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "apps/angular-slack",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "build": {
             "executor": "@angular-devkit/build-angular:application",
             "cache": true,
@@ -1379,7 +1955,9 @@
               }
             },
             "defaultConfiguration": "development",
-            "options": {}
+            "options": {
+              "proxyConfig": "apps/angular-slack/proxy.conf.json"
+            }
           },
           "extract-i18n": {
             "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -1409,6 +1987,30 @@
       "data": {
         "root": "libs/shared/utils",
         "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "libs/shared/utils",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
           "lint": {
             "executor": "@nx/eslint:lint",
             "cache": true,
@@ -1455,6 +2057,188 @@
         "tags": [
           "util"
         ],
+        "implicitDependencies": []
+      }
+    },
+    "backend-e2e": {
+      "name": "backend-e2e",
+      "type": "e2e",
+      "data": {
+        "root": "apps/backend-e2e",
+        "targets": {
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "apps/backend-e2e",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
+          "e2e": {
+            "executor": "@nx/jest:jest",
+            "cache": true,
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}/jest.preset.js"
+            ],
+            "outputs": [
+              "{workspaceRoot}/coverage/{e2eProjectRoot}"
+            ],
+            "options": {
+              "passWithNoTests": true,
+              "jestConfig": "apps/backend-e2e/jest.config.ts"
+            },
+            "dependsOn": [
+              "backend:build"
+            ],
+            "configurations": {
+              "ci": {
+                "ci": true,
+                "codeCoverage": true
+              }
+            }
+          }
+        },
+        "name": "backend-e2e",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "projectType": "application",
+        "implicitDependencies": [
+          "backend"
+        ],
+        "tags": []
+      }
+    },
+    "backend": {
+      "name": "backend",
+      "type": "app",
+      "data": {
+        "root": "apps/backend",
+        "projectType": "application",
+        "targets": {
+          "build": {
+            "cache": true,
+            "dependsOn": [
+              "^build"
+            ],
+            "inputs": [
+              "production",
+              "^production"
+            ],
+            "outputs": [
+              "{workspaceRoot}/dist/apps/backend"
+            ],
+            "executor": "nx:run-commands",
+            "options": {
+              "cwd": "apps/backend",
+              "args": [
+                "--node-env=production"
+              ],
+              "command": "webpack-cli build"
+            },
+            "configurations": {}
+          },
+          "serve": {
+            "executor": "@nx/js:node",
+            "defaultConfiguration": "development",
+            "options": {
+              "buildTarget": "backend:build"
+            },
+            "configurations": {
+              "development": {
+                "buildTarget": "backend:build:development"
+              },
+              "production": {
+                "buildTarget": "backend:build:production"
+              }
+            }
+          },
+          "preview": {
+            "options": {
+              "cwd": "apps/backend",
+              "args": [
+                "--node-env=production"
+              ],
+              "command": "webpack-cli serve"
+            },
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
+          "serve-static": {
+            "executor": "@nx/web:file-server",
+            "options": {
+              "buildTarget": "build",
+              "spa": true
+            },
+            "configurations": {}
+          },
+          "eslint:lint": {
+            "cache": true,
+            "options": {
+              "cwd": "apps/backend",
+              "command": "eslint ."
+            },
+            "inputs": [
+              "default",
+              "^default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{projectRoot}/.eslintrc.json",
+              "{workspaceRoot}/tools/eslint-rules/**/*",
+              {
+                "externalDependencies": [
+                  "eslint"
+                ]
+              }
+            ],
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "executor": "nx:run-commands",
+            "configurations": {}
+          },
+          "test": {
+            "executor": "@nx/jest:jest",
+            "cache": true,
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}/jest.preset.js"
+            ],
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "passWithNoTests": true,
+              "jestConfig": "apps/backend/jest.config.ts"
+            },
+            "configurations": {
+              "ci": {
+                "ci": true,
+                "codeCoverage": true
+              }
+            }
+          }
+        },
+        "name": "backend",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "apps/backend/src",
+        "tags": [],
         "implicitDependencies": []
       }
     }
@@ -1703,6 +2487,24 @@
         "hash": "sha512-93N6oHnmtRt0hL3AXxvnk47sN1rHndfj+pqI5haEY41AGWzIWv9cSBsqlM0PWltNpo6VivcExZESvbLJ71wqbQ=="
       }
     },
+    "npm:@angular-devkit/core@17.1.2": {
+      "type": "npm",
+      "name": "npm:@angular-devkit/core@17.1.2",
+      "data": {
+        "version": "17.1.2",
+        "packageName": "@angular-devkit/core",
+        "hash": "sha512-ku+/W/HMCBacSWFppenr9y6Lx8mDuTuQvn1IkTyBLiJOpWnzgVbx9kHDeaDchGa1PwLlJUBBrv27t3qgJOIDPw=="
+      }
+    },
+    "npm:@angular-devkit/core@16.0.1": {
+      "type": "npm",
+      "name": "npm:@angular-devkit/core@16.0.1",
+      "data": {
+        "version": "16.0.1",
+        "packageName": "@angular-devkit/core",
+        "hash": "sha512-2uz98IqkKJlgnHbWQ7VeL4pb+snGAZXIama2KXi+k9GsRntdcw+udX8rL3G9SdUGUF+m6+147Y1oRBMHsO/v4w=="
+      }
+    },
     "npm:ajv-formats@3.0.1": {
       "type": "npm",
       "name": "npm:ajv-formats@3.0.1",
@@ -1737,6 +2539,24 @@
         "version": "17.0.10",
         "packageName": "@angular-devkit/schematics",
         "hash": "sha512-hjf4gaMx2uB6ZhBstBSH0Q2hzfp6kxI4IiJ5i1QrxPNE1MdGnb2h+LgPTRCdO72a7PGeWcSxFRE7cxrXeQy19g=="
+      }
+    },
+    "npm:@angular-devkit/schematics@17.1.2": {
+      "type": "npm",
+      "name": "npm:@angular-devkit/schematics@17.1.2",
+      "data": {
+        "version": "17.1.2",
+        "packageName": "@angular-devkit/schematics",
+        "hash": "sha512-8S9RuM8olFN/gwN+mjbuF1CwHX61f0i59EGXz9tXLnKRUTjsRR+8vVMTAmX0dvVAT5fJTG/T69X+HX7FeumdqA=="
+      }
+    },
+    "npm:@angular-devkit/schematics@16.0.1": {
+      "type": "npm",
+      "name": "npm:@angular-devkit/schematics@16.0.1",
+      "data": {
+        "version": "16.0.1",
+        "packageName": "@angular-devkit/schematics",
+        "hash": "sha512-A9D0LTYmiqiBa90GKcSuWb7hUouGIbm/AHbJbjL85WLLRbQA2PwKl7P5Mpd6nS/ZC0kfG4VQY3VOaDvb3qpI9g=="
       }
     },
     "npm:@angular-eslint/bundled-angular-compiler": {
@@ -2063,6 +2883,15 @@
         "hash": "sha512-7xlpfBaQaP/T6Vh8MO/EqXSW5En6INHEvEXQiuff7Gku0PWjU3uf6w/j9o7O+SpB5fOAkrI5HeoNgwjEO0pFsA=="
       }
     },
+    "npm:magic-string@0.30.0": {
+      "type": "npm",
+      "name": "npm:magic-string@0.30.0",
+      "data": {
+        "version": "0.30.0",
+        "packageName": "magic-string",
+        "hash": "sha512-LA+31JYDJLs82r2ScLrlz1GjSgu66ZV518eyWT+S8VhyQn/JL0u9MeBOvQMGYiPk1DBiSN9DDMOcXvigJZaViQ=="
+      }
+    },
     "npm:magic-string": {
       "type": "npm",
       "name": "npm:magic-string",
@@ -2142,6 +2971,24 @@
         "version": "18.0.3",
         "packageName": "@angular/compiler-cli",
         "hash": "sha512-mxwQEeP94YBM6C9A2YfkV7ug1sHgh0fU/TSBpQcm5ni4cZiVPu6q/+Ft7hyFTKe2p3tKQme33+xVjsWhtOCx0A=="
+      }
+    },
+    "npm:reflect-metadata@0.2.2": {
+      "type": "npm",
+      "name": "npm:reflect-metadata@0.2.2",
+      "data": {
+        "version": "0.2.2",
+        "packageName": "reflect-metadata",
+        "hash": "sha512-urBwgfrvVP/eAyXx4hluJivBKzuEbSQs9rKWCrCkbSxNv8mxPcUZKeuoF3Uy4mJl3Lwprp6yy5/39VWigZ4K6Q=="
+      }
+    },
+    "npm:reflect-metadata": {
+      "type": "npm",
+      "name": "npm:reflect-metadata",
+      "data": {
+        "version": "0.1.14",
+        "packageName": "reflect-metadata",
+        "hash": "sha512-ZhYeb6nRaXCfhnndflDK8qI6ZQ/YcWZCISRAWICW9XYqMUwjZM9Z0DveWX/ABN01oxSHwVxKQmxeYZSsm0jh5A=="
       }
     },
     "npm:@angular/core": {
@@ -4511,6 +5358,15 @@
         "hash": "sha512-T98rfsgfdQMS5/mqdsPb6oHSJ+iBYNa+PQDLtXLh6rzTEBsYP9x2uXxIj6VS4qXVDWXVi8rv85NCOG+UBOsHXQ=="
       }
     },
+    "npm:@lukeed/csprng": {
+      "type": "npm",
+      "name": "npm:@lukeed/csprng",
+      "data": {
+        "version": "1.1.0",
+        "packageName": "@lukeed/csprng",
+        "hash": "sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA=="
+      }
+    },
     "npm:@maskito/angular": {
       "type": "npm",
       "name": "npm:@maskito/angular",
@@ -4545,6 +5401,78 @@
         "version": "3.0.3",
         "packageName": "@msgpackr-extract/msgpackr-extract-darwin-x64",
         "hash": "sha512-mdzd3AVzYKuUmiWOQ8GNhl64/IoFGol569zNRdkLReh6LRLHOXxU4U8eq0JwaD8iFHdVGqSy4IjFL4reoWCDFw=="
+      }
+    },
+    "npm:@nestjs/common": {
+      "type": "npm",
+      "name": "npm:@nestjs/common",
+      "data": {
+        "version": "10.3.9",
+        "packageName": "@nestjs/common",
+        "hash": "sha512-JAQONPagMa+sy/fcIqh/Hn3rkYQ9pQM51vXCFNOM5ujefxUVqn3gwFRMN8Y1+MxdUHipV+8daEj2jEm0IqJzOA=="
+      }
+    },
+    "npm:@nestjs/core": {
+      "type": "npm",
+      "name": "npm:@nestjs/core",
+      "data": {
+        "version": "10.3.9",
+        "packageName": "@nestjs/core",
+        "hash": "sha512-NzZUfWAmaf8sqhhwoRA+CuqxQe+P4Rz8PZp5U7CdCbjyeB9ZVGcBkihcJC9wMdtiOWHRndB2J8zRfs5w06jK3w=="
+      }
+    },
+    "npm:path-to-regexp@3.2.0": {
+      "type": "npm",
+      "name": "npm:path-to-regexp@3.2.0",
+      "data": {
+        "version": "3.2.0",
+        "packageName": "path-to-regexp",
+        "hash": "sha512-jczvQbCUS7XmS7o+y1aEO9OBVFeZBQ1MDSEqmO7xSoPgOPoowY/SxLpZ6Vh97/8qHZOteiCKb7gkG9gA2ZUxJA=="
+      }
+    },
+    "npm:path-to-regexp": {
+      "type": "npm",
+      "name": "npm:path-to-regexp",
+      "data": {
+        "version": "0.1.7",
+        "packageName": "path-to-regexp",
+        "hash": "sha512-5DFkuoqlv1uYQKxy8omFBeJPQcdoE07Kv2sferDCrAq1ohOU+MSDswDIbnx3YAM60qIOnYa53wBhXW0EbMonrQ=="
+      }
+    },
+    "npm:@nestjs/platform-express": {
+      "type": "npm",
+      "name": "npm:@nestjs/platform-express",
+      "data": {
+        "version": "10.3.9",
+        "packageName": "@nestjs/platform-express",
+        "hash": "sha512-si/UzobP6YUtYtCT1cSyQYHHzU3yseqYT6l7OHSMVvfG1+TqxaAqI6nmrix02LO+l1YntHRXEs3p+v9a7EfrSQ=="
+      }
+    },
+    "npm:@nestjs/schematics": {
+      "type": "npm",
+      "name": "npm:@nestjs/schematics",
+      "data": {
+        "version": "10.1.1",
+        "packageName": "@nestjs/schematics",
+        "hash": "sha512-o4lfCnEeIkfJhGBbLZxTuVWcGuqDCFwg5OrvpgRUBM7vI/vONvKKiB5riVNpO+JqXoH0I42NNeDb0m4V5RREig=="
+      }
+    },
+    "npm:@nestjs/schematics@9.2.0": {
+      "type": "npm",
+      "name": "npm:@nestjs/schematics@9.2.0",
+      "data": {
+        "version": "9.2.0",
+        "packageName": "@nestjs/schematics",
+        "hash": "sha512-wHpNJDPzM6XtZUOB3gW0J6mkFCSJilzCM3XrHI1o0C8vZmFE1snbmkIXNyoi1eV0Nxh1BMymcgz5vIMJgQtTqw=="
+      }
+    },
+    "npm:@nestjs/testing": {
+      "type": "npm",
+      "name": "npm:@nestjs/testing",
+      "data": {
+        "version": "10.3.9",
+        "packageName": "@nestjs/testing",
+        "hash": "sha512-z24SdpZIRtYyM5s2vnu7rbBosXJY/KcAP7oJlwgFa/h/z/wg8gzyoKy5lhibH//OZNO+pYKajV5wczxuy5WeAg=="
       }
     },
     "npm:@ng-web-apis/common": {
@@ -4916,6 +5844,24 @@
         "hash": "sha512-G+7nvAlfwnnlcPnoAhpcCrsOZTwa7hRd6WoqSrYuG/9Ge1NZ3H+rwvS5wX+bTKn8/hKHQdDuJUTomyOTpt1I1g=="
       }
     },
+    "npm:@nrwl/nest": {
+      "type": "npm",
+      "name": "npm:@nrwl/nest",
+      "data": {
+        "version": "19.3.0",
+        "packageName": "@nrwl/nest",
+        "hash": "sha512-PXmAMdGXwrdJgn87tfNfnvY5guuu1BeOVyd+aCEXqXlgLVnp5JR6BtSm5l+R1q+LyQQEG482SJnBE+UaFDgVfw=="
+      }
+    },
+    "npm:@nrwl/node": {
+      "type": "npm",
+      "name": "npm:@nrwl/node",
+      "data": {
+        "version": "19.3.0",
+        "packageName": "@nrwl/node",
+        "hash": "sha512-BhbY1k0eS//BIdzU8iblsbIVIm3gxa+2WqpBYNoLZr95qU2QJD20VmmNBIehUTJn4fj58KbdbHzW4jbw7Zf4pA=="
+      }
+    },
     "npm:@nrwl/tao": {
       "type": "npm",
       "name": "npm:@nrwl/tao",
@@ -4950,6 +5896,15 @@
         "version": "19.3.0",
         "packageName": "@nrwl/workspace",
         "hash": "sha512-h/kMImLdX5NMg0lXB6PmYIxBYI6WU7ATcOI3tGl8z48HHfyfwu87vTQlxFi3jaZv2qj/mE5VFpd+tGADEPNvCw=="
+      }
+    },
+    "npm:@nuxtjs/opencollective": {
+      "type": "npm",
+      "name": "npm:@nuxtjs/opencollective",
+      "data": {
+        "version": "0.3.2",
+        "packageName": "@nuxtjs/opencollective",
+        "hash": "sha512-um0xL3fO7Mf4fDxcqx9KryrB7zgRM5JSlvGN5AGkP6JLM5XEKyjeAiPbNxdXVXQ16isuAhYpvP88NgL2BGd6aA=="
       }
     },
     "npm:@nx/angular": {
@@ -5013,15 +5968,6 @@
         "version": "2.8.0",
         "packageName": "babel-plugin-macros",
         "hash": "sha512-SEP5kJpfGYqYKpBrj5XU3ahw5p5GOHJ0U5ssOSQ/WBVdwkD2Dzlce95exQTs3jOVWPPKLBN2rlEWkCK7dSmLvg=="
-      }
-    },
-    "npm:babel-plugin-macros": {
-      "type": "npm",
-      "name": "npm:babel-plugin-macros",
-      "data": {
-        "version": "3.1.0",
-        "packageName": "babel-plugin-macros",
-        "hash": "sha512-Cg7TFGpIr01vOQNODXOOaGz2NpCU5gl8x1qJFbb6hbZxR7XrcE2vtbAsTAbJ7/xwJtUuJEw8K8Zr/AE0LHlesg=="
       }
     },
     "npm:fast-glob@3.2.7": {
@@ -5112,6 +6058,24 @@
         "version": "19.3.0",
         "packageName": "@nx/linter",
         "hash": "sha512-+bpDyXjHBTuVHvbQ7m2hG86m1jJNAPOmnoad/2ZPoQM4LjBTOW8M7s2upZPewjnAJs8Fv02281mO+ORbhW7L9A=="
+      }
+    },
+    "npm:@nx/nest": {
+      "type": "npm",
+      "name": "npm:@nx/nest",
+      "data": {
+        "version": "19.3.0",
+        "packageName": "@nx/nest",
+        "hash": "sha512-ka9acMmCbzPEISn3CqJNYRI2pWKcfr0IWkevjpmt3z4Woq1W7kG1x6o0Q00VHk2IpTmo1h2XzU9F0SqBD0HTiQ=="
+      }
+    },
+    "npm:@nx/node": {
+      "type": "npm",
+      "name": "npm:@nx/node",
+      "data": {
+        "version": "19.3.0",
+        "packageName": "@nx/node",
+        "hash": "sha512-haa2YBNv2FLKcV6X4wAIhzVLOhn9f6i+AJGRUzlgNOqEtGlrRWpnuO2kGBtFco9PmI7avyUxySlwXppYWDOBRQ=="
       }
     },
     "npm:@nx/nx-darwin-x64": {
@@ -5699,15 +6663,6 @@
         "hash": "sha512-scHWahbHF0eyj3JsxG9CFJgFdFNaVQCNAimBlT6PzS3n/HptxqREjsm4OH6AN3lYcffZYSPxXW8ua2BEHp0lJQ=="
       }
     },
-    "npm:@swc/types": {
-      "type": "npm",
-      "name": "npm:@swc/types",
-      "data": {
-        "version": "0.1.8",
-        "packageName": "@swc/types",
-        "hash": "sha512-RNFA3+7OJFNYY78x0FYwi1Ow+iF1eF5WvmfY1nXPOEH4R2p/D4Cr1vzje7dNAI2aLFqpv8Wyz4oKSWqIZArpQA=="
-      }
-    },
     "npm:@swc/counter": {
       "type": "npm",
       "name": "npm:@swc/counter",
@@ -5715,6 +6670,15 @@
         "version": "0.1.3",
         "packageName": "@swc/counter",
         "hash": "sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ=="
+      }
+    },
+    "npm:@swc/helpers": {
+      "type": "npm",
+      "name": "npm:@swc/helpers",
+      "data": {
+        "version": "0.5.11",
+        "packageName": "@swc/helpers",
+        "hash": "sha512-YNlnKRWF2sVojTpIyzwou9XoTNbzbzONwRhOoniEioF1AtaitTvVZblaQRrAzChWQ1bLYyYSWzM18y4WwgzJ+A=="
       }
     },
     "npm:@taiga-ui/addon-preview": {
@@ -6581,6 +7545,33 @@
         "hash": "sha512-+X4WAlOisVWQMikjbcvY2e0rwPsKQ9F688lksZhBcPycBBuii3O7m8FACbDMWDojpAqvjIncrG8J0XHKyQfVeA=="
       }
     },
+    "npm:@webpack-cli/configtest": {
+      "type": "npm",
+      "name": "npm:@webpack-cli/configtest",
+      "data": {
+        "version": "2.1.1",
+        "packageName": "@webpack-cli/configtest",
+        "hash": "sha512-wy0mglZpDSiSS0XHrVR+BAdId2+yxPSoJW8fsna3ZpYSlufjvxnP4YbKTCBZnNIcGN4r6ZPXV55X4mYExOfLmw=="
+      }
+    },
+    "npm:@webpack-cli/info": {
+      "type": "npm",
+      "name": "npm:@webpack-cli/info",
+      "data": {
+        "version": "2.0.2",
+        "packageName": "@webpack-cli/info",
+        "hash": "sha512-zLHQdI/Qs1UyT5UBdWNqsARasIA+AaF8t+4u2aS2nEpBQh2mWIVb8qAklq0eUENnC5mOItrIB4LiS9xMtph18A=="
+      }
+    },
+    "npm:@webpack-cli/serve": {
+      "type": "npm",
+      "name": "npm:@webpack-cli/serve",
+      "data": {
+        "version": "2.0.5",
+        "packageName": "@webpack-cli/serve",
+        "hash": "sha512-lqaoKnRYBdo1UgDX8uF24AfGMifWK19TxPmM5FHc2vAGxrJ/qtyUyFBWoY1tISZdelsQ5fBcOusifo5o5wSJxQ=="
+      }
+    },
     "npm:@xtuc/ieee754": {
       "type": "npm",
       "name": "npm:@xtuc/ieee754",
@@ -6806,6 +7797,15 @@
         "hash": "sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw=="
       }
     },
+    "npm:append-field": {
+      "type": "npm",
+      "name": "npm:append-field",
+      "data": {
+        "version": "1.0.0",
+        "packageName": "append-field",
+        "hash": "sha512-klpgFSWLW1ZEs8svjfb7g4qWY0YS5imI82dTg+QahUvJ8YqAY0P10Uk8tTyh9ZGuYEZEMaeJYCF5BFuX552hsw=="
+      }
+    },
     "npm:arg": {
       "type": "npm",
       "name": "npm:arg",
@@ -6858,6 +7858,15 @@
         "version": "1.0.0",
         "packageName": "array-ify",
         "hash": "sha512-c5AMf34bKdvPhQ7tBGhqkgKNUzMr4WUs+WDtC2ZUGOUncbxKMTvqxYctiseW3+L4bA8ec+GcZ6/A/FW4m8ukng=="
+      }
+    },
+    "npm:array-timsort": {
+      "type": "npm",
+      "name": "npm:array-timsort",
+      "data": {
+        "version": "1.0.3",
+        "packageName": "array-timsort",
+        "hash": "sha512-/+3GRL7dDAGEfM6TseQk/U+mi18TU2Ms9I3UlLdUMhz2hbvGNTKdj9xniwXfUqgYhHxRx0+8UnKkvlNwVU+cWQ=="
       }
     },
     "npm:arrify": {
@@ -7328,6 +8337,15 @@
         "hash": "sha512-tjwM5exMg6BGRI+kNmTntNsvdZS1X8BFYS6tnJ2hdH0kVxM6/eVZ2xy+FqStSWvYmtfFMDLIxurorHwDKfDz5Q=="
       }
     },
+    "npm:busboy": {
+      "type": "npm",
+      "name": "npm:busboy",
+      "data": {
+        "version": "1.6.0",
+        "packageName": "busboy",
+        "hash": "sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA=="
+      }
+    },
     "npm:cacache": {
       "type": "npm",
       "name": "npm:cacache",
@@ -7616,6 +8634,24 @@
         "hash": "sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ=="
       }
     },
+    "npm:commander@10.0.1": {
+      "type": "npm",
+      "name": "npm:commander@10.0.1",
+      "data": {
+        "version": "10.0.1",
+        "packageName": "commander",
+        "hash": "sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug=="
+      }
+    },
+    "npm:comment-json": {
+      "type": "npm",
+      "name": "npm:comment-json",
+      "data": {
+        "version": "4.2.3",
+        "packageName": "comment-json",
+        "hash": "sha512-SsxdiOf064DWoZLH799Ata6u7iV658A11PlWtZATDlXPpKGJnbJZ5Z24ybixAi+LUUqJ/GKowAejtC5GFUG7Tw=="
+      }
+    },
     "npm:common-path-prefix": {
       "type": "npm",
       "name": "npm:common-path-prefix",
@@ -7670,6 +8706,51 @@
         "hash": "sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg=="
       }
     },
+    "npm:concat-stream": {
+      "type": "npm",
+      "name": "npm:concat-stream",
+      "data": {
+        "version": "1.6.2",
+        "packageName": "concat-stream",
+        "hash": "sha512-27HBghJxjiZtIk3Ycvn/4kbJk/1uZuJFfuPEns6LaEvpvG1f0hTea8lilrouyo9mVc2GWdcEZ8OLoGmSADlrCw=="
+      }
+    },
+    "npm:readable-stream@2.3.8": {
+      "type": "npm",
+      "name": "npm:readable-stream@2.3.8",
+      "data": {
+        "version": "2.3.8",
+        "packageName": "readable-stream",
+        "hash": "sha512-8p0AUk4XODgIewSi0l8Epjs+EVnWiK7NoDIEGU0HhE7+ZyY8D1IMY7odu5lRrFXGg71L15KG8QrPmum45RTtdA=="
+      }
+    },
+    "npm:readable-stream": {
+      "type": "npm",
+      "name": "npm:readable-stream",
+      "data": {
+        "version": "3.6.2",
+        "packageName": "readable-stream",
+        "hash": "sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA=="
+      }
+    },
+    "npm:string_decoder@1.1.1": {
+      "type": "npm",
+      "name": "npm:string_decoder@1.1.1",
+      "data": {
+        "version": "1.1.1",
+        "packageName": "string_decoder",
+        "hash": "sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg=="
+      }
+    },
+    "npm:string_decoder": {
+      "type": "npm",
+      "name": "npm:string_decoder",
+      "data": {
+        "version": "1.3.0",
+        "packageName": "string_decoder",
+        "hash": "sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA=="
+      }
+    },
     "npm:confusing-browser-globals": {
       "type": "npm",
       "name": "npm:confusing-browser-globals",
@@ -7686,6 +8767,15 @@
         "version": "2.0.0",
         "packageName": "connect-history-api-fallback",
         "hash": "sha512-U73+6lQFmfiNPrYbXqr6kZ1i1wiRqXnp2nhMsINseWXO8lDau0LGEffJ8kQi4EjLZympVgRdvqjAgiZ1tgzDDA=="
+      }
+    },
+    "npm:consola": {
+      "type": "npm",
+      "name": "npm:consola",
+      "data": {
+        "version": "2.15.3",
+        "packageName": "consola",
+        "hash": "sha512-9vAdYbHj6x2fLKC4+oPH0kFzY/orMZyG2Aj+kNylHxKGJ/Ed4dpNyAQYwJOdqO4zdM7XpVHmyejQDcQHrnuXbw=="
       }
     },
     "npm:content-disposition": {
@@ -7755,9 +8845,9 @@
       "type": "npm",
       "name": "npm:cookie",
       "data": {
-        "version": "0.5.0",
+        "version": "0.6.0",
         "packageName": "cookie",
-        "hash": "sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw=="
+        "hash": "sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw=="
       }
     },
     "npm:cookie-signature": {
@@ -7794,6 +8884,15 @@
         "version": "1.0.3",
         "packageName": "core-util-is",
         "hash": "sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ=="
+      }
+    },
+    "npm:cors": {
+      "type": "npm",
+      "name": "npm:cors",
+      "data": {
+        "version": "2.8.5",
+        "packageName": "cors",
+        "hash": "sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g=="
       }
     },
     "npm:corser": {
@@ -8471,6 +9570,15 @@
         "hash": "sha512-+h1lkLKhZMTYjog1VEpJNG7NZJWcuc2DDk/qsqSTRRCOXiLjeQ1d1/udrUGhqMxUgAlwKNZ0cf2uqan5GLuS2A=="
       }
     },
+    "npm:envinfo": {
+      "type": "npm",
+      "name": "npm:envinfo",
+      "data": {
+        "version": "7.13.0",
+        "packageName": "envinfo",
+        "hash": "sha512-cvcaMr7KqXVh4nyzGTVqTum+gAiL265x5jUWQIDLq//zOGbW+gSW/C+OWLleY/rs9Qole6AZLMXPbtIFQbqu+Q=="
+      }
+    },
     "npm:err-code": {
       "type": "npm",
       "name": "npm:err-code",
@@ -8718,9 +9826,9 @@
       "type": "npm",
       "name": "npm:express",
       "data": {
-        "version": "4.18.3",
+        "version": "4.19.2",
         "packageName": "express",
-        "hash": "sha512-6VyCijWQ+9O7WuVMTRBTl+cjNNIzD5cY5mQ1WM8r/LEkI2u8EYpOotESNwzNlyCn3g+dmjKYI6BmNneSr/FSRw=="
+        "hash": "sha512-5T6nhjsT+EOMzuck8JjBHARTHfMht0POzlA60WV2pMD3gyXw2LZnZ+ueGdNxG+0calOJcWKbpFcuzLZ91YWq9Q=="
       }
     },
     "npm:external-editor": {
@@ -8784,6 +9892,24 @@
         "version": "2.0.6",
         "packageName": "fast-levenshtein",
         "hash": "sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw=="
+      }
+    },
+    "npm:fast-safe-stringify": {
+      "type": "npm",
+      "name": "npm:fast-safe-stringify",
+      "data": {
+        "version": "2.1.1",
+        "packageName": "fast-safe-stringify",
+        "hash": "sha512-W+KJc2dmILlPplD/H4K9l9LcAHAfPtP6BY84uVLXQ6Evcz9Lcg33Y2z1IVblT6xdY54PXYVHEv+0Wpq8Io6zkA=="
+      }
+    },
+    "npm:fastest-levenshtein": {
+      "type": "npm",
+      "name": "npm:fastest-levenshtein",
+      "data": {
+        "version": "1.0.16",
+        "packageName": "fastest-levenshtein",
+        "hash": "sha512-eRnCtTTtGZFpQCwhJiUOuxPQWRXVKYDn0b2PeHfXL6/Zi53SLAzAHfVhVWK2AryC/WH05kGfxhFIPvTF0SXQzg=="
       }
     },
     "npm:fastq": {
@@ -9155,6 +10281,15 @@
         "hash": "sha512-HIp/n38R9kQjDEziXyDTuW3vvoxxyxjxFzXLrBr18uB47GnSt+G9D29fqrpM5ZkspMcPICud3XsBJQ4Y2URg8g=="
       }
     },
+    "npm:has-own-prop": {
+      "type": "npm",
+      "name": "npm:has-own-prop",
+      "data": {
+        "version": "2.0.0",
+        "packageName": "has-own-prop",
+        "hash": "sha512-Pq0h+hvsVm6dDEa8x82GnLSYHOzNDt7f0ddFa3FqcQlgzEiptPqL+XrOJNavjOzSYiYWIrgeVYYgGlLmnxwilQ=="
+      }
+    },
     "npm:has-property-descriptors": {
       "type": "npm",
       "name": "npm:has-property-descriptors",
@@ -9216,42 +10351,6 @@
         "version": "2.1.6",
         "packageName": "hpack.js",
         "hash": "sha512-zJxVehUdMGIKsRaNt7apO2Gqp0BdqW5yaiGHXXmbpvxgBYVZnAql+BJb4RO5ad2MgpbZKn5G6nMnegrH1FcNYQ=="
-      }
-    },
-    "npm:readable-stream@2.3.8": {
-      "type": "npm",
-      "name": "npm:readable-stream@2.3.8",
-      "data": {
-        "version": "2.3.8",
-        "packageName": "readable-stream",
-        "hash": "sha512-8p0AUk4XODgIewSi0l8Epjs+EVnWiK7NoDIEGU0HhE7+ZyY8D1IMY7odu5lRrFXGg71L15KG8QrPmum45RTtdA=="
-      }
-    },
-    "npm:readable-stream": {
-      "type": "npm",
-      "name": "npm:readable-stream",
-      "data": {
-        "version": "3.6.2",
-        "packageName": "readable-stream",
-        "hash": "sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA=="
-      }
-    },
-    "npm:string_decoder@1.1.1": {
-      "type": "npm",
-      "name": "npm:string_decoder@1.1.1",
-      "data": {
-        "version": "1.1.1",
-        "packageName": "string_decoder",
-        "hash": "sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg=="
-      }
-    },
-    "npm:string_decoder": {
-      "type": "npm",
-      "name": "npm:string_decoder",
-      "data": {
-        "version": "1.3.0",
-        "packageName": "string_decoder",
-        "hash": "sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA=="
       }
     },
     "npm:html-encoding-sniffer": {
@@ -9549,6 +10648,15 @@
         "version": "4.1.1",
         "packageName": "ini",
         "hash": "sha512-QQnnxNyfvmHFIsj7gkPcYymR8Jdw/o7mp5ZFihxn6h8Ci6fh3Dx4E1gPjpQEpIuPo9XVNY/ZUwh4BPMjGyL01g=="
+      }
+    },
+    "npm:interpret": {
+      "type": "npm",
+      "name": "npm:interpret",
+      "data": {
+        "version": "3.1.1",
+        "packageName": "interpret",
+        "hash": "sha512-6xwYfHbajpoF0xLW+iwLkhwgvLoZDfjYfoFNu8ftMoXINzwuymNLd9u/KmwtdT2GbR+/Cz66otEGEVVUHX9QLQ=="
       }
     },
     "npm:ip-address": {
@@ -9855,6 +10963,15 @@
         "version": "3.1.7",
         "packageName": "istanbul-reports",
         "hash": "sha512-BewmUXImeuRk2YY0PVbxgKAysvhRPUQE0h5QRM++nVWyubKGV0l8qQ5op8+B2DOmwSe63Jivj0BjkPQVf8fP5g=="
+      }
+    },
+    "npm:iterare": {
+      "type": "npm",
+      "name": "npm:iterare",
+      "data": {
+        "version": "1.2.1",
+        "packageName": "iterare",
+        "hash": "sha512-RKYVTCjAnRthyJes037NX/IiqeidgN1xc3j1RjFfECFp28A1GVwK9nA+i0rJPaHqSZwygLzRnFlzUuHFoWWy+Q=="
       }
     },
     "npm:jackspeak": {
@@ -10883,6 +12000,15 @@
         "hash": "sha512-+P72GAjVAbTxjjwUmwjVrqrdZROD4nf8KgpBoDxqXXTiYZZt/ud60dE5yvCSr9lRO8e8yv6kgJIC0K0PfZFVQw=="
       }
     },
+    "npm:multer": {
+      "type": "npm",
+      "name": "npm:multer",
+      "data": {
+        "version": "1.4.4-lts.1",
+        "packageName": "multer",
+        "hash": "sha512-WeSGziVj6+Z2/MwQo3GvqzgR+9Uc+qt8SwHKh3gvNPiISKfsMfG4SvCOFYlxxgkXt7yIV2i1yczehm0EOKIxIg=="
+      }
+    },
     "npm:multicast-dns": {
       "type": "npm",
       "name": "npm:multicast-dns",
@@ -11016,6 +12142,69 @@
         "version": "3.1.1",
         "packageName": "node-abort-controller",
         "hash": "sha512-AGK2yQKIjRuqnc6VkX2Xj5d+QW8xZ87pa1UK6yA6ouUyuxfHuMP6umE5QK7UmTeOAymo+Zx1Fxiuw9rVx8taHQ=="
+      }
+    },
+    "npm:node-fetch": {
+      "type": "npm",
+      "name": "npm:node-fetch",
+      "data": {
+        "version": "2.7.0",
+        "packageName": "node-fetch",
+        "hash": "sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A=="
+      }
+    },
+    "npm:tr46@0.0.3": {
+      "type": "npm",
+      "name": "npm:tr46@0.0.3",
+      "data": {
+        "version": "0.0.3",
+        "packageName": "tr46",
+        "hash": "sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw=="
+      }
+    },
+    "npm:tr46": {
+      "type": "npm",
+      "name": "npm:tr46",
+      "data": {
+        "version": "3.0.0",
+        "packageName": "tr46",
+        "hash": "sha512-l7FvfAHlcmulp8kr+flpQZmVwtu7nfRV7NZujtN0OqES8EL4O4e0qqzL0DC5gAvx/ZC/9lk6rhcUwYvkBnBnYA=="
+      }
+    },
+    "npm:webidl-conversions@3.0.1": {
+      "type": "npm",
+      "name": "npm:webidl-conversions@3.0.1",
+      "data": {
+        "version": "3.0.1",
+        "packageName": "webidl-conversions",
+        "hash": "sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ=="
+      }
+    },
+    "npm:webidl-conversions": {
+      "type": "npm",
+      "name": "npm:webidl-conversions",
+      "data": {
+        "version": "7.0.0",
+        "packageName": "webidl-conversions",
+        "hash": "sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g=="
+      }
+    },
+    "npm:whatwg-url@5.0.0": {
+      "type": "npm",
+      "name": "npm:whatwg-url@5.0.0",
+      "data": {
+        "version": "5.0.0",
+        "packageName": "whatwg-url",
+        "hash": "sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw=="
+      }
+    },
+    "npm:whatwg-url": {
+      "type": "npm",
+      "name": "npm:whatwg-url",
+      "data": {
+        "version": "11.0.0",
+        "packageName": "whatwg-url",
+        "hash": "sha512-RKT8HExMpoYx4igMiVMY83lN6UeITKJlBQ+vR/8ZJ8OCdSiN3RwCq+9gH0+Xzj0+5IrM6i4j/6LuvzbZIQgEcQ=="
       }
     },
     "npm:node-forge": {
@@ -11459,15 +12648,6 @@
         "hash": "sha512-Xa4Nw17FS9ApQFJ9umLiJS4orGjm7ZzwUrwamcGQuHSzDyth9boKDaycYdDcZDuqYATXw4HFXgaqWTctW/v1HA=="
       }
     },
-    "npm:path-to-regexp": {
-      "type": "npm",
-      "name": "npm:path-to-regexp",
-      "data": {
-        "version": "0.1.7",
-        "packageName": "path-to-regexp",
-        "hash": "sha512-5DFkuoqlv1uYQKxy8omFBeJPQcdoE07Kv2sferDCrAq1ohOU+MSDswDIbnx3YAM60qIOnYa53wBhXW0EbMonrQ=="
-      }
-    },
     "npm:path-type": {
       "type": "npm",
       "name": "npm:path-type",
@@ -11502,6 +12682,15 @@
         "version": "4.5.0",
         "packageName": "piscina",
         "hash": "sha512-iBaLWI56PFP81cfBSomWTmhOo9W2/yhIOL+Tk8O1vBCpK39cM0tGxB+wgYjG31qq4ohGvysfXSdnj8h7g4rZxA=="
+      }
+    },
+    "npm:pluralize": {
+      "type": "npm",
+      "name": "npm:pluralize",
+      "data": {
+        "version": "8.0.0",
+        "packageName": "pluralize",
+        "hash": "sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA=="
       }
     },
     "npm:portfinder": {
@@ -12125,13 +13314,13 @@
         "hash": "sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA=="
       }
     },
-    "npm:reflect-metadata": {
+    "npm:rechoir": {
       "type": "npm",
-      "name": "npm:reflect-metadata",
+      "name": "npm:rechoir",
       "data": {
-        "version": "0.2.2",
-        "packageName": "reflect-metadata",
-        "hash": "sha512-urBwgfrvVP/eAyXx4hluJivBKzuEbSQs9rKWCrCkbSxNv8mxPcUZKeuoF3Uy4mJl3Lwprp6yy5/39VWigZ4K6Q=="
+        "version": "0.8.0",
+        "packageName": "rechoir",
+        "hash": "sha512-/vxpCXddiX8NGfGO/mTafwjq4aFa/71pvamip0++IQk3zG8cbCj0fifNPrjjF1XMXUne91jL9OoxmdykoEtifQ=="
       }
     },
     "npm:regenerate": {
@@ -12195,6 +13384,15 @@
         "version": "0.9.1",
         "packageName": "regjsparser",
         "hash": "sha512-dQUtn90WanSNl+7mQKcXAgZxvUe7Z0SqXlgzv0za4LwiUhyzBC58yQO3liFoUgu8GiJVInAhJjkj1N0EtQ5nkQ=="
+      }
+    },
+    "npm:repeat-string": {
+      "type": "npm",
+      "name": "npm:repeat-string",
+      "data": {
+        "version": "1.6.1",
+        "packageName": "repeat-string",
+        "hash": "sha512-PV0dzCYDNfRi1jCDbJzpW7jNNDRuCOG/jI5ctQcGKt/clZD+YcPS3yIlWuTJMmESC8aevCFmWJy5wjAFgNqN6w=="
       }
     },
     "npm:require-directory": {
@@ -12683,6 +13881,15 @@
         "hash": "sha512-XlkWvfIm6RmsWtNJx+uqtKLS8eqFbxUg0ZzLXqY0caEy9l7hruX8IpiDnjsLavoBgqCCR71TqWO8MaXYheJ3RQ=="
       }
     },
+    "npm:streamsearch": {
+      "type": "npm",
+      "name": "npm:streamsearch",
+      "data": {
+        "version": "1.1.0",
+        "packageName": "streamsearch",
+        "hash": "sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg=="
+      }
+    },
     "npm:string-length": {
       "type": "npm",
       "name": "npm:string-length",
@@ -13025,15 +14232,6 @@
         "hash": "sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw=="
       }
     },
-    "npm:tr46": {
-      "type": "npm",
-      "name": "npm:tr46",
-      "data": {
-        "version": "3.0.0",
-        "packageName": "tr46",
-        "hash": "sha512-l7FvfAHlcmulp8kr+flpQZmVwtu7nfRV7NZujtN0OqES8EL4O4e0qqzL0DC5gAvx/ZC/9lk6rhcUwYvkBnBnYA=="
-      }
-    },
     "npm:tree-dump": {
       "type": "npm",
       "name": "npm:tree-dump",
@@ -13178,6 +14376,15 @@
         "hash": "sha512-KNNZtayBCtmnNmbo5mG47p1XsCyrx6iVqomjcZnec/1Y5GGARaxPs6r49RnSPeUP3YjNYiU9sQHAtY4BBvnZwg=="
       }
     },
+    "npm:typedarray": {
+      "type": "npm",
+      "name": "npm:typedarray",
+      "data": {
+        "version": "0.0.6",
+        "packageName": "typedarray",
+        "hash": "sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA=="
+      }
+    },
     "npm:typescript": {
       "type": "npm",
       "name": "npm:typescript",
@@ -13185,6 +14392,15 @@
         "version": "5.4.5",
         "packageName": "typescript",
         "hash": "sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ=="
+      }
+    },
+    "npm:uid": {
+      "type": "npm",
+      "name": "npm:uid",
+      "data": {
+        "version": "2.0.2",
+        "packageName": "uid",
+        "hash": "sha512-u3xV3X7uzvi5b1MncmZo3i2Aw222Zk1keqLA1YkHldREkAhAqi65wuPfe7lHx8H/Wzy+8CE7S7uS3jekIM5s8g=="
       }
     },
     "npm:undici": {
@@ -13457,15 +14673,6 @@
         "hash": "sha512-DEAoo25RfSYMuTGc9vPJzZcZullwIqRDSI9LOy+fkCJPi6hykCnfKaXTuPBDuXAUcqHXyOgFtHNp/kB2FjYHbw=="
       }
     },
-    "npm:webidl-conversions": {
-      "type": "npm",
-      "name": "npm:webidl-conversions",
-      "data": {
-        "version": "7.0.0",
-        "packageName": "webidl-conversions",
-        "hash": "sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g=="
-      }
-    },
     "npm:webpack": {
       "type": "npm",
       "name": "npm:webpack",
@@ -13473,6 +14680,15 @@
         "version": "5.91.0",
         "packageName": "webpack",
         "hash": "sha512-rzVwlLeBWHJbmgTC/8TvAcu5vpJNII+MelQpylD4jNERPwpBJOE2lEcko1zJX3QJeLjTTAnQxn/OJ8bjDzVQaw=="
+      }
+    },
+    "npm:webpack-cli": {
+      "type": "npm",
+      "name": "npm:webpack-cli",
+      "data": {
+        "version": "5.1.4",
+        "packageName": "webpack-cli",
+        "hash": "sha512-pIDJHIEI9LR0yxHXQ+Qh95k2EvXpWzZ5l+d+jIo+RdSm9MiHfzazIxwwni/p7+x4eJZuvG1AJwgC4TNQ7NRgsg=="
       }
     },
     "npm:webpack-merge": {
@@ -13547,15 +14763,6 @@
         "hash": "sha512-nt+N2dzIutVRxARx1nghPKGv1xHikU7HKdfafKkLNLindmPU/ch3U31NOCGGA/dmPcmb1VlofO0vnKAcsm0o/Q=="
       }
     },
-    "npm:whatwg-url": {
-      "type": "npm",
-      "name": "npm:whatwg-url",
-      "data": {
-        "version": "11.0.0",
-        "packageName": "whatwg-url",
-        "hash": "sha512-RKT8HExMpoYx4igMiVMY83lN6UeITKJlBQ+vR/8ZJ8OCdSiN3RwCq+9gH0+Xzj0+5IrM6i4j/6LuvzbZIQgEcQ=="
-      }
-    },
     "npm:wildcard": {
       "type": "npm",
       "name": "npm:wildcard",
@@ -13619,6 +14826,15 @@
         "hash": "sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw=="
       }
     },
+    "npm:xtend": {
+      "type": "npm",
+      "name": "npm:xtend",
+      "data": {
+        "version": "4.0.2",
+        "packageName": "xtend",
+        "hash": "sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ=="
+      }
+    },
     "npm:y18n": {
       "type": "npm",
       "name": "npm:y18n",
@@ -13666,8 +14882,39 @@
     }
   },
   "dependencies": {
-    "header-toolbar": [],
+    "header-toolbar": [
+      {
+        "source": "header-toolbar",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "header-toolbar",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "header-toolbar",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      }
+    ],
     "create-channel": [
+      {
+        "source": "create-channel",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "create-channel",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "create-channel",
+        "target": "npm:@angular/forms",
+        "type": "static"
+      },
       {
         "source": "create-channel",
         "target": "npm:@taiga-ui/kit",
@@ -13707,12 +14954,32 @@
         "source": "create-channel",
         "target": "data-access-channels",
         "type": "static"
+      },
+      {
+        "source": "create-channel",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
       }
     ],
     "channel-chat-view": [
       {
         "source": "channel-chat-view",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "channel-chat-view",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "channel-chat-view",
         "target": "chat-message",
+        "type": "static"
+      },
+      {
+        "source": "channel-chat-view",
+        "target": "npm:@angular/cdk",
         "type": "static"
       },
       {
@@ -13743,6 +15010,11 @@
       {
         "source": "channel-chat-view",
         "target": "npm:@ngrx/store",
+        "type": "static"
+      },
+      {
+        "source": "channel-chat-view",
+        "target": "npm:@angular/router",
         "type": "static"
       },
       {
@@ -13779,9 +15051,25 @@
         "source": "channel-chat-view",
         "target": "edit-channel",
         "type": "static"
+      },
+      {
+        "source": "channel-chat-view",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
       }
     ],
-    "collection-commas": [],
+    "collection-commas": [
+      {
+        "source": "collection-commas",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "collection-commas",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      }
+    ],
     "data-access-channels": [
       {
         "source": "data-access-channels",
@@ -13795,6 +15083,11 @@
       },
       {
         "source": "data-access-channels",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "data-access-channels",
         "target": "npm:@ngrx/effects",
         "type": "static"
       },
@@ -13812,12 +15105,22 @@
         "source": "data-access-channels",
         "target": "npm:@ngrx/entity",
         "type": "static"
+      },
+      {
+        "source": "data-access-channels",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
       }
     ],
     "data-access-contacts": [
       {
         "source": "data-access-contacts",
         "target": "npm:@ngrx/store",
+        "type": "static"
+      },
+      {
+        "source": "data-access-contacts",
+        "target": "npm:@angular/core",
         "type": "static"
       },
       {
@@ -13844,9 +15147,24 @@
         "source": "data-access-contacts",
         "target": "npm:@ngrx/entity",
         "type": "static"
+      },
+      {
+        "source": "data-access-contacts",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
       }
     ],
     "edit-channel": [
+      {
+        "source": "edit-channel",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "edit-channel",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
       {
         "source": "edit-channel",
         "target": "npm:@taiga-ui/kit",
@@ -13869,6 +15187,11 @@
       },
       {
         "source": "edit-channel",
+        "target": "npm:@angular/forms",
+        "type": "static"
+      },
+      {
+        "source": "edit-channel",
         "target": "auth-data-access",
         "type": "static"
       },
@@ -13886,9 +15209,24 @@
         "source": "edit-channel",
         "target": "data-access-channels",
         "type": "static"
+      },
+      {
+        "source": "edit-channel",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
       }
     ],
     "thread-chat-view": [
+      {
+        "source": "thread-chat-view",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "thread-chat-view",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
       {
         "source": "thread-chat-view",
         "target": "npm:@taiga-ui/core",
@@ -13926,6 +15264,11 @@
       },
       {
         "source": "thread-chat-view",
+        "target": "npm:@angular/cdk",
+        "type": "static"
+      },
+      {
+        "source": "thread-chat-view",
         "target": "npm:rxjs",
         "type": "static"
       },
@@ -13938,12 +15281,22 @@
         "source": "thread-chat-view",
         "target": "npm:@taiga-ui/cdk",
         "type": "static"
+      },
+      {
+        "source": "thread-chat-view",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
       }
     ],
     "slack-api": [
       {
         "source": "slack-api",
         "target": "auth-data-access",
+        "type": "static"
+      },
+      {
+        "source": "slack-api",
+        "target": "npm:@angular/core",
         "type": "static"
       },
       {
@@ -13960,6 +15313,11 @@
         "source": "slack-api",
         "target": "utils",
         "type": "static"
+      },
+      {
+        "source": "slack-api",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
       }
     ],
     "data-access-threads": [
@@ -13971,6 +15329,11 @@
       {
         "source": "data-access-threads",
         "target": "npm:@ngrx/store",
+        "type": "static"
+      },
+      {
+        "source": "data-access-threads",
+        "target": "npm:@angular/core",
         "type": "static"
       },
       {
@@ -13997,12 +15360,27 @@
         "source": "data-access-threads",
         "target": "npm:@ngrx/entity",
         "type": "static"
+      },
+      {
+        "source": "data-access-threads",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
       }
     ],
     "ui-store": [
       {
         "source": "ui-store",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "ui-store",
         "target": "npm:@ngrx/signals",
+        "type": "static"
+      },
+      {
+        "source": "ui-store",
+        "target": "npm:jest-preset-angular",
         "type": "static"
       }
     ],
@@ -14020,6 +15398,11 @@
       {
         "source": "data-access-messages",
         "target": "auth-data-access",
+        "type": "static"
+      },
+      {
+        "source": "data-access-messages",
+        "target": "npm:@angular/core",
         "type": "static"
       },
       {
@@ -14056,9 +15439,29 @@
         "source": "data-access-messages",
         "target": "npm:luxon",
         "type": "static"
+      },
+      {
+        "source": "data-access-messages",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
       }
     ],
     "primary-view": [
+      {
+        "source": "primary-view",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "primary-view",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "primary-view",
+        "target": "npm:@angular/router",
+        "type": "static"
+      },
       {
         "source": "primary-view",
         "target": "npm:rxjs",
@@ -14091,6 +15494,11 @@
       },
       {
         "source": "primary-view",
+        "target": "npm:@angular/cdk",
+        "type": "static"
+      },
+      {
+        "source": "primary-view",
         "target": "message-editor",
         "type": "static"
       },
@@ -14118,9 +15526,24 @@
         "source": "primary-view",
         "target": "data-access-contacts",
         "type": "static"
+      },
+      {
+        "source": "primary-view",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
       }
     ],
     "tab-rail": [
+      {
+        "source": "tab-rail",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "tab-rail",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
       {
         "source": "tab-rail",
         "target": "auth-data-access",
@@ -14145,9 +15568,29 @@
         "source": "tab-rail",
         "target": "npm:@taiga-ui/kit",
         "type": "static"
+      },
+      {
+        "source": "tab-rail",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
       }
     ],
     "message-editor": [
+      {
+        "source": "message-editor",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "message-editor",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "message-editor",
+        "target": "npm:@angular/forms",
+        "type": "static"
+      },
       {
         "source": "message-editor",
         "target": "npm:ngx-quill",
@@ -14162,9 +15605,24 @@
         "source": "message-editor",
         "target": "file-preview",
         "type": "static"
+      },
+      {
+        "source": "message-editor",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
       }
     ],
     "threads": [
+      {
+        "source": "threads",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "threads",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
       {
         "source": "threads",
         "target": "npm:@ngrx/store",
@@ -14194,9 +15652,29 @@
         "source": "threads",
         "target": "thread-card",
         "type": "static"
+      },
+      {
+        "source": "threads",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
       }
     ],
     "workspace": [
+      {
+        "source": "workspace",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "workspace",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "workspace",
+        "target": "npm:@angular/router",
+        "type": "static"
+      },
       {
         "source": "workspace",
         "target": "client-data-access",
@@ -14276,16 +15754,46 @@
         "source": "workspace",
         "target": "channel-chat-view",
         "type": "dynamic"
+      },
+      {
+        "source": "workspace",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
       }
     ],
     "file-preview": [
       {
         "source": "file-preview",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "file-preview",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "file-preview",
         "target": "npm:@taiga-ui/kit",
+        "type": "static"
+      },
+      {
+        "source": "file-preview",
+        "target": "npm:jest-preset-angular",
         "type": "static"
       }
     ],
     "thread-card": [
+      {
+        "source": "thread-card",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "thread-card",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
       {
         "source": "thread-card",
         "target": "slack-api",
@@ -14305,9 +15813,24 @@
         "source": "thread-card",
         "target": "collection-commas",
         "type": "static"
+      },
+      {
+        "source": "thread-card",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
       }
     ],
     "shell": [
+      {
+        "source": "shell",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "shell",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
       {
         "source": "shell",
         "target": "header-toolbar",
@@ -14335,6 +15858,11 @@
       },
       {
         "source": "shell",
+        "target": "npm:@angular/router",
+        "type": "static"
+      },
+      {
+        "source": "shell",
         "target": "npm:@ngrx/effects",
         "type": "static"
       },
@@ -14342,12 +15870,22 @@
         "source": "shell",
         "target": "workspace",
         "type": "dynamic"
+      },
+      {
+        "source": "shell",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
       }
     ],
     "client-data-access": [
       {
         "source": "client-data-access",
         "target": "npm:@ngrx/store",
+        "type": "static"
+      },
+      {
+        "source": "client-data-access",
+        "target": "npm:@angular/core",
         "type": "static"
       },
       {
@@ -14374,9 +15912,24 @@
         "source": "client-data-access",
         "target": "npm:@ngrx/entity",
         "type": "static"
+      },
+      {
+        "source": "client-data-access",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
       }
     ],
     "chat-message": [
+      {
+        "source": "chat-message",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "chat-message",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
       {
         "source": "chat-message",
         "target": "npm:@taiga-ui/kit",
@@ -14399,6 +15952,11 @@
       },
       {
         "source": "chat-message",
+        "target": "npm:@angular/cdk",
+        "type": "static"
+      },
+      {
+        "source": "chat-message",
         "target": "npm:@taiga-ui/core",
         "type": "static"
       },
@@ -14411,9 +15969,24 @@
         "source": "chat-message",
         "target": "npm:rxjs",
         "type": "static"
+      },
+      {
+        "source": "chat-message",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
       }
     ],
     "auth-data-access": [
+      {
+        "source": "auth-data-access",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "auth-data-access",
+        "target": "npm:@angular/router",
+        "type": "static"
+      },
       {
         "source": "auth-data-access",
         "target": "npm:rxjs",
@@ -14423,9 +15996,24 @@
         "source": "auth-data-access",
         "target": "npm:@ngrx/signals",
         "type": "static"
+      },
+      {
+        "source": "auth-data-access",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
       }
     ],
     "angular-slack": [
+      {
+        "source": "angular-slack",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "angular-slack",
+        "target": "npm:@angular/router",
+        "type": "static"
+      },
       {
         "source": "angular-slack",
         "target": "npm:@tinkoff/ng-dompurify",
@@ -14434,6 +16022,11 @@
       {
         "source": "angular-slack",
         "target": "npm:@taiga-ui/core",
+        "type": "static"
+      },
+      {
+        "source": "angular-slack",
+        "target": "npm:@angular/platform-browser",
         "type": "static"
       },
       {
@@ -14465,9 +16058,44 @@
         "source": "angular-slack",
         "target": "shell",
         "type": "dynamic"
+      },
+      {
+        "source": "angular-slack",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      },
+      {
+        "source": "angular-slack",
+        "target": "npm:@nx/angular",
+        "type": "static"
       }
     ],
-    "utils": [],
+    "utils": [
+      {
+        "source": "utils",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      }
+    ],
+    "backend-e2e": [
+      {
+        "source": "backend-e2e",
+        "target": "backend",
+        "type": "implicit"
+      },
+      {
+        "source": "backend-e2e",
+        "target": "npm:axios",
+        "type": "static"
+      }
+    ],
+    "backend": [
+      {
+        "source": "backend",
+        "target": "npm:@nx/webpack",
+        "type": "static"
+      }
+    ],
     "npm:@ampproject/remapping": [
       {
         "source": "npm:@ampproject/remapping",
@@ -15743,7 +17371,7 @@
       },
       {
         "source": "npm:@angular/compiler-cli",
-        "target": "npm:reflect-metadata",
+        "target": "npm:reflect-metadata@0.2.2",
         "type": "static"
       },
       {
@@ -19673,6 +21301,240 @@
         "type": "static"
       }
     ],
+    "npm:@nestjs/common": [
+      {
+        "source": "npm:@nestjs/common",
+        "target": "npm:reflect-metadata",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/common",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/common",
+        "target": "npm:iterare",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/common",
+        "target": "npm:tslib",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/common",
+        "target": "npm:uid",
+        "type": "static"
+      }
+    ],
+    "npm:@nestjs/core": [
+      {
+        "source": "npm:@nestjs/core",
+        "target": "npm:@nestjs/common",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/core",
+        "target": "npm:@nestjs/platform-express",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/core",
+        "target": "npm:reflect-metadata",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/core",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/core",
+        "target": "npm:@nuxtjs/opencollective",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/core",
+        "target": "npm:fast-safe-stringify",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/core",
+        "target": "npm:iterare",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/core",
+        "target": "npm:path-to-regexp@3.2.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/core",
+        "target": "npm:tslib",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/core",
+        "target": "npm:uid",
+        "type": "static"
+      }
+    ],
+    "npm:@nestjs/platform-express": [
+      {
+        "source": "npm:@nestjs/platform-express",
+        "target": "npm:@nestjs/common",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/platform-express",
+        "target": "npm:@nestjs/core",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/platform-express",
+        "target": "npm:body-parser",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/platform-express",
+        "target": "npm:cors",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/platform-express",
+        "target": "npm:express",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/platform-express",
+        "target": "npm:multer",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/platform-express",
+        "target": "npm:tslib",
+        "type": "static"
+      }
+    ],
+    "npm:@nestjs/schematics": [
+      {
+        "source": "npm:@nestjs/schematics",
+        "target": "npm:typescript",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/schematics",
+        "target": "npm:@angular-devkit/core@17.1.2",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/schematics",
+        "target": "npm:@angular-devkit/schematics@17.1.2",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/schematics",
+        "target": "npm:comment-json",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/schematics",
+        "target": "npm:jsonc-parser",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/schematics",
+        "target": "npm:pluralize",
+        "type": "static"
+      }
+    ],
+    "npm:@angular-devkit/core@17.1.2": [
+      {
+        "source": "npm:@angular-devkit/core@17.1.2",
+        "target": "npm:chokidar",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-devkit/core@17.1.2",
+        "target": "npm:ajv@8.12.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-devkit/core@17.1.2",
+        "target": "npm:ajv-formats",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-devkit/core@17.1.2",
+        "target": "npm:jsonc-parser@3.2.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-devkit/core@17.1.2",
+        "target": "npm:picomatch@3.0.1",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-devkit/core@17.1.2",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-devkit/core@17.1.2",
+        "target": "npm:source-map",
+        "type": "static"
+      }
+    ],
+    "npm:@angular-devkit/schematics@17.1.2": [
+      {
+        "source": "npm:@angular-devkit/schematics@17.1.2",
+        "target": "npm:@angular-devkit/core@17.1.2",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-devkit/schematics@17.1.2",
+        "target": "npm:jsonc-parser@3.2.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-devkit/schematics@17.1.2",
+        "target": "npm:magic-string@0.30.5",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-devkit/schematics@17.1.2",
+        "target": "npm:ora",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-devkit/schematics@17.1.2",
+        "target": "npm:rxjs",
+        "type": "static"
+      }
+    ],
+    "npm:@nestjs/testing": [
+      {
+        "source": "npm:@nestjs/testing",
+        "target": "npm:@nestjs/common",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/testing",
+        "target": "npm:@nestjs/core",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/testing",
+        "target": "npm:@nestjs/platform-express",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/testing",
+        "target": "npm:tslib",
+        "type": "static"
+      }
+    ],
     "npm:@ng-web-apis/common": [
       {
         "source": "npm:@ng-web-apis/common",
@@ -20172,6 +22034,20 @@
         "type": "static"
       }
     ],
+    "npm:@nrwl/nest": [
+      {
+        "source": "npm:@nrwl/nest",
+        "target": "npm:@nx/nest",
+        "type": "static"
+      }
+    ],
+    "npm:@nrwl/node": [
+      {
+        "source": "npm:@nrwl/node",
+        "target": "npm:@nx/node",
+        "type": "static"
+      }
+    ],
     "npm:@nrwl/tao": [
       {
         "source": "npm:@nrwl/tao",
@@ -20202,6 +22078,23 @@
       {
         "source": "npm:@nrwl/workspace",
         "target": "npm:@nx/workspace",
+        "type": "static"
+      }
+    ],
+    "npm:@nuxtjs/opencollective": [
+      {
+        "source": "npm:@nuxtjs/opencollective",
+        "target": "npm:chalk@4.1.2",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nuxtjs/opencollective",
+        "target": "npm:consola",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nuxtjs/opencollective",
+        "target": "npm:node-fetch",
         "type": "static"
       }
     ],
@@ -20841,6 +22734,173 @@
       {
         "source": "npm:@nx/linter",
         "target": "npm:@nx/eslint",
+        "type": "static"
+      }
+    ],
+    "npm:@nx/nest": [
+      {
+        "source": "npm:@nx/nest",
+        "target": "npm:@nestjs/schematics@9.2.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nx/nest",
+        "target": "npm:@nrwl/nest",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nx/nest",
+        "target": "npm:@nx/devkit",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nx/nest",
+        "target": "npm:@nx/eslint",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nx/nest",
+        "target": "npm:@nx/js",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nx/nest",
+        "target": "npm:@nx/node",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nx/nest",
+        "target": "npm:@phenomnomnominal/tsquery",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nx/nest",
+        "target": "npm:tslib",
+        "type": "static"
+      }
+    ],
+    "npm:@angular-devkit/core@16.0.1": [
+      {
+        "source": "npm:@angular-devkit/core@16.0.1",
+        "target": "npm:chokidar",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-devkit/core@16.0.1",
+        "target": "npm:ajv@8.12.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-devkit/core@16.0.1",
+        "target": "npm:ajv-formats",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-devkit/core@16.0.1",
+        "target": "npm:jsonc-parser@3.2.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-devkit/core@16.0.1",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-devkit/core@16.0.1",
+        "target": "npm:source-map",
+        "type": "static"
+      }
+    ],
+    "npm:@angular-devkit/schematics@16.0.1": [
+      {
+        "source": "npm:@angular-devkit/schematics@16.0.1",
+        "target": "npm:@angular-devkit/core@16.0.1",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-devkit/schematics@16.0.1",
+        "target": "npm:jsonc-parser@3.2.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-devkit/schematics@16.0.1",
+        "target": "npm:magic-string@0.30.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-devkit/schematics@16.0.1",
+        "target": "npm:ora",
+        "type": "static"
+      },
+      {
+        "source": "npm:@angular-devkit/schematics@16.0.1",
+        "target": "npm:rxjs",
+        "type": "static"
+      }
+    ],
+    "npm:@nestjs/schematics@9.2.0": [
+      {
+        "source": "npm:@nestjs/schematics@9.2.0",
+        "target": "npm:typescript",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/schematics@9.2.0",
+        "target": "npm:@angular-devkit/core@16.0.1",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/schematics@9.2.0",
+        "target": "npm:@angular-devkit/schematics@16.0.1",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/schematics@9.2.0",
+        "target": "npm:jsonc-parser@3.2.0",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nestjs/schematics@9.2.0",
+        "target": "npm:pluralize",
+        "type": "static"
+      }
+    ],
+    "npm:magic-string@0.30.0": [
+      {
+        "source": "npm:magic-string@0.30.0",
+        "target": "npm:@jridgewell/sourcemap-codec",
+        "type": "static"
+      }
+    ],
+    "npm:@nx/node": [
+      {
+        "source": "npm:@nx/node",
+        "target": "npm:@nrwl/node",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nx/node",
+        "target": "npm:@nx/devkit",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nx/node",
+        "target": "npm:@nx/eslint",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nx/node",
+        "target": "npm:@nx/jest",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nx/node",
+        "target": "npm:@nx/js",
+        "type": "static"
+      },
+      {
+        "source": "npm:@nx/node",
+        "target": "npm:tslib",
         "type": "static"
       }
     ],
@@ -21694,11 +23754,6 @@
         "source": "npm:@swc-node/core",
         "target": "npm:@swc/core",
         "type": "static"
-      },
-      {
-        "source": "npm:@swc-node/core",
-        "target": "npm:@swc/types",
-        "type": "static"
       }
     ],
     "npm:@swc-node/register": [
@@ -21758,6 +23813,11 @@
     "npm:@swc/core": [
       {
         "source": "npm:@swc/core",
+        "target": "npm:@swc/helpers",
+        "type": "static"
+      },
+      {
+        "source": "npm:@swc/core",
         "target": "npm:@swc/counter",
         "type": "static"
       },
@@ -21779,10 +23839,10 @@
         "type": "static"
       }
     ],
-    "npm:@swc/types": [
+    "npm:@swc/helpers": [
       {
-        "source": "npm:@swc/types",
-        "target": "npm:@swc/counter",
+        "source": "npm:@swc/helpers",
+        "target": "npm:tslib",
         "type": "static"
       }
     ],
@@ -23052,6 +25112,42 @@
         "type": "static"
       }
     ],
+    "npm:@webpack-cli/configtest": [
+      {
+        "source": "npm:@webpack-cli/configtest",
+        "target": "npm:webpack",
+        "type": "static"
+      },
+      {
+        "source": "npm:@webpack-cli/configtest",
+        "target": "npm:webpack-cli",
+        "type": "static"
+      }
+    ],
+    "npm:@webpack-cli/info": [
+      {
+        "source": "npm:@webpack-cli/info",
+        "target": "npm:webpack",
+        "type": "static"
+      },
+      {
+        "source": "npm:@webpack-cli/info",
+        "target": "npm:webpack-cli",
+        "type": "static"
+      }
+    ],
+    "npm:@webpack-cli/serve": [
+      {
+        "source": "npm:@webpack-cli/serve",
+        "target": "npm:webpack",
+        "type": "static"
+      },
+      {
+        "source": "npm:@webpack-cli/serve",
+        "target": "npm:webpack-cli",
+        "type": "static"
+      }
+    ],
     "npm:@yarnpkg/parsers": [
       {
         "source": "npm:@yarnpkg/parsers",
@@ -23468,23 +25564,6 @@
         "type": "static"
       }
     ],
-    "npm:babel-plugin-macros": [
-      {
-        "source": "npm:babel-plugin-macros",
-        "target": "npm:@babel/runtime",
-        "type": "static"
-      },
-      {
-        "source": "npm:babel-plugin-macros",
-        "target": "npm:cosmiconfig",
-        "type": "static"
-      },
-      {
-        "source": "npm:babel-plugin-macros",
-        "target": "npm:resolve",
-        "type": "static"
-      }
-    ],
     "npm:babel-plugin-polyfill-corejs2": [
       {
         "source": "npm:babel-plugin-polyfill-corejs2",
@@ -23820,6 +25899,13 @@
         "type": "static"
       }
     ],
+    "npm:busboy": [
+      {
+        "source": "npm:busboy",
+        "target": "npm:streamsearch",
+        "type": "static"
+      }
+    ],
     "npm:cacache": [
       {
         "source": "npm:cacache",
@@ -24074,6 +26160,33 @@
         "type": "static"
       }
     ],
+    "npm:comment-json": [
+      {
+        "source": "npm:comment-json",
+        "target": "npm:array-timsort",
+        "type": "static"
+      },
+      {
+        "source": "npm:comment-json",
+        "target": "npm:core-util-is",
+        "type": "static"
+      },
+      {
+        "source": "npm:comment-json",
+        "target": "npm:esprima",
+        "type": "static"
+      },
+      {
+        "source": "npm:comment-json",
+        "target": "npm:has-own-prop",
+        "type": "static"
+      },
+      {
+        "source": "npm:comment-json",
+        "target": "npm:repeat-string",
+        "type": "static"
+      }
+    ],
     "npm:compare-func": [
       {
         "source": "npm:compare-func",
@@ -24127,6 +26240,72 @@
       {
         "source": "npm:compression",
         "target": "npm:vary",
+        "type": "static"
+      }
+    ],
+    "npm:concat-stream": [
+      {
+        "source": "npm:concat-stream",
+        "target": "npm:buffer-from",
+        "type": "static"
+      },
+      {
+        "source": "npm:concat-stream",
+        "target": "npm:inherits",
+        "type": "static"
+      },
+      {
+        "source": "npm:concat-stream",
+        "target": "npm:readable-stream@2.3.8",
+        "type": "static"
+      },
+      {
+        "source": "npm:concat-stream",
+        "target": "npm:typedarray",
+        "type": "static"
+      }
+    ],
+    "npm:readable-stream@2.3.8": [
+      {
+        "source": "npm:readable-stream@2.3.8",
+        "target": "npm:core-util-is",
+        "type": "static"
+      },
+      {
+        "source": "npm:readable-stream@2.3.8",
+        "target": "npm:inherits",
+        "type": "static"
+      },
+      {
+        "source": "npm:readable-stream@2.3.8",
+        "target": "npm:isarray",
+        "type": "static"
+      },
+      {
+        "source": "npm:readable-stream@2.3.8",
+        "target": "npm:process-nextick-args",
+        "type": "static"
+      },
+      {
+        "source": "npm:readable-stream@2.3.8",
+        "target": "npm:safe-buffer",
+        "type": "static"
+      },
+      {
+        "source": "npm:readable-stream@2.3.8",
+        "target": "npm:string_decoder@1.1.1",
+        "type": "static"
+      },
+      {
+        "source": "npm:readable-stream@2.3.8",
+        "target": "npm:util-deprecate",
+        "type": "static"
+      }
+    ],
+    "npm:string_decoder@1.1.1": [
+      {
+        "source": "npm:string_decoder@1.1.1",
+        "target": "npm:safe-buffer",
         "type": "static"
       }
     ],
@@ -24248,6 +26427,18 @@
       {
         "source": "npm:core-js-compat",
         "target": "npm:browserslist",
+        "type": "static"
+      }
+    ],
+    "npm:cors": [
+      {
+        "source": "npm:cors",
+        "target": "npm:object-assign",
+        "type": "static"
+      },
+      {
+        "source": "npm:cors",
+        "target": "npm:vary",
         "type": "static"
       }
     ],
@@ -24727,13 +26918,6 @@
       {
         "source": "npm:debug",
         "target": "npm:ms",
-        "type": "static"
-      }
-    ],
-    "npm:dedent": [
-      {
-        "source": "npm:dedent",
-        "target": "npm:babel-plugin-macros",
         "type": "static"
       }
     ],
@@ -25996,50 +28180,6 @@
       {
         "source": "npm:hpack.js",
         "target": "npm:wbuf",
-        "type": "static"
-      }
-    ],
-    "npm:readable-stream@2.3.8": [
-      {
-        "source": "npm:readable-stream@2.3.8",
-        "target": "npm:core-util-is",
-        "type": "static"
-      },
-      {
-        "source": "npm:readable-stream@2.3.8",
-        "target": "npm:inherits",
-        "type": "static"
-      },
-      {
-        "source": "npm:readable-stream@2.3.8",
-        "target": "npm:isarray",
-        "type": "static"
-      },
-      {
-        "source": "npm:readable-stream@2.3.8",
-        "target": "npm:process-nextick-args",
-        "type": "static"
-      },
-      {
-        "source": "npm:readable-stream@2.3.8",
-        "target": "npm:safe-buffer",
-        "type": "static"
-      },
-      {
-        "source": "npm:readable-stream@2.3.8",
-        "target": "npm:string_decoder@1.1.1",
-        "type": "static"
-      },
-      {
-        "source": "npm:readable-stream@2.3.8",
-        "target": "npm:util-deprecate",
-        "type": "static"
-      }
-    ],
-    "npm:string_decoder@1.1.1": [
-      {
-        "source": "npm:string_decoder@1.1.1",
-        "target": "npm:safe-buffer",
         "type": "static"
       }
     ],
@@ -28396,6 +30536,43 @@
         "type": "static"
       }
     ],
+    "npm:multer": [
+      {
+        "source": "npm:multer",
+        "target": "npm:append-field",
+        "type": "static"
+      },
+      {
+        "source": "npm:multer",
+        "target": "npm:busboy",
+        "type": "static"
+      },
+      {
+        "source": "npm:multer",
+        "target": "npm:concat-stream",
+        "type": "static"
+      },
+      {
+        "source": "npm:multer",
+        "target": "npm:mkdirp",
+        "type": "static"
+      },
+      {
+        "source": "npm:multer",
+        "target": "npm:object-assign",
+        "type": "static"
+      },
+      {
+        "source": "npm:multer",
+        "target": "npm:type-is",
+        "type": "static"
+      },
+      {
+        "source": "npm:multer",
+        "target": "npm:xtend",
+        "type": "static"
+      }
+    ],
     "npm:multicast-dns": [
       {
         "source": "npm:multicast-dns",
@@ -28527,6 +30704,30 @@
       {
         "source": "npm:nice-napi",
         "target": "npm:node-gyp-build",
+        "type": "static"
+      }
+    ],
+    "npm:node-fetch": [
+      {
+        "source": "npm:node-fetch",
+        "target": "npm:encoding",
+        "type": "static"
+      },
+      {
+        "source": "npm:node-fetch",
+        "target": "npm:whatwg-url@5.0.0",
+        "type": "static"
+      }
+    ],
+    "npm:whatwg-url@5.0.0": [
+      {
+        "source": "npm:whatwg-url@5.0.0",
+        "target": "npm:tr46@0.0.3",
+        "type": "static"
+      },
+      {
+        "source": "npm:whatwg-url@5.0.0",
+        "target": "npm:webidl-conversions@3.0.1",
         "type": "static"
       }
     ],
@@ -30043,6 +32244,13 @@
       {
         "source": "npm:readdirp",
         "target": "npm:picomatch@2.3.1",
+        "type": "static"
+      }
+    ],
+    "npm:rechoir": [
+      {
+        "source": "npm:rechoir",
+        "target": "npm:resolve",
         "type": "static"
       }
     ],
@@ -31574,6 +33782,13 @@
         "type": "static"
       }
     ],
+    "npm:uid": [
+      {
+        "source": "npm:uid",
+        "target": "npm:@lukeed/csprng",
+        "type": "static"
+      }
+    ],
     "npm:unicode-match-property-ecmascript": [
       {
         "source": "npm:unicode-match-property-ecmascript",
@@ -31904,6 +34119,78 @@
       {
         "source": "npm:webpack",
         "target": "npm:webpack-sources",
+        "type": "static"
+      }
+    ],
+    "npm:webpack-cli": [
+      {
+        "source": "npm:webpack-cli",
+        "target": "npm:webpack",
+        "type": "static"
+      },
+      {
+        "source": "npm:webpack-cli",
+        "target": "npm:@discoveryjs/json-ext",
+        "type": "static"
+      },
+      {
+        "source": "npm:webpack-cli",
+        "target": "npm:@webpack-cli/configtest",
+        "type": "static"
+      },
+      {
+        "source": "npm:webpack-cli",
+        "target": "npm:@webpack-cli/info",
+        "type": "static"
+      },
+      {
+        "source": "npm:webpack-cli",
+        "target": "npm:@webpack-cli/serve",
+        "type": "static"
+      },
+      {
+        "source": "npm:webpack-cli",
+        "target": "npm:colorette",
+        "type": "static"
+      },
+      {
+        "source": "npm:webpack-cli",
+        "target": "npm:commander@10.0.1",
+        "type": "static"
+      },
+      {
+        "source": "npm:webpack-cli",
+        "target": "npm:cross-spawn",
+        "type": "static"
+      },
+      {
+        "source": "npm:webpack-cli",
+        "target": "npm:envinfo",
+        "type": "static"
+      },
+      {
+        "source": "npm:webpack-cli",
+        "target": "npm:fastest-levenshtein",
+        "type": "static"
+      },
+      {
+        "source": "npm:webpack-cli",
+        "target": "npm:import-local",
+        "type": "static"
+      },
+      {
+        "source": "npm:webpack-cli",
+        "target": "npm:interpret",
+        "type": "static"
+      },
+      {
+        "source": "npm:webpack-cli",
+        "target": "npm:rechoir",
+        "type": "static"
+      },
+      {
+        "source": "npm:webpack-cli",
+        "target": "npm:webpack-merge",
         "type": "static"
       }
     ],
