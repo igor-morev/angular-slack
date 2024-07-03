@@ -6,6 +6,8 @@ import { getMongoConfig } from '../config/db-connect.config';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -19,6 +21,8 @@ import { AppService } from './app.service';
       inject: [ConfigService],
       useFactory: getMongoConfig, // добавляем созданную ранее функцию подключения к БД
     }),
+    AuthModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
