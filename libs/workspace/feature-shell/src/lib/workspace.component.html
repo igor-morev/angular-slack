@@ -12,7 +12,7 @@
         routerLinkActive="bg-black text-white pointer-events-none"
         class="flex px-2 py-1 items-center hover:bg-slate-300 rounded-md"
       >
-        <tui-svg src="tuiIconMessageSquare" class="mr-2"></tui-svg>
+        <tui-icon src="tuiIconMessageSquare" class="mr-2"></tui-icon>
         <span>Threads</span>
       </a>
     </div>
@@ -23,7 +23,7 @@
             (click)="channelsExpanded = !channelsExpanded"
             class="h-6 w-6 flex items-center justify-center hover:bg-slate-300 rounded-md ml-2"
           >
-            <tui-svg src="tuiIconChevronDown"></tui-svg>
+            <tui-icon src="tuiIconChevronDown"></tui-icon>
           </button>
           <button class="hover:bg-slate-300 rounded-md px-2 flex py-1">
             Channels
@@ -33,7 +33,7 @@
           (click)="openCreateChannel()"
           class="hover:bg-slate-300 rounded-md flex py-1"
         >
-          <tui-svg src="tuiIconPlus"></tui-svg>
+          <tui-icon src="tuiIconPlus"></tui-icon>
         </button>
       </div>
       <tui-expand [expanded]="channelsExpanded">
@@ -44,7 +44,7 @@
           class="contact-item flex px-2 py-1 items-center hover:bg-slate-300 rounded-md"
           *ngFor="let channel of channels$ | async"
         >
-          <tui-svg src="tuiIconHash" class="mr-2"></tui-svg>
+          <tui-icon src="tuiIconHash" class="mr-2"></tui-icon>
           <span>{{ channel.name }}</span>
         </a>
       </tui-expand>
@@ -55,7 +55,7 @@
           (click)="contactsExpanded = !contactsExpanded"
           class="h-6 w-6 flex items-center justify-center hover:bg-slate-300 rounded-md ml-2"
         >
-          <tui-svg src="tuiIconChevronDown"></tui-svg>
+          <tui-icon src="tuiIconChevronDown"></tui-icon>
         </button>
         <button class="hover:bg-slate-300 rounded-md px-2 flex py-1">
           Direct messages
@@ -70,8 +70,7 @@
           *ngFor="let contact of contacts$ | async"
         >
           <tui-avatar
-            [text]="contact.name"
-            [autoColor]="true"
+            [src]="contact.name"
             size="xs"
             class="mr-2"
           ></tui-avatar>

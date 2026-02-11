@@ -1,0 +1,4896 @@
+{
+  "apps/backend": {
+    "root": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.options": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.dependsOn": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.outputs": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.metadata": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.executor": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.options.cwd": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.options.args": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.options.command": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.metadata.technologies": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.metadata.technologies.0": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.metadata.description": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.metadata.help": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.metadata.help.command": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build.metadata.help.example": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.continuous": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.options": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.metadata": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.executor": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.options.cwd": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.options.args": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.options.command": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.metadata.technologies": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.metadata.technologies.0": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.metadata.description": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.metadata.help": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.metadata.help.command": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.preview.metadata.help.example": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build-deps": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.build-deps.dependsOn": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.watch-deps": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.watch-deps.continuous": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.watch-deps.dependsOn": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.watch-deps.executor": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.watch-deps.options": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.watch-deps.options.command": [
+      "apps/backend/webpack.config.js",
+      "@nx/webpack/plugin"
+    ],
+    "targets.eslint:lint": [
+      "apps/backend/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "apps/backend/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "apps/backend/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "apps/backend/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "apps/backend/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "apps/backend/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "apps/backend/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "apps/backend/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "apps/backend/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "apps/backend/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "apps/backend/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "apps/backend/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "apps/backend/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "apps/backend/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "apps/backend/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.executor": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.defaultConfiguration": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.options": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.configurations": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.options.buildTarget": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.configurations.development": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.configurations.development.buildTarget": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.configurations.production": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.configurations.production.buildTarget": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "apps/backend/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "apps/angular-slack": {
+    "root": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "apps/angular-slack/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "apps/angular-slack/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "apps/angular-slack/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "apps/angular-slack/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "apps/angular-slack/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "apps/angular-slack/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "apps/angular-slack/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "apps/angular-slack/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "apps/angular-slack/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "apps/angular-slack/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "apps/angular-slack/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "apps/angular-slack/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "apps/angular-slack/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "apps/angular-slack/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "apps/angular-slack/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "apps/angular-slack/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "generators": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "generators.@nx/angular:component": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "generators.@nx/angular:component.style": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.executor": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.outputs": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.defaultConfiguration": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.outputPath": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.index": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.browser": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.polyfills": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.tsConfig": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.inlineStyleLanguage": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.assets": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.styles": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.scripts": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.production": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.production.budgets": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.production.outputHashing": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.development": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.development.optimization": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.development.extractLicenses": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.development.sourceMap": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.executor": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.configurations": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.defaultConfiguration": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.options": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.options.proxyConfig": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.configurations.production": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.configurations.production.buildTarget": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.configurations.development": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.configurations.development.buildTarget": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.extract-i18n": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.extract-i18n.executor": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.extract-i18n.options": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.extract-i18n.options.buildTarget": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "apps/angular-slack/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.dependsOn": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "apps/backend-e2e": {
+    "root": [
+      "apps/backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "apps/backend-e2e/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "apps/backend-e2e/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "apps/backend-e2e/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "apps/backend-e2e/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "apps/backend-e2e/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "apps/backend-e2e/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "apps/backend-e2e/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "apps/backend-e2e/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "apps/backend-e2e/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "apps/backend-e2e/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "apps/backend-e2e/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "apps/backend-e2e/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "apps/backend-e2e/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "apps/backend-e2e/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "apps/backend-e2e/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "apps/backend-e2e/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "apps/backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "apps/backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "apps/backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "implicitDependencies": [
+      "apps/backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "implicitDependencies.backend": [
+      "apps/backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.e2e": [
+      "apps/backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.e2e.executor": [
+      "apps/backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.e2e.outputs": [
+      "apps/backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.e2e.options": [
+      "apps/backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.e2e.dependsOn": [
+      "apps/backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.e2e.options.jestConfig": [
+      "apps/backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.e2e.options.passWithNoTests": [
+      "apps/backend-e2e/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.e2e.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.e2e.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.e2e.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.e2e.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.e2e.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.e2e.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/auth/data-access": {
+    "root": [
+      "libs/auth/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/auth/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/auth/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/auth/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/auth/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/auth/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/auth/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/auth/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/auth/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/auth/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/auth/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/auth/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/auth/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/auth/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/auth/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/auth/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/auth/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/auth/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/auth/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/auth/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/auth/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/auth/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/auth/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.data-access": [
+      "libs/auth/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/auth/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/auth/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/auth/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/auth/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/auth/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/auth/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/auth/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/auth/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/channels/data-access-channels": {
+    "root": [
+      "libs/channels/data-access-channels/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/channels/data-access-channels/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/channels/data-access-channels/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/channels/data-access-channels/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/channels/data-access-channels/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/channels/data-access-channels/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/channels/data-access-channels/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/channels/data-access-channels/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/channels/data-access-channels/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/channels/data-access-channels/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/channels/data-access-channels/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/channels/data-access-channels/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/channels/data-access-channels/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/channels/data-access-channels/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/channels/data-access-channels/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/channels/data-access-channels/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/channels/data-access-channels/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/channels/data-access-channels/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/channels/data-access-channels/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/channels/data-access-channels/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/channels/data-access-channels/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/channels/data-access-channels/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/channels/data-access-channels/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.data-access": [
+      "libs/channels/data-access-channels/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/channels/data-access-channels/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/channels/data-access-channels/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/channels/data-access-channels/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/channels/data-access-channels/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/channels/data-access-channels/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/channels/data-access-channels/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/channels/data-access-channels/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/channels/data-access-channels/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/channels/feature-create-channel": {
+    "root": [
+      "libs/channels/feature-create-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/channels/feature-create-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/channels/feature-create-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/channels/feature-create-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/channels/feature-create-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/channels/feature-create-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/channels/feature-create-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/channels/feature-create-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/channels/feature-create-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/channels/feature-create-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/channels/feature-create-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/channels/feature-create-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/channels/feature-create-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/channels/feature-create-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/channels/feature-create-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/channels/feature-create-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/channels/feature-create-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/channels/feature-create-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/channels/feature-create-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/channels/feature-create-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/channels/feature-create-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/channels/feature-create-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/channels/feature-create-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.feature": [
+      "libs/channels/feature-create-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/channels/feature-create-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/channels/feature-create-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/channels/feature-create-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/channels/feature-create-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/channels/feature-create-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/channels/feature-create-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/channels/feature-create-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/channels/feature-create-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/channels/feature-edit-channel": {
+    "root": [
+      "libs/channels/feature-edit-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/channels/feature-edit-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/channels/feature-edit-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/channels/feature-edit-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/channels/feature-edit-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/channels/feature-edit-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/channels/feature-edit-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/channels/feature-edit-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/channels/feature-edit-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/channels/feature-edit-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/channels/feature-edit-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/channels/feature-edit-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/channels/feature-edit-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/channels/feature-edit-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/channels/feature-edit-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/channels/feature-edit-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/channels/feature-edit-channel/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/channels/feature-edit-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/channels/feature-edit-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/channels/feature-edit-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/channels/feature-edit-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/channels/feature-edit-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/channels/feature-edit-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.feature": [
+      "libs/channels/feature-edit-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/channels/feature-edit-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/channels/feature-edit-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/channels/feature-edit-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/channels/feature-edit-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/channels/feature-edit-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/channels/feature-edit-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/channels/feature-edit-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/channels/feature-edit-channel/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/chat/data-access-messages": {
+    "root": [
+      "libs/chat/data-access-messages/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/chat/data-access-messages/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/chat/data-access-messages/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/chat/data-access-messages/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/chat/data-access-messages/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/chat/data-access-messages/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/chat/data-access-messages/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/chat/data-access-messages/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/chat/data-access-messages/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/chat/data-access-messages/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/chat/data-access-messages/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/chat/data-access-messages/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/chat/data-access-messages/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/chat/data-access-messages/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/chat/data-access-messages/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/chat/data-access-messages/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/chat/data-access-messages/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/chat/data-access-messages/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/chat/data-access-messages/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/chat/data-access-messages/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/chat/data-access-messages/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/chat/data-access-messages/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/chat/data-access-messages/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.data-access": [
+      "libs/chat/data-access-messages/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/chat/data-access-messages/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/chat/data-access-messages/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/chat/data-access-messages/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/chat/data-access-messages/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/chat/data-access-messages/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/chat/data-access-messages/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/chat/data-access-messages/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/chat/data-access-messages/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/chat/feature-channel-chat-view": {
+    "root": [
+      "libs/chat/feature-channel-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/chat/feature-channel-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/chat/feature-channel-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/chat/feature-channel-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/chat/feature-channel-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/chat/feature-channel-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/chat/feature-channel-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/chat/feature-channel-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/chat/feature-channel-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/chat/feature-channel-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/chat/feature-channel-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/chat/feature-channel-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/chat/feature-channel-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/chat/feature-channel-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/chat/feature-channel-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/chat/feature-channel-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/chat/feature-channel-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/chat/feature-channel-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/chat/feature-channel-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/chat/feature-channel-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/chat/feature-channel-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/chat/feature-channel-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/chat/feature-channel-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.feature": [
+      "libs/chat/feature-channel-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/chat/feature-channel-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/chat/feature-channel-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/chat/feature-channel-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/chat/feature-channel-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/chat/feature-channel-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/chat/feature-channel-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/chat/feature-channel-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/chat/feature-channel-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/chat/feature-primary-view": {
+    "root": [
+      "libs/chat/feature-primary-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/chat/feature-primary-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/chat/feature-primary-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/chat/feature-primary-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/chat/feature-primary-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/chat/feature-primary-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/chat/feature-primary-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/chat/feature-primary-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/chat/feature-primary-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/chat/feature-primary-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/chat/feature-primary-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/chat/feature-primary-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/chat/feature-primary-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/chat/feature-primary-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/chat/feature-primary-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/chat/feature-primary-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/chat/feature-primary-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/chat/feature-primary-view/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/chat/feature-primary-view/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/chat/feature-primary-view/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/chat/feature-primary-view/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/chat/feature-primary-view/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/chat/feature-primary-view/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.feature": [
+      "libs/chat/feature-primary-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/chat/feature-primary-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/chat/feature-primary-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/chat/feature-primary-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/chat/feature-primary-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/chat/feature-primary-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/chat/feature-primary-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/chat/feature-primary-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/chat/feature-primary-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/chat/feature-thread-chat-view": {
+    "root": [
+      "libs/chat/feature-thread-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/chat/feature-thread-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/chat/feature-thread-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/chat/feature-thread-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/chat/feature-thread-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/chat/feature-thread-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/chat/feature-thread-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/chat/feature-thread-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/chat/feature-thread-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/chat/feature-thread-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/chat/feature-thread-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/chat/feature-thread-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/chat/feature-thread-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/chat/feature-thread-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/chat/feature-thread-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/chat/feature-thread-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/chat/feature-thread-chat-view/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/chat/feature-thread-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/chat/feature-thread-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/chat/feature-thread-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/chat/feature-thread-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/chat/feature-thread-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/chat/feature-thread-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.feature": [
+      "libs/chat/feature-thread-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/chat/feature-thread-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/chat/feature-thread-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/chat/feature-thread-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/chat/feature-thread-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/chat/feature-thread-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/chat/feature-thread-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/chat/feature-thread-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/chat/feature-thread-chat-view/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/client/data-access": {
+    "root": [
+      "libs/client/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/client/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/client/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/client/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/client/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/client/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/client/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/client/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/client/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/client/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/client/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/client/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/client/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/client/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/client/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/client/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/client/data-access/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/client/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/client/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/client/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/client/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/client/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/client/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.data-access": [
+      "libs/client/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/client/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/client/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/client/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/client/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/client/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/client/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/client/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/client/data-access/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/client/feature-shell": {
+    "root": [
+      "libs/client/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/client/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/client/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/client/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/client/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/client/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/client/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/client/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/client/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/client/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/client/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/client/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/client/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/client/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/client/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/client/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/client/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/client/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/client/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/client/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/client/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/client/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/client/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/client/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/client/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/client/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/client/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/client/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/client/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/client/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/client/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/contacts/data-access-contacts": {
+    "root": [
+      "libs/contacts/data-access-contacts/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/contacts/data-access-contacts/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/contacts/data-access-contacts/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/contacts/data-access-contacts/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/contacts/data-access-contacts/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/contacts/data-access-contacts/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/contacts/data-access-contacts/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/contacts/data-access-contacts/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/contacts/data-access-contacts/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/contacts/data-access-contacts/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/contacts/data-access-contacts/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/contacts/data-access-contacts/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/contacts/data-access-contacts/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/contacts/data-access-contacts/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/contacts/data-access-contacts/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/contacts/data-access-contacts/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/contacts/data-access-contacts/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/contacts/data-access-contacts/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/contacts/data-access-contacts/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/contacts/data-access-contacts/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/contacts/data-access-contacts/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/contacts/data-access-contacts/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/contacts/data-access-contacts/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.data-access": [
+      "libs/contacts/data-access-contacts/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/contacts/data-access-contacts/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/contacts/data-access-contacts/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/contacts/data-access-contacts/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/contacts/data-access-contacts/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/contacts/data-access-contacts/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/contacts/data-access-contacts/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/contacts/data-access-contacts/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/contacts/data-access-contacts/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/header-toolbar/feature-header-toolbar": {
+    "root": [
+      "libs/header-toolbar/feature-header-toolbar/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/header-toolbar/feature-header-toolbar/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/header-toolbar/feature-header-toolbar/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/header-toolbar/feature-header-toolbar/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/header-toolbar/feature-header-toolbar/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/header-toolbar/feature-header-toolbar/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/header-toolbar/feature-header-toolbar/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/header-toolbar/feature-header-toolbar/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/header-toolbar/feature-header-toolbar/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/header-toolbar/feature-header-toolbar/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/header-toolbar/feature-header-toolbar/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/header-toolbar/feature-header-toolbar/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/header-toolbar/feature-header-toolbar/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/header-toolbar/feature-header-toolbar/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/header-toolbar/feature-header-toolbar/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/header-toolbar/feature-header-toolbar/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/header-toolbar/feature-header-toolbar/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/header-toolbar/feature-header-toolbar/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/header-toolbar/feature-header-toolbar/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/header-toolbar/feature-header-toolbar/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/header-toolbar/feature-header-toolbar/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/header-toolbar/feature-header-toolbar/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/header-toolbar/feature-header-toolbar/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.feature": [
+      "libs/header-toolbar/feature-header-toolbar/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/header-toolbar/feature-header-toolbar/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/header-toolbar/feature-header-toolbar/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/header-toolbar/feature-header-toolbar/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/header-toolbar/feature-header-toolbar/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/header-toolbar/feature-header-toolbar/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/header-toolbar/feature-header-toolbar/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/header-toolbar/feature-header-toolbar/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/header-toolbar/feature-header-toolbar/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/shared/data-access/slack-api": {
+    "root": [
+      "libs/shared/data-access/slack-api/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/shared/data-access/slack-api/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/shared/data-access/slack-api/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/shared/data-access/slack-api/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/shared/data-access/slack-api/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/shared/data-access/slack-api/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/shared/data-access/slack-api/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/shared/data-access/slack-api/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/shared/data-access/slack-api/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/shared/data-access/slack-api/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/shared/data-access/slack-api/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/shared/data-access/slack-api/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/shared/data-access/slack-api/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/shared/data-access/slack-api/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/shared/data-access/slack-api/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/shared/data-access/slack-api/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/shared/data-access/slack-api/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/shared/data-access/slack-api/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/shared/data-access/slack-api/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/shared/data-access/slack-api/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/shared/data-access/slack-api/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/shared/data-access/slack-api/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/shared/data-access/slack-api/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.data-access": [
+      "libs/shared/data-access/slack-api/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/shared/data-access/slack-api/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/shared/data-access/slack-api/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/shared/data-access/slack-api/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/shared/data-access/slack-api/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/shared/data-access/slack-api/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/shared/data-access/slack-api/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/shared/data-access/slack-api/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/shared/data-access/slack-api/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/shared/data-access/ui-store": {
+    "root": [
+      "libs/shared/data-access/ui-store/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/shared/data-access/ui-store/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/shared/data-access/ui-store/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/shared/data-access/ui-store/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/shared/data-access/ui-store/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/shared/data-access/ui-store/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/shared/data-access/ui-store/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/shared/data-access/ui-store/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/shared/data-access/ui-store/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/shared/data-access/ui-store/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/shared/data-access/ui-store/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/shared/data-access/ui-store/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/shared/data-access/ui-store/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/shared/data-access/ui-store/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/shared/data-access/ui-store/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/shared/data-access/ui-store/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/shared/data-access/ui-store/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/shared/data-access/ui-store/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/shared/data-access/ui-store/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/shared/data-access/ui-store/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/shared/data-access/ui-store/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/shared/data-access/ui-store/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/shared/data-access/ui-store/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.data-access": [
+      "libs/shared/data-access/ui-store/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/shared/data-access/ui-store/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/shared/data-access/ui-store/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/shared/data-access/ui-store/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/shared/data-access/ui-store/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/shared/data-access/ui-store/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/shared/data-access/ui-store/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/shared/data-access/ui-store/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/shared/data-access/ui-store/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/shared/pipes/collection-commas": {
+    "root": [
+      "libs/shared/pipes/collection-commas/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/shared/pipes/collection-commas/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/shared/pipes/collection-commas/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/shared/pipes/collection-commas/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/shared/pipes/collection-commas/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/shared/pipes/collection-commas/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/shared/pipes/collection-commas/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/shared/pipes/collection-commas/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/shared/pipes/collection-commas/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/shared/pipes/collection-commas/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/shared/pipes/collection-commas/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/shared/pipes/collection-commas/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/shared/pipes/collection-commas/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/shared/pipes/collection-commas/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/shared/pipes/collection-commas/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/shared/pipes/collection-commas/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/shared/pipes/collection-commas/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/shared/pipes/collection-commas/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/shared/pipes/collection-commas/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/shared/pipes/collection-commas/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/shared/pipes/collection-commas/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/shared/pipes/collection-commas/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/shared/pipes/collection-commas/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.util": [
+      "libs/shared/pipes/collection-commas/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/shared/pipes/collection-commas/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/shared/pipes/collection-commas/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/shared/pipes/collection-commas/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/shared/pipes/collection-commas/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/shared/pipes/collection-commas/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/shared/pipes/collection-commas/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/shared/pipes/collection-commas/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/shared/pipes/collection-commas/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/shared/ui-file-preview": {
+    "root": [
+      "libs/shared/ui-file-preview/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/shared/ui-file-preview/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/shared/ui-file-preview/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/shared/ui-file-preview/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/shared/ui-file-preview/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/shared/ui-file-preview/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/shared/ui-file-preview/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/shared/ui-file-preview/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/shared/ui-file-preview/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/shared/ui-file-preview/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/shared/ui-file-preview/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/shared/ui-file-preview/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/shared/ui-file-preview/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/shared/ui-file-preview/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/shared/ui-file-preview/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/shared/ui-file-preview/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/shared/ui-file-preview/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/shared/ui-file-preview/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/shared/ui-file-preview/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/shared/ui-file-preview/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/shared/ui-file-preview/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/shared/ui-file-preview/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/shared/ui-file-preview/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.ui": [
+      "libs/shared/ui-file-preview/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/shared/ui-file-preview/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/shared/ui-file-preview/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/shared/ui-file-preview/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/shared/ui-file-preview/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/shared/ui-file-preview/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/shared/ui-file-preview/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/shared/ui-file-preview/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/shared/ui-file-preview/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/shared/ui-message": {
+    "root": [
+      "libs/shared/ui-message/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/shared/ui-message/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/shared/ui-message/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/shared/ui-message/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/shared/ui-message/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/shared/ui-message/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/shared/ui-message/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/shared/ui-message/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/shared/ui-message/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/shared/ui-message/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/shared/ui-message/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/shared/ui-message/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/shared/ui-message/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/shared/ui-message/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/shared/ui-message/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/shared/ui-message/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/shared/ui-message/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/shared/ui-message/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/shared/ui-message/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/shared/ui-message/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/shared/ui-message/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/shared/ui-message/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/shared/ui-message/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.ui": [
+      "libs/shared/ui-message/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/shared/ui-message/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/shared/ui-message/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/shared/ui-message/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/shared/ui-message/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/shared/ui-message/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/shared/ui-message/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/shared/ui-message/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/shared/ui-message/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/shared/ui-message-editor": {
+    "root": [
+      "libs/shared/ui-message-editor/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/shared/ui-message-editor/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/shared/ui-message-editor/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/shared/ui-message-editor/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/shared/ui-message-editor/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/shared/ui-message-editor/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/shared/ui-message-editor/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/shared/ui-message-editor/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/shared/ui-message-editor/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/shared/ui-message-editor/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/shared/ui-message-editor/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/shared/ui-message-editor/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/shared/ui-message-editor/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/shared/ui-message-editor/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/shared/ui-message-editor/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/shared/ui-message-editor/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/shared/ui-message-editor/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/shared/ui-message-editor/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/shared/ui-message-editor/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/shared/ui-message-editor/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/shared/ui-message-editor/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/shared/ui-message-editor/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/shared/ui-message-editor/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.ui": [
+      "libs/shared/ui-message-editor/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/shared/ui-message-editor/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/shared/ui-message-editor/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/shared/ui-message-editor/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/shared/ui-message-editor/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/shared/ui-message-editor/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/shared/ui-message-editor/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/shared/ui-message-editor/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/shared/ui-message-editor/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/shared/utils": {
+    "root": [
+      "libs/shared/utils/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/shared/utils/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/shared/utils/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/shared/utils/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/shared/utils/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/shared/utils/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/shared/utils/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/shared/utils/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/shared/utils/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/shared/utils/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/shared/utils/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/shared/utils/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/shared/utils/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/shared/utils/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/shared/utils/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/shared/utils/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/shared/utils/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/shared/utils/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/shared/utils/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/shared/utils/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/shared/utils/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/shared/utils/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/shared/utils/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.util": [
+      "libs/shared/utils/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/shared/utils/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/shared/utils/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/shared/utils/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/shared/utils/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/shared/utils/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/shared/utils/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/shared/utils/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/shared/utils/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/tab-rail/feature-tab-rail": {
+    "root": [
+      "libs/tab-rail/feature-tab-rail/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/tab-rail/feature-tab-rail/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/tab-rail/feature-tab-rail/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/tab-rail/feature-tab-rail/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/tab-rail/feature-tab-rail/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/tab-rail/feature-tab-rail/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/tab-rail/feature-tab-rail/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/tab-rail/feature-tab-rail/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/tab-rail/feature-tab-rail/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/tab-rail/feature-tab-rail/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/tab-rail/feature-tab-rail/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/tab-rail/feature-tab-rail/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/tab-rail/feature-tab-rail/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/tab-rail/feature-tab-rail/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/tab-rail/feature-tab-rail/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/tab-rail/feature-tab-rail/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/tab-rail/feature-tab-rail/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/tab-rail/feature-tab-rail/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/tab-rail/feature-tab-rail/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/tab-rail/feature-tab-rail/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/tab-rail/feature-tab-rail/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/tab-rail/feature-tab-rail/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/tab-rail/feature-tab-rail/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.feature": [
+      "libs/tab-rail/feature-tab-rail/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/tab-rail/feature-tab-rail/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/tab-rail/feature-tab-rail/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/tab-rail/feature-tab-rail/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/tab-rail/feature-tab-rail/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/tab-rail/feature-tab-rail/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/tab-rail/feature-tab-rail/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/tab-rail/feature-tab-rail/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/tab-rail/feature-tab-rail/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/threads/data-access-threads": {
+    "root": [
+      "libs/threads/data-access-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/threads/data-access-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/threads/data-access-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/threads/data-access-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/threads/data-access-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/threads/data-access-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/threads/data-access-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/threads/data-access-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/threads/data-access-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/threads/data-access-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/threads/data-access-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/threads/data-access-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/threads/data-access-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/threads/data-access-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/threads/data-access-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/threads/data-access-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/threads/data-access-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/threads/data-access-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/threads/data-access-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/threads/data-access-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/threads/data-access-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/threads/data-access-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/threads/data-access-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.data-access": [
+      "libs/threads/data-access-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/threads/data-access-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/threads/data-access-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/threads/data-access-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/threads/data-access-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/threads/data-access-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/threads/data-access-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/threads/data-access-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/threads/data-access-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/threads/feature-threads": {
+    "root": [
+      "libs/threads/feature-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/threads/feature-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/threads/feature-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/threads/feature-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/threads/feature-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/threads/feature-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/threads/feature-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/threads/feature-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/threads/feature-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/threads/feature-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/threads/feature-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/threads/feature-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/threads/feature-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/threads/feature-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/threads/feature-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/threads/feature-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/threads/feature-threads/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/threads/feature-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/threads/feature-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/threads/feature-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/threads/feature-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/threads/feature-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/threads/feature-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.feature": [
+      "libs/threads/feature-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/threads/feature-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/threads/feature-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/threads/feature-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/threads/feature-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/threads/feature-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/threads/feature-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/threads/feature-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/threads/feature-threads/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/threads/ui-thread-card": {
+    "root": [
+      "libs/threads/ui-thread-card/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/threads/ui-thread-card/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/threads/ui-thread-card/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/threads/ui-thread-card/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/threads/ui-thread-card/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/threads/ui-thread-card/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/threads/ui-thread-card/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/threads/ui-thread-card/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/threads/ui-thread-card/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/threads/ui-thread-card/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/threads/ui-thread-card/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/threads/ui-thread-card/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/threads/ui-thread-card/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/threads/ui-thread-card/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/threads/ui-thread-card/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/threads/ui-thread-card/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/threads/ui-thread-card/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/threads/ui-thread-card/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/threads/ui-thread-card/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/threads/ui-thread-card/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/threads/ui-thread-card/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/threads/ui-thread-card/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/threads/ui-thread-card/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.ui": [
+      "libs/threads/ui-thread-card/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/threads/ui-thread-card/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/threads/ui-thread-card/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/threads/ui-thread-card/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/threads/ui-thread-card/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/threads/ui-thread-card/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/threads/ui-thread-card/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/threads/ui-thread-card/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/threads/ui-thread-card/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "libs/workspace/feature-shell": {
+    "root": [
+      "libs/workspace/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "libs/workspace/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint": [
+      "libs/workspace/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.cache": [
+      "libs/workspace/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options": [
+      "libs/workspace/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.inputs": [
+      "libs/workspace/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.outputs": [
+      "libs/workspace/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata": [
+      "libs/workspace/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.executor": [
+      "libs/workspace/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.cwd": [
+      "libs/workspace/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.options.command": [
+      "libs/workspace/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies": [
+      "libs/workspace/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.technologies.0": [
+      "libs/workspace/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.description": [
+      "libs/workspace/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help": [
+      "libs/workspace/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.command": [
+      "libs/workspace/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "targets.eslint:lint.metadata.help.example": [
+      "libs/workspace/feature-shell/.eslintrc.json",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "libs/workspace/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "libs/workspace/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "libs/workspace/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "libs/workspace/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "libs/workspace/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "libs/workspace/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "tags.feature": [
+      "libs/workspace/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "libs/workspace/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "libs/workspace/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.outputs": [
+      "libs/workspace/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "libs/workspace/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.jestConfig": [
+      "libs/workspace/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "libs/workspace/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "libs/workspace/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.outputs": [
+      "libs/workspace/feature-shell/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.options.passWithNoTests": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.ci": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.configurations.ci.codeCoverage": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.test.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.cache": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.lint.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  }
+}

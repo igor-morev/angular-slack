@@ -3,19 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { selectEntity } from '@angular-slack/client/data-access';
 import { Store } from '@ngrx/store';
-import {
-  TuiDialogModule,
-  TuiDialogService,
-  TuiExpandModule,
-  TuiHintModule,
-  TuiSvgModule,
-} from '@taiga-ui/core';
-import { TuiAvatarModule } from '@taiga-ui/kit';
-import { TuiLetModule } from '@taiga-ui/cdk';
-import {
-  ContactsApiActions,
-  selectAllContacts,
-} from 'libs/contacts/data-access-contacts/src';
+
 import {
   ChannelsApiActions,
   selectAllChannels,
@@ -23,6 +11,12 @@ import {
 import { SecondaryViewStore } from '@angular-slack/ui-store';
 import { CreateChannelComponent } from '@angular-slack/create-channel';
 import { PolymorpheusComponent } from '@tinkoff/ng-polymorpheus';
+import { TuiDialogService, TuiExpand } from '@taiga-ui/core';
+import { ContactsApiActions, selectAllContacts } from '@angular-slack/data-access-contacts';
+import { TuiAvatar } from '@taiga-ui/kit';
+
+import { TuiIcon } from '@taiga-ui/core';
+
 
 @Component({
   selector: 'as-workspace',
@@ -30,12 +24,9 @@ import { PolymorpheusComponent } from '@tinkoff/ng-polymorpheus';
   imports: [
     CommonModule,
     RouterModule,
-    TuiSvgModule,
-    TuiHintModule,
-    TuiAvatarModule,
-    TuiLetModule,
-    TuiExpandModule,
-    TuiDialogModule,
+    TuiAvatar,
+    TuiExpand,
+    TuiIcon
   ],
   templateUrl: './workspace.component.html',
   styleUrl: './workspace.component.scss',

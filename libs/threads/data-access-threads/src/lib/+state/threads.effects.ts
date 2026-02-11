@@ -5,7 +5,9 @@ import {
 } from '@angular-slack/data-access-messages';
 import { ThreadApiService } from '@angular-slack/slack-api';
 import { Injectable, inject } from '@angular/core';
-import { createEffect, Actions, ofType, concatLatestFrom } from '@ngrx/effects';
+import { createEffect, Actions, ofType } from '@ngrx/effects';
+import { concatLatestFrom } from '@ngrx/operators';
+
 import { Store } from '@ngrx/store';
 import { switchMap, catchError, of, map, filter, concatMap } from 'rxjs';
 import { ThreadsApiActions } from './threads.actions';

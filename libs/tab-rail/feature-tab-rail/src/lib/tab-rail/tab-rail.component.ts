@@ -6,13 +6,14 @@ import {
   selectAllClients,
   selectEntity,
 } from '@angular-slack/client/data-access';
-import { TuiHintModule, TuiSvgModule } from '@taiga-ui/core';
-import { TuiAvatarModule } from '@taiga-ui/kit';
+import { TuiHint, TuiIcon } from '@taiga-ui/core';
+import { TuiAvatar } from '@taiga-ui/kit';
+
 
 @Component({
   selector: 'as-tab-rail',
   standalone: true,
-  imports: [CommonModule, TuiSvgModule, TuiHintModule, TuiAvatarModule],
+  imports: [CommonModule, TuiIcon, TuiHint, TuiAvatar],
   templateUrl: './tab-rail.component.html',
   styleUrl: './tab-rail.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

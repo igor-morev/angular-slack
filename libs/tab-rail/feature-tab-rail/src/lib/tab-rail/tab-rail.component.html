@@ -19,7 +19,7 @@
         <span
           class="bg-slate-400 h-10 w-10 rounded-md flex items-center justify-center"
         >
-          <tui-svg src="tuiIconHome"></tui-svg>
+          <tui-icon src="tuiIconHome"></tui-icon>
         </span>
         <span class="block pt-1">Home</span>
       </button>
@@ -32,6 +32,6 @@
   tuiHintDirection="right"
   [tuiHint]="user().username"
 >
-  <tui-avatar [text]="user().username" [autoColor]="true" size="m"></tui-avatar>
+  <tui-avatar [src]="user().username" size="m"></tui-avatar>
   <!-- <img [src]="user().image" alt="" class="inline-block h-8 w-8 rounded-md" /> -->
 </button>

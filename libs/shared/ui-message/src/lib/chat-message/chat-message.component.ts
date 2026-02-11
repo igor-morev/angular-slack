@@ -10,32 +10,14 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TuiAvatarModule } from '@taiga-ui/kit';
+import { TuiAvatar } from '@taiga-ui/kit';
 import { Message } from '@angular-slack/slack-api';
 import { FilePreviewComponent } from '@angular-slack/file-preview';
 
 import { PickerComponent } from '@ctrl/ngx-emoji-mart';
 
-import {
-  OverlayModule,
-  OverlayConfig,
-  Overlay,
-  OverlayRef,
-} from '@angular/cdk/overlay';
-
-import {
-  TuiButtonModule,
-  TuiDataListModule,
-  TuiDialogModule,
-  TuiDialogService,
-  TuiDropdownModule,
-  TuiHostedDropdownModule,
-  TuiSvgModule,
-} from '@taiga-ui/core';
-
-import { TuiDestroyService } from '@taiga-ui/cdk';
-import { TemplatePortal } from '@angular/cdk/portal';
 import { takeUntil } from 'rxjs';
+import { TuiDialog } from '@taiga-ui/core/components/dialog';
 
 type DropdownConfig = Partial<Record<'emoji' | 'thread', boolean>>;
 
@@ -44,9 +26,9 @@ type DropdownConfig = Partial<Record<'emoji' | 'thread', boolean>>;
   standalone: true,
   imports: [
     CommonModule,
-    TuiAvatarModule,
+    TuiAvatar,
     FilePreviewComponent,
-    TuiDialogModule,
+    TuiDialog,
     TuiSvgModule,
     TuiDropdownModule,
     TuiHostedDropdownModule,
@@ -57,7 +39,6 @@ type DropdownConfig = Partial<Record<'emoji' | 'thread', boolean>>;
   ],
   templateUrl: './chat-message.component.html',
   styleUrl: './chat-message.component.scss',
-  providers: [TuiDestroyService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChatMessageComponent {
@@ -97,7 +78,6 @@ export class ChatMessageComponent {
     private readonly dialogs: TuiDialogService,
     private overlay: Overlay,
     private containerRef: ViewContainerRef,
-    private destroy$: TuiDestroyService
   ) {}
 
   show(file: File): void {
