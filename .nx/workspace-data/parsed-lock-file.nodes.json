@@ -576,6 +576,15 @@
         "hash": "sha512-i7iMIMt2rbCDXRuVULbi0I5v4a7ldBgoGdPvHQ17poohTjU4NJ2Jm7p7mUYCGcDlYmWOvgxMGaoiqUs6S5lFPA=="
       }
     },
+    "npm:@angular/material": {
+      "type": "npm",
+      "name": "npm:@angular/material",
+      "data": {
+        "version": "21.1.3",
+        "packageName": "@angular/material",
+        "hash": "sha512-bVjtGSsQYOV6Z2cHCpdQVPVOdDxFKAprGV50BHRlPIIFl0X4hsMquFCMVTMExKP5ABKOzVt8Ae5faaszVcPh3A=="
+      }
+    },
     "npm:@angular/platform-browser": {
       "type": "npm",
       "name": "npm:@angular/platform-browser",
@@ -16999,6 +17008,7 @@
     "node_modules/@angular/core": "npm:@angular/core",
     "node_modules/@angular/forms": "npm:@angular/forms",
     "node_modules/@angular/language-service": "npm:@angular/language-service",
+    "node_modules/@angular/material": "npm:@angular/material",
     "node_modules/@angular/platform-browser": "npm:@angular/platform-browser",
     "node_modules/@angular/platform-browser-dynamic": "npm:@angular/platform-browser-dynamic",
     "node_modules/@angular/router": "npm:@angular/router",

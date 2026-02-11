@@ -1440,6 +1440,41 @@
     "type": "static"
   },
   {
+    "source": "npm:@angular/material",
+    "target": "npm:@angular/cdk",
+    "type": "static"
+  },
+  {
+    "source": "npm:@angular/material",
+    "target": "npm:@angular/common",
+    "type": "static"
+  },
+  {
+    "source": "npm:@angular/material",
+    "target": "npm:@angular/core",
+    "type": "static"
+  },
+  {
+    "source": "npm:@angular/material",
+    "target": "npm:@angular/forms",
+    "type": "static"
+  },
+  {
+    "source": "npm:@angular/material",
+    "target": "npm:@angular/platform-browser",
+    "type": "static"
+  },
+  {
+    "source": "npm:@angular/material",
+    "target": "npm:rxjs",
+    "type": "static"
+  },
+  {
+    "source": "npm:@angular/material",
+    "target": "npm:tslib",
+    "type": "static"
+  },
+  {
     "source": "npm:@angular/platform-browser",
     "target": "npm:@angular/animations",
     "type": "static"
