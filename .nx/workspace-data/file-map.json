@@ -13,7 +13,11 @@
     "@angular/router": "18.0.3",
     "@ctrl/ngx-emoji-mart": "^9.2.0",
     "@nestjs/common": "^10.0.2",
+    "@nestjs/config": "^3.2.3",
     "@nestjs/core": "^10.0.2",
+    "@nestjs/jwt": "^10.2.0",
+    "@nestjs/mongoose": "^10.0.6",
+    "@nestjs/passport": "^10.0.3",
     "@nestjs/platform-express": "^10.0.2",
     "@ngrx/component-store": "~17.0.0",
     "@ngrx/effects": "~17.0.0",
@@ -31,9 +35,15 @@
     "@tinkoff/ng-polymorpheus": "^4.3.0",
     "@types/quill": "^2.0.14",
     "axios": "^1.6.0",
+    "bcrypt": "^5.1.1",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
     "dompurify": "^3.0.9",
     "luxon": "^3.4.4",
+    "mongoose": "^8.4.4",
     "ngx-quill": "^25.0.3",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
     "quill": "^2.0.0-rc.2",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~7.8.0",
@@ -68,10 +78,12 @@
     "@swc-node/register": "1.9.2",
     "@swc/core": "1.5.7",
     "@swc/helpers": "~0.5.11",
+    "@types/bcrypt": "^5.0.2",
     "@types/dompurify": "^2.2.3",
     "@types/jest": "^29.4.0",
     "@types/luxon": "^3.3.7",
     "@types/node": "^18.16.9",
+    "@types/passport-jwt": "^4.0.1",
     "@typescript-eslint/eslint-plugin": "7.9.0",
     "@typescript-eslint/parser": "7.9.0",
     "autoprefixer": "^10.4.0",
@@ -206,7 +218,7 @@
       },
       {
         "file": ".gitignore",
-        "hash": "8491837053101957257"
+        "hash": "6911698759603853251"
       },
       {
         "file": ".husky/commit-msg",
@@ -231,6 +243,14 @@
       {
         "file": "README.md",
         "hash": "3288129378159169366"
+      },
+      {
+        "file": "docker-compose.yml",
+        "hash": "5965192949790899273"
+      },
+      {
+        "file": "envs/.backend.env",
+        "hash": "17357780510551873442"
       },
       {
         "file": "jest.config.ts",
@@ -262,11 +282,11 @@
       },
       {
         "file": "package-lock.json",
-        "hash": "10817918371596050431"
+        "hash": "2044882230061210940"
       },
       {
         "file": "package.json",
-        "hash": "16481233465839115732"
+        "hash": "10553319408631118356"
       },
       {
         "file": "tsconfig.base.json",
@@ -274,6 +294,54 @@
       }
     ],
     "projectFileMap": {
+      "collection-commas": [
+        {
+          "file": "libs/shared/pipes/collection-commas/.eslintrc.json",
+          "hash": "11377653707530137242"
+        },
+        {
+          "file": "libs/shared/pipes/collection-commas/README.md",
+          "hash": "1317966422514301400"
+        },
+        {
+          "file": "libs/shared/pipes/collection-commas/jest.config.ts",
+          "hash": "6740743423189719355"
+        },
+        {
+          "file": "libs/shared/pipes/collection-commas/project.json",
+          "hash": "14519952187353633642"
+        },
+        {
+          "file": "libs/shared/pipes/collection-commas/src/index.ts",
+          "hash": "7437008285991970263"
+        },
+        {
+          "file": "libs/shared/pipes/collection-commas/src/lib/collection-commas.pipe.ts",
+          "hash": "11337687560865979016",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/shared/pipes/collection-commas/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/shared/pipes/collection-commas/tsconfig.json",
+          "hash": "16248533471678702062"
+        },
+        {
+          "file": "libs/shared/pipes/collection-commas/tsconfig.lib.json",
+          "hash": "8746075233993636049"
+        },
+        {
+          "file": "libs/shared/pipes/collection-commas/tsconfig.spec.json",
+          "hash": "9840611283105717156"
+        }
+      ],
       "shell": [
         {
           "file": "libs/client/feature-shell/.eslintrc.json",
@@ -358,6 +426,120 @@
           "hash": "7159729809249402441"
         }
       ],
+      "ui-store": [
+        {
+          "file": "libs/shared/data-access/ui-store/.eslintrc.json",
+          "hash": "11377653707530137242"
+        },
+        {
+          "file": "libs/shared/data-access/ui-store/README.md",
+          "hash": "10400595476844398387"
+        },
+        {
+          "file": "libs/shared/data-access/ui-store/jest.config.ts",
+          "hash": "232075066997528762"
+        },
+        {
+          "file": "libs/shared/data-access/ui-store/project.json",
+          "hash": "7110816003847706566"
+        },
+        {
+          "file": "libs/shared/data-access/ui-store/src/index.ts",
+          "hash": "15274375296530821063"
+        },
+        {
+          "file": "libs/shared/data-access/ui-store/src/lib/secondary-view.store.ts",
+          "hash": "17933025122638643705",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@ngrx/signals"
+          ]
+        },
+        {
+          "file": "libs/shared/data-access/ui-store/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/shared/data-access/ui-store/tsconfig.json",
+          "hash": "16248533471678702062"
+        },
+        {
+          "file": "libs/shared/data-access/ui-store/tsconfig.lib.json",
+          "hash": "8746075233993636049"
+        },
+        {
+          "file": "libs/shared/data-access/ui-store/tsconfig.spec.json",
+          "hash": "9840611283105717156"
+        }
+      ],
+      "file-preview": [
+        {
+          "file": "libs/shared/ui-file-preview/.eslintrc.json",
+          "hash": "3642164882771910298"
+        },
+        {
+          "file": "libs/shared/ui-file-preview/README.md",
+          "hash": "3978437442576589793"
+        },
+        {
+          "file": "libs/shared/ui-file-preview/jest.config.ts",
+          "hash": "9476164527426953307"
+        },
+        {
+          "file": "libs/shared/ui-file-preview/project.json",
+          "hash": "11357946151725827954"
+        },
+        {
+          "file": "libs/shared/ui-file-preview/src/index.ts",
+          "hash": "6615350294942668002"
+        },
+        {
+          "file": "libs/shared/ui-file-preview/src/lib/file-preview/file-preview.component.html",
+          "hash": "17998672091206015352"
+        },
+        {
+          "file": "libs/shared/ui-file-preview/src/lib/file-preview/file-preview.component.scss",
+          "hash": "9911954729985612708"
+        },
+        {
+          "file": "libs/shared/ui-file-preview/src/lib/file-preview/file-preview.component.spec.ts",
+          "hash": "6380187942027269463",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/shared/ui-file-preview/src/lib/file-preview/file-preview.component.ts",
+          "hash": "4952608007861554101",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@taiga-ui/kit"
+          ]
+        },
+        {
+          "file": "libs/shared/ui-file-preview/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/shared/ui-file-preview/tsconfig.json",
+          "hash": "8526453262384300416"
+        },
+        {
+          "file": "libs/shared/ui-file-preview/tsconfig.lib.json",
+          "hash": "6020606002228403423"
+        },
+        {
+          "file": "libs/shared/ui-file-preview/tsconfig.spec.json",
+          "hash": "7159729809249402441"
+        }
+      ],
       "channel-chat-view": [
         {
           "file": "libs/chat/feature-channel-chat-view/.eslintrc.json",
@@ -438,6 +620,81 @@
           "hash": "7159729809249402441"
         }
       ],
+      "thread-chat-view": [
+        {
+          "file": "libs/chat/feature-thread-chat-view/.eslintrc.json",
+          "hash": "3642164882771910298"
+        },
+        {
+          "file": "libs/chat/feature-thread-chat-view/README.md",
+          "hash": "8647310667942845161"
+        },
+        {
+          "file": "libs/chat/feature-thread-chat-view/jest.config.ts",
+          "hash": "12038503928577137394"
+        },
+        {
+          "file": "libs/chat/feature-thread-chat-view/project.json",
+          "hash": "17525356543086719504"
+        },
+        {
+          "file": "libs/chat/feature-thread-chat-view/src/index.ts",
+          "hash": "1636622534494932176"
+        },
+        {
+          "file": "libs/chat/feature-thread-chat-view/src/lib/thread-chat-view.component.html",
+          "hash": "10390335923525084047"
+        },
+        {
+          "file": "libs/chat/feature-thread-chat-view/src/lib/thread-chat-view.component.scss",
+          "hash": "11425719391180982812"
+        },
+        {
+          "file": "libs/chat/feature-thread-chat-view/src/lib/thread-chat-view.component.spec.ts",
+          "hash": "2161223513772217821",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/chat/feature-thread-chat-view/src/lib/thread-chat-view.component.ts",
+          "hash": "10643435546092241617",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@taiga-ui/core",
+            "ui-store",
+            "npm:@ngrx/store",
+            "data-access-messages",
+            "message-editor",
+            "file-preview",
+            "chat-message",
+            "npm:@angular/cdk",
+            "npm:rxjs",
+            "slack-api",
+            "npm:@taiga-ui/cdk"
+          ]
+        },
+        {
+          "file": "libs/chat/feature-thread-chat-view/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/chat/feature-thread-chat-view/tsconfig.json",
+          "hash": "8526453262384300416"
+        },
+        {
+          "file": "libs/chat/feature-thread-chat-view/tsconfig.lib.json",
+          "hash": "6020606002228403423"
+        },
+        {
+          "file": "libs/chat/feature-thread-chat-view/tsconfig.spec.json",
+          "hash": "7159729809249402441"
+        }
+      ],
       "threads": [
         {
           "file": "libs/threads/feature-threads/.eslintrc.json",
@@ -508,43 +765,37 @@
           "hash": "7159729809249402441"
         }
       ],
-      "data-access-messages": [
+      "client-data-access": [
         {
-          "file": "libs/chat/data-access-messages/.eslintrc.json",
+          "file": "libs/client/data-access/.eslintrc.json",
           "hash": "3865548440771963112"
         },
         {
-          "file": "libs/chat/data-access-messages/README.md",
-          "hash": "8615884468042607992"
+          "file": "libs/client/data-access/README.md",
+          "hash": "13265400724219469506"
         },
         {
-          "file": "libs/chat/data-access-messages/jest.config.ts",
-          "hash": "5139367970315523148"
+          "file": "libs/client/data-access/jest.config.ts",
+          "hash": "9173046544055385857"
         },
         {
-          "file": "libs/chat/data-access-messages/project.json",
-          "hash": "14800282543526867486"
+          "file": "libs/client/data-access/project.json",
+          "hash": "1702728622507476873"
         },
         {
-          "file": "libs/chat/data-access-messages/src/index.ts",
+          "file": "libs/client/data-access/src/index.ts",
           "hash": "14444220784472518467"
         },
         {
-          "file": "libs/chat/data-access-messages/src/lib/+state/index.ts",
-          "hash": "10558011417790256468"
-        },
-        {
-          "file": "libs/chat/data-access-messages/src/lib/+state/messages.actions.ts",
-          "hash": "11247480908115043818",
+          "file": "libs/client/data-access/src/lib/+state/clients.actions.ts",
+          "hash": "11771344515618998034",
           "deps": [
-            "slack-api",
-            "npm:@ngrx/store",
-            "auth-data-access"
+            "npm:@ngrx/store"
           ]
         },
         {
-          "file": "libs/chat/data-access-messages/src/lib/+state/messages.effects.spec.ts",
-          "hash": "3852537860293567952",
+          "file": "libs/client/data-access/src/lib/+state/clients.effects.spec.ts",
+          "hash": "10807663676809960040",
           "deps": [
             "npm:@angular/core",
             "npm:@ngrx/effects",
@@ -554,70 +805,133 @@
           ]
         },
         {
-          "file": "libs/chat/data-access-messages/src/lib/+state/messages.effects.ts",
-          "hash": "6673322065121965725",
+          "file": "libs/client/data-access/src/lib/+state/clients.effects.ts",
+          "hash": "15463791878338330828",
           "deps": [
             "slack-api",
             "npm:@angular/core",
             "npm:@ngrx/effects",
-            "npm:@ngrx/store",
             "npm:rxjs"
           ]
         },
         {
-          "file": "libs/chat/data-access-messages/src/lib/+state/messages.models.ts",
-          "hash": "2636138740343749771",
+          "file": "libs/client/data-access/src/lib/+state/clients.models.ts",
+          "hash": "5145285196370036003",
           "deps": [
             "slack-api"
           ]
         },
         {
-          "file": "libs/chat/data-access-messages/src/lib/+state/messages.reducer.spec.ts",
-          "hash": "5509561272760381370",
+          "file": "libs/client/data-access/src/lib/+state/clients.reducer.spec.ts",
+          "hash": "4544553845791235439",
           "deps": [
             "npm:@ngrx/store"
           ]
         },
         {
-          "file": "libs/chat/data-access-messages/src/lib/+state/messages.reducer.ts",
-          "hash": "10384531648840314076",
+          "file": "libs/client/data-access/src/lib/+state/clients.reducer.ts",
+          "hash": "9567650881468378793",
           "deps": [
             "npm:@ngrx/entity",
             "npm:@ngrx/store"
           ]
         },
         {
-          "file": "libs/chat/data-access-messages/src/lib/+state/messages.selectors.spec.ts",
-          "hash": "14167678086101883509"
+          "file": "libs/client/data-access/src/lib/+state/clients.selectors.spec.ts",
+          "hash": "16701671747062427616"
         },
         {
-          "file": "libs/chat/data-access-messages/src/lib/+state/messages.selectors.ts",
-          "hash": "15387089363046003788",
+          "file": "libs/client/data-access/src/lib/+state/clients.selectors.ts",
+          "hash": "16152719720464142176",
           "deps": [
-            "slack-api",
-            "npm:@ngrx/store",
-            "data-access-contacts",
-            "data-access-channels",
-            "npm:luxon"
+            "npm:@ngrx/store"
           ]
         },
         {
-          "file": "libs/chat/data-access-messages/src/test-setup.ts",
+          "file": "libs/client/data-access/src/lib/+state/index.ts",
+          "hash": "14131024578008348968"
+        },
+        {
+          "file": "libs/client/data-access/src/test-setup.ts",
           "hash": "12935735732682149507",
           "deps": [
             "npm:jest-preset-angular"
           ]
         },
         {
-          "file": "libs/chat/data-access-messages/tsconfig.json",
+          "file": "libs/client/data-access/tsconfig.json",
           "hash": "8526453262384300416"
         },
         {
-          "file": "libs/chat/data-access-messages/tsconfig.lib.json",
+          "file": "libs/client/data-access/tsconfig.lib.json",
           "hash": "6020606002228403423"
         },
         {
-          "file": "libs/chat/data-access-messages/tsconfig.spec.json",
+          "file": "libs/client/data-access/tsconfig.spec.json",
+          "hash": "7159729809249402441"
+        }
+      ],
+      "header-toolbar": [
+        {
+          "file": "libs/header-toolbar/feature-header-toolbar/.eslintrc.json",
+          "hash": "3642164882771910298"
+        },
+        {
+          "file": "libs/header-toolbar/feature-header-toolbar/README.md",
+          "hash": "18226710373341959856"
+        },
+        {
+          "file": "libs/header-toolbar/feature-header-toolbar/jest.config.ts",
+          "hash": "13706278142199153131"
+        },
+        {
+          "file": "libs/header-toolbar/feature-header-toolbar/project.json",
+          "hash": "11696960151084123146"
+        },
+        {
+          "file": "libs/header-toolbar/feature-header-toolbar/src/index.ts",
+          "hash": "6157768829652700345"
+        },
+        {
+          "file": "libs/header-toolbar/feature-header-toolbar/src/lib/header-toolbar/header-toolbar.component.html",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "libs/header-toolbar/feature-header-toolbar/src/lib/header-toolbar/header-toolbar.component.scss",
+          "hash": "8537097946923023697"
+        },
+        {
+          "file": "libs/header-toolbar/feature-header-toolbar/src/lib/header-toolbar/header-toolbar.component.spec.ts",
+          "hash": "9191650198673291184",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/header-toolbar/feature-header-toolbar/src/lib/header-toolbar/header-toolbar.component.ts",
+          "hash": "4863718252102218271",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "libs/header-toolbar/feature-header-toolbar/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/header-toolbar/feature-header-toolbar/tsconfig.json",
+          "hash": "8526453262384300416"
+        },
+        {
+          "file": "libs/header-toolbar/feature-header-toolbar/tsconfig.lib.json",
+          "hash": "6020606002228403423"
+        },
+        {
+          "file": "libs/header-toolbar/feature-header-toolbar/tsconfig.spec.json",
           "hash": "7159729809249402441"
         }
       ],
@@ -727,199 +1041,72 @@
           "hash": "7159729809249402441"
         }
       ],
-      "create-channel": [
+      "tab-rail": [
         {
-          "file": "libs/channels/feature-create-channel/.eslintrc.json",
+          "file": "libs/tab-rail/feature-tab-rail/.eslintrc.json",
           "hash": "3642164882771910298"
         },
         {
-          "file": "libs/channels/feature-create-channel/README.md",
-          "hash": "977905302583535652"
+          "file": "libs/tab-rail/feature-tab-rail/README.md",
+          "hash": "4903590336836095853"
         },
         {
-          "file": "libs/channels/feature-create-channel/jest.config.ts",
-          "hash": "17129332983062457301"
+          "file": "libs/tab-rail/feature-tab-rail/jest.config.ts",
+          "hash": "3963973007056492361"
         },
         {
-          "file": "libs/channels/feature-create-channel/project.json",
-          "hash": "2230264960942263153"
+          "file": "libs/tab-rail/feature-tab-rail/project.json",
+          "hash": "15065437319968502506"
         },
         {
-          "file": "libs/channels/feature-create-channel/src/index.ts",
-          "hash": "4027713908635162902"
+          "file": "libs/tab-rail/feature-tab-rail/src/index.ts",
+          "hash": "8169695417755688714"
         },
         {
-          "file": "libs/channels/feature-create-channel/src/lib/create-channel.component.html",
-          "hash": "7729860928232711222"
+          "file": "libs/tab-rail/feature-tab-rail/src/lib/tab-rail/tab-rail.component.html",
+          "hash": "6385760518487826241"
         },
         {
-          "file": "libs/channels/feature-create-channel/src/lib/create-channel.component.scss",
-          "hash": "3244421341483603138"
+          "file": "libs/tab-rail/feature-tab-rail/src/lib/tab-rail/tab-rail.component.scss",
+          "hash": "8925578911841714108"
         },
         {
-          "file": "libs/channels/feature-create-channel/src/lib/create-channel.component.spec.ts",
-          "hash": "12598570403193601758",
+          "file": "libs/tab-rail/feature-tab-rail/src/lib/tab-rail/tab-rail.component.spec.ts",
+          "hash": "11985542418132997084",
           "deps": [
             "npm:@angular/core"
           ]
         },
         {
-          "file": "libs/channels/feature-create-channel/src/lib/create-channel.component.ts",
-          "hash": "7758305411950772097",
+          "file": "libs/tab-rail/feature-tab-rail/src/lib/tab-rail/tab-rail.component.ts",
+          "hash": "5868310280314471656",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/common",
-            "npm:@angular/forms",
-            "npm:@taiga-ui/kit",
-            "npm:@taiga-ui/core",
-            "slack-api",
-            "npm:@taiga-ui/cdk",
             "auth-data-access",
-            "npm:@tinkoff/ng-polymorpheus",
             "npm:@ngrx/store",
-            "data-access-channels"
-          ]
-        },
-        {
-          "file": "libs/channels/feature-create-channel/src/test-setup.ts",
-          "hash": "12935735732682149507",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/channels/feature-create-channel/tsconfig.json",
-          "hash": "8526453262384300416"
-        },
-        {
-          "file": "libs/channels/feature-create-channel/tsconfig.lib.json",
-          "hash": "6020606002228403423"
-        },
-        {
-          "file": "libs/channels/feature-create-channel/tsconfig.spec.json",
-          "hash": "7159729809249402441"
-        }
-      ],
-      "primary-view": [
-        {
-          "file": "libs/chat/feature-primary-view/.eslintrc.json",
-          "hash": "3642164882771910298"
-        },
-        {
-          "file": "libs/chat/feature-primary-view/README.md",
-          "hash": "7555232730970363532"
-        },
-        {
-          "file": "libs/chat/feature-primary-view/jest.config.ts",
-          "hash": "11270569828353146401"
-        },
-        {
-          "file": "libs/chat/feature-primary-view/project.json",
-          "hash": "8229096138843125454"
-        },
-        {
-          "file": "libs/chat/feature-primary-view/src/index.ts",
-          "hash": "9646664629900578064"
-        },
-        {
-          "file": "libs/chat/feature-primary-view/src/lib/primary-view/primary-view.component.html",
-          "hash": "2131574911782463741"
-        },
-        {
-          "file": "libs/chat/feature-primary-view/src/lib/primary-view/primary-view.component.scss",
-          "hash": "11923164517650203789"
-        },
-        {
-          "file": "libs/chat/feature-primary-view/src/lib/primary-view/primary-view.component.spec.ts",
-          "hash": "16570345938225623844",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/chat/feature-primary-view/src/lib/primary-view/primary-view.component.ts",
-          "hash": "11940173954217897129",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "npm:@angular/router",
-            "npm:rxjs",
-            "npm:@ngrx/store",
-            "npm:@taiga-ui/cdk",
-            "data-access-messages",
-            "npm:@taiga-ui/kit",
+            "client-data-access",
             "npm:@taiga-ui/core",
-            "npm:@angular/cdk",
-            "message-editor",
-            "slack-api",
-            "ui-store",
-            "thread-chat-view",
-            "chat-message",
-            "data-access-contacts"
+            "npm:@taiga-ui/kit"
           ]
         },
         {
-          "file": "libs/chat/feature-primary-view/src/test-setup.ts",
+          "file": "libs/tab-rail/feature-tab-rail/src/test-setup.ts",
           "hash": "12935735732682149507",
           "deps": [
             "npm:jest-preset-angular"
           ]
         },
         {
-          "file": "libs/chat/feature-primary-view/tsconfig.json",
+          "file": "libs/tab-rail/feature-tab-rail/tsconfig.json",
           "hash": "8526453262384300416"
         },
         {
-          "file": "libs/chat/feature-primary-view/tsconfig.lib.json",
+          "file": "libs/tab-rail/feature-tab-rail/tsconfig.lib.json",
           "hash": "6020606002228403423"
         },
         {
-          "file": "libs/chat/feature-primary-view/tsconfig.spec.json",
-          "hash": "7159729809249402441"
-        }
-      ],
-      "utils": [
-        {
-          "file": "libs/shared/utils/.eslintrc.json",
-          "hash": "3865548440771963112"
-        },
-        {
-          "file": "libs/shared/utils/README.md",
-          "hash": "7928633615893668067"
-        },
-        {
-          "file": "libs/shared/utils/jest.config.ts",
-          "hash": "15479299737995323507"
-        },
-        {
-          "file": "libs/shared/utils/project.json",
-          "hash": "1701894255939830844"
-        },
-        {
-          "file": "libs/shared/utils/src/index.ts",
-          "hash": "17229467606895649566"
-        },
-        {
-          "file": "libs/shared/utils/src/lib/collection.ts",
-          "hash": "9445727082539244282"
-        },
-        {
-          "file": "libs/shared/utils/src/test-setup.ts",
-          "hash": "12935735732682149507",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/shared/utils/tsconfig.json",
-          "hash": "8526453262384300416"
-        },
-        {
-          "file": "libs/shared/utils/tsconfig.lib.json",
-          "hash": "6020606002228403423"
-        },
-        {
-          "file": "libs/shared/utils/tsconfig.spec.json",
+          "file": "libs/tab-rail/feature-tab-rail/tsconfig.spec.json",
           "hash": "7159729809249402441"
         }
       ],
@@ -946,7 +1133,7 @@
         },
         {
           "file": "apps/backend/src/app/app.module.ts",
-          "hash": "3163250445227373966"
+          "hash": "15136772645693566643"
         },
         {
           "file": "apps/backend/src/app/app.service.spec.ts",
@@ -957,8 +1144,76 @@
           "hash": "9967902337593410053"
         },
         {
+          "file": "apps/backend/src/app/auth/auth.controller.ts",
+          "hash": "5626520797178074803"
+        },
+        {
+          "file": "apps/backend/src/app/auth/auth.module.ts",
+          "hash": "2629066859858444937"
+        },
+        {
+          "file": "apps/backend/src/app/auth/auth.service.ts",
+          "hash": "2169544676496098085"
+        },
+        {
+          "file": "apps/backend/src/app/auth/constants.ts",
+          "hash": "8606993318295278727"
+        },
+        {
+          "file": "apps/backend/src/app/auth/interfaces/login-status.interface.ts",
+          "hash": "6160874031561445629"
+        },
+        {
+          "file": "apps/backend/src/app/auth/interfaces/payload.interface.ts",
+          "hash": "3114325562944584961"
+        },
+        {
+          "file": "apps/backend/src/app/auth/interfaces/regisration-status.interface.ts",
+          "hash": "18407649554276989937"
+        },
+        {
+          "file": "apps/backend/src/app/auth/jwt.strategy.ts",
+          "hash": "1388806206204844900"
+        },
+        {
+          "file": "apps/backend/src/app/users/dto/user-login.dto.ts",
+          "hash": "3333831496599079867"
+        },
+        {
+          "file": "apps/backend/src/app/users/dto/user.create.dto.ts",
+          "hash": "2890333278673823283"
+        },
+        {
+          "file": "apps/backend/src/app/users/dto/user.dto.ts",
+          "hash": "3500951969796152839"
+        },
+        {
+          "file": "apps/backend/src/app/users/interfaces/user.interface.ts",
+          "hash": "13422142145485686764"
+        },
+        {
+          "file": "apps/backend/src/app/users/models/user.model.ts",
+          "hash": "9757860770163259319"
+        },
+        {
+          "file": "apps/backend/src/app/users/users.module.ts",
+          "hash": "16530233804543033462"
+        },
+        {
+          "file": "apps/backend/src/app/users/users.service.ts",
+          "hash": "11330747537496183654"
+        },
+        {
+          "file": "apps/backend/src/app/users/users.types.ts",
+          "hash": "18063523930697309112"
+        },
+        {
           "file": "apps/backend/src/assets/.gitkeep",
           "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/backend/src/config/db-connect.config.ts",
+          "hash": "1022976919778392242"
         },
         {
           "file": "apps/backend/src/main.ts",
@@ -984,219 +1239,138 @@
           ]
         }
       ],
-      "client-data-access": [
+      "slack-api": [
         {
-          "file": "libs/client/data-access/.eslintrc.json",
-          "hash": "3865548440771963112"
+          "file": "libs/shared/data-access/slack-api/.eslintrc.json",
+          "hash": "11377653707530137242"
         },
         {
-          "file": "libs/client/data-access/README.md",
-          "hash": "13265400724219469506"
+          "file": "libs/shared/data-access/slack-api/README.md",
+          "hash": "13193173338245912583"
         },
         {
-          "file": "libs/client/data-access/jest.config.ts",
-          "hash": "9173046544055385857"
+          "file": "libs/shared/data-access/slack-api/jest.config.ts",
+          "hash": "722454560571663771"
         },
         {
-          "file": "libs/client/data-access/project.json",
-          "hash": "1702728622507476873"
+          "file": "libs/shared/data-access/slack-api/project.json",
+          "hash": "8525997417297080556"
         },
         {
-          "file": "libs/client/data-access/src/index.ts",
-          "hash": "14444220784472518467"
+          "file": "libs/shared/data-access/slack-api/src/index.ts",
+          "hash": "6529703599833771184"
         },
         {
-          "file": "libs/client/data-access/src/lib/+state/clients.actions.ts",
-          "hash": "11771344515618998034",
+          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/channel-api.service.ts",
+          "hash": "3206898307178517721",
           "deps": [
-            "npm:@ngrx/store"
+            "auth-data-access",
+            "npm:@angular/core",
+            "npm:rxjs",
+            "npm:uuid"
           ]
         },
         {
-          "file": "libs/client/data-access/src/lib/+state/clients.effects.spec.ts",
-          "hash": "10807663676809960040",
+          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/client-api.service.ts",
+          "hash": "18155392325260672874",
           "deps": [
             "npm:@angular/core",
-            "npm:@ngrx/effects",
-            "npm:@ngrx/store",
-            "npm:jasmine-marbles",
             "npm:rxjs"
           ]
         },
         {
-          "file": "libs/client/data-access/src/lib/+state/clients.effects.ts",
-          "hash": "15463791878338330828",
+          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/contact-api.service.ts",
+          "hash": "14659910204242861376",
           "deps": [
-            "slack-api",
+            "auth-data-access",
             "npm:@angular/core",
-            "npm:@ngrx/effects",
             "npm:rxjs"
           ]
         },
         {
-          "file": "libs/client/data-access/src/lib/+state/clients.models.ts",
-          "hash": "5145285196370036003",
+          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/message-api.service.ts",
+          "hash": "408201989385134610",
           "deps": [
-            "slack-api"
+            "auth-data-access",
+            "npm:@angular/core",
+            "npm:rxjs",
+            "npm:uuid",
+            "utils"
           ]
         },
         {
-          "file": "libs/client/data-access/src/lib/+state/clients.reducer.spec.ts",
-          "hash": "4544553845791235439",
+          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/models/attachment.ts",
+          "hash": "15872655072339571399"
+        },
+        {
+          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/models/channel.ts",
+          "hash": "4308346595899137460",
           "deps": [
-            "npm:@ngrx/store"
+            "auth-data-access"
           ]
         },
         {
-          "file": "libs/client/data-access/src/lib/+state/clients.reducer.ts",
-          "hash": "9567650881468378793",
+          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/models/client.ts",
+          "hash": "2532774846346029301"
+        },
+        {
+          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/models/contact.ts",
+          "hash": "3941154823607193920"
+        },
+        {
+          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/models/index.ts",
+          "hash": "10999200747561441912"
+        },
+        {
+          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/models/message.ts",
+          "hash": "8308636420890537348",
           "deps": [
-            "npm:@ngrx/entity",
-            "npm:@ngrx/store"
+            "auth-data-access"
           ]
         },
         {
-          "file": "libs/client/data-access/src/lib/+state/clients.selectors.spec.ts",
-          "hash": "16701671747062427616"
-        },
-        {
-          "file": "libs/client/data-access/src/lib/+state/clients.selectors.ts",
-          "hash": "16152719720464142176",
+          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/models/thread.ts",
+          "hash": "13023636785210175237",
           "deps": [
-            "npm:@ngrx/store"
+            "auth-data-access"
           ]
         },
         {
-          "file": "libs/client/data-access/src/lib/+state/index.ts",
-          "hash": "14131024578008348968"
+          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/thread-api.service.ts",
+          "hash": "14431887347948907908",
+          "deps": [
+            "auth-data-access",
+            "npm:@angular/core",
+            "npm:rxjs"
+          ]
         },
         {
-          "file": "libs/client/data-access/src/test-setup.ts",
+          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/user-api.service.ts",
+          "hash": "9217926048672481317",
+          "deps": [
+            "auth-data-access",
+            "npm:@angular/core",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/shared/data-access/slack-api/src/test-setup.ts",
           "hash": "12935735732682149507",
           "deps": [
             "npm:jest-preset-angular"
           ]
         },
         {
-          "file": "libs/client/data-access/tsconfig.json",
-          "hash": "8526453262384300416"
+          "file": "libs/shared/data-access/slack-api/tsconfig.json",
+          "hash": "16248533471678702062"
         },
         {
-          "file": "libs/client/data-access/tsconfig.lib.json",
-          "hash": "6020606002228403423"
+          "file": "libs/shared/data-access/slack-api/tsconfig.lib.json",
+          "hash": "2259867284347580065"
         },
         {
-          "file": "libs/client/data-access/tsconfig.spec.json",
-          "hash": "7159729809249402441"
-        }
-      ],
-      "data-access-threads": [
-        {
-          "file": "libs/threads/data-access-threads/.eslintrc.json",
-          "hash": "3865548440771963112"
-        },
-        {
-          "file": "libs/threads/data-access-threads/README.md",
-          "hash": "2450662518855550944"
-        },
-        {
-          "file": "libs/threads/data-access-threads/jest.config.ts",
-          "hash": "155580699189877125"
-        },
-        {
-          "file": "libs/threads/data-access-threads/project.json",
-          "hash": "15675253726204392418"
-        },
-        {
-          "file": "libs/threads/data-access-threads/src/index.ts",
-          "hash": "14444220784472518467"
-        },
-        {
-          "file": "libs/threads/data-access-threads/src/lib/+state/index.ts",
-          "hash": "14638968577589280578"
-        },
-        {
-          "file": "libs/threads/data-access-threads/src/lib/+state/threads.actions.ts",
-          "hash": "15365436777847738955",
-          "deps": [
-            "slack-api",
-            "npm:@ngrx/store"
-          ]
-        },
-        {
-          "file": "libs/threads/data-access-threads/src/lib/+state/threads.effects.spec.ts",
-          "hash": "7789540463787495084",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@ngrx/effects",
-            "npm:@ngrx/store",
-            "npm:jasmine-marbles",
-            "npm:rxjs"
-          ]
-        },
-        {
-          "file": "libs/threads/data-access-threads/src/lib/+state/threads.effects.ts",
-          "hash": "13129282813319050128",
-          "deps": [
-            "data-access-messages",
-            "slack-api",
-            "npm:@angular/core",
-            "npm:@ngrx/effects",
-            "npm:@ngrx/store",
-            "npm:rxjs"
-          ]
-        },
-        {
-          "file": "libs/threads/data-access-threads/src/lib/+state/threads.models.ts",
-          "hash": "16216164857865686925",
-          "deps": [
-            "slack-api"
-          ]
-        },
-        {
-          "file": "libs/threads/data-access-threads/src/lib/+state/threads.reducer.spec.ts",
-          "hash": "9319337163642437434",
-          "deps": [
-            "npm:@ngrx/store"
-          ]
-        },
-        {
-          "file": "libs/threads/data-access-threads/src/lib/+state/threads.reducer.ts",
-          "hash": "3304021793406054006",
-          "deps": [
-            "npm:@ngrx/entity",
-            "npm:@ngrx/store"
-          ]
-        },
-        {
-          "file": "libs/threads/data-access-threads/src/lib/+state/threads.selectors.spec.ts",
-          "hash": "3788254987197917126"
-        },
-        {
-          "file": "libs/threads/data-access-threads/src/lib/+state/threads.selectors.ts",
-          "hash": "11252486771891793119",
-          "deps": [
-            "npm:@ngrx/store"
-          ]
-        },
-        {
-          "file": "libs/threads/data-access-threads/src/test-setup.ts",
-          "hash": "12935735732682149507",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/threads/data-access-threads/tsconfig.json",
-          "hash": "8526453262384300416"
-        },
-        {
-          "file": "libs/threads/data-access-threads/tsconfig.lib.json",
-          "hash": "6020606002228403423"
-        },
-        {
-          "file": "libs/threads/data-access-threads/tsconfig.spec.json",
-          "hash": "7159729809249402441"
+          "file": "libs/shared/data-access/slack-api/tsconfig.spec.json",
+          "hash": "9840611283105717156"
         }
       ],
       "data-access-channels": [
@@ -1306,54 +1480,6 @@
           "hash": "7159729809249402441"
         }
       ],
-      "collection-commas": [
-        {
-          "file": "libs/shared/pipes/collection-commas/.eslintrc.json",
-          "hash": "11377653707530137242"
-        },
-        {
-          "file": "libs/shared/pipes/collection-commas/README.md",
-          "hash": "1317966422514301400"
-        },
-        {
-          "file": "libs/shared/pipes/collection-commas/jest.config.ts",
-          "hash": "6740743423189719355"
-        },
-        {
-          "file": "libs/shared/pipes/collection-commas/project.json",
-          "hash": "14519952187353633642"
-        },
-        {
-          "file": "libs/shared/pipes/collection-commas/src/index.ts",
-          "hash": "7437008285991970263"
-        },
-        {
-          "file": "libs/shared/pipes/collection-commas/src/lib/collection-commas.pipe.ts",
-          "hash": "11337687560865979016",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/shared/pipes/collection-commas/src/test-setup.ts",
-          "hash": "12935735732682149507",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/shared/pipes/collection-commas/tsconfig.json",
-          "hash": "16248533471678702062"
-        },
-        {
-          "file": "libs/shared/pipes/collection-commas/tsconfig.lib.json",
-          "hash": "8746075233993636049"
-        },
-        {
-          "file": "libs/shared/pipes/collection-commas/tsconfig.spec.json",
-          "hash": "9840611283105717156"
-        }
-      ],
       "backend-e2e": [
         {
           "file": "apps/backend-e2e/.eslintrc.json",
@@ -1396,6 +1522,297 @@
         {
           "file": "apps/backend-e2e/tsconfig.spec.json",
           "hash": "14954872453723519891"
+        }
+      ],
+      "create-channel": [
+        {
+          "file": "libs/channels/feature-create-channel/.eslintrc.json",
+          "hash": "3642164882771910298"
+        },
+        {
+          "file": "libs/channels/feature-create-channel/README.md",
+          "hash": "977905302583535652"
+        },
+        {
+          "file": "libs/channels/feature-create-channel/jest.config.ts",
+          "hash": "17129332983062457301"
+        },
+        {
+          "file": "libs/channels/feature-create-channel/project.json",
+          "hash": "2230264960942263153"
+        },
+        {
+          "file": "libs/channels/feature-create-channel/src/index.ts",
+          "hash": "4027713908635162902"
+        },
+        {
+          "file": "libs/channels/feature-create-channel/src/lib/create-channel.component.html",
+          "hash": "7729860928232711222"
+        },
+        {
+          "file": "libs/channels/feature-create-channel/src/lib/create-channel.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "libs/channels/feature-create-channel/src/lib/create-channel.component.spec.ts",
+          "hash": "12598570403193601758",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/channels/feature-create-channel/src/lib/create-channel.component.ts",
+          "hash": "7758305411950772097",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@angular/forms",
+            "npm:@taiga-ui/kit",
+            "npm:@taiga-ui/core",
+            "slack-api",
+            "npm:@taiga-ui/cdk",
+            "auth-data-access",
+            "npm:@tinkoff/ng-polymorpheus",
+            "npm:@ngrx/store",
+            "data-access-channels"
+          ]
+        },
+        {
+          "file": "libs/channels/feature-create-channel/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/channels/feature-create-channel/tsconfig.json",
+          "hash": "8526453262384300416"
+        },
+        {
+          "file": "libs/channels/feature-create-channel/tsconfig.lib.json",
+          "hash": "6020606002228403423"
+        },
+        {
+          "file": "libs/channels/feature-create-channel/tsconfig.spec.json",
+          "hash": "7159729809249402441"
+        }
+      ],
+      "workspace": [
+        {
+          "file": "libs/workspace/feature-shell/.eslintrc.json",
+          "hash": "3642164882771910298"
+        },
+        {
+          "file": "libs/workspace/feature-shell/README.md",
+          "hash": "5389119819276186641"
+        },
+        {
+          "file": "libs/workspace/feature-shell/jest.config.ts",
+          "hash": "2843797594631031354"
+        },
+        {
+          "file": "libs/workspace/feature-shell/project.json",
+          "hash": "8179205422452227906"
+        },
+        {
+          "file": "libs/workspace/feature-shell/src/index.ts",
+          "hash": "11061508815223125909"
+        },
+        {
+          "file": "libs/workspace/feature-shell/src/lib/workspace.component.html",
+          "hash": "10123098412031591852"
+        },
+        {
+          "file": "libs/workspace/feature-shell/src/lib/workspace.component.scss",
+          "hash": "2784018291182294848"
+        },
+        {
+          "file": "libs/workspace/feature-shell/src/lib/workspace.component.spec.ts",
+          "hash": "5118376375623121801",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/workspace/feature-shell/src/lib/workspace.component.ts",
+          "hash": "1056681207926866488",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@angular/router",
+            "client-data-access",
+            "npm:@ngrx/store",
+            "npm:@taiga-ui/core",
+            "npm:@taiga-ui/kit",
+            "npm:@taiga-ui/cdk",
+            "data-access-contacts",
+            "data-access-channels",
+            "ui-store",
+            "create-channel",
+            "npm:@tinkoff/ng-polymorpheus"
+          ]
+        },
+        {
+          "file": "libs/workspace/feature-shell/src/lib/workspace.routes.ts",
+          "hash": "9711456437868559543",
+          "deps": [
+            "npm:@angular/router",
+            "npm:@ngrx/store",
+            "npm:@ngrx/effects",
+            "data-access-messages",
+            "data-access-channels",
+            "data-access-threads",
+            "data-access-contacts",
+            [
+              "threads",
+              "dynamic"
+            ],
+            [
+              "primary-view",
+              "dynamic"
+            ],
+            [
+              "channel-chat-view",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "libs/workspace/feature-shell/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/workspace/feature-shell/tsconfig.json",
+          "hash": "8526453262384300416"
+        },
+        {
+          "file": "libs/workspace/feature-shell/tsconfig.lib.json",
+          "hash": "6020606002228403423"
+        },
+        {
+          "file": "libs/workspace/feature-shell/tsconfig.spec.json",
+          "hash": "7159729809249402441"
+        }
+      ],
+      "utils": [
+        {
+          "file": "libs/shared/utils/.eslintrc.json",
+          "hash": "3865548440771963112"
+        },
+        {
+          "file": "libs/shared/utils/README.md",
+          "hash": "7928633615893668067"
+        },
+        {
+          "file": "libs/shared/utils/jest.config.ts",
+          "hash": "15479299737995323507"
+        },
+        {
+          "file": "libs/shared/utils/project.json",
+          "hash": "1701894255939830844"
+        },
+        {
+          "file": "libs/shared/utils/src/index.ts",
+          "hash": "17229467606895649566"
+        },
+        {
+          "file": "libs/shared/utils/src/lib/collection.ts",
+          "hash": "9445727082539244282"
+        },
+        {
+          "file": "libs/shared/utils/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/shared/utils/tsconfig.json",
+          "hash": "8526453262384300416"
+        },
+        {
+          "file": "libs/shared/utils/tsconfig.lib.json",
+          "hash": "6020606002228403423"
+        },
+        {
+          "file": "libs/shared/utils/tsconfig.spec.json",
+          "hash": "7159729809249402441"
+        }
+      ],
+      "edit-channel": [
+        {
+          "file": "libs/channels/feature-edit-channel/.eslintrc.json",
+          "hash": "3642164882771910298"
+        },
+        {
+          "file": "libs/channels/feature-edit-channel/README.md",
+          "hash": "17987532050290010884"
+        },
+        {
+          "file": "libs/channels/feature-edit-channel/jest.config.ts",
+          "hash": "1162354098862340227"
+        },
+        {
+          "file": "libs/channels/feature-edit-channel/project.json",
+          "hash": "1980164053953064404"
+        },
+        {
+          "file": "libs/channels/feature-edit-channel/src/index.ts",
+          "hash": "1287161932301085807"
+        },
+        {
+          "file": "libs/channels/feature-edit-channel/src/lib/edit-channel.component.html",
+          "hash": "13732138218608708052"
+        },
+        {
+          "file": "libs/channels/feature-edit-channel/src/lib/edit-channel.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "libs/channels/feature-edit-channel/src/lib/edit-channel.component.spec.ts",
+          "hash": "11080975432786481108",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/channels/feature-edit-channel/src/lib/edit-channel.component.ts",
+          "hash": "18205260102914732747",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@taiga-ui/kit",
+            "npm:@tinkoff/ng-polymorpheus",
+            "npm:@taiga-ui/core",
+            "slack-api",
+            "npm:@angular/forms",
+            "auth-data-access",
+            "npm:@ngrx/store",
+            "npm:@taiga-ui/cdk",
+            "data-access-channels"
+          ]
+        },
+        {
+          "file": "libs/channels/feature-edit-channel/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/channels/feature-edit-channel/tsconfig.json",
+          "hash": "8526453262384300416"
+        },
+        {
+          "file": "libs/channels/feature-edit-channel/tsconfig.lib.json",
+          "hash": "6020606002228403423"
+        },
+        {
+          "file": "libs/channels/feature-edit-channel/tsconfig.spec.json",
+          "hash": "7159729809249402441"
         }
       ],
       "chat-message": [
@@ -1467,6 +1884,91 @@
         },
         {
           "file": "libs/shared/ui-message/tsconfig.spec.json",
+          "hash": "7159729809249402441"
+        }
+      ],
+      "message-editor": [
+        {
+          "file": "libs/shared/ui-message-editor/.eslintrc.json",
+          "hash": "3642164882771910298"
+        },
+        {
+          "file": "libs/shared/ui-message-editor/README.md",
+          "hash": "6353466241115919968"
+        },
+        {
+          "file": "libs/shared/ui-message-editor/jest.config.ts",
+          "hash": "12740588206589001765"
+        },
+        {
+          "file": "libs/shared/ui-message-editor/project.json",
+          "hash": "16447047892972169346"
+        },
+        {
+          "file": "libs/shared/ui-message-editor/src/index.ts",
+          "hash": "5927323776727536562"
+        },
+        {
+          "file": "libs/shared/ui-message-editor/src/lib/input-file/input-file.component.html",
+          "hash": "4882257321517824288"
+        },
+        {
+          "file": "libs/shared/ui-message-editor/src/lib/input-file/input-file.component.scss",
+          "hash": "9984878493467796753"
+        },
+        {
+          "file": "libs/shared/ui-message-editor/src/lib/input-file/input-file.component.ts",
+          "hash": "8391113787865364437",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:@angular/forms"
+          ]
+        },
+        {
+          "file": "libs/shared/ui-message-editor/src/lib/message-editor/message-editor.component.html",
+          "hash": "18415911759425060581"
+        },
+        {
+          "file": "libs/shared/ui-message-editor/src/lib/message-editor/message-editor.component.scss",
+          "hash": "16072184641082866965"
+        },
+        {
+          "file": "libs/shared/ui-message-editor/src/lib/message-editor/message-editor.component.spec.ts",
+          "hash": "6403857468259560603",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/shared/ui-message-editor/src/lib/message-editor/message-editor.component.ts",
+          "hash": "7342665935420069817",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@angular/forms",
+            "npm:ngx-quill",
+            "npm:@taiga-ui/core",
+            "file-preview"
+          ]
+        },
+        {
+          "file": "libs/shared/ui-message-editor/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/shared/ui-message-editor/tsconfig.json",
+          "hash": "8526453262384300416"
+        },
+        {
+          "file": "libs/shared/ui-message-editor/tsconfig.lib.json",
+          "hash": "6020606002228403423"
+        },
+        {
+          "file": "libs/shared/ui-message-editor/tsconfig.spec.json",
           "hash": "7159729809249402441"
         }
       ],
@@ -1605,272 +2107,372 @@
           "hash": "2927375835638640771"
         }
       ],
-      "ui-store": [
+      "data-access-threads": [
         {
-          "file": "libs/shared/data-access/ui-store/.eslintrc.json",
-          "hash": "11377653707530137242"
+          "file": "libs/threads/data-access-threads/.eslintrc.json",
+          "hash": "3865548440771963112"
         },
         {
-          "file": "libs/shared/data-access/ui-store/README.md",
-          "hash": "10400595476844398387"
+          "file": "libs/threads/data-access-threads/README.md",
+          "hash": "2450662518855550944"
         },
         {
-          "file": "libs/shared/data-access/ui-store/jest.config.ts",
-          "hash": "232075066997528762"
+          "file": "libs/threads/data-access-threads/jest.config.ts",
+          "hash": "155580699189877125"
         },
         {
-          "file": "libs/shared/data-access/ui-store/project.json",
-          "hash": "7110816003847706566"
+          "file": "libs/threads/data-access-threads/project.json",
+          "hash": "15675253726204392418"
         },
         {
-          "file": "libs/shared/data-access/ui-store/src/index.ts",
-          "hash": "15274375296530821063"
+          "file": "libs/threads/data-access-threads/src/index.ts",
+          "hash": "14444220784472518467"
         },
         {
-          "file": "libs/shared/data-access/ui-store/src/lib/secondary-view.store.ts",
-          "hash": "17933025122638643705",
+          "file": "libs/threads/data-access-threads/src/lib/+state/index.ts",
+          "hash": "14638968577589280578"
+        },
+        {
+          "file": "libs/threads/data-access-threads/src/lib/+state/threads.actions.ts",
+          "hash": "15365436777847738955",
           "deps": [
-            "npm:@angular/core",
-            "npm:@ngrx/signals"
+            "slack-api",
+            "npm:@ngrx/store"
           ]
         },
         {
-          "file": "libs/shared/data-access/ui-store/src/test-setup.ts",
+          "file": "libs/threads/data-access-threads/src/lib/+state/threads.effects.spec.ts",
+          "hash": "7789540463787495084",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@ngrx/effects",
+            "npm:@ngrx/store",
+            "npm:jasmine-marbles",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/threads/data-access-threads/src/lib/+state/threads.effects.ts",
+          "hash": "13129282813319050128",
+          "deps": [
+            "data-access-messages",
+            "slack-api",
+            "npm:@angular/core",
+            "npm:@ngrx/effects",
+            "npm:@ngrx/store",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/threads/data-access-threads/src/lib/+state/threads.models.ts",
+          "hash": "16216164857865686925",
+          "deps": [
+            "slack-api"
+          ]
+        },
+        {
+          "file": "libs/threads/data-access-threads/src/lib/+state/threads.reducer.spec.ts",
+          "hash": "9319337163642437434",
+          "deps": [
+            "npm:@ngrx/store"
+          ]
+        },
+        {
+          "file": "libs/threads/data-access-threads/src/lib/+state/threads.reducer.ts",
+          "hash": "3304021793406054006",
+          "deps": [
+            "npm:@ngrx/entity",
+            "npm:@ngrx/store"
+          ]
+        },
+        {
+          "file": "libs/threads/data-access-threads/src/lib/+state/threads.selectors.spec.ts",
+          "hash": "3788254987197917126"
+        },
+        {
+          "file": "libs/threads/data-access-threads/src/lib/+state/threads.selectors.ts",
+          "hash": "11252486771891793119",
+          "deps": [
+            "npm:@ngrx/store"
+          ]
+        },
+        {
+          "file": "libs/threads/data-access-threads/src/test-setup.ts",
           "hash": "12935735732682149507",
           "deps": [
             "npm:jest-preset-angular"
           ]
         },
         {
-          "file": "libs/shared/data-access/ui-store/tsconfig.json",
-          "hash": "16248533471678702062"
+          "file": "libs/threads/data-access-threads/tsconfig.json",
+          "hash": "8526453262384300416"
         },
         {
-          "file": "libs/shared/data-access/ui-store/tsconfig.lib.json",
-          "hash": "8746075233993636049"
+          "file": "libs/threads/data-access-threads/tsconfig.lib.json",
+          "hash": "6020606002228403423"
         },
         {
-          "file": "libs/shared/data-access/ui-store/tsconfig.spec.json",
-          "hash": "9840611283105717156"
+          "file": "libs/threads/data-access-threads/tsconfig.spec.json",
+          "hash": "7159729809249402441"
         }
       ],
-      "message-editor": [
+      "thread-card": [
         {
-          "file": "libs/shared/ui-message-editor/.eslintrc.json",
+          "file": "libs/threads/ui-thread-card/.eslintrc.json",
           "hash": "3642164882771910298"
         },
         {
-          "file": "libs/shared/ui-message-editor/README.md",
-          "hash": "6353466241115919968"
+          "file": "libs/threads/ui-thread-card/README.md",
+          "hash": "7852479952963170198"
         },
         {
-          "file": "libs/shared/ui-message-editor/jest.config.ts",
-          "hash": "12740588206589001765"
+          "file": "libs/threads/ui-thread-card/jest.config.ts",
+          "hash": "888211457343245072"
         },
         {
-          "file": "libs/shared/ui-message-editor/project.json",
-          "hash": "16447047892972169346"
+          "file": "libs/threads/ui-thread-card/project.json",
+          "hash": "14915225233490507569"
         },
         {
-          "file": "libs/shared/ui-message-editor/src/index.ts",
-          "hash": "5927323776727536562"
+          "file": "libs/threads/ui-thread-card/src/index.ts",
+          "hash": "12700274079405759269"
         },
         {
-          "file": "libs/shared/ui-message-editor/src/lib/input-file/input-file.component.html",
-          "hash": "4882257321517824288"
+          "file": "libs/threads/ui-thread-card/src/lib/thread-card/thread-card.component.html",
+          "hash": "15930865950569877392"
         },
         {
-          "file": "libs/shared/ui-message-editor/src/lib/input-file/input-file.component.scss",
-          "hash": "9984878493467796753"
+          "file": "libs/threads/ui-thread-card/src/lib/thread-card/thread-card.component.scss",
+          "hash": "14974478999803941376"
         },
         {
-          "file": "libs/shared/ui-message-editor/src/lib/input-file/input-file.component.ts",
-          "hash": "8391113787865364437",
-          "deps": [
-            "npm:@angular/common",
-            "npm:@angular/core",
-            "npm:@angular/forms"
-          ]
-        },
-        {
-          "file": "libs/shared/ui-message-editor/src/lib/message-editor/message-editor.component.html",
-          "hash": "18415911759425060581"
-        },
-        {
-          "file": "libs/shared/ui-message-editor/src/lib/message-editor/message-editor.component.scss",
-          "hash": "16072184641082866965"
-        },
-        {
-          "file": "libs/shared/ui-message-editor/src/lib/message-editor/message-editor.component.spec.ts",
-          "hash": "6403857468259560603",
+          "file": "libs/threads/ui-thread-card/src/lib/thread-card/thread-card.component.spec.ts",
+          "hash": "17385282173577916202",
           "deps": [
             "npm:@angular/core"
           ]
         },
         {
-          "file": "libs/shared/ui-message-editor/src/lib/message-editor/message-editor.component.ts",
-          "hash": "7342665935420069817",
+          "file": "libs/threads/ui-thread-card/src/lib/thread-card/thread-card.component.ts",
+          "hash": "12723574948703706154",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/common",
-            "npm:@angular/forms",
-            "npm:ngx-quill",
-            "npm:@taiga-ui/core",
-            "file-preview"
+            "slack-api",
+            "chat-message",
+            "message-editor",
+            "collection-commas"
           ]
         },
         {
-          "file": "libs/shared/ui-message-editor/src/test-setup.ts",
+          "file": "libs/threads/ui-thread-card/src/test-setup.ts",
           "hash": "12935735732682149507",
           "deps": [
             "npm:jest-preset-angular"
           ]
         },
         {
-          "file": "libs/shared/ui-message-editor/tsconfig.json",
+          "file": "libs/threads/ui-thread-card/tsconfig.json",
           "hash": "8526453262384300416"
         },
         {
-          "file": "libs/shared/ui-message-editor/tsconfig.lib.json",
+          "file": "libs/threads/ui-thread-card/tsconfig.lib.json",
           "hash": "6020606002228403423"
         },
         {
-          "file": "libs/shared/ui-message-editor/tsconfig.spec.json",
+          "file": "libs/threads/ui-thread-card/tsconfig.spec.json",
           "hash": "7159729809249402441"
         }
       ],
-      "slack-api": [
+      "data-access-messages": [
         {
-          "file": "libs/shared/data-access/slack-api/.eslintrc.json",
-          "hash": "11377653707530137242"
+          "file": "libs/chat/data-access-messages/.eslintrc.json",
+          "hash": "3865548440771963112"
         },
         {
-          "file": "libs/shared/data-access/slack-api/README.md",
-          "hash": "13193173338245912583"
+          "file": "libs/chat/data-access-messages/README.md",
+          "hash": "8615884468042607992"
         },
         {
-          "file": "libs/shared/data-access/slack-api/jest.config.ts",
-          "hash": "722454560571663771"
+          "file": "libs/chat/data-access-messages/jest.config.ts",
+          "hash": "5139367970315523148"
         },
         {
-          "file": "libs/shared/data-access/slack-api/project.json",
-          "hash": "8525997417297080556"
+          "file": "libs/chat/data-access-messages/project.json",
+          "hash": "14800282543526867486"
         },
         {
-          "file": "libs/shared/data-access/slack-api/src/index.ts",
-          "hash": "6529703599833771184"
+          "file": "libs/chat/data-access-messages/src/index.ts",
+          "hash": "14444220784472518467"
         },
         {
-          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/channel-api.service.ts",
-          "hash": "3206898307178517721",
+          "file": "libs/chat/data-access-messages/src/lib/+state/index.ts",
+          "hash": "10558011417790256468"
+        },
+        {
+          "file": "libs/chat/data-access-messages/src/lib/+state/messages.actions.ts",
+          "hash": "11247480908115043818",
           "deps": [
-            "auth-data-access",
-            "npm:@angular/core",
-            "npm:rxjs",
-            "npm:uuid"
-          ]
-        },
-        {
-          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/client-api.service.ts",
-          "hash": "18155392325260672874",
-          "deps": [
-            "npm:@angular/core",
-            "npm:rxjs"
-          ]
-        },
-        {
-          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/contact-api.service.ts",
-          "hash": "14659910204242861376",
-          "deps": [
-            "auth-data-access",
-            "npm:@angular/core",
-            "npm:rxjs"
-          ]
-        },
-        {
-          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/message-api.service.ts",
-          "hash": "408201989385134610",
-          "deps": [
-            "auth-data-access",
-            "npm:@angular/core",
-            "npm:rxjs",
-            "npm:uuid",
-            "utils"
-          ]
-        },
-        {
-          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/models/attachment.ts",
-          "hash": "15872655072339571399"
-        },
-        {
-          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/models/channel.ts",
-          "hash": "4308346595899137460",
-          "deps": [
+            "slack-api",
+            "npm:@ngrx/store",
             "auth-data-access"
           ]
         },
         {
-          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/models/client.ts",
-          "hash": "2532774846346029301"
-        },
-        {
-          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/models/contact.ts",
-          "hash": "3941154823607193920"
-        },
-        {
-          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/models/index.ts",
-          "hash": "10999200747561441912"
-        },
-        {
-          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/models/message.ts",
-          "hash": "8308636420890537348",
+          "file": "libs/chat/data-access-messages/src/lib/+state/messages.effects.spec.ts",
+          "hash": "3852537860293567952",
           "deps": [
-            "auth-data-access"
-          ]
-        },
-        {
-          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/models/thread.ts",
-          "hash": "13023636785210175237",
-          "deps": [
-            "auth-data-access"
-          ]
-        },
-        {
-          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/thread-api.service.ts",
-          "hash": "14431887347948907908",
-          "deps": [
-            "auth-data-access",
             "npm:@angular/core",
+            "npm:@ngrx/effects",
+            "npm:@ngrx/store",
+            "npm:jasmine-marbles",
             "npm:rxjs"
           ]
         },
         {
-          "file": "libs/shared/data-access/slack-api/src/lib/slack-api/user-api.service.ts",
-          "hash": "9217926048672481317",
+          "file": "libs/chat/data-access-messages/src/lib/+state/messages.effects.ts",
+          "hash": "6673322065121965725",
           "deps": [
-            "auth-data-access",
+            "slack-api",
             "npm:@angular/core",
+            "npm:@ngrx/effects",
+            "npm:@ngrx/store",
             "npm:rxjs"
           ]
         },
         {
-          "file": "libs/shared/data-access/slack-api/src/test-setup.ts",
+          "file": "libs/chat/data-access-messages/src/lib/+state/messages.models.ts",
+          "hash": "2636138740343749771",
+          "deps": [
+            "slack-api"
+          ]
+        },
+        {
+          "file": "libs/chat/data-access-messages/src/lib/+state/messages.reducer.spec.ts",
+          "hash": "5509561272760381370",
+          "deps": [
+            "npm:@ngrx/store"
+          ]
+        },
+        {
+          "file": "libs/chat/data-access-messages/src/lib/+state/messages.reducer.ts",
+          "hash": "10384531648840314076",
+          "deps": [
+            "npm:@ngrx/entity",
+            "npm:@ngrx/store"
+          ]
+        },
+        {
+          "file": "libs/chat/data-access-messages/src/lib/+state/messages.selectors.spec.ts",
+          "hash": "14167678086101883509"
+        },
+        {
+          "file": "libs/chat/data-access-messages/src/lib/+state/messages.selectors.ts",
+          "hash": "15387089363046003788",
+          "deps": [
+            "slack-api",
+            "npm:@ngrx/store",
+            "data-access-contacts",
+            "data-access-channels",
+            "npm:luxon"
+          ]
+        },
+        {
+          "file": "libs/chat/data-access-messages/src/test-setup.ts",
           "hash": "12935735732682149507",
           "deps": [
             "npm:jest-preset-angular"
           ]
         },
         {
-          "file": "libs/shared/data-access/slack-api/tsconfig.json",
-          "hash": "16248533471678702062"
+          "file": "libs/chat/data-access-messages/tsconfig.json",
+          "hash": "8526453262384300416"
         },
         {
-          "file": "libs/shared/data-access/slack-api/tsconfig.lib.json",
-          "hash": "2259867284347580065"
+          "file": "libs/chat/data-access-messages/tsconfig.lib.json",
+          "hash": "6020606002228403423"
         },
         {
-          "file": "libs/shared/data-access/slack-api/tsconfig.spec.json",
-          "hash": "9840611283105717156"
+          "file": "libs/chat/data-access-messages/tsconfig.spec.json",
+          "hash": "7159729809249402441"
+        }
+      ],
+      "primary-view": [
+        {
+          "file": "libs/chat/feature-primary-view/.eslintrc.json",
+          "hash": "3642164882771910298"
+        },
+        {
+          "file": "libs/chat/feature-primary-view/README.md",
+          "hash": "7555232730970363532"
+        },
+        {
+          "file": "libs/chat/feature-primary-view/jest.config.ts",
+          "hash": "11270569828353146401"
+        },
+        {
+          "file": "libs/chat/feature-primary-view/project.json",
+          "hash": "8229096138843125454"
+        },
+        {
+          "file": "libs/chat/feature-primary-view/src/index.ts",
+          "hash": "9646664629900578064"
+        },
+        {
+          "file": "libs/chat/feature-primary-view/src/lib/primary-view/primary-view.component.html",
+          "hash": "2131574911782463741"
+        },
+        {
+          "file": "libs/chat/feature-primary-view/src/lib/primary-view/primary-view.component.scss",
+          "hash": "11923164517650203789"
+        },
+        {
+          "file": "libs/chat/feature-primary-view/src/lib/primary-view/primary-view.component.spec.ts",
+          "hash": "16570345938225623844",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/chat/feature-primary-view/src/lib/primary-view/primary-view.component.ts",
+          "hash": "11940173954217897129",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@angular/router",
+            "npm:rxjs",
+            "npm:@ngrx/store",
+            "npm:@taiga-ui/cdk",
+            "data-access-messages",
+            "npm:@taiga-ui/kit",
+            "npm:@taiga-ui/core",
+            "npm:@angular/cdk",
+            "message-editor",
+            "slack-api",
+            "ui-store",
+            "thread-chat-view",
+            "chat-message",
+            "data-access-contacts"
+          ]
+        },
+        {
+          "file": "libs/chat/feature-primary-view/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/chat/feature-primary-view/tsconfig.json",
+          "hash": "8526453262384300416"
+        },
+        {
+          "file": "libs/chat/feature-primary-view/tsconfig.lib.json",
+          "hash": "6020606002228403423"
+        },
+        {
+          "file": "libs/chat/feature-primary-view/tsconfig.spec.json",
+          "hash": "7159729809249402441"
         }
       ],
       "auth-data-access": [
@@ -1963,520 +2565,6 @@
         },
         {
           "file": "libs/auth/data-access/tsconfig.spec.json",
-          "hash": "7159729809249402441"
-        }
-      ],
-      "tab-rail": [
-        {
-          "file": "libs/tab-rail/feature-tab-rail/.eslintrc.json",
-          "hash": "3642164882771910298"
-        },
-        {
-          "file": "libs/tab-rail/feature-tab-rail/README.md",
-          "hash": "4903590336836095853"
-        },
-        {
-          "file": "libs/tab-rail/feature-tab-rail/jest.config.ts",
-          "hash": "3963973007056492361"
-        },
-        {
-          "file": "libs/tab-rail/feature-tab-rail/project.json",
-          "hash": "15065437319968502506"
-        },
-        {
-          "file": "libs/tab-rail/feature-tab-rail/src/index.ts",
-          "hash": "8169695417755688714"
-        },
-        {
-          "file": "libs/tab-rail/feature-tab-rail/src/lib/tab-rail/tab-rail.component.html",
-          "hash": "6385760518487826241"
-        },
-        {
-          "file": "libs/tab-rail/feature-tab-rail/src/lib/tab-rail/tab-rail.component.scss",
-          "hash": "8925578911841714108"
-        },
-        {
-          "file": "libs/tab-rail/feature-tab-rail/src/lib/tab-rail/tab-rail.component.spec.ts",
-          "hash": "11985542418132997084",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/tab-rail/feature-tab-rail/src/lib/tab-rail/tab-rail.component.ts",
-          "hash": "5868310280314471656",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "auth-data-access",
-            "npm:@ngrx/store",
-            "client-data-access",
-            "npm:@taiga-ui/core",
-            "npm:@taiga-ui/kit"
-          ]
-        },
-        {
-          "file": "libs/tab-rail/feature-tab-rail/src/test-setup.ts",
-          "hash": "12935735732682149507",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/tab-rail/feature-tab-rail/tsconfig.json",
-          "hash": "8526453262384300416"
-        },
-        {
-          "file": "libs/tab-rail/feature-tab-rail/tsconfig.lib.json",
-          "hash": "6020606002228403423"
-        },
-        {
-          "file": "libs/tab-rail/feature-tab-rail/tsconfig.spec.json",
-          "hash": "7159729809249402441"
-        }
-      ],
-      "edit-channel": [
-        {
-          "file": "libs/channels/feature-edit-channel/.eslintrc.json",
-          "hash": "3642164882771910298"
-        },
-        {
-          "file": "libs/channels/feature-edit-channel/README.md",
-          "hash": "17987532050290010884"
-        },
-        {
-          "file": "libs/channels/feature-edit-channel/jest.config.ts",
-          "hash": "1162354098862340227"
-        },
-        {
-          "file": "libs/channels/feature-edit-channel/project.json",
-          "hash": "1980164053953064404"
-        },
-        {
-          "file": "libs/channels/feature-edit-channel/src/index.ts",
-          "hash": "1287161932301085807"
-        },
-        {
-          "file": "libs/channels/feature-edit-channel/src/lib/edit-channel.component.html",
-          "hash": "13732138218608708052"
-        },
-        {
-          "file": "libs/channels/feature-edit-channel/src/lib/edit-channel.component.scss",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "libs/channels/feature-edit-channel/src/lib/edit-channel.component.spec.ts",
-          "hash": "11080975432786481108",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/channels/feature-edit-channel/src/lib/edit-channel.component.ts",
-          "hash": "18205260102914732747",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "npm:@taiga-ui/kit",
-            "npm:@tinkoff/ng-polymorpheus",
-            "npm:@taiga-ui/core",
-            "slack-api",
-            "npm:@angular/forms",
-            "auth-data-access",
-            "npm:@ngrx/store",
-            "npm:@taiga-ui/cdk",
-            "data-access-channels"
-          ]
-        },
-        {
-          "file": "libs/channels/feature-edit-channel/src/test-setup.ts",
-          "hash": "12935735732682149507",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/channels/feature-edit-channel/tsconfig.json",
-          "hash": "8526453262384300416"
-        },
-        {
-          "file": "libs/channels/feature-edit-channel/tsconfig.lib.json",
-          "hash": "6020606002228403423"
-        },
-        {
-          "file": "libs/channels/feature-edit-channel/tsconfig.spec.json",
-          "hash": "7159729809249402441"
-        }
-      ],
-      "thread-chat-view": [
-        {
-          "file": "libs/chat/feature-thread-chat-view/.eslintrc.json",
-          "hash": "3642164882771910298"
-        },
-        {
-          "file": "libs/chat/feature-thread-chat-view/README.md",
-          "hash": "8647310667942845161"
-        },
-        {
-          "file": "libs/chat/feature-thread-chat-view/jest.config.ts",
-          "hash": "12038503928577137394"
-        },
-        {
-          "file": "libs/chat/feature-thread-chat-view/project.json",
-          "hash": "17525356543086719504"
-        },
-        {
-          "file": "libs/chat/feature-thread-chat-view/src/index.ts",
-          "hash": "1636622534494932176"
-        },
-        {
-          "file": "libs/chat/feature-thread-chat-view/src/lib/thread-chat-view.component.html",
-          "hash": "10390335923525084047"
-        },
-        {
-          "file": "libs/chat/feature-thread-chat-view/src/lib/thread-chat-view.component.scss",
-          "hash": "11425719391180982812"
-        },
-        {
-          "file": "libs/chat/feature-thread-chat-view/src/lib/thread-chat-view.component.spec.ts",
-          "hash": "2161223513772217821",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/chat/feature-thread-chat-view/src/lib/thread-chat-view.component.ts",
-          "hash": "10643435546092241617",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "npm:@taiga-ui/core",
-            "ui-store",
-            "npm:@ngrx/store",
-            "data-access-messages",
-            "message-editor",
-            "file-preview",
-            "chat-message",
-            "npm:@angular/cdk",
-            "npm:rxjs",
-            "slack-api",
-            "npm:@taiga-ui/cdk"
-          ]
-        },
-        {
-          "file": "libs/chat/feature-thread-chat-view/src/test-setup.ts",
-          "hash": "12935735732682149507",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/chat/feature-thread-chat-view/tsconfig.json",
-          "hash": "8526453262384300416"
-        },
-        {
-          "file": "libs/chat/feature-thread-chat-view/tsconfig.lib.json",
-          "hash": "6020606002228403423"
-        },
-        {
-          "file": "libs/chat/feature-thread-chat-view/tsconfig.spec.json",
-          "hash": "7159729809249402441"
-        }
-      ],
-      "workspace": [
-        {
-          "file": "libs/workspace/feature-shell/.eslintrc.json",
-          "hash": "3642164882771910298"
-        },
-        {
-          "file": "libs/workspace/feature-shell/README.md",
-          "hash": "5389119819276186641"
-        },
-        {
-          "file": "libs/workspace/feature-shell/jest.config.ts",
-          "hash": "2843797594631031354"
-        },
-        {
-          "file": "libs/workspace/feature-shell/project.json",
-          "hash": "8179205422452227906"
-        },
-        {
-          "file": "libs/workspace/feature-shell/src/index.ts",
-          "hash": "11061508815223125909"
-        },
-        {
-          "file": "libs/workspace/feature-shell/src/lib/workspace.component.html",
-          "hash": "10123098412031591852"
-        },
-        {
-          "file": "libs/workspace/feature-shell/src/lib/workspace.component.scss",
-          "hash": "2784018291182294848"
-        },
-        {
-          "file": "libs/workspace/feature-shell/src/lib/workspace.component.spec.ts",
-          "hash": "5118376375623121801",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/workspace/feature-shell/src/lib/workspace.component.ts",
-          "hash": "1056681207926866488",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "npm:@angular/router",
-            "client-data-access",
-            "npm:@ngrx/store",
-            "npm:@taiga-ui/core",
-            "npm:@taiga-ui/kit",
-            "npm:@taiga-ui/cdk",
-            "data-access-contacts",
-            "data-access-channels",
-            "ui-store",
-            "create-channel",
-            "npm:@tinkoff/ng-polymorpheus"
-          ]
-        },
-        {
-          "file": "libs/workspace/feature-shell/src/lib/workspace.routes.ts",
-          "hash": "9711456437868559543",
-          "deps": [
-            "npm:@angular/router",
-            "npm:@ngrx/store",
-            "npm:@ngrx/effects",
-            "data-access-messages",
-            "data-access-channels",
-            "data-access-threads",
-            "data-access-contacts",
-            [
-              "threads",
-              "dynamic"
-            ],
-            [
-              "primary-view",
-              "dynamic"
-            ],
-            [
-              "channel-chat-view",
-              "dynamic"
-            ]
-          ]
-        },
-        {
-          "file": "libs/workspace/feature-shell/src/test-setup.ts",
-          "hash": "12935735732682149507",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/workspace/feature-shell/tsconfig.json",
-          "hash": "8526453262384300416"
-        },
-        {
-          "file": "libs/workspace/feature-shell/tsconfig.lib.json",
-          "hash": "6020606002228403423"
-        },
-        {
-          "file": "libs/workspace/feature-shell/tsconfig.spec.json",
-          "hash": "7159729809249402441"
-        }
-      ],
-      "file-preview": [
-        {
-          "file": "libs/shared/ui-file-preview/.eslintrc.json",
-          "hash": "3642164882771910298"
-        },
-        {
-          "file": "libs/shared/ui-file-preview/README.md",
-          "hash": "3978437442576589793"
-        },
-        {
-          "file": "libs/shared/ui-file-preview/jest.config.ts",
-          "hash": "9476164527426953307"
-        },
-        {
-          "file": "libs/shared/ui-file-preview/project.json",
-          "hash": "11357946151725827954"
-        },
-        {
-          "file": "libs/shared/ui-file-preview/src/index.ts",
-          "hash": "6615350294942668002"
-        },
-        {
-          "file": "libs/shared/ui-file-preview/src/lib/file-preview/file-preview.component.html",
-          "hash": "17998672091206015352"
-        },
-        {
-          "file": "libs/shared/ui-file-preview/src/lib/file-preview/file-preview.component.scss",
-          "hash": "9911954729985612708"
-        },
-        {
-          "file": "libs/shared/ui-file-preview/src/lib/file-preview/file-preview.component.spec.ts",
-          "hash": "6380187942027269463",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/shared/ui-file-preview/src/lib/file-preview/file-preview.component.ts",
-          "hash": "4952608007861554101",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "npm:@taiga-ui/kit"
-          ]
-        },
-        {
-          "file": "libs/shared/ui-file-preview/src/test-setup.ts",
-          "hash": "12935735732682149507",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/shared/ui-file-preview/tsconfig.json",
-          "hash": "8526453262384300416"
-        },
-        {
-          "file": "libs/shared/ui-file-preview/tsconfig.lib.json",
-          "hash": "6020606002228403423"
-        },
-        {
-          "file": "libs/shared/ui-file-preview/tsconfig.spec.json",
-          "hash": "7159729809249402441"
-        }
-      ],
-      "header-toolbar": [
-        {
-          "file": "libs/header-toolbar/feature-header-toolbar/.eslintrc.json",
-          "hash": "3642164882771910298"
-        },
-        {
-          "file": "libs/header-toolbar/feature-header-toolbar/README.md",
-          "hash": "18226710373341959856"
-        },
-        {
-          "file": "libs/header-toolbar/feature-header-toolbar/jest.config.ts",
-          "hash": "13706278142199153131"
-        },
-        {
-          "file": "libs/header-toolbar/feature-header-toolbar/project.json",
-          "hash": "11696960151084123146"
-        },
-        {
-          "file": "libs/header-toolbar/feature-header-toolbar/src/index.ts",
-          "hash": "6157768829652700345"
-        },
-        {
-          "file": "libs/header-toolbar/feature-header-toolbar/src/lib/header-toolbar/header-toolbar.component.html",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "libs/header-toolbar/feature-header-toolbar/src/lib/header-toolbar/header-toolbar.component.scss",
-          "hash": "8537097946923023697"
-        },
-        {
-          "file": "libs/header-toolbar/feature-header-toolbar/src/lib/header-toolbar/header-toolbar.component.spec.ts",
-          "hash": "9191650198673291184",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/header-toolbar/feature-header-toolbar/src/lib/header-toolbar/header-toolbar.component.ts",
-          "hash": "4863718252102218271",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common"
-          ]
-        },
-        {
-          "file": "libs/header-toolbar/feature-header-toolbar/src/test-setup.ts",
-          "hash": "12935735732682149507",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/header-toolbar/feature-header-toolbar/tsconfig.json",
-          "hash": "8526453262384300416"
-        },
-        {
-          "file": "libs/header-toolbar/feature-header-toolbar/tsconfig.lib.json",
-          "hash": "6020606002228403423"
-        },
-        {
-          "file": "libs/header-toolbar/feature-header-toolbar/tsconfig.spec.json",
-          "hash": "7159729809249402441"
-        }
-      ],
-      "thread-card": [
-        {
-          "file": "libs/threads/ui-thread-card/.eslintrc.json",
-          "hash": "3642164882771910298"
-        },
-        {
-          "file": "libs/threads/ui-thread-card/README.md",
-          "hash": "7852479952963170198"
-        },
-        {
-          "file": "libs/threads/ui-thread-card/jest.config.ts",
-          "hash": "888211457343245072"
-        },
-        {
-          "file": "libs/threads/ui-thread-card/project.json",
-          "hash": "14915225233490507569"
-        },
-        {
-          "file": "libs/threads/ui-thread-card/src/index.ts",
-          "hash": "12700274079405759269"
-        },
-        {
-          "file": "libs/threads/ui-thread-card/src/lib/thread-card/thread-card.component.html",
-          "hash": "15930865950569877392"
-        },
-        {
-          "file": "libs/threads/ui-thread-card/src/lib/thread-card/thread-card.component.scss",
-          "hash": "14974478999803941376"
-        },
-        {
-          "file": "libs/threads/ui-thread-card/src/lib/thread-card/thread-card.component.spec.ts",
-          "hash": "17385282173577916202",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/threads/ui-thread-card/src/lib/thread-card/thread-card.component.ts",
-          "hash": "12723574948703706154",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "slack-api",
-            "chat-message",
-            "message-editor",
-            "collection-commas"
-          ]
-        },
-        {
-          "file": "libs/threads/ui-thread-card/src/test-setup.ts",
-          "hash": "12935735732682149507",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/threads/ui-thread-card/tsconfig.json",
-          "hash": "8526453262384300416"
-        },
-        {
-          "file": "libs/threads/ui-thread-card/tsconfig.lib.json",
-          "hash": "6020606002228403423"
-        },
-        {
-          "file": "libs/threads/ui-thread-card/tsconfig.spec.json",
           "hash": "7159729809249402441"
         }
       ]
